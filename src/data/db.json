@@ -1,0 +1,586 @@
+{
+  "users": [
+    {
+      "id": "5072ce59-b1de-4f4d-9fe7-4b44c114eb6a",
+      "role": "admin",
+      "email": "Monty.Koepp@gmail.com",
+      "name": "Susie Rowe",
+      "password": "admin12345",
+      "date": "2021-12-24T21:40:32.274Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/576.jpg",
+      "age": 29,
+      "visits": 761,
+      "progress": 57,
+      "status": {
+        "name": "Pending",
+        "color": "yellow",
+        "id": "085f27ad-166e-49c9-840a-1db495e8a344"
+      },
+      "statusMenu": [
+        {
+          "name": "Pending",
+          "color": "yellow",
+          "id": "3840aa3b-323b-415f-b8a5-e36d03d40c0b"
+        },
+        {
+          "name": "Inprocess",
+          "color": "#159afb",
+          "id": "59e278fa-5dc9-4d06-baf7-0dee06380ef4"
+        },
+        {
+          "name": "Complete",
+          "color": "#0cf90c",
+          "id": "99373bd6-d3ec-4e76-a04b-5ea7a5e5ffbe"
+        },
+        {
+          "name": "Waitting",
+          "color": "orange",
+          "id": "99373bd6-d3ec-4e76-a04b-5ea7a5e5ff4e"
+        }
+      ],
+      "theme": false,
+      "sideBar": false,
+      "allowFollowUp": {
+        "type": "No"
+      }
+    },
+    {
+      "id": "79da516b-3f44-4617-908d-1cba9fb035d4",
+      "role": "employee",
+      "email": "Kianna.Veum@gmail.com",
+      "name": "Constance Goodwin",
+      "password": "1OMYSq9q",
+      "date": "2023-12-28T08:53:34.345Z",
+      "profile": "https://avatars.githubusercontent.com/u/26579419",
+      "age": 41,
+      "visits": 629,
+      "progress": 64,
+      "status": "",
+      "statusMenu": [
+        {
+          "name": "Pending",
+          "color": "yellow",
+          "id": "8b76cfc0-9fe9-49ea-a9ba-c25fe738da1a"
+        },
+        {
+          "name": "Inprocess",
+          "color": "#159afb",
+          "id": "9d8d3b63-942e-46c6-92e6-ecec017546f4"
+        },
+        {
+          "name": "Complete",
+          "color": "#0cf90c",
+          "id": "73a8768f-c8e5-44be-aec0-a52334ac7cb0"
+        }
+      ],
+      "theme": true,
+      "sideBar": true,
+      "allowFollowUp": {
+        "type": "Yes"
+      }
+    },
+    {
+      "id": "7b875fa0-d9fa-4048-87f7-4ec91b5ddf5e",
+      "role": "client",
+      "email": "Deron_OHara80@hotmail.com",
+      "name": "Bernice Block",
+      "password": "piqqstDl",
+      "date": "2023-12-23T10:24:55.527Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1053.jpg",
+      "age": 32,
+      "visits": 859,
+      "progress": 46,
+      "status": {
+        "name": "Pending",
+        "color": "yellow",
+        "id": "3840aa3b-323b-415f-b8a5-e36d03d40c0b"
+      },
+      "statusMenu": [
+        {
+          "name": "Pending",
+          "color": "yellow",
+          "id": "9d8d35dc-e498-409c-bc22-a778058491f3"
+        },
+        {
+          "name": "Inprocess",
+          "color": "#159afb",
+          "id": "f1a12aba-4ffc-4bf9-9e6b-e250b74100d6"
+        },
+        {
+          "name": "Complete",
+          "color": "#0cf90c",
+          "id": "feac9f8b-d293-4e02-88d9-6145548d823f"
+        }
+      ],
+      "theme": "",
+      "sideBar": "",
+      "allowFollowUp": {
+        "type": "No"
+      }
+    },
+    {
+      "id": "0fcb35d1-5abe-4617-9af8-55b5c01519c9",
+      "role": "client",
+      "email": "Lula_Huel22@yahoo.com",
+      "name": "Cora Larson Jr.",
+      "password": "VYOZDVsw",
+      "date": "2023-12-23T11:34:54.738Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/775.jpg",
+      "age": 34,
+      "visits": 775,
+      "progress": 52,
+      "status": {
+        "name": "Inprocess",
+        "color": "#159afb",
+        "id": "59e278fa-5dc9-4d06-baf7-0dee06380ef4"
+      },
+      "statusMenu": [
+        {
+          "name": "Pending",
+          "color": "yellow",
+          "id": "254bf712-3393-4776-aa50-ae38416fd81a"
+        },
+        {
+          "name": "Inprocess",
+          "color": "#159afb",
+          "id": "bf27af2d-5a86-4c42-b03f-0e93cde8606c"
+        },
+        {
+          "name": "Complete",
+          "color": "#0cf90c",
+          "id": "5ab0b4f1-e86e-4c72-86f4-520b63ce1143"
+        }
+      ],
+      "theme": true,
+      "sideBar": true,
+      "allowFollowUp": {
+        "type": "No"
+      }
+    },
+    {
+      "id": "b65d794a-b019-4081-be00-aa68dbbc7790",
+      "role": "employee",
+      "email": "Magdalena_Hudson4@yahoo.com",
+      "name": "Pat Davis",
+      "password": "gDTomNK5",
+      "date": "2022-06-07T04:48:41.231Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/304.jpg",
+      "age": 41,
+      "visits": 36,
+      "progress": 47,
+      "status": {
+        "name": "Pending",
+        "color": "yellow",
+        "id": "3840aa3b-323b-415f-b8a5-e36d03d40c0b"
+      },
+      "statusMenu": [
+        {
+          "name": "Pending",
+          "color": "yellow",
+          "id": "67d9a368-898c-4fa1-b0c5-ce3c2b82661b"
+        },
+        {
+          "name": "Inprocess",
+          "color": "#159afb",
+          "id": "8499c897-2ccc-4963-be49-52ba6793e42d"
+        },
+        {
+          "name": "Complete",
+          "color": "#0cf90c",
+          "id": "2ba49a62-29be-4161-b592-a4f1f8253f67"
+        }
+      ],
+      "theme": false,
+      "sideBar": true,
+      "allowFollowUp": {
+        "type": "No"
+      }
+    },
+    {
+      "id": "347b551e-5264-4d9b-8b86-6cfad76ba44a",
+      "role": "client",
+      "email": "Corbin_Hoeger86@gmail.com",
+      "name": "Joyce White",
+      "password": "k4QWbzIp",
+      "date": "2023-12-23T14:04:48.968Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1190.jpg",
+      "age": 42,
+      "visits": "",
+      "progress": 69,
+      "status": {
+        "name": "Waitting",
+        "color": "orange",
+        "id": "99373bd6-d3ec-4e76-a04b-5ea7a5e5ff4e"
+      },
+      "statusMenu": [
+        {
+          "name": "Pending",
+          "color": "yellow",
+          "id": "00a12227-54e3-48fd-9d47-fb5188396ad1"
+        },
+        {
+          "name": "Inprocess",
+          "color": "#159afb",
+          "id": "77da4b99-7d35-4031-8b03-570e6959823f"
+        },
+        {
+          "name": "Complete",
+          "color": "#0cf90c",
+          "id": "8f63fc68-6de3-4057-bc17-20db851d3eff"
+        }
+      ],
+      "theme": true,
+      "sideBar": true,
+      "allowFollowUp": {
+        "type": "No"
+      }
+    },
+    {
+      "id": "5e0cc489-c8eb-438e-b55d-40c016773b9d",
+      "role": "employee",
+      "email": "Tomasa20@yahoo.com",
+      "name": "Dexter Crist",
+      "password": "7E046ddO",
+      "date": "2021-12-29T08:08:19.369Z",
+      "profile": "https://avatars.githubusercontent.com/u/28415938",
+      "age": 43,
+      "visits": 396,
+      "progress": 72,
+      "status": {
+        "name": "Complete",
+        "color": "#0cf90c",
+        "id": "7d9937b6-f823-403c-b821-b874dd9b2147"
+      },
+      "statusMenu": [
+        {
+          "name": "Pending",
+          "color": "yellow",
+          "id": "f07f9d88-4922-4c1e-b83b-03e59843c5ac"
+        },
+        {
+          "name": "Inprocess",
+          "color": "#159afb",
+          "id": "4343881e-7d45-4840-9e58-5dc319a66cc5"
+        },
+        {
+          "name": "Complete",
+          "color": "#0cf90c",
+          "id": "a0f88121-d12a-4947-9de1-420e7490b0b7"
+        }
+      ],
+      "theme": false,
+      "sideBar": true,
+      "allowFollowUp": {
+        "type": "Yes"
+      }
+    },
+    {
+      "id": "68a5136a-7914-44a2-950f-8eae7fd8574d",
+      "role": "employee",
+      "email": "Una.Mraz-Koepp96@hotmail.com",
+      "name": "Dwight Hane",
+      "password": "7wfzAvBP",
+      "date": "2021-02-19T16:06:25.854Z",
+      "profile": "https://avatars.githubusercontent.com/u/47954867",
+      "age": 31,
+      "visits": 740,
+      "progress": 44,
+      "status": {
+        "name": "Waitting",
+        "color": "orange",
+        "id": "99373bd6-d3ec-4e76-a04b-5ea7a5e5ff4e"
+      },
+      "statusMenu": [
+        {
+          "name": "Pending",
+          "color": "yellow",
+          "id": "c6b652d2-b904-4ce9-b68d-f067f109f226"
+        },
+        {
+          "name": "Inprocess",
+          "color": "#159afb",
+          "id": "d4845122-81fa-4501-9c30-18f00cf53a3e"
+        },
+        {
+          "name": "Complete",
+          "color": "#0cf90c",
+          "id": "89ee24c5-e2fd-4de3-9ed6-ecbfc01d3370"
+        }
+      ],
+      "theme": true,
+      "sideBar": true,
+      "allowFollowUp": {
+        "type": "Yes"
+      }
+    },
+    {
+      "id": "ea22a9e5-abc0-4345-8ec7-030670a67e7e",
+      "role": "client",
+      "email": "Magdalen.Smitham@gmail.com",
+      "name": "Kari Schimmel",
+      "password": "wViAjryh",
+      "date": "2023-04-15T05:23:26.169Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/349.jpg",
+      "age": 42,
+      "visits": 303,
+      "progress": 65,
+      "status": {
+        "name": "Complete",
+        "color": "#0cf90c",
+        "id": "9a375b54-aec2-4f2b-a6e4-617ac0e0ac2e"
+      },
+      "statusMenu": [
+        {
+          "name": "Pending",
+          "color": "yellow",
+          "id": "075b81e9-b3d4-40c9-b1c6-895b8abc0485"
+        },
+        {
+          "name": "Inprocess",
+          "color": "#159afb",
+          "id": "75c29d39-e09c-41b4-bc71-1d9fcd321f23"
+        },
+        {
+          "name": "Complete",
+          "color": "#0cf90c",
+          "id": "5efc41c3-cf4a-4321-ad1b-539d00681c02"
+        }
+      ],
+      "theme": true,
+      "sideBar": true,
+      "allowFollowUp": {
+        "type": "Yes"
+      }
+    },
+    {
+      "id": "d28767ee-75ab-4b68-a678-49bf5d3b5e5b",
+      "role": "client",
+      "email": "Samir_Hansen87@yahoo.com",
+      "name": "Dr. Roosevelt Satterfield",
+      "password": "mxPMfm7z",
+      "date": "2022-08-09T05:10:12.255Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/243.jpg",
+      "age": 32,
+      "visits": 992,
+      "progress": 77,
+      "status": {
+        "name": "Pending",
+        "color": "yellow",
+        "id": "3840aa3b-323b-415f-b8a5-e36d03d40c0b"
+      },
+      "statusMenu": [
+        {
+          "name": "Pending",
+          "color": "yellow",
+          "id": "7041d04f-4bf3-472f-8e42-4927cc11b5f2"
+        },
+        {
+          "name": "Inprocess",
+          "color": "#159afb",
+          "id": "b32c9f69-fe38-4c12-994d-3882aa821132"
+        },
+        {
+          "name": "Complete",
+          "color": "#0cf90c",
+          "id": "7e40b9d4-bf5d-4559-ae31-865ca48b8085"
+        }
+      ],
+      "theme": true,
+      "sideBar": true,
+      "allowFollowUp": {
+        "type": "Yes"
+      }
+    },
+    {
+      "id": "66cccf65-ca21-49b8-9be9-758501aa9388",
+      "role": "employee",
+      "email": "Abbigail69@gmail.com",
+      "name": "Dennis Smitham",
+      "password": "xJAyRE97",
+      "date": "2023-12-23T10:18:00.877Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/177.jpg",
+      "age": 49,
+      "visits": 573,
+      "progress": 86,
+      "status": "",
+      "statusMenu": [
+        {
+          "name": "Pending",
+          "color": "yellow",
+          "id": "81bce506-ceca-422b-9b6b-900a4c84779d"
+        },
+        {
+          "name": "Inprocess",
+          "color": "#159afb",
+          "id": "de3b8944-4976-404b-8345-6ca1377d37c1"
+        },
+        {
+          "name": "Complete",
+          "color": "#0cf90c",
+          "id": "2e3c943a-b2f6-4973-8406-58c2bf18dcb1"
+        }
+      ],
+      "theme": true,
+      "sideBar": true,
+      "allowFollowUp": {
+        "type": "Yes"
+      }
+    },
+    {
+      "id": "815ff69d-ad85-4adf-81ba-e7e55ce4bb22",
+      "role": "client",
+      "email": "Princess_Gerlach@hotmail.com",
+      "name": "Mr. Nelson Kihn",
+      "password": "UJoBmfN8",
+      "date": "2021-02-18T16:00:51.575Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/619.jpg",
+      "age": 29,
+      "visits": 802,
+      "progress": 58,
+      "status": {
+        "name": "Inprocess",
+        "color": "#159afb",
+        "id": "7de4277b-5f0a-4d79-a23a-9b5480af861f"
+      },
+      "statusMenu": [
+        {
+          "name": "Pending",
+          "color": "yellow",
+          "id": "f5b59a2a-e09e-4bce-b0ee-c929e7010d05"
+        },
+        {
+          "name": "Inprocess",
+          "color": "#159afb",
+          "id": "c7b00f8d-0d30-4904-865d-e8a2625348c6"
+        },
+        {
+          "name": "Complete",
+          "color": "#0cf90c",
+          "id": "3952265a-91f3-4081-b308-c98577e72b5c"
+        }
+      ],
+      "theme": true,
+      "sideBar": true,
+      "allowFollowUp": {
+        "type": "Yes"
+      }
+    },
+    {
+      "id": "c5f5b598-012c-437a-9014-beb429c3622e",
+      "role": "employee",
+      "email": "Christopher2@yahoo.com",
+      "name": "Angel Vandervort",
+      "password": "q7FkBMt5",
+      "date": "2023-10-30T12:37:16.723Z",
+      "profile": "https://avatars.githubusercontent.com/u/78480809",
+      "age": 42,
+      "visits": 688,
+      "progress": 90,
+      "status": {
+        "name": "Pending",
+        "color": "yellow",
+        "id": "8eff29fb-30fd-473d-86cd-3d3424534f23"
+      },
+      "statusMenu": [
+        {
+          "name": "Pending",
+          "color": "yellow",
+          "id": "4c0f49b0-a3ef-4e5b-aab2-133a2e42d717"
+        },
+        {
+          "name": "Inprocess",
+          "color": "#159afb",
+          "id": "d0f78218-c58d-48fb-b5b3-4ba2c5828bb7"
+        },
+        {
+          "name": "Complete",
+          "color": "#0cf90c",
+          "id": "4615ccb8-460c-4f5e-bcd0-4267c736edd7"
+        }
+      ],
+      "theme": true,
+      "sideBar": true,
+      "allowFollowUp": {
+        "type": "No"
+      }
+    },
+    {
+      "id": "2cf43b1f-af08-4340-92f8-b6e6ad5575d2",
+      "role": "employee",
+      "email": "Maxie.OReilly2@gmail.com",
+      "name": "Javier Koelpin",
+      "password": "6p05TbfQ",
+      "date": "2021-03-14T05:40:05.900Z",
+      "profile": "https://avatars.githubusercontent.com/u/70595397",
+      "age": 50,
+      "visits": 764,
+      "progress": 40,
+      "status": {
+        "name": "Pending",
+        "color": "yellow",
+        "id": "9093f77b-85d8-45ad-868a-d27da010f4bf"
+      },
+      "statusMenu": [
+        {
+          "name": "Pending",
+          "color": "yellow",
+          "id": "04708d9e-40cc-483b-b96a-5e820032362e"
+        },
+        {
+          "name": "Inprocess",
+          "color": "#159afb",
+          "id": "ae504956-81cf-4adc-b49c-ff45c94fa564"
+        },
+        {
+          "name": "Complete",
+          "color": "#0cf90c",
+          "id": "e4db3642-3781-4bb5-9c22-5ed41f392dca"
+        }
+      ],
+      "theme": true,
+      "sideBar": true,
+      "allowFollowUp": {
+        "type": "No"
+      }
+    },
+    {
+      "id": "1dac0890-0411-44a6-84f8-12b873ea1771",
+      "role": "client",
+      "email": "Florine_Bradtke30@gmail.com",
+      "name": "Timothy Mraz",
+      "password": "apUsKNua",
+      "date": "2021-10-20T02:57:22.374Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/34.jpg",
+      "age": 31,
+      "visits": 346,
+      "progress": 42,
+      "status": {
+        "name": "Inprocess",
+        "color": "#159afb",
+        "id": "2fd6ef3a-ce53-406e-bd3e-07e50800b698"
+      },
+      "statusMenu": [
+        {
+          "name": "Pending",
+          "color": "yellow",
+          "id": "5208349f-70ad-4834-b5ab-0ef8fa100085"
+        },
+        {
+          "name": "Inprocess",
+          "color": "#159afb",
+          "id": "1d727ce0-e62b-49a4-aa74-7a2515a8cc94"
+        },
+        {
+          "name": "Complete",
+          "color": "#0cf90c",
+          "id": "21645a14-04d7-4077-9937-aac1901b0161"
+        }
+      ],
+      "theme": true,
+      "sideBar": true,
+      "allowFollowUp": {
+        "type": "Yes"
+      }
+    }
+  ]
+}
