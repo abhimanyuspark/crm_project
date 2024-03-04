@@ -8,44 +8,22 @@ export const admin = [
     subMenu: [
       {
         id: 1,
-        value: "Dashboard",
+        value: "Private",
         link: "/",
-      },
-      {
-        id: 2,
-        value: "Select",
-        link: "/select",
-      },
-      {
-        id: 3,
-        value: "Buttons",
-        link: "/allbuttons",
       },
     ],
   },
   {
     id: 2,
-    icon: <FaList />,
-    value: "Accordians",
-    link: "/accordians",
+    icon: <FaUsers />,
+    value: "Clients",
+    link: "/clients",
   },
   {
     id: 3,
-    icon: <FaUsers />,
-    value: "Users",
-    link: "/users",
-  },
-  {
-    id: 4,
     icon: <FaGear />,
     value: "Setting",
-    subMenu: [
-      {
-        id: 1,
-        value: "Settings",
-        link: "/setting",
-      },
-    ],
+    link: "/setting",
   },
 ];
 

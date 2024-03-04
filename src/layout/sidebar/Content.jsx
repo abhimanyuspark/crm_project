@@ -7,10 +7,11 @@ import { useSideBar } from "../../hooks";
 
 const Content = () => {
   const [isOpen] = useSideBar();
+
   const [activeChildIndex, setActiveChildIndex] = useState(0);
   const { pathname } = useLocation();
   const { user } = useSelector((state) => state.auth);
-  const { expand } = useSelector((state) => state.layout);
+
   const data =
     user?.role === "admin"
       ? admin
@@ -53,7 +54,7 @@ const Content = () => {
   }, [pathname]);
 
   return (
-    <ul className="overflow-auto select-none">
+    <>
       {data?.map((d, i) => (
         <Child
           item={d}
@@ -62,21 +63,13 @@ const Content = () => {
           isChildActive={isChildActive}
           index={i}
           handleIndex={handleIndex}
-          isOpen={expand || isOpen}
         />
       ))}
-    </ul>
+    </>
   );
 };
 
-const Child = ({
-  item,
-  activeIndex,
-  index,
-  handleIndex,
-  isChildActive,
-  isOpen,
-}) => {
+const Child = ({ item, activeIndex, index, handleIndex, isChildActive }) => {
   return (
     <li className="cursor-pointer text-[15px] border-b border-slate-600 text-white ">
       {item?.link ? (
@@ -85,12 +78,10 @@ const Child = ({
             handleIndex(index);
           }}
           to={item?.link}
-          className={`h-12 flex items-center ${
-            !isOpen && "justify-center"
-          } px-4 gap-4 hover:text-[var(--cl-sky)]`}
+          className={`h-12 flex items-center px-4 gap-4 hover:text-[var(--cl-sky)]`}
         >
           <div className="text-lg">{item?.icon}</div>
-          {isOpen && <p>{item?.value}</p>}
+          <p>{item?.value}</p>
         </Link>
       ) : (
         <div>
@@ -98,43 +89,38 @@ const Child = ({
             onClick={() => {
               handleIndex(index);
             }}
-            className={`h-12 flex items-center ${
-              !isOpen && "justify-center"
-            } gap-4 px-4 hover:text-[var(--cl-sky)] ${
+            className={`h-12 flex items-center gap-4 px-4 hover:text-[var(--cl-sky)] ${
               isChildActive(index) ? "text-[var(--cl-sky)]" : ""
             }`}
           >
             <div className="text-lg">{item?.icon}</div>
-            {isOpen && (
-              <div className="flex items-center justify-between w-full">
-                <p>{item?.value}</p>
-                <div>
-                  {activeIndex === index ? <FaAngleDown /> : <FaAngleRight />}
-                </div>
+
+            <div className="flex items-center justify-between w-full">
+              <p>{item?.value}</p>
+              <div>
+                {activeIndex === index ? <FaAngleDown /> : <FaAngleRight />}
               </div>
-            )}
+            </div>
           </div>
 
           <div className={`flex flex-col pl-[50px]`}>
-            {isOpen
-              ? activeIndex === index &&
-                item?.subMenu?.map((s, i) => {
-                  return (
-                    <NavLink
-                      style={{ paddingBottom: "12px" }}
-                      to={s?.link}
-                      key={i}
-                      className={({ isActive }) =>
-                        isActive
-                          ? "text-[var(--cl-sky)]"
-                          : "" + "hover:text-[var(--cl-sky)]"
-                      }
-                    >
-                      {s?.value}
-                    </NavLink>
-                  );
-                })
-              : ""}
+            {activeIndex === index &&
+              item?.subMenu?.map((s, i) => {
+                return (
+                  <NavLink
+                    style={{ paddingBottom: "12px" }}
+                    to={s?.link}
+                    key={i}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-[var(--cl-sky)]"
+                        : "" + "hover:text-[var(--cl-sky)]"
+                    }
+                  >
+                    {s?.value}
+                  </NavLink>
+                );
+              })}
           </div>
         </div>
       )}

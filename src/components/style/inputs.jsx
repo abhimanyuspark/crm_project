@@ -81,13 +81,15 @@ const CheckBox = ({ label, onChange, value, important, name }) => {
         onChange={onChange}
         className="w-4 aspect-square"
       />
-      <label
-        htmlFor={name}
-        className="text-slate-600 cursor-pointer flex gap-1"
-      >
-        {label}
-        {important && <sup className="text-red-500 text-base static">*</sup>}
-      </label>
+      {label && (
+        <label
+          htmlFor={name}
+          className="text-slate-600 cursor-pointer flex gap-1"
+        >
+          {label}
+          {important && <sup className="text-red-500 text-base static">*</sup>}
+        </label>
+      )}
     </div>
   );
 };

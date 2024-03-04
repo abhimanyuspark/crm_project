@@ -1,58 +1,73 @@
 import React from "react";
-import { useSideBar } from "../../hooks";
+import { useExpand, useSideBar } from "../../hooks";
 import Content from "./Content";
 import { FaAngleLeft, FaAngleRight } from "../../components/icons";
 import SVG from "../../assets/react.svg";
-import { toggleExpand } from "../../redux/features/layoutSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Sidebar = () => {
   const [isOpen] = useSideBar();
-  const { expand } = useSelector((state) => state.layout);
-  const dispatch = useDispatch();
+  const [expand, toggleExpand] = useExpand();
 
   const onMouseEnter = () => {
     if (isOpen) return;
-    dispatch(toggleExpand(true));
+    toggleExpand(true);
   };
   const onMouseLeave = () => {
     if (isOpen) return;
-    dispatch(toggleExpand(false));
+    toggleExpand(false);
   };
 
   return (
-    <aside
-      style={{
-        width: isOpen ? "260px" : expand ? "260px" : "60px",
-        position: expand ? "relative" : "absolute",
-        transition: "0.3s ease-in-out",
-      }}
-      className="grid grid-rows-[60px_1fr_60px] border-r border-slate-300 bg-[var(--bg-dk-bl)] h-full"
-    >
-      <Header />
-      <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-        <Content />
+    <aside className="relative">
+      <div
+        style={{
+          transition: "0.2s ease-in-out",
+        }}
+        className={`sm:grid grid-rows-[60px_calc(100vh-120px)_60px] border-r border-slate-300 bg-[var(--bg-dk-bl)] h-full hidden ${
+          expand ? "w-[240px] absolute" : "w-full"
+        }`}
+      >
+        <Header open={expand || isOpen} />
+        <ul
+          id="aside"
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          className="overflow-y-scroll overflow-x-hidden select-none"
+        >
+          <Content />
+        </ul>
+        <Footer />
       </div>
-      <Footer />
     </aside>
   );
 };
 
-const Header = () => {
-  const [isOpen] = useSideBar();
+const Header = ({ open }) => {
+  const { user } = useSelector((state) => state.auth);
 
   return (
     <div
-      className={`border-b border-slate-600 flex items-center text-[var(--cl-sky)] ${
-        isOpen ? "justify-between p-2" : "justify-center"
-      }`}
+      className={`border-b border-slate-600 flex items-center text-[var(--cl-sky)] p-2`}
     >
-      {isOpen && <h2 className="text-lg font-bold text-center">CRM</h2>}
+      <div
+        style={{ transition: "0.3s ease-in-out" }}
+        className={`flex flex-col items-start absolute w-24 ${
+          open ? "opacity-100" : "left-2 opacity-0"
+        }`}
+      >
+        <h3 className="text-lg font-bold text-center">CRM</h3>
+        <p className="text-sm text-white">{user?.name}</p>
+      </div>
+
       <img
+        style={{ transition: "0.5s ease-in-out" }}
         loading="lazy"
         src={SVG}
         alt="logo"
-        className="w-auto h-auto rounded-sm"
+        className={`w-auto h-auto rounded-sm p-1 absolute bg-[var(--bg-dk-bl)] ${
+          open ? "right-1" : "left-1"
+        }`}
       />
     </div>
   );
@@ -76,7 +91,7 @@ const Footer = () => {
       </div>
 
       {isOpen && (
-        <p className="py-1 px-2 rounded-sm text-sm text-[var(--cl-sky)] bg-[var(--blue)]">
+        <p className="py-[2px] px-1 rounded-sm text-xs text-[var(--cl-sky)] bg-[var(--blue)]">
           ver 1.0.0
         </p>
       )}
