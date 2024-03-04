@@ -19,12 +19,11 @@ const authSlice = createSlice({
       state.user = {};
       state.persist = false;
       Cookies.remove("user");
+      Cookies.remove("sidebar");
+      Cookies.remove("theme");
     },
     togglePersist: (state, action) => {
       state.persist = action?.payload;
-    },
-    toggleSidebar: (state, action) => {
-      state.user.sideBar = action?.payload;
     },
   },
   extraReducers: (builder) => {
@@ -36,6 +35,8 @@ const authSlice = createSlice({
         state.loading = false;
         state.user = action?.payload;
         const persist = state?.persist;
+        Cookies.set("sidebar", true, { expires: 7 });
+        Cookies.set("theme", true, { expires: 7 });
         if (persist) {
           const { email } = action?.payload;
           Cookies.set("user", JSON.stringify({ email }), {
@@ -63,5 +64,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { logout, togglePersist, toggleSidebar } = authSlice.actions;
+export const { logout, togglePersist } = authSlice.actions;
 export default authSlice.reducer;

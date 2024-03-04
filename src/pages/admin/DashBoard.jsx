@@ -4,7 +4,11 @@ import { useSelector } from "react-redux";
 const DashBoard = () => {
   const { user } = useSelector((state) => state.auth);
 
-  return <div>DashBoard {user?.name}</div>;
+  return (
+    <div>
+      <h1>DashBoard {user?.name}</h1>
+    </div>
+  );
 };
 
 export default DashBoard;

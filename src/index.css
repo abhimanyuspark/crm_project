@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+#root {
+  --bg-dk-bl: #06283d;
+  --blue: #256d85;
+  --cl-sky: #47b5ff;
+  --light: #dff6ff;
+}
+
 * {
   padding: 0px;
   margin: 0px;

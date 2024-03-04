@@ -3,6 +3,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { Login, Not_Found, UnAuth, DashBoard } from "./pages";
 import { RequireAuth, PersistenceAuth } from "./components/index";
+import { Tooltip } from "react-tooltip";
 
 function App() {
   const role = {
@@ -27,9 +28,11 @@ function App() {
             }
           >
             <Route path="/" element={<DashBoard />} />
+            <Route path="/select" element={<p>Select</p>} />
           </Route>
         </Route>
       </Routes>
+      <Tooltip id="my-tooltip" />
     </Suspense>
   );
 }

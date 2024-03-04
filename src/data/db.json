@@ -38,8 +38,6 @@
           "id": "99373bd6-d3ec-4e76-a04b-5ea7a5e5ff4e"
         }
       ],
-      "theme": false,
-      "sideBar": false,
       "allowFollowUp": {
         "type": "No"
       }
@@ -73,8 +71,6 @@
           "id": "73a8768f-c8e5-44be-aec0-a52334ac7cb0"
         }
       ],
-      "theme": true,
-      "sideBar": true,
       "allowFollowUp": {
         "type": "Yes"
       }
@@ -112,8 +108,6 @@
           "id": "feac9f8b-d293-4e02-88d9-6145548d823f"
         }
       ],
-      "theme": "",
-      "sideBar": "",
       "allowFollowUp": {
         "type": "No"
       }
@@ -151,8 +145,6 @@
           "id": "5ab0b4f1-e86e-4c72-86f4-520b63ce1143"
         }
       ],
-      "theme": true,
-      "sideBar": true,
       "allowFollowUp": {
         "type": "No"
       }
@@ -190,8 +182,6 @@
           "id": "2ba49a62-29be-4161-b592-a4f1f8253f67"
         }
       ],
-      "theme": false,
-      "sideBar": true,
       "allowFollowUp": {
         "type": "No"
       }
@@ -229,8 +219,6 @@
           "id": "8f63fc68-6de3-4057-bc17-20db851d3eff"
         }
       ],
-      "theme": true,
-      "sideBar": true,
       "allowFollowUp": {
         "type": "No"
       }
@@ -268,8 +256,6 @@
           "id": "a0f88121-d12a-4947-9de1-420e7490b0b7"
         }
       ],
-      "theme": false,
-      "sideBar": true,
       "allowFollowUp": {
         "type": "Yes"
       }
@@ -307,8 +293,6 @@
           "id": "89ee24c5-e2fd-4de3-9ed6-ecbfc01d3370"
         }
       ],
-      "theme": true,
-      "sideBar": true,
       "allowFollowUp": {
         "type": "Yes"
       }
@@ -346,8 +330,6 @@
           "id": "5efc41c3-cf4a-4321-ad1b-539d00681c02"
         }
       ],
-      "theme": true,
-      "sideBar": true,
       "allowFollowUp": {
         "type": "Yes"
       }
@@ -385,8 +367,6 @@
           "id": "7e40b9d4-bf5d-4559-ae31-865ca48b8085"
         }
       ],
-      "theme": true,
-      "sideBar": true,
       "allowFollowUp": {
         "type": "Yes"
       }
@@ -420,8 +400,6 @@
           "id": "2e3c943a-b2f6-4973-8406-58c2bf18dcb1"
         }
       ],
-      "theme": true,
-      "sideBar": true,
       "allowFollowUp": {
         "type": "Yes"
       }
@@ -459,8 +437,6 @@
           "id": "3952265a-91f3-4081-b308-c98577e72b5c"
         }
       ],
-      "theme": true,
-      "sideBar": true,
       "allowFollowUp": {
         "type": "Yes"
       }
@@ -498,8 +474,6 @@
           "id": "4615ccb8-460c-4f5e-bcd0-4267c736edd7"
         }
       ],
-      "theme": true,
-      "sideBar": true,
       "allowFollowUp": {
         "type": "No"
       }
@@ -537,8 +511,6 @@
           "id": "e4db3642-3781-4bb5-9c22-5ed41f392dca"
         }
       ],
-      "theme": true,
-      "sideBar": true,
       "allowFollowUp": {
         "type": "No"
       }
@@ -576,8 +548,6 @@
           "id": "21645a14-04d7-4077-9937-aac1901b0161"
         }
       ],
-      "theme": true,
-      "sideBar": true,
       "allowFollowUp": {
         "type": "Yes"
       }
