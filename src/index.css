@@ -7,7 +7,7 @@
   --blue: #256d85;
   --cl-sky: #47b5ff;
   --light: #dff6ff;
-  --gray: @apply text-slate-500;
+  --cl-gr: @apply text-slate-300;
 }
 
 * {

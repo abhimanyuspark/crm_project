@@ -3,6 +3,7 @@ import RequireAuth from "./requireAuth";
 import { Button } from "./style/buttons";
 import { InputText, CheckBox } from "./style/inputs";
 import { formValidation } from "./formValidation";
+import Calender from "./Calender";
 
 export {
   PersistenceAuth,
@@ -11,4 +12,5 @@ export {
   InputText,
   CheckBox,
   formValidation,
+  Calender,
 };

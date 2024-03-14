@@ -1,5 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Calender } from "../../components";
+import { makeData } from "../../data/makeData";
+
+const make = makeData(10);
+// console.log(JSON.stringify(make));
+console.log(make);
 
 const DashBoard = () => {
   const { user } = useSelector((state) => state.auth);
@@ -7,7 +13,7 @@ const DashBoard = () => {
   return (
     <div>
       <div>
-        <h1 className="text-lg font-bold py-8">Welcome {user?.name}</h1>
+        <h1 className="text-xl font-bold py-8">Welcome {user?.name}</h1>
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4 grid-rows-1">
@@ -19,7 +25,7 @@ const DashBoard = () => {
               <img src={user?.profile} className="w-24 aspect-square" />
               <div className="flex flex-col">
                 <h3 className="text-lg font-bold">{user?.name}</h3>
-                <p className="text-[15px] font-semibold text-[var(--gray)]">
+                <p className="text-[15px] font-semibold text-[var(--cl-gr)]">
                   {"Junior"}
                 </p>
                 <p className="text-sm">Employee : EMP-Id-{user?.id}</p>
@@ -66,6 +72,15 @@ const DashBoard = () => {
               </p>
             </div>
           ))}
+
+          <div className="w-full bg-white rounded-md border border-slate-200">
+            <h2 className="text-xl font-bold p-4 border-b border-slate-200">
+              My Calender
+            </h2>
+            <div className="p-4">
+              <Calender />
+            </div>
+          </div>
         </div>
       </div>
     </div>
