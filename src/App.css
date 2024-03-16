@@ -1,1 +1,32 @@
+.fc {
+  font-size: 14px !important;
+}
+.fc-toolbar-title {
+  font-size: 12.5px !important;
+}
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):active {
+  color: #99a5b5 !important;
+  background-color: #1a252f !important;
+}
+.fc .fc-button-primary {
+  color: #99a5b5 !important;
+  background-color: white !important;
+  border-color: #99a5b5 !important;
+}
+.fc .fc-button-primary:hover {
+  background-color: #1a252f !important;
+}
+.fc-daygrid-day-number {
+  color: #99a5b5 !important;
+}
+.fc-daygrid-day-number:hover {
+  color: black !important;
+}
+.fc .fc-col-header-cell-cushion {
+  padding: 10px !important;
+}
 
+:root {
+  --fc-today-bg-color: #f2f4f7 !important;
+}

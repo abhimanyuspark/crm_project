@@ -71,20 +71,20 @@ const InputText = ({
   );
 };
 
-const CheckBox = ({ label, onChange, value, important, name }) => {
+const CheckBox = ({ label, onChange, checked, important, name }) => {
   return (
     <div className="flex gap-2 items-center">
       <input
         type="checkbox"
         id={name}
-        value={value}
+        checked={checked}
         onChange={onChange}
-        className="w-4 aspect-square"
+        className="w-[14px] aspect-square"
       />
       {label && (
         <label
           htmlFor={name}
-          className="text-slate-600 cursor-pointer flex gap-1"
+          className="text-slate-600 text-sm cursor-pointer flex gap-1"
         >
           {label}
           {important && <sup className="text-red-500 text-base static">*</sup>}

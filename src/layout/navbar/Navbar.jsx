@@ -1,17 +1,31 @@
 import React from "react";
-import { FaPowerOff } from "../../components/icons";
+import { FaPowerOff, IoMdMenu } from "../../components/icons";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { logout } from "../../redux/features/login/reduxLogin";
 import { useTheme } from "../../hooks";
+import { toggleMenu } from "../../redux/features/layoutSlice";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+
   return (
     <nav className="bg-white text-slate-500 border-b border-slate-300 flex items-center justify-between px-6">
-      <Link to="/" className="font-semibold hover:text-black cursor-pointer">
-        DashBoard
-      </Link>
+      <div className="flex gap-2 items-center">
+        <div
+          className="sm:hidden block"
+          onClick={() => {
+            dispatch(toggleMenu(true));
+          }}
+        >
+          <IoMdMenu size={25} className="cursor-pointer hover:text-black" />
+        </div>
+        <Link to="/" className="font-semibold hover:text-black cursor-pointer">
+          DashBoard
+        </Link>
+      </div>
+
       <ul className="flex gap-2 items-center">
         <li
           data-tooltip-id="my-tooltip"

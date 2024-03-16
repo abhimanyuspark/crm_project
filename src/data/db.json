@@ -1,556 +1,494 @@
 {
   "users": [
     {
-      "id": "5072ce59-b1de-4f4d-9fe7-4b44c114eb6a",
+      "id": "748dc2a8-675a-426e-a5d1-0d0ad5bead34",
       "role": "admin",
-      "email": "Monty.Koepp@gmail.com",
-      "name": "Susie Rowe",
+      "email": "admin@gmail.com",
+      "name": "Shari Aufderhar-Crona",
       "password": "admin12345",
-      "date": "2021-12-24T21:40:32.274Z",
-      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/576.jpg",
-      "age": 29,
-      "visits": 761,
-      "progress": 57,
+      "date": "2022-07-24T10:33:09.373Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/835.jpg",
+      "age": 31,
+      "visits": 136,
+      "progress": 70,
       "status": {
         "name": "Pending",
         "color": "yellow",
-        "id": "085f27ad-166e-49c9-840a-1db495e8a344"
+        "id": "f9a96046-cb8c-4e73-9d3a-660ca4fb0d3c"
       },
       "statusMenu": [
         {
           "name": "Pending",
           "color": "yellow",
-          "id": "3840aa3b-323b-415f-b8a5-e36d03d40c0b"
+          "id": "78e2a3d9-292f-4356-8e7f-f72e02c5b954"
         },
         {
           "name": "Inprocess",
           "color": "#159afb",
-          "id": "59e278fa-5dc9-4d06-baf7-0dee06380ef4"
+          "id": "d78fefa7-997a-4655-8954-7d106234a91e"
         },
         {
           "name": "Complete",
           "color": "#0cf90c",
-          "id": "99373bd6-d3ec-4e76-a04b-5ea7a5e5ffbe"
-        },
-        {
-          "name": "Waitting",
-          "color": "orange",
-          "id": "99373bd6-d3ec-4e76-a04b-5ea7a5e5ff4e"
+          "id": "912b29e3-78bd-4861-a3d3-c33fee89b2a4"
         }
       ],
-      "allowFollowUp": {
-        "type": "No"
-      }
+      "gender": "female",
+      "tasks": [
+        {
+          "title": "Eius degusto cruciamentum voluptates apud cunctatio alo.",
+          "description": "Caritas rem at auxilium clibanus pauci odio constans comitatus paens.",
+          "dueDate": "2024-03-14T18:14:05.313Z"
+        }
+      ],
+      "projects": [
+        {
+          "title": "Refined Rubber Chips",
+          "description": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J"
+        }
+      ],
+      "allowFollowUp": { "type": "No" }
     },
     {
-      "id": "79da516b-3f44-4617-908d-1cba9fb035d4",
+      "id": "f9e2a00d-e3ac-4c61-a956-ea068f850f2d",
+      "role": "client",
+      "email": "Adah82@hotmail.com",
+      "name": "Dolores Dickinson",
+      "password": "8S7Lscso",
+      "date": "2021-06-21T23:07:24.949Z",
+      "profile": "https://avatars.githubusercontent.com/u/80256756",
+      "age": 46,
+      "visits": 341,
+      "progress": 79,
+      "status": {
+        "name": "Pending",
+        "color": "yellow",
+        "id": "f5e27470-5d1d-42a9-a17f-dd6617d214ca"
+      },
+      "statusMenu": [
+        {
+          "name": "Pending",
+          "color": "yellow",
+          "id": "f1abc313-7315-4df1-86c7-eb10d97e18db"
+        },
+        {
+          "name": "Inprocess",
+          "color": "#159afb",
+          "id": "cffc85f7-9634-4e10-a1be-a3acd9c47e88"
+        },
+        {
+          "name": "Complete",
+          "color": "#0cf90c",
+          "id": "a7a705a0-14d3-4bd4-b734-f5bd3f3ea149"
+        }
+      ],
+      "gender": "male",
+      "tasks": [
+        {
+          "title": "Fugit adinventitias tracto turbo altus.",
+          "description": "Stabilis careo coaegresco sunt.",
+          "dueDate": "2024-03-14T10:35:48.988Z"
+        }
+      ],
+      "projects": [
+        {
+          "title": "Refined Rubber Computer",
+          "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support"
+        }
+      ],
+      "allowFollowUp": { "type": "Yes" }
+    },
+    {
+      "id": "86b16ada-cc95-4a36-910a-575645373183",
+      "role": "client",
+      "email": "Andreanne94@gmail.com",
+      "name": "Shelly Mayert",
+      "password": "4lgYfQgy",
+      "date": "2022-03-28T10:50:03.089Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/153.jpg",
+      "age": 38,
+      "visits": 760,
+      "progress": 84,
+      "status": {
+        "name": "Pending",
+        "color": "yellow",
+        "id": "de4e5e69-9c99-402e-9179-b323121918b0"
+      },
+      "statusMenu": [
+        {
+          "name": "Pending",
+          "color": "yellow",
+          "id": "f9d8b936-88dc-492d-9df9-e9fc5ae1c8b9"
+        },
+        {
+          "name": "Inprocess",
+          "color": "#159afb",
+          "id": "0d38a524-d5ef-49fc-abd4-6c2489b8348c"
+        },
+        {
+          "name": "Complete",
+          "color": "#0cf90c",
+          "id": "89621534-7db0-4a94-9eae-0b1dd8fe4aca"
+        }
+      ],
+      "gender": "male",
+      "tasks": [
+        {
+          "title": "Ventito verbum arbitro alias adiuvo sum surgo cubo conduco sonitus.",
+          "description": "Optio deleo acidus pauper conor tutis ullus vulariter.",
+          "dueDate": "2024-03-14T07:50:11.415Z"
+        }
+      ],
+      "projects": [
+        {
+          "title": "Electronic Metal Bacon",
+          "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals"
+        }
+      ],
+      "allowFollowUp": { "type": "Yes" }
+    },
+    {
+      "id": "6d86f03b-c6cb-4b80-aac0-23d157029a4f",
       "role": "employee",
-      "email": "Kianna.Veum@gmail.com",
-      "name": "Constance Goodwin",
-      "password": "1OMYSq9q",
-      "date": "2023-12-28T08:53:34.345Z",
-      "profile": "https://avatars.githubusercontent.com/u/26579419",
+      "email": "Pat85@yahoo.com",
+      "name": "Manuel Haley",
+      "password": "M0d1TlCE",
+      "date": "2023-04-07T18:56:54.077Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/125.jpg",
       "age": 41,
-      "visits": 629,
-      "progress": 64,
-      "status": "",
-      "statusMenu": [
-        {
-          "name": "Pending",
-          "color": "yellow",
-          "id": "8b76cfc0-9fe9-49ea-a9ba-c25fe738da1a"
-        },
-        {
-          "name": "Inprocess",
-          "color": "#159afb",
-          "id": "9d8d3b63-942e-46c6-92e6-ecec017546f4"
-        },
-        {
-          "name": "Complete",
-          "color": "#0cf90c",
-          "id": "73a8768f-c8e5-44be-aec0-a52334ac7cb0"
-        }
-      ],
-      "allowFollowUp": {
-        "type": "Yes"
-      }
-    },
-    {
-      "id": "7b875fa0-d9fa-4048-87f7-4ec91b5ddf5e",
-      "role": "client",
-      "email": "Deron_OHara80@hotmail.com",
-      "name": "Bernice Block",
-      "password": "piqqstDl",
-      "date": "2023-12-23T10:24:55.527Z",
-      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1053.jpg",
-      "age": 32,
-      "visits": 859,
-      "progress": 46,
-      "status": {
-        "name": "Pending",
-        "color": "yellow",
-        "id": "3840aa3b-323b-415f-b8a5-e36d03d40c0b"
-      },
-      "statusMenu": [
-        {
-          "name": "Pending",
-          "color": "yellow",
-          "id": "9d8d35dc-e498-409c-bc22-a778058491f3"
-        },
-        {
-          "name": "Inprocess",
-          "color": "#159afb",
-          "id": "f1a12aba-4ffc-4bf9-9e6b-e250b74100d6"
-        },
-        {
-          "name": "Complete",
-          "color": "#0cf90c",
-          "id": "feac9f8b-d293-4e02-88d9-6145548d823f"
-        }
-      ],
-      "allowFollowUp": {
-        "type": "No"
-      }
-    },
-    {
-      "id": "0fcb35d1-5abe-4617-9af8-55b5c01519c9",
-      "role": "client",
-      "email": "Lula_Huel22@yahoo.com",
-      "name": "Cora Larson Jr.",
-      "password": "VYOZDVsw",
-      "date": "2023-12-23T11:34:54.738Z",
-      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/775.jpg",
-      "age": 34,
-      "visits": 775,
-      "progress": 52,
+      "visits": 65,
+      "progress": 74,
       "status": {
         "name": "Inprocess",
         "color": "#159afb",
-        "id": "59e278fa-5dc9-4d06-baf7-0dee06380ef4"
+        "id": "e4e19330-f720-411c-9d50-f3bcbd542671"
       },
       "statusMenu": [
         {
           "name": "Pending",
           "color": "yellow",
-          "id": "254bf712-3393-4776-aa50-ae38416fd81a"
+          "id": "2be61344-ef39-47a9-8fff-382eda1e9b42"
         },
         {
           "name": "Inprocess",
           "color": "#159afb",
-          "id": "bf27af2d-5a86-4c42-b03f-0e93cde8606c"
+          "id": "9854d55d-29fe-437e-868a-f877fba70c56"
         },
         {
           "name": "Complete",
           "color": "#0cf90c",
-          "id": "5ab0b4f1-e86e-4c72-86f4-520b63ce1143"
+          "id": "8f8fcc1e-7eb8-4ca8-9d09-2a907a660221"
         }
       ],
-      "allowFollowUp": {
-        "type": "No"
-      }
-    },
-    {
-      "id": "b65d794a-b019-4081-be00-aa68dbbc7790",
-      "role": "employee",
-      "email": "Magdalena_Hudson4@yahoo.com",
-      "name": "Pat Davis",
-      "password": "gDTomNK5",
-      "date": "2022-06-07T04:48:41.231Z",
-      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/304.jpg",
-      "age": 41,
-      "visits": 36,
-      "progress": 47,
-      "status": {
-        "name": "Pending",
-        "color": "yellow",
-        "id": "3840aa3b-323b-415f-b8a5-e36d03d40c0b"
-      },
-      "statusMenu": [
+      "gender": "female",
+      "tasks": [
         {
-          "name": "Pending",
-          "color": "yellow",
-          "id": "67d9a368-898c-4fa1-b0c5-ce3c2b82661b"
-        },
-        {
-          "name": "Inprocess",
-          "color": "#159afb",
-          "id": "8499c897-2ccc-4963-be49-52ba6793e42d"
-        },
-        {
-          "name": "Complete",
-          "color": "#0cf90c",
-          "id": "2ba49a62-29be-4161-b592-a4f1f8253f67"
+          "title": "Reprehenderit allatus volaticus subnecto sit allatus talis careo.",
+          "description": "Aro ultra clam comburo sto.",
+          "dueDate": "2024-03-14T15:00:12.702Z"
         }
       ],
-      "allowFollowUp": {
-        "type": "No"
-      }
+      "projects": [
+        {
+          "title": "Ergonomic Plastic Gloves",
+          "description": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles"
+        }
+      ],
+      "allowFollowUp": { "type": "Yes" }
     },
     {
-      "id": "347b551e-5264-4d9b-8b86-6cfad76ba44a",
+      "id": "85554148-c6ba-4d4a-8551-18a82366d9d8",
       "role": "client",
-      "email": "Corbin_Hoeger86@gmail.com",
-      "name": "Joyce White",
-      "password": "k4QWbzIp",
-      "date": "2023-12-23T14:04:48.968Z",
-      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1190.jpg",
-      "age": 42,
-      "visits": "",
-      "progress": 69,
+      "email": "Vincenza49@hotmail.com",
+      "name": "Mattie Hamill-Kutch",
+      "password": "6TT7dZI9",
+      "date": "2022-10-21T13:27:52.670Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/978.jpg",
+      "age": 37,
+      "visits": 553,
+      "progress": 75,
       "status": {
-        "name": "Waitting",
-        "color": "orange",
-        "id": "99373bd6-d3ec-4e76-a04b-5ea7a5e5ff4e"
+        "name": "Inprocess",
+        "color": "#159afb",
+        "id": "b9fb5507-2c49-4e08-b131-4bb51c18120f"
       },
       "statusMenu": [
         {
           "name": "Pending",
           "color": "yellow",
-          "id": "00a12227-54e3-48fd-9d47-fb5188396ad1"
+          "id": "7048665d-beb2-4bab-bd43-daa060b1bcb1"
         },
         {
           "name": "Inprocess",
           "color": "#159afb",
-          "id": "77da4b99-7d35-4031-8b03-570e6959823f"
+          "id": "19313073-71f2-4b37-bdc6-76e6a56106e3"
         },
         {
           "name": "Complete",
           "color": "#0cf90c",
-          "id": "8f63fc68-6de3-4057-bc17-20db851d3eff"
+          "id": "d708ad5b-f71e-4ce1-91b1-3a9c210e7615"
         }
       ],
-      "allowFollowUp": {
-        "type": "No"
-      }
+      "gender": "male",
+      "tasks": [
+        {
+          "title": "Altus una pecus sit contigo compello toties cupiditate veniam.",
+          "description": "Vorago cavus canis tepesco depromo trucido testimonium pectus cresco defetiscor.",
+          "dueDate": "2024-03-14T23:36:25.850Z"
+        }
+      ],
+      "projects": [
+        {
+          "title": "Sleek Concrete Pants",
+          "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive"
+        }
+      ],
+      "allowFollowUp": { "type": "No" }
     },
     {
-      "id": "5e0cc489-c8eb-438e-b55d-40c016773b9d",
+      "id": "5d431a2e-533d-4f16-88b8-a6a416429e69",
       "role": "employee",
-      "email": "Tomasa20@yahoo.com",
-      "name": "Dexter Crist",
-      "password": "7E046ddO",
-      "date": "2021-12-29T08:08:19.369Z",
-      "profile": "https://avatars.githubusercontent.com/u/28415938",
-      "age": 43,
+      "email": "Marcella.Runolfsdottir49@hotmail.com",
+      "name": "Jake Rippin",
+      "password": "WDU9SykS",
+      "date": "2022-09-06T18:02:49.310Z",
+      "profile": "https://avatars.githubusercontent.com/u/83009618",
+      "age": 32,
+      "visits": 242,
+      "progress": 76,
+      "status": {
+        "name": "Inprocess",
+        "color": "#159afb",
+        "id": "c08b326c-8db5-4f24-87f1-455645eafaac"
+      },
+      "statusMenu": [
+        {
+          "name": "Pending",
+          "color": "yellow",
+          "id": "f9ced0af-ec3d-4bd3-b7e1-a0e0045b4ae3"
+        },
+        {
+          "name": "Inprocess",
+          "color": "#159afb",
+          "id": "3a0d27e8-869c-4939-9ec1-2fe1eb4c81b1"
+        },
+        {
+          "name": "Complete",
+          "color": "#0cf90c",
+          "id": "744aa4ef-fb89-481a-9dd6-908df9e35ba0"
+        }
+      ],
+      "gender": "female",
+      "tasks": [
+        {
+          "title": "Comminor cubicularis consuasor succurro conscendo.",
+          "description": "Excepturi cena adsidue modi culpa.",
+          "dueDate": "2024-03-14T10:07:14.596Z"
+        }
+      ],
+      "projects": [
+        {
+          "title": "Tasty Bronze Pizza",
+          "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support"
+        }
+      ],
+      "allowFollowUp": { "type": "Yes" }
+    },
+    {
+      "id": "0ee70d8e-497a-4ab5-a35d-3afbc2f2d73d",
+      "role": "client",
+      "email": "Marjolaine_Krajcik65@gmail.com",
+      "name": "Sally Windler",
+      "password": "q2CSz2zk",
+      "date": "2021-09-16T22:41:35.476Z",
+      "profile": "https://avatars.githubusercontent.com/u/52465681",
+      "age": 49,
       "visits": 396,
       "progress": 72,
       "status": {
         "name": "Complete",
         "color": "#0cf90c",
-        "id": "7d9937b6-f823-403c-b821-b874dd9b2147"
+        "id": "877a391b-2423-4832-8930-b4ca73589793"
       },
       "statusMenu": [
         {
           "name": "Pending",
           "color": "yellow",
-          "id": "f07f9d88-4922-4c1e-b83b-03e59843c5ac"
+          "id": "d80229d6-3ade-4a6e-b9d3-43f7ebb6a785"
         },
         {
           "name": "Inprocess",
           "color": "#159afb",
-          "id": "4343881e-7d45-4840-9e58-5dc319a66cc5"
+          "id": "97415fab-32c5-463b-a1a2-45daee7b4bc9"
         },
         {
           "name": "Complete",
           "color": "#0cf90c",
-          "id": "a0f88121-d12a-4947-9de1-420e7490b0b7"
+          "id": "bde6f7b9-d779-406e-bb16-209a04430214"
         }
       ],
-      "allowFollowUp": {
-        "type": "Yes"
-      }
+      "gender": "female",
+      "tasks": [
+        {
+          "title": "Tracto thorax absorbeo demitto absconditus cattus tenuis colo.",
+          "description": "Combibo universe depromo veritatis amicitia avaritia.",
+          "dueDate": "2024-03-15T00:48:17.524Z"
+        }
+      ],
+      "projects": [
+        {
+          "title": "Licensed Plastic Soap",
+          "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality"
+        }
+      ],
+      "allowFollowUp": { "type": "No" }
     },
     {
-      "id": "68a5136a-7914-44a2-950f-8eae7fd8574d",
+      "id": "2ab2405e-e0e4-488d-81c9-5945a72bd39b",
+      "role": "client",
+      "email": "Kathlyn.Beahan@yahoo.com",
+      "name": "Earnest Romaguera-Russel",
+      "password": "W7UPXrnd",
+      "date": "2022-04-20T02:05:44.473Z",
+      "profile": "https://avatars.githubusercontent.com/u/32899053",
+      "age": 50,
+      "visits": 736,
+      "progress": 75,
+      "status": {
+        "name": "Pending",
+        "color": "yellow",
+        "id": "710102ed-7a65-40f3-8667-cf16ff290d4a"
+      },
+      "statusMenu": [
+        {
+          "name": "Pending",
+          "color": "yellow",
+          "id": "2985f325-9e50-41de-9d8d-e6ceab6045ce"
+        },
+        {
+          "name": "Inprocess",
+          "color": "#159afb",
+          "id": "01ed57e1-2656-41fb-bd30-f9e12e0ca2bf"
+        },
+        {
+          "name": "Complete",
+          "color": "#0cf90c",
+          "id": "06832cdb-b990-4c62-be7f-c2efae148696"
+        }
+      ],
+      "gender": "female",
+      "tasks": [
+        {
+          "title": "Magnam demum atrox.",
+          "description": "Canto sol vorax supra sursum molestias.",
+          "dueDate": "2024-03-14T21:39:42.857Z"
+        }
+      ],
+      "projects": [
+        {
+          "title": "Recycled Metal Chicken",
+          "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart"
+        }
+      ],
+      "allowFollowUp": { "type": "No" }
+    },
+    {
+      "id": "b81956b2-a152-48cc-85be-2941b8a2e802",
       "role": "employee",
-      "email": "Una.Mraz-Koepp96@hotmail.com",
-      "name": "Dwight Hane",
-      "password": "7wfzAvBP",
-      "date": "2021-02-19T16:06:25.854Z",
-      "profile": "https://avatars.githubusercontent.com/u/47954867",
-      "age": 31,
-      "visits": 740,
+      "email": "Ilene74@hotmail.com",
+      "name": "Melvin Heidenreich",
+      "password": "T3_ao8M0",
+      "date": "2022-03-23T11:55:52.582Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/626.jpg",
+      "age": 46,
+      "visits": 290,
       "progress": 44,
       "status": {
-        "name": "Waitting",
-        "color": "orange",
-        "id": "99373bd6-d3ec-4e76-a04b-5ea7a5e5ff4e"
+        "name": "Inprocess",
+        "color": "#159afb",
+        "id": "049232a5-9ebb-4209-9f60-dd12d07ed7fb"
       },
       "statusMenu": [
         {
           "name": "Pending",
           "color": "yellow",
-          "id": "c6b652d2-b904-4ce9-b68d-f067f109f226"
+          "id": "1759dd19-1842-4a9a-8dd3-60e8db41fb6e"
         },
         {
           "name": "Inprocess",
           "color": "#159afb",
-          "id": "d4845122-81fa-4501-9c30-18f00cf53a3e"
+          "id": "64b295f2-5622-46ac-9d51-14e1524bed00"
         },
         {
           "name": "Complete",
           "color": "#0cf90c",
-          "id": "89ee24c5-e2fd-4de3-9ed6-ecbfc01d3370"
+          "id": "37618e91-7dbc-4062-b477-e1bc5655912f"
         }
       ],
-      "allowFollowUp": {
-        "type": "Yes"
-      }
+      "gender": "male",
+      "tasks": [
+        {
+          "title": "Confero tollo depraedor totus audentia ceno arx curiositas atavus thesaurus.",
+          "description": "Vox tricesimus trepide umquam ocer.",
+          "dueDate": "2024-03-14T14:18:45.673Z"
+        }
+      ],
+      "projects": [
+        {
+          "title": "Licensed Rubber Chicken",
+          "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality"
+        }
+      ],
+      "allowFollowUp": { "type": "No" }
     },
     {
-      "id": "ea22a9e5-abc0-4345-8ec7-030670a67e7e",
-      "role": "client",
-      "email": "Magdalen.Smitham@gmail.com",
-      "name": "Kari Schimmel",
-      "password": "wViAjryh",
-      "date": "2023-04-15T05:23:26.169Z",
-      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/349.jpg",
-      "age": 42,
-      "visits": 303,
-      "progress": 65,
+      "id": "1105b953-ba46-46d1-8458-cac79488355d",
+      "role": "employee",
+      "email": "Dock_Yundt@hotmail.com",
+      "name": "Darlene Anderson",
+      "password": "RdnRcBHS",
+      "date": "2023-04-22T09:52:16.591Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1188.jpg",
+      "age": 44,
+      "visits": 188,
+      "progress": 62,
       "status": {
         "name": "Complete",
         "color": "#0cf90c",
-        "id": "9a375b54-aec2-4f2b-a6e4-617ac0e0ac2e"
+        "id": "e9911770-567f-4c18-ab8c-270814b0a636"
       },
       "statusMenu": [
         {
           "name": "Pending",
           "color": "yellow",
-          "id": "075b81e9-b3d4-40c9-b1c6-895b8abc0485"
+          "id": "822bb6d2-da1f-466a-a1bf-93ade4271e96"
         },
         {
           "name": "Inprocess",
           "color": "#159afb",
-          "id": "75c29d39-e09c-41b4-bc71-1d9fcd321f23"
+          "id": "b40b0dbd-9afb-42c6-a03a-45141991484f"
         },
         {
           "name": "Complete",
           "color": "#0cf90c",
-          "id": "5efc41c3-cf4a-4321-ad1b-539d00681c02"
+          "id": "f6fa483a-afdd-490a-ad44-e24c76ecd7bb"
         }
       ],
-      "allowFollowUp": {
-        "type": "Yes"
-      }
-    },
-    {
-      "id": "d28767ee-75ab-4b68-a678-49bf5d3b5e5b",
-      "role": "client",
-      "email": "Samir_Hansen87@yahoo.com",
-      "name": "Dr. Roosevelt Satterfield",
-      "password": "mxPMfm7z",
-      "date": "2022-08-09T05:10:12.255Z",
-      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/243.jpg",
-      "age": 32,
-      "visits": 992,
-      "progress": 77,
-      "status": {
-        "name": "Pending",
-        "color": "yellow",
-        "id": "3840aa3b-323b-415f-b8a5-e36d03d40c0b"
-      },
-      "statusMenu": [
+      "gender": "male",
+      "tasks": [
         {
-          "name": "Pending",
-          "color": "yellow",
-          "id": "7041d04f-4bf3-472f-8e42-4927cc11b5f2"
-        },
-        {
-          "name": "Inprocess",
-          "color": "#159afb",
-          "id": "b32c9f69-fe38-4c12-994d-3882aa821132"
-        },
-        {
-          "name": "Complete",
-          "color": "#0cf90c",
-          "id": "7e40b9d4-bf5d-4559-ae31-865ca48b8085"
+          "title": "Adhaero una deinde defaeco.",
+          "description": "Labore bos officiis.",
+          "dueDate": "2024-03-14T08:09:04.498Z"
         }
       ],
-      "allowFollowUp": {
-        "type": "Yes"
-      }
-    },
-    {
-      "id": "66cccf65-ca21-49b8-9be9-758501aa9388",
-      "role": "employee",
-      "email": "Abbigail69@gmail.com",
-      "name": "Dennis Smitham",
-      "password": "xJAyRE97",
-      "date": "2023-12-23T10:18:00.877Z",
-      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/177.jpg",
-      "age": 49,
-      "visits": 573,
-      "progress": 86,
-      "status": "",
-      "statusMenu": [
+      "projects": [
         {
-          "name": "Pending",
-          "color": "yellow",
-          "id": "81bce506-ceca-422b-9b6b-900a4c84779d"
-        },
-        {
-          "name": "Inprocess",
-          "color": "#159afb",
-          "id": "de3b8944-4976-404b-8345-6ca1377d37c1"
-        },
-        {
-          "name": "Complete",
-          "color": "#0cf90c",
-          "id": "2e3c943a-b2f6-4973-8406-58c2bf18dcb1"
+          "title": "Rustic Concrete Pants",
+          "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design"
         }
       ],
-      "allowFollowUp": {
-        "type": "Yes"
-      }
-    },
-    {
-      "id": "815ff69d-ad85-4adf-81ba-e7e55ce4bb22",
-      "role": "client",
-      "email": "Princess_Gerlach@hotmail.com",
-      "name": "Mr. Nelson Kihn",
-      "password": "UJoBmfN8",
-      "date": "2021-02-18T16:00:51.575Z",
-      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/619.jpg",
-      "age": 29,
-      "visits": 802,
-      "progress": 58,
-      "status": {
-        "name": "Inprocess",
-        "color": "#159afb",
-        "id": "7de4277b-5f0a-4d79-a23a-9b5480af861f"
-      },
-      "statusMenu": [
-        {
-          "name": "Pending",
-          "color": "yellow",
-          "id": "f5b59a2a-e09e-4bce-b0ee-c929e7010d05"
-        },
-        {
-          "name": "Inprocess",
-          "color": "#159afb",
-          "id": "c7b00f8d-0d30-4904-865d-e8a2625348c6"
-        },
-        {
-          "name": "Complete",
-          "color": "#0cf90c",
-          "id": "3952265a-91f3-4081-b308-c98577e72b5c"
-        }
-      ],
-      "allowFollowUp": {
-        "type": "Yes"
-      }
-    },
-    {
-      "id": "c5f5b598-012c-437a-9014-beb429c3622e",
-      "role": "employee",
-      "email": "Christopher2@yahoo.com",
-      "name": "Angel Vandervort",
-      "password": "q7FkBMt5",
-      "date": "2023-10-30T12:37:16.723Z",
-      "profile": "https://avatars.githubusercontent.com/u/78480809",
-      "age": 42,
-      "visits": 688,
-      "progress": 90,
-      "status": {
-        "name": "Pending",
-        "color": "yellow",
-        "id": "8eff29fb-30fd-473d-86cd-3d3424534f23"
-      },
-      "statusMenu": [
-        {
-          "name": "Pending",
-          "color": "yellow",
-          "id": "4c0f49b0-a3ef-4e5b-aab2-133a2e42d717"
-        },
-        {
-          "name": "Inprocess",
-          "color": "#159afb",
-          "id": "d0f78218-c58d-48fb-b5b3-4ba2c5828bb7"
-        },
-        {
-          "name": "Complete",
-          "color": "#0cf90c",
-          "id": "4615ccb8-460c-4f5e-bcd0-4267c736edd7"
-        }
-      ],
-      "allowFollowUp": {
-        "type": "No"
-      }
-    },
-    {
-      "id": "2cf43b1f-af08-4340-92f8-b6e6ad5575d2",
-      "role": "employee",
-      "email": "Maxie.OReilly2@gmail.com",
-      "name": "Javier Koelpin",
-      "password": "6p05TbfQ",
-      "date": "2021-03-14T05:40:05.900Z",
-      "profile": "https://avatars.githubusercontent.com/u/70595397",
-      "age": 50,
-      "visits": 764,
-      "progress": 40,
-      "status": {
-        "name": "Pending",
-        "color": "yellow",
-        "id": "9093f77b-85d8-45ad-868a-d27da010f4bf"
-      },
-      "statusMenu": [
-        {
-          "name": "Pending",
-          "color": "yellow",
-          "id": "04708d9e-40cc-483b-b96a-5e820032362e"
-        },
-        {
-          "name": "Inprocess",
-          "color": "#159afb",
-          "id": "ae504956-81cf-4adc-b49c-ff45c94fa564"
-        },
-        {
-          "name": "Complete",
-          "color": "#0cf90c",
-          "id": "e4db3642-3781-4bb5-9c22-5ed41f392dca"
-        }
-      ],
-      "allowFollowUp": {
-        "type": "No"
-      }
-    },
-    {
-      "id": "1dac0890-0411-44a6-84f8-12b873ea1771",
-      "role": "client",
-      "email": "Florine_Bradtke30@gmail.com",
-      "name": "Timothy Mraz",
-      "password": "apUsKNua",
-      "date": "2021-10-20T02:57:22.374Z",
-      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/34.jpg",
-      "age": 31,
-      "visits": 346,
-      "progress": 42,
-      "status": {
-        "name": "Inprocess",
-        "color": "#159afb",
-        "id": "2fd6ef3a-ce53-406e-bd3e-07e50800b698"
-      },
-      "statusMenu": [
-        {
-          "name": "Pending",
-          "color": "yellow",
-          "id": "5208349f-70ad-4834-b5ab-0ef8fa100085"
-        },
-        {
-          "name": "Inprocess",
-          "color": "#159afb",
-          "id": "1d727ce0-e62b-49a4-aa74-7a2515a8cc94"
-        },
-        {
-          "name": "Complete",
-          "color": "#0cf90c",
-          "id": "21645a14-04d7-4077-9937-aac1901b0161"
-        }
-      ],
-      "allowFollowUp": {
-        "type": "Yes"
-      }
+      "allowFollowUp": { "type": "No" }
     }
   ]
 }

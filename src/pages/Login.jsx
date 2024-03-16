@@ -13,7 +13,7 @@ import { authenticateUser } from "../redux/server/server";
 import { togglePersist } from "../redux/features/login/reduxLogin";
 
 const Login = () => {
-  const { loading } = useSelector((state) => state.auth);
+  const { loading, persist } = useSelector((state) => state.auth);
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -105,6 +105,7 @@ const Login = () => {
             <CheckBox
               label="Remember me"
               name="persist"
+              checked={persist}
               onChange={(e) => {
                 const value = e.target.checked;
                 dispatch(togglePersist(value));

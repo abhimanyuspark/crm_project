@@ -1,7 +1,14 @@
 import React, { Suspense } from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import { Login, Not_Found, UnAuth, DashBoard } from "./pages";
+import {
+  Login,
+  Not_Found,
+  UnAuth,
+  APDashboard,
+  Client,
+  Employee,
+} from "./pages";
 import { RequireAuth, PersistenceAuth } from "./components/index";
 import { Tooltip } from "react-tooltip";
 
@@ -27,8 +34,13 @@ function App() {
               />
             }
           >
-            <Route path="/" element={<DashBoard />} />
+            <Route path="/" element={<APDashboard />} />
             <Route path="/select" element={<p>Select</p>} />
+          </Route>
+
+          <Route element={<RequireAuth roleAccess={[role.Admin]} />}>
+            <Route path="/clients" element={<Client />} />
+            <Route path="/employees" element={<Employee />} />
           </Route>
         </Route>
       </Routes>

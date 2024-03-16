@@ -33,7 +33,9 @@ const newPerson = () => {
     gender: faker.person.sex(),
     tasks: [
       {
-        title: faker.word.words({ min: 5, max: 10 }),
+        title: faker.lorem.lines(1),
+        description: faker.lorem.sentence(),
+        dueDate: faker.date.soon(),
       },
     ],
     projects: [

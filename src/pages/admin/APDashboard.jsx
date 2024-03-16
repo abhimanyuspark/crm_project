@@ -1,13 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Calender } from "../../components";
-import { makeData } from "../../data/makeData";
+// import { makeData } from "../../data/makeData";
+// console.log(JSON.stringify(makeData(10)));
 
-const make = makeData(10);
-// console.log(JSON.stringify(make));
-console.log(make);
-
-const DashBoard = () => {
+const APDashboard = () => {
   const { user } = useSelector((state) => state.auth);
 
   return (
@@ -16,7 +13,7 @@ const DashBoard = () => {
         <h1 className="text-xl font-bold py-8">Welcome {user?.name}</h1>
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-4 grid-rows-1">
+      <div className="grid lg:grid-cols-2 gap-4 grid-rows-1">
         {/* column 1 */}
 
         <div className="w-full grid gap-4">
@@ -87,4 +84,4 @@ const DashBoard = () => {
   );
 };
 
-export default DashBoard;
+export default APDashboard;

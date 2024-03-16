@@ -21,6 +21,12 @@ export const admin = [
   },
   {
     id: 3,
+    icon: <FaUsers />,
+    value: "Employees",
+    link: "/employees",
+  },
+  {
+    id: 4,
     icon: <FaGear />,
     value: "Setting",
     link: "/setting",

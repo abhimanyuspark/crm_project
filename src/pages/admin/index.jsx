@@ -1,5 +1,7 @@
 import { lazy } from "react";
 
-const DashBoard = lazy(() => import("./DashBoard"));
+const APDashboard = lazy(() => import("./APDashboard"));
+const Employee = lazy(() => import("./employee/employee"));
+const Client = lazy(() => import("./client/client"));
 
-export { DashBoard };
+export { APDashboard, Employee, Client };

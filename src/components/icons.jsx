@@ -12,6 +12,7 @@ import {
   FaUsers,
 } from "react-icons/fa";
 import { FaGear } from "react-icons/fa6";
+import { IoMdMenu } from "react-icons/io";
 
 export {
   FaDashcube,
@@ -26,4 +27,5 @@ export {
   FaGear,
   FaList,
   FaUsers,
+  IoMdMenu,
 };

@@ -6,7 +6,7 @@ const initialState = {
   error: null,
   loading: false,
   user: {},
-  persist: false,
+  persist: true,
 };
 
 const authSlice = createSlice({

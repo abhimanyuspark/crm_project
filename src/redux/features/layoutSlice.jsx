@@ -8,6 +8,7 @@ const initialState = {
   side: sidebarCookie ? JSON.parse(sidebarCookie) : true,
   theme: themeCookie ? JSON.parse(themeCookie) : true,
   expand: false,
+  menu: false,
 };
 
 const lauOutSlice = createSlice({
@@ -25,10 +26,14 @@ const lauOutSlice = createSlice({
     toggleExpand: (state, action) => {
       state.expand = action?.payload;
     },
+    toggleMenu: (state, action) => {
+      state.menu = action?.payload;
+    },
   },
 });
 
 // Actions
-export const { toggleSide, toggleTheme, toggleExpand } = lauOutSlice.actions;
+export const { toggleSide, toggleTheme, toggleExpand, toggleMenu } =
+  lauOutSlice.actions;
 // Reducer
 export default lauOutSlice.reducer;

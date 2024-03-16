@@ -3,11 +3,14 @@ import { useExpand, useSideBar } from "../../hooks";
 import Content from "./Content";
 import { FaAngleLeft, FaAngleRight } from "../../components/icons";
 import SVG from "../../assets/react.svg";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleMenu } from "../../redux/features/layoutSlice";
 
 const Sidebar = () => {
   const [isOpen] = useSideBar();
   const [expand, toggleExpand] = useExpand();
+  const { menu } = useSelector((state) => state.layout);
+  const dispatch = useDispatch();
 
   const onMouseEnter = () => {
     if (isOpen) return;
@@ -21,23 +24,38 @@ const Sidebar = () => {
   return (
     <aside className="relative">
       <div
+        className={`sm:relative absolute ${
+          menu ? "sm:block grid grid-cols-[240px_1fr]" : "sm:block hidden"
+        }`}
         style={{
           transition: "0.2s ease-in-out",
         }}
-        className={`sm:grid grid-rows-[60px_calc(100vh-120px)_60px] border-r border-slate-300 bg-[var(--bg-dk-bl)] h-full hidden ${
-          expand ? "w-[240px] absolute" : "w-full"
-        }`}
       >
-        <Header open={expand || isOpen} />
-        <ul
-          id="aside"
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-          className="overflow-y-scroll overflow-x-hidden select-none"
+        <div
+          className={`grid sm:grid-rows-[60px_calc(100vh-120px)_60px] grid-rows-[60px_calc(100vh-60px)] border-r border-slate-300 bg-[var(--bg-dk-bl)] h-full ${
+            expand ? "w-[240px]" : "w-full"
+          }`}
+          style={{
+            transition: "0.2s ease-in-out",
+          }}
         >
-          <Content />
-        </ul>
-        <Footer />
+          <Header open={expand || isOpen} />
+          <ul
+            id="aside"
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            className="overflow-y-scroll overflow-x-hidden select-none"
+          >
+            <Content />
+          </ul>
+          <Footer />
+        </div>
+        <div
+          onClick={() => {
+            dispatch(toggleMenu(false));
+          }}
+          className="w-[calc(100vw-240px)] h-full bg-[rgba(0,0,0,0.3)]"
+        ></div>
       </div>
     </aside>
   );
@@ -45,19 +63,20 @@ const Sidebar = () => {
 
 const Header = ({ open }) => {
   const { user } = useSelector((state) => state.auth);
+  const { menu } = useSelector((state) => state.layout);
 
   return (
     <div
-      className={`border-b border-slate-600 flex items-center text-[var(--cl-sky)] p-2`}
+      className={`relative border-b border-slate-600 flex items-center text-[var(--cl-sky)] p-2`}
     >
       <div
         style={{ transition: "0.3s ease-in-out" }}
         className={`flex flex-col items-start absolute w-24 ${
-          open ? "opacity-100" : "left-2 opacity-0"
+          open ? "sm:opacity-100" : "left-2 sm:opacity-0"
         }`}
       >
         <h3 className="text-lg font-bold text-center">CRM</h3>
-        <p className="text-sm text-white">{user?.name}</p>
+        <p className="text-sm text-white truncate w-auto">{user?.name}</p>
       </div>
 
       <img
@@ -66,7 +85,7 @@ const Header = ({ open }) => {
         src={SVG}
         alt="logo"
         className={`w-auto h-auto rounded-sm p-1 absolute bg-[var(--bg-dk-bl)] ${
-          open ? "right-1" : "left-1"
+          menu || open ? "right-1" : "sm:left-1"
         }`}
       />
     </div>
@@ -78,7 +97,7 @@ const Footer = () => {
 
   return (
     <div
-      className={`flex items-center border-t border-slate-600 ${
+      className={`sm:flex hidden items-center border-t border-slate-600 ${
         isOpen ? "justify-between p-2" : "justify-center"
       }`}
     >
