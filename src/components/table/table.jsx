@@ -1,0 +1,243 @@
+import React, { useState, useMemo, useEffect } from "react";
+import SortingIcons from "./sort";
+import { CheckBox } from "../style/inputs";
+import {
+  flexRender,
+  getCoreRowModel,
+  getFilteredRowModel,
+  getSortedRowModel,
+  getPaginationRowModel,
+  useReactTable,
+} from "@tanstack/react-table";
+
+const Table = ({
+  Columns = [],
+  data = [],
+  setGlobalFilter,
+  globalFilter,
+  onSelectedRowIdsChange = (o) => o,
+  loading = false,
+}) => {
+  const [rowSelection, setRowSelection] = useState({});
+  const columns = useMemo(() => Columns, [Columns]);
+  const [sorting, setSorting] = useState([]);
+
+  const table = useReactTable({
+    data,
+    columns,
+    state: {
+      rowSelection,
+      sorting,
+      globalFilter,
+    },
+    onSortingChange: setSorting,
+    onGlobalFilterChange: setGlobalFilter,
+    enableRowSelection: true,
+    onRowSelectionChange: setRowSelection,
+    getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
+    // debugTable: true,
+  });
+
+  const Loading = () => {
+    return (
+      <div className="flex items-center justify-center p-2">
+        <div className="px-4 py-2 border border-slate-300 rounded-md bg-white">
+          loading...
+        </div>
+      </div>
+    );
+  };
+
+  const columnSpan = useMemo(() => {
+    return table.getHeaderGroups().map((d) => d.headers.length);
+  }, []);
+
+  useEffect(() => {
+    let push = [];
+    table.getSelectedRowModel().flatRows.map((d) => {
+      let obj = d.original.id;
+      push.push(obj);
+    });
+    onSelectedRowIdsChange(push);
+  }, [rowSelection]);
+
+  return (
+    <table className="w-full overflow-auto">
+      <thead>
+        {table.getHeaderGroups().map((headerGroup) => (
+          <tr key={headerGroup.id}>
+            {headerGroup.headers.map((header) => {
+              return (
+                <th className="p-2" key={header.id} colSpan={header.colSpan}>
+                  {header.isPlaceholder ? null : (
+                    <div
+                      className={`flex items-center gap-1 ${
+                        header.column.getCanSort() ? "" : ""
+                      }`}
+                    >
+                      {flexRender(
+                        header.column.columnDef.header,
+                        header.getContext()
+                      )}
+                      <SortingIcons
+                        header={header}
+                        onClick={header.column.getToggleSortingHandler()}
+                      />
+                    </div>
+                  )}
+                </th>
+              );
+            })}
+          </tr>
+        ))}
+      </thead>
+      <tbody>
+        {loading ? (
+          <tr>
+            <td colSpan={columnSpan}>{Loading()}</td>
+          </tr>
+        ) : table.getRowModel().rows.length > 0 ? (
+          table.getRowModel().rows.map((row) => {
+            const isSelected = row.getIsSelected(row.id);
+            return (
+              <tr
+                key={row.id}
+                className={`${isSelected ? "bg-slate-300" : ""}`}
+              >
+                {row.getVisibleCells().map((cell) => {
+                  return (
+                    <td
+                      className={`${
+                        cell.column.id === "name" ? "w-8 truncate" : ""
+                      } ${
+                        cell.column.id === "id"
+                          ? "flex justify-end items-center"
+                          : ""
+                      } p-2`}
+                      key={cell.id}
+                    >
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext()
+                      )}
+                    </td>
+                  );
+                })}
+              </tr>
+            );
+          })
+        ) : (
+          <tr className="p-2">
+            <td
+              className="flex justify-center items-center"
+              colSpan={columnSpan}
+            >
+              No data Found
+            </td>
+          </tr>
+        )}
+      </tbody>
+      <tfoot>
+        <tr>
+          <td className="p-2">
+            <CheckBox
+              checked={table.getIsAllPageRowsSelected()}
+              indeterminate={table.getIsSomePageRowsSelected()}
+              onChange={table.getToggleAllPageRowsSelectedHandler()}
+            />
+          </td>
+          <td className="p-2" colSpan={columnSpan}>
+            Page Rows ({table.getRowModel().rows.length})
+          </td>
+        </tr>
+
+        <tr>
+          <td colSpan={columnSpan} className="p-2">
+            <div className="flex justify-between">
+              <div className="flex items-center gap-2">
+                <div className="flex gap-2 items-center">
+                  <label>
+                    Page {table.getState().pagination.pageIndex + 1} of{" "}
+                    {table.getPageCount()} | Go to page :
+                  </label>
+                  <select
+                    className="border border-salte-200 p-2 rounded-md"
+                    value={table.getState().pagination.pageIndex}
+                    onChange={(e) => {
+                      const page = e.target.value;
+                      table.setPageIndex(page);
+                    }}
+                  >
+                    {table.getPageOptions().map((i) => (
+                      <option key={i} value={i}>
+                        Page {i + 1}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="flex gap-2 items-center">
+                  <label>Show : </label>
+                  <select
+                    className="border border-salte-200 p-2 rounded-md"
+                    value={table.getState().pagination.pageSize}
+                    onChange={(e) => {
+                      table.setPageSize(Number(e.target.value));
+                    }}
+                  >
+                    {[2, 10, 20, 30, 40, 50].map((pageSize) => (
+                      <option key={pageSize} value={pageSize}>
+                        {pageSize}
+                      </option>
+                    ))}
+                  </select>
+                  <label>
+                    {Object.keys(rowSelection).length} of{" "}
+                    {table.getPreFilteredRowModel().rows.length} Total Rows
+                    Selected
+                  </label>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <button
+                  className="px-4 py-2 rounded-sm border border-slate-300 hover:bg-slate-200 disabled:bg-white"
+                  onClick={() => table.setPageIndex(0)}
+                  disabled={!table.getCanPreviousPage()}
+                >
+                  {"<<"}
+                </button>
+                <button
+                  className="px-4 py-2 rounded-sm border border-slate-300 hover:bg-slate-200 disabled:bg-white"
+                  onClick={() => table.previousPage()}
+                  disabled={!table.getCanPreviousPage()}
+                >
+                  {"<"}
+                </button>
+                <button
+                  className="px-4 py-2 rounded-sm border border-slate-300 hover:bg-slate-200 disabled:bg-white"
+                  onClick={() => table.nextPage()}
+                  disabled={!table.getCanNextPage()}
+                >
+                  {">"}
+                </button>
+                <button
+                  className="px-4 py-2 rounded-sm border border-slate-300 hover:bg-slate-200 disabled:bg-white"
+                  onClick={() => table.setPageIndex(table.getPageCount() - 1)}
+                  disabled={!table.getCanNextPage()}
+                >
+                  {">>"}
+                </button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  );
+};
+
+export default Table;

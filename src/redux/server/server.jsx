@@ -32,3 +32,13 @@ export const refreshAuthUser = createAsyncThunk(
     }
   }
 );
+
+export const roleUsers = createAsyncThunk("role/roleUsers", async (role) => {
+  try {
+    const response = await axios.get(`${apiUrl}/users?role=${role}`);
+    const users = response.data;
+    return users;
+  } catch (error) {
+    return rejectWithValue("Role is not persent");
+  }
+});

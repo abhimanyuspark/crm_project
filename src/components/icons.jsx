@@ -10,9 +10,12 @@ import {
   FaDashcube,
   FaList,
   FaUsers,
+  FaLongArrowAltUp,
+  FaLongArrowAltDown,
 } from "react-icons/fa";
 import { FaGear } from "react-icons/fa6";
 import { IoMdMenu } from "react-icons/io";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 export {
   FaDashcube,
@@ -28,4 +31,7 @@ export {
   FaList,
   FaUsers,
   IoMdMenu,
+  FaLongArrowAltUp,
+  FaLongArrowAltDown,
+  BsThreeDotsVertical as ThDotV,
 };

@@ -11,6 +11,7 @@ import {
 } from "./pages";
 import { RequireAuth, PersistenceAuth } from "./components/index";
 import { Tooltip } from "react-tooltip";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const role = {
@@ -44,6 +45,7 @@ function App() {
           </Route>
         </Route>
       </Routes>
+      <Toaster />
       <Tooltip id="my-tooltip" />
     </Suspense>
   );

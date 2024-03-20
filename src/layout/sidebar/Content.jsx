@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { admin, client, employee } from "./data";
 import { FaAngleRight, FaAngleDown } from "../../components/icons";
 import { useSideBar } from "../../hooks";
@@ -73,16 +73,20 @@ const Child = ({ item, activeIndex, index, handleIndex, isChildActive }) => {
   return (
     <li className="cursor-pointer text-[15px] border-b border-slate-600 text-white ">
       {item?.link ? (
-        <Link
+        <NavLink
           onClick={() => {
             handleIndex(index);
           }}
           to={item?.link}
-          className={`h-12 flex items-center px-4 gap-4 hover:text-[var(--cl-sky)]`}
+          className={({ isActive }) =>
+            isActive
+              ? "text-[var(--cl-sky)] h-12 flex items-center px-4 gap-4"
+              : "hover:text-[var(--cl-sky)] h-12 flex items-center px-4 gap-4"
+          }
         >
           <div className="text-lg">{item?.icon}</div>
           <p>{item?.value}</p>
-        </Link>
+        </NavLink>
       ) : (
         <div>
           <div

@@ -1,16 +1,14 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Calender } from "../../components";
-// import { makeData } from "../../data/makeData";
-// console.log(JSON.stringify(makeData(10)));
 
 const APDashboard = () => {
   const { user } = useSelector((state) => state.auth);
 
   return (
     <div>
-      <div>
-        <h1 className="text-xl font-bold py-8">Welcome {user?.name}</h1>
+      <div className="py-8 flex gap-2 flex-col">
+        <h1 className="text-xl font-bold">Welcome {user?.name}</h1>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-4 grid-rows-1">
@@ -36,40 +34,19 @@ const APDashboard = () => {
             </div>
           </div>
 
-          {[1, 2, 3, 4].map((d, i) => (
-            <div
-              key={i}
-              className="w-full bg-white p-8 rounded-md border border-slate-200"
-            >
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                perferendis aperiam alias cupiditate magnam nostrum nemo tenetur
-                accusantium molestias, nihil aspernatur expedita ducimus quae
-                voluptate, assumenda delectus fugiat voluptatibus dolores
-                nesciunt.
-              </p>
+          <div className="w-full bg-white rounded-md border border-slate-200">
+            <div className="p-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
+              doloremque doloribus obcaecati saepe ratione! Quisquam
+              perspiciatis eligendi reiciendis ab? Nisi officia, repellendus
+              molestiae ad natus ab ipsam impedit vitae sint.
             </div>
-          ))}
+          </div>
         </div>
 
         {/* column 2 */}
 
         <div className="w-full grid gap-4">
-          {[1, 2, 3, 4].map((d, i) => (
-            <div
-              key={i}
-              className="w-full bg-white p-8 rounded-md border border-slate-200"
-            >
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                perferendis aperiam alias cupiditate magnam nostrum nemo tenetur
-                accusantium molestias, nihil aspernatur expedita ducimus quae
-                voluptate, assumenda delectus fugiat voluptatibus dolores
-                nesciunt.
-              </p>
-            </div>
-          ))}
-
           <div className="w-full bg-white rounded-md border border-slate-200">
             <h2 className="text-xl font-bold p-4 border-b border-slate-200">
               My Calender

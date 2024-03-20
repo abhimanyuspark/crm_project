@@ -24,7 +24,7 @@ const Sidebar = () => {
   return (
     <aside className="relative">
       <div
-        className={`sm:relative absolute ${
+        className={`sm:relative absolute z-10 ${
           menu ? "sm:block grid grid-cols-[240px_1fr]" : "sm:block hidden"
         }`}
         style={{

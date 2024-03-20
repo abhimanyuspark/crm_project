@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const InputText = ({
   value,
@@ -71,15 +71,34 @@ const InputText = ({
   );
 };
 
-const CheckBox = ({ label, onChange, checked, important, name }) => {
+const CheckBox = ({
+  label,
+  indeterminate,
+  disabled,
+  onChange,
+  checked,
+  important,
+  name,
+  className,
+}) => {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (typeof indeterminate === "boolean") {
+      ref.current.indeterminate = !checked && indeterminate;
+    }
+  }, [ref, indeterminate]);
+
   return (
     <div className="flex gap-2 items-center">
       <input
         type="checkbox"
         id={name}
+        ref={ref}
         checked={checked}
         onChange={onChange}
-        className="w-[14px] aspect-square"
+        disabled={disabled}
+        className={className + " aspect-square"}
       />
       {label && (
         <label

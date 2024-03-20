@@ -33,6 +33,32 @@ export const admin = [
   },
 ];
 
-export const client = [];
+export const client = [
+  {
+    id: 1,
+    icon: <FaDashcube />,
+    value: "Dashboard",
+    subMenu: [
+      {
+        id: 1,
+        value: "Private",
+        link: "/",
+      },
+    ],
+  },
+];
 
-export const employee = [];
+export const employee = [
+  {
+    id: 1,
+    icon: <FaDashcube />,
+    value: "Dashboard",
+    subMenu: [
+      {
+        id: 1,
+        value: "Private",
+        link: "/",
+      },
+    ],
+  },
+];

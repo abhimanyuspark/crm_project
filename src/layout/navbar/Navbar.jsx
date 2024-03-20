@@ -22,7 +22,7 @@ const Navbar = () => {
           <IoMdMenu size={25} className="cursor-pointer hover:text-black" />
         </div>
         <Link to="/" className="font-semibold hover:text-black cursor-pointer">
-          DashBoard
+          Dashboard
         </Link>
       </div>
 

@@ -7,8 +7,10 @@ function Select({
   onChange = (c) => c,
   options = [],
   width = "300px",
+  optionswidth = "100%",
   search = false,
   emptylist = false,
+  clearicon = false,
   fields = (i) => i.label,
   optiontemplete = (o) => o,
   valuetemplete = (v) => v,
@@ -38,7 +40,9 @@ function Select({
   }
 
   function isOptionSelected(option) {
-    return multiple ? value.includes(option) : option === value;
+    return multiple
+      ? value.includes(option)
+      : labelInfo(option) === labelInfo(value);
   }
 
   const filterOptions = useMemo(() => {
@@ -47,6 +51,7 @@ function Select({
     );
   }, [options, query]);
 
+  // Focus on input field and clear the search box when dropdown opens
   useEffect(() => {
     if (isOpen) {
       inputRef?.current?.focus();
@@ -55,6 +60,7 @@ function Select({
     }
   }, [isOpen, inputRef]);
 
+  //  Close the dropdown when clicking outside of it or its
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (parentRef.current && !parentRef.current.contains(e.target)) {
@@ -68,54 +74,73 @@ function Select({
   }, [isOpen, parentRef, setIsOpen]);
 
   return (
-    <div
-      ref={parentRef}
-      style={{ width: width }}
-      className={`${styles.main} ${isOpen ? styles.m : ""}`}
-    >
+    <div ref={parentRef} style={{ width: width }} className={`${styles.main}`}>
+      {/*  Select Input Field */}
+
       <div
+        tabIndex={0}
         onClick={() => setIsOpen((prev) => !prev)}
         className={`${styles.container}`}
       >
+        {/* Display Options */}
         <span className={styles.value}>
-          {multiple
-            ? value.length > 0
-              ? value.map((v, i) => (
-                  <span
-                    key={i}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      selectOption(v);
-                    }}
-                    className={styles["option-badge"]}
-                  >
-                    {multiplvaluetemplete()
-                      ? multiplvaluetemplete(labelInfo(v))
-                      : labelInfo(v)}
-                    <span className={styles["remove-btn"]}>&times;</span>
-                  </span>
-                ))
-              : "--"
-            : valuetemplete()
-            ? valuetemplete(labelInfo(value))
-            : value === ""
-            ? "--"
-            : labelInfo(value)}
+          {multiple ? (
+            //  For multiple select show a list of selected items
+            value.length > 0 ? (
+              value.map((v, i) => (
+                <span
+                  key={i}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    selectOption(v);
+                  }}
+                  className={styles["option-badge"]}
+                >
+                  {multiplvaluetemplete()
+                    ? multiplvaluetemplete(labelInfo(v))
+                    : labelInfo(v)}
+                  <span className={styles["remove-btn"]}>&times;</span>
+                </span>
+              ))
+            ) : (
+              <span>--</span>
+            )
+          ) : //  Single select just display the current selected item
+          valuetemplete() ? (
+            valuetemplete(value)
+          ) : value === "" ? (
+            <span>--</span>
+          ) : (
+            labelInfo(value)
+          )}
         </span>
-        <div
-          onClick={(e) => {
-            e.stopPropagation();
-            clearOptions();
-          }}
-          className={styles["clear-btn"]}
-        >
-          &times;
-        </div>
-        <div className={styles.divider}></div>
+        {/* Clear Icon */}
+        {clearicon && (
+          <div
+            onClick={(e) => {
+              e.stopPropagation();
+              clearOptions();
+            }}
+            className={styles["clear-btn"]}
+          >
+            &times;
+          </div>
+        )}
+        {/* Divider */}
+        {clearicon && <div className={styles.divider}></div>}
+        {/* Caret Icon */}
         <div className={styles.caret}></div>
       </div>
-      <ul className={`${styles.options} ${isOpen ? styles.show : ""}`}>
+
+      {/*  Options List */}
+
+      <ul
+        style={{ width: optionswidth }}
+        className={`${styles.options} ${isOpen ? styles.show : ""}`}
+      >
+        {/*  Custom Filtering Option */}
+
         {search && (
           <li className={`${styles["search-box"]}`}>
             <input
@@ -131,6 +156,9 @@ function Select({
             />
           </li>
         )}
+
+        {/* Custom Select All and Deselect All Option */}
+
         {multiple && (
           <li className={`${styles["buttons-box"]}`}>
             <div
@@ -152,7 +180,12 @@ function Select({
             </div>
           </li>
         )}
+
+        {/* Options List */}
+
         <ul className={styles.list}>
+          {/* Empty Option */}
+
           {!multiple && emptylist && (
             <li
               onClick={() => {
@@ -166,6 +199,9 @@ function Select({
               --
             </li>
           )}
+
+          {/* Options */}
+
           {filterOptions.length > 0 ? (
             filterOptions.map((option, index) => (
               <li
@@ -178,9 +214,7 @@ function Select({
                   isOptionSelected(option) ? styles.selected : ""
                 }`}
               >
-                {optiontemplete()
-                  ? optiontemplete(labelInfo(option))
-                  : labelInfo(option)}
+                {optiontemplete() ? optiontemplete(option) : labelInfo(option)}
               </li>
             ))
           ) : (
