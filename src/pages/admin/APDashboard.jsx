@@ -12,9 +12,9 @@ const APDashboard = () => {
       </div>
 
       <div className="grid lg:grid-cols-2 gap-4 grid-rows-1">
-        {/* column 1 */}
-
-        <div className="w-full grid gap-4">
+        {/*//? column 1 */}
+        <div className="w-full flex gap-4 flex-col">
+          {/* Profile Card */}
           <div className="w-full bg-white rounded-md border border-slate-200">
             <div className="p-4 flex items-start gap-4 border-b border-slate-200">
               <img src={user?.profile} className="w-24 aspect-square" />
@@ -28,25 +28,24 @@ const APDashboard = () => {
             </div>
 
             <div className="flex justify-between items-center p-4">
-              {[]?.map((i) => (
-                <p key={i}>{i}</p>
-              ))}
+              <div className="text-center">
+                <p>{user?.projects?.length}</p>
+                <p>Projects</p>
+              </div>
+
+              <div className="text-center">
+                <p>{user?.tasks?.length}</p>
+                <p>Tasks</p>
+              </div>
             </div>
           </div>
 
-          <div className="w-full bg-white rounded-md border border-slate-200">
-            <div className="p-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-              doloremque doloribus obcaecati saepe ratione! Quisquam
-              perspiciatis eligendi reiciendis ab? Nisi officia, repellendus
-              molestiae ad natus ab ipsam impedit vitae sint.
-            </div>
-          </div>
+          {/* Projects and Tasks Chart */}
+          <div className="w-full bg-white rounded-md border border-slate-200"></div>
         </div>
 
-        {/* column 2 */}
-
-        <div className="w-full grid gap-4">
+        {/*//? column 2 */}
+        <div className="w-full flex gap-4 flex-col">
           <div className="w-full bg-white rounded-md border border-slate-200">
             <h2 className="text-xl font-bold p-4 border-b border-slate-200">
               My Calender

@@ -1,10 +1,9 @@
 import { CheckBox } from "../../../components/style/inputs";
-import { useState } from "react";
 import toast from "react-hot-toast";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Menu, Select } from "../../../components";
+import { Menu } from "../../../components";
 
 export const Columns = [
   {
@@ -140,7 +139,7 @@ export const Columns = [
         // navigate(`/users/update/${id}`, { state: { from: location } });
       };
       const View = (id) => {
-        navigate(`/users/details/${id}`, { state: { from: location } });
+        // navigate(`/users/details/${id}`, { state: { from: location } });
       };
       const Delete = (id) => {
         Swal.fire({
@@ -153,8 +152,6 @@ export const Columns = [
           confirmButtonText: "Yes, delete!",
         }).then((result) => {
           if (result.isConfirmed) {
-            dispatch(deleteUser(id));
-            dispatch(deleteUserReducer(id));
             toast.success(`${name} deleted successfull`, {
               position: "top-right",
             });
