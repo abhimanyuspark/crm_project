@@ -28,8 +28,8 @@ export const admin = [
   {
     id: 4,
     icon: <FaGear />,
-    value: "Setting",
-    link: "/setting",
+    value: "Settings",
+    link: "/settings",
   },
 ];
 

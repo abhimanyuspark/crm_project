@@ -47,7 +47,9 @@
           "description": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J"
         }
       ],
-      "allowFollowUp": { "type": "No" }
+      "allowFollowUp": {
+        "type": "No"
+      }
     },
     {
       "id": "f9e2a00d-e3ac-4c61-a956-ea068f850f2d",
@@ -63,7 +65,7 @@
       "status": {
         "name": "Pending",
         "color": "yellow",
-        "id": "f5e27470-5d1d-42a9-a17f-dd6617d214ca"
+        "id": "78e2a3d9-292f-4356-8e7f-f72e02c5b954"
       },
       "statusMenu": [
         {
@@ -96,7 +98,9 @@
           "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support"
         }
       ],
-      "allowFollowUp": { "type": "Yes" }
+      "allowFollowUp": {
+        "type": "Yes"
+      }
     },
     {
       "id": "86b16ada-cc95-4a36-910a-575645373183",
@@ -110,9 +114,9 @@
       "visits": 760,
       "progress": 84,
       "status": {
-        "name": "Pending",
-        "color": "yellow",
-        "id": "de4e5e69-9c99-402e-9179-b323121918b0"
+        "name": "Complete",
+        "color": "#0cf90c",
+        "id": "912b29e3-78bd-4861-a3d3-c33fee89b2a4"
       },
       "statusMenu": [
         {
@@ -145,7 +149,9 @@
           "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals"
         }
       ],
-      "allowFollowUp": { "type": "Yes" }
+      "allowFollowUp": {
+        "type": "Yes"
+      }
     },
     {
       "id": "6d86f03b-c6cb-4b80-aac0-23d157029a4f",
@@ -194,7 +200,9 @@
           "description": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles"
         }
       ],
-      "allowFollowUp": { "type": "Yes" }
+      "allowFollowUp": {
+        "type": "Yes"
+      }
     },
     {
       "id": "85554148-c6ba-4d4a-8551-18a82366d9d8",
@@ -243,7 +251,9 @@
           "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive"
         }
       ],
-      "allowFollowUp": { "type": "No" }
+      "allowFollowUp": {
+        "type": "No"
+      }
     },
     {
       "id": "5d431a2e-533d-4f16-88b8-a6a416429e69",
@@ -292,7 +302,9 @@
           "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support"
         }
       ],
-      "allowFollowUp": { "type": "Yes" }
+      "allowFollowUp": {
+        "type": "Yes"
+      }
     },
     {
       "id": "0ee70d8e-497a-4ab5-a35d-3afbc2f2d73d",
@@ -341,7 +353,9 @@
           "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality"
         }
       ],
-      "allowFollowUp": { "type": "No" }
+      "allowFollowUp": {
+        "type": "No"
+      }
     },
     {
       "id": "2ab2405e-e0e4-488d-81c9-5945a72bd39b",
@@ -357,7 +371,7 @@
       "status": {
         "name": "Pending",
         "color": "yellow",
-        "id": "710102ed-7a65-40f3-8667-cf16ff290d4a"
+        "id": "78e2a3d9-292f-4356-8e7f-f72e02c5b954"
       },
       "statusMenu": [
         {
@@ -390,7 +404,9 @@
           "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart"
         }
       ],
-      "allowFollowUp": { "type": "No" }
+      "allowFollowUp": {
+        "type": "No"
+      }
     },
     {
       "id": "b81956b2-a152-48cc-85be-2941b8a2e802",
@@ -439,7 +455,9 @@
           "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality"
         }
       ],
-      "allowFollowUp": { "type": "No" }
+      "allowFollowUp": {
+        "type": "No"
+      }
     },
     {
       "id": "1105b953-ba46-46d1-8458-cac79488355d",
@@ -488,7 +506,9 @@
           "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design"
         }
       ],
-      "allowFollowUp": { "type": "No" }
+      "allowFollowUp": {
+        "type": "No"
+      }
     }
   ]
 }

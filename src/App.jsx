@@ -8,6 +8,7 @@ import {
   APDashboard,
   Client,
   Employee,
+  Settings,
 } from "./pages";
 import { RequireAuth, PersistenceAuth } from "./components/index";
 import { Tooltip } from "react-tooltip";
@@ -36,7 +37,7 @@ function App() {
             }
           >
             <Route path="/" element={<APDashboard />} />
-            <Route path="/select" element={<p>Select</p>} />
+            <Route path="/settings" element={<Settings />} />
           </Route>
 
           <Route element={<RequireAuth roleAccess={[role.Admin]} />}>

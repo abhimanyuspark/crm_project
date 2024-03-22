@@ -5,7 +5,7 @@ const Button = ({ icon, text, onClick, type, loading = false }) => {
     <button
       onClick={onClick}
       type={type || "submit"}
-      className="py-2 px-3 bg-blue-500 flex justify-center items-center rounded-md text-white"
+      className="py-2 px-3 bg-blue-500 flex justify-center items-center rounded-md text-white hover:bg-black hover:text-white"
     >
       <div className="flex justify-between items-center gap-2">
         {loading ? "loading..." : icon && icon}

@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, Select } from "../../../components";
+import { updateStatus } from "../../../redux/server/server";
+import { FaEdit, FaTrash, FaEye } from "../../../components/icons";
 
 export const Columns = [
   {
@@ -67,7 +69,7 @@ export const Columns = [
     cell: (info) => {
       const value = info.getValue();
       return (
-        <div>
+        <div className="w-40">
           <p>{value}</p>
         </div>
       );
@@ -106,7 +108,7 @@ export const Columns = [
     header: "Progress",
     cell: (info) => {
       const value = info.getValue();
-      return value ? <div>{value}</div> : "--";
+      return value ? <div className="w-10">{value}</div> : "--";
     },
     sortDescFirst: false,
   },
@@ -121,10 +123,18 @@ export const Columns = [
       const { user } = useSelector((state) => state.auth);
       const options = user?.statusMenu;
 
-      const updateStatus = (status) => {
+      const Status = (status) => {
+        if (val?.name === status?.name) return null;
         setVal(status);
-        // dispatch(updateUserStatus({ id, status }));
-        toast.success(`${name} status is Update`, { position: "top-right" });
+        toast.promise(
+          dispatch(updateStatus({ id, status })),
+          {
+            loading: "Updating...",
+            success: <b>{`${name} status is Update`}</b>,
+            error: <b>{`${name} status is not Update`}</b>,
+          },
+          { position: "top-right" }
+        );
       };
 
       const optionTemplete = (o) => {
@@ -149,7 +159,7 @@ export const Columns = [
           value={val}
           fields={(l) => l.name}
           onChange={(o) => {
-            updateStatus(o);
+            Status(o);
           }}
         />
       ) : (
@@ -206,21 +216,21 @@ export const Columns = [
               Edit(id);
             }}
           >
-            Edit
+            <FaEdit /> Edit
           </li>
           <li
             onClick={() => {
               View(id);
             }}
           >
-            View
+            <FaEye size={17} /> View
           </li>
           <li
             onClick={() => {
               Delete(id);
             }}
           >
-            Delete
+            <FaTrash /> Delete
           </li>
         </Menu>
       );
