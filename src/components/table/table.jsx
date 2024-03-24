@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from "react";
 import SortingIcons from "./sort";
-import { CheckBox } from "../style/inputs";
+import { CheckBox, InputSelect } from "../index";
 import {
   flexRender,
   getCoreRowModel,
@@ -71,7 +71,7 @@ const Table = ({
   }, [rowSelection]);
 
   return (
-    <div className="w-full overflow-auto">
+    <div className="w-full lg:overflow-visible overflow-auto">
       <table className="w-full">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
@@ -82,7 +82,7 @@ const Table = ({
                     {header.isPlaceholder ? null : (
                       <div
                         className={`flex items-center gap-1 ${
-                          header.column.getCanSort() ? "" : ""
+                          header?.column?.id === "id" ? "justify-end" : ""
                         }`}
                       >
                         {flexRender(
@@ -161,8 +161,7 @@ const Table = ({
                       Page {table.getState().pagination.pageIndex + 1} of{" "}
                       {table.getPageCount()} | Go to page :
                     </label>
-                    <select
-                      className="border border-salte-200 p-2 rounded-md"
+                    <InputSelect
                       value={table.getState().pagination.pageIndex}
                       onChange={(e) => {
                         const page = e.target.value;
@@ -174,13 +173,12 @@ const Table = ({
                           Page {i + 1}
                         </option>
                       ))}
-                    </select>
+                    </InputSelect>
                   </div>
 
                   <div className="flex gap-2 items-center">
                     <label>Show : </label>
-                    <select
-                      className="border border-salte-200 p-2 rounded-md"
+                    <InputSelect
                       value={table.getState().pagination.pageSize}
                       onChange={(e) => {
                         table.setPageSize(Number(e.target.value));
@@ -191,7 +189,7 @@ const Table = ({
                           {pageSize}
                         </option>
                       ))}
-                    </select>
+                    </InputSelect>
                     <label>
                       {Object.keys(rowSelection).length} of{" "}
                       {table.getPreFilteredRowModel().rows.length} Total Rows

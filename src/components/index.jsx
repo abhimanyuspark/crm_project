@@ -1,7 +1,7 @@
 import PersistenceAuth from "./persistenceAuth";
 import RequireAuth from "./requireAuth";
 import { Button } from "./style/buttons";
-import { InputText, CheckBox } from "./style/inputs";
+import { InputText, CheckBox, InputSelect } from "./style/inputs";
 import { formValidation } from "./formValidation";
 import Calender from "./Calender";
 import Select from "./select/select";
@@ -13,6 +13,7 @@ export {
   RequireAuth,
   Button,
   InputText,
+  InputSelect,
   CheckBox,
   formValidation,
   Calender,

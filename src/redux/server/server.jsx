@@ -58,18 +58,18 @@ export const updateStatus = createAsyncThunk(
 );
 
 export const addUser = createAsyncThunk("user/postUser", async (data) => {
-  const response = await axios.post(`${apiUrl}/user`, data);
+  const response = await axios.post(`${apiUrl}/users`, data);
   return response.data;
 });
 
 export const editUser = createAsyncThunk("user/patchUser", async (data) => {
-  const response = await axios.patch(`${apiUrl}/user/${data.id}`, data);
+  const response = await axios.patch(`${apiUrl}/users/${data.id}`, data);
   return response.data;
 });
 
 export const deleteUser = createAsyncThunk("user/deleteUser", async (id) => {
   try {
-    await axios.delete(`${apiUrl}/user/${id}`);
+    await axios.delete(`${apiUrl}/users/${id}`);
     return id;
   } catch (error) {
     console.log(error.message);

@@ -9,6 +9,12 @@ import {
   Client,
   Employee,
   Settings,
+  AddClient,
+  AddEmployee,
+  EditClient,
+  EditEmployee,
+  ViewClient,
+  ViewEmployee,
 } from "./pages";
 import { RequireAuth, PersistenceAuth } from "./components/index";
 import { Tooltip } from "react-tooltip";
@@ -42,7 +48,14 @@ function App() {
 
           <Route element={<RequireAuth roleAccess={[role.Admin]} />}>
             <Route path="/clients" element={<Client />} />
+            <Route path="/clients/:id" element={<ViewClient />} />
+            <Route path="/clients/add" element={<AddClient />} />
+            <Route path="/clients/edit/:id" element={<EditClient />} />
+
             <Route path="/employees" element={<Employee />} />
+            <Route path="/employees/:id" element={<ViewEmployee />} />
+            <Route path="/employees/add" element={<AddEmployee />} />
+            <Route path="/employees/edit/:id" element={<EditEmployee />} />
           </Route>
         </Route>
       </Routes>

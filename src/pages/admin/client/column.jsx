@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, Select } from "../../../components";
-import { updateStatus } from "../../../redux/server/server";
+import { updateStatus, deleteUser } from "../../../redux/server/server";
+import { deleteUserReducer } from "../../../redux/features/roleUsers";
 import { FaEdit, FaTrash, FaEye } from "../../../components/icons";
 
 export const Columns = [
@@ -183,11 +184,10 @@ export const Columns = [
       const { id, name } = info.row.original;
 
       const Edit = (id) => {
-        alert(id);
-        // navigate(`/users/update/${id}`, { state: { from: location } });
+        navigate(`/clients/edit/${id}`, { state: { from: location } });
       };
       const View = (id) => {
-        navigate(`/users/details/${id}`, { state: { from: location } });
+        navigate(`/clients/${id}`, { state: { from: location } });
       };
       const Delete = (id) => {
         Swal.fire({

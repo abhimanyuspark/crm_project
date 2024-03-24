@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { roleUsers } from "../../../redux/server/server";
-import { Table } from "../../../components";
+import { Button, Table } from "../../../components";
 import { Columns } from "./column";
+import { useNavigate } from "react-router-dom";
 
 const Client = () => {
   const { users, loading } = useSelector((state) => state.users);
@@ -13,6 +14,7 @@ const Client = () => {
     select: [],
   });
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(roleUsers("client"));
@@ -29,14 +31,26 @@ const Client = () => {
   }, [users, date?.start, date?.end]);
 
   return (
-    <div className="p-2 rounded-md border border-slate-200 bg-white">
-      <Table
-        loading={loading}
-        Columns={Columns}
-        data={filterByDate}
-        globalFilter={globalFilter}
-        setGlobalFilter={setGlobalFilter}
-      />
+    <div className="flex gap-6 flex-col">
+      <div className="flex gap-2 items-center">
+        <Button
+          text="Add Client"
+          icon="+"
+          type="button"
+          onClick={() => {
+            navigate("/clients/add");
+          }}
+        />
+      </div>
+      <div className="p-2 rounded-md border border-slate-200 bg-white">
+        <Table
+          loading={loading}
+          Columns={Columns}
+          data={filterByDate}
+          globalFilter={globalFilter}
+          setGlobalFilter={setGlobalFilter}
+        />
+      </div>
     </div>
   );
 };

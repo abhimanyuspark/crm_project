@@ -10,7 +10,14 @@ const initialState = {
 const usersSlice = createSlice({
   name: "users",
   initialState,
-  reducers: {},
+  reducers: {
+    deleteUserReducer: (state, action) => {
+      const id = action?.payload;
+      state.users = state.users.filter((i) => {
+        return i.id !== id;
+      });
+    },
+  },
   extraReducers: (builder) =>
     builder
       .addCase(roleUsers.pending, (state) => {
@@ -26,5 +33,5 @@ const usersSlice = createSlice({
       }),
 });
 
-export const {} = usersSlice.actions;
+export const { deleteUserReducer } = usersSlice.actions;
 export default usersSlice.reducer;

@@ -113,4 +113,16 @@ const CheckBox = ({
   );
 };
 
-export { InputText, CheckBox };
+const InputSelect = ({ value, onChange, children }) => {
+  return (
+    <select
+      value={value}
+      onChange={onChange}
+      className="border border-slate-300 p-2 rounded-[0.2rem]"
+    >
+      {children}
+    </select>
+  );
+};
+
+export { InputText, CheckBox, InputSelect };

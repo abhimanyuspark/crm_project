@@ -4,6 +4,9 @@ import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Menu } from "../../../components";
+import { deleteUser } from "../../../redux/server/server";
+import { deleteUserReducer } from "../../../redux/features/roleUsers";
+import { FaEdit, FaTrash, FaEye } from "../../../components/icons";
 
 export const Columns = [
   {
@@ -135,11 +138,10 @@ export const Columns = [
       const { id, name } = info.row.original;
 
       const Edit = (id) => {
-        alert(id);
-        // navigate(`/users/update/${id}`, { state: { from: location } });
+        navigate(`/employees/edit/${id}`, { state: { from: location } });
       };
       const View = (id) => {
-        // navigate(`/users/details/${id}`, { state: { from: location } });
+        navigate(`/employees/${id}`, { state: { from: location } });
       };
       const Delete = (id) => {
         Swal.fire({
@@ -152,6 +154,8 @@ export const Columns = [
           confirmButtonText: "Yes, delete!",
         }).then((result) => {
           if (result.isConfirmed) {
+            dispatch(deleteUser(id));
+            dispatch(deleteUserReducer(id));
             toast.success(`${name} deleted successfull`, {
               position: "top-right",
             });
@@ -166,21 +170,21 @@ export const Columns = [
               Edit(id);
             }}
           >
-            Edit
+            <FaEdit /> Edit
           </li>
           <li
             onClick={() => {
               View(id);
             }}
           >
-            View
+            <FaEye size={17} /> View
           </li>
           <li
             onClick={() => {
               Delete(id);
             }}
           >
-            Delete
+            <FaTrash /> Delete
           </li>
         </Menu>
       );
