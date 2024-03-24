@@ -55,6 +55,7 @@ export const Columns = [
       return value ? (
         <img
           src={value}
+          loading="lazy"
           alt="profile"
           className="w-10 aspect-square rounded-full"
         />

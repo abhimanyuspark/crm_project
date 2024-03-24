@@ -112,7 +112,9 @@ const Table = ({
               return (
                 <tr
                   key={row.id}
-                  className={`${isSelected ? "bg-slate-300" : ""}`}
+                  className={`hover:bg-slate-200 ${
+                    isSelected ? "bg-slate-300" : ""
+                  }`}
                 >
                   {row.getVisibleCells().map((cell) => {
                     return (

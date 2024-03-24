@@ -41,7 +41,7 @@ const APDashboard = () => {
           </div>
 
           {/* Projects and Tasks Chart */}
-          <div className="w-full bg-white rounded-md border border-slate-200"></div>
+          {/* <div className="w-full bg-white rounded-md border border-slate-200"></div> */}
         </div>
 
         {/*//? column 2 */}

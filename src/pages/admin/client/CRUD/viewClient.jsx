@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { userDetails } from "../../../redux/server/server";
-import { IoMdFemale, IoMdMale } from "../../../components/icons";
-import { FlConverter } from "../../../utilities";
+import { userDetails } from "../../../../redux/server/server";
+import { IoMdFemale, IoMdMale } from "../../../../components/icons";
+import { FlConverter } from "../../../../utilities";
 
 const ViewClient = () => {
   const { user, loading, error } = useSelector((state) => state.users);

@@ -1,4 +1,9 @@
-import { FaDashcube, FaGear, FaList, FaUsers } from "../../components/icons";
+import {
+  FaDashcube,
+  FaGear,
+  FaUserFriends,
+  FaUsers,
+} from "../../components/icons";
 
 export const admin = [
   {
@@ -15,7 +20,7 @@ export const admin = [
   },
   {
     id: 2,
-    icon: <FaUsers />,
+    icon: <FaUserFriends />,
     value: "Clients",
     link: "/clients",
   },

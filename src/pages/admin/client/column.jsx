@@ -57,6 +57,7 @@ export const Columns = [
         <img
           src={value}
           alt="profile"
+          loading="lazy"
           className="w-10 aspect-square rounded-full"
         />
       ) : (

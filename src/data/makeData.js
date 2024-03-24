@@ -15,10 +15,11 @@ const newPerson = () => {
     email: faker.internet.email(),
     name: faker.person.fullName(),
     password: faker.internet.password({ length: 8 }),
-    date: faker.date.between({ from: "2021-01-01", to: "2023-12-01" }),
+    date: faker.date.between({ from: "2022-01-01", to: "2024-12-01" }),
     profile: faker.image.avatar(),
     age: faker.number.int({ min: 25, max: 50 }),
     visits: faker.number.int(1000),
+    jobType: faker.person.jobType(),
     progress: faker.number.int({ min: 40, max: 90 }),
     status: faker.helpers.arrayElement([
       { name: "Pending", color: "yellow", id: faker.string.uuid() },
@@ -42,6 +43,13 @@ const newPerson = () => {
       {
         title: faker.commerce.productName(),
         description: faker.commerce.productDescription(),
+      },
+    ],
+    events: [
+      {
+        name: faker.lorem.word({ min: 1, max: 3 }),
+        description: faker.lorem.words(),
+        date: faker.date.between({ from: "2022-01-01", to: "2024-12-01" }),
       },
     ],
     allowFollowUp: faker.helpers.arrayElement([
