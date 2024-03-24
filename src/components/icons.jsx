@@ -16,14 +16,16 @@ import {
   FaLongArrowAltDown,
   FaAngleDoubleLeft,
   FaAngleDoubleRight,
+  FaPlus,
 } from "react-icons/fa";
 import { FaGear } from "react-icons/fa6";
-import { IoMdMenu } from "react-icons/io";
+import { IoMdMenu, IoMdFemale, IoMdMale } from "react-icons/io";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
 export {
   FaDashcube,
   FaCheck,
+  FaPlus,
   FaEye,
   FaEdit,
   FaTrash,
@@ -37,6 +39,8 @@ export {
   FaList,
   FaUsers,
   IoMdMenu,
+  IoMdFemale,
+  IoMdMale,
   FaLongArrowAltUp,
   FaLongArrowAltDown,
   FaAngleDoubleLeft,

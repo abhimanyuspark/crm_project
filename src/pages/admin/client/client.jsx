@@ -4,6 +4,7 @@ import { roleUsers } from "../../../redux/server/server";
 import { Button, Table } from "../../../components";
 import { Columns } from "./column";
 import { useNavigate } from "react-router-dom";
+import { FaPlus } from "../../../components/icons";
 
 const Client = () => {
   const { users, loading } = useSelector((state) => state.users);
@@ -35,7 +36,7 @@ const Client = () => {
       <div className="flex gap-2 items-center">
         <Button
           text="Add Client"
-          icon="+"
+          icon={<FaPlus />}
           type="button"
           onClick={() => {
             navigate("/clients/add");

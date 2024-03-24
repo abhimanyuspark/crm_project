@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { roleUsers } from "../server/server";
+import { roleUsers, userDetails } from "../server/server";
 
 const initialState = {
   users: [],
   loading: false,
   error: null,
+  user: {},
 };
 
 const usersSlice = createSlice({
@@ -28,6 +29,17 @@ const usersSlice = createSlice({
         state.users = action.payload;
       })
       .addCase(roleUsers.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
+      .addCase(userDetails.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(userDetails.fulfilled, (state, action) => {
+        state.loading = false;
+        state.user = action.payload;
+      })
+      .addCase(userDetails.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
       }),

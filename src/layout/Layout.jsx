@@ -20,7 +20,7 @@ const Layout = () => {
 
       <div className="grid grid-rows-[60px_1fr]">
         <Navbar />
-        <main className="h-[calc(100vh-60px)] overflow-auto p-8 bg-gray-100">
+        <main className="h-[calc(100vh-60px)] overflow-auto scroll-smooth p-8 bg-gray-100">
           <Suspense fallback={<p>Loader...</p>}>
             <Outlet />
           </Suspense>

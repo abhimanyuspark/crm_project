@@ -6,8 +6,8 @@ const APDashboard = () => {
   const { user } = useSelector((state) => state.auth);
 
   return (
-    <div>
-      <div className="py-8 flex gap-2 flex-col">
+    <div className="flex flex-col gap-8">
+      <div className="flex justify-between items-center pt-4">
         <h1 className="text-xl font-bold">Welcome {user?.name}</h1>
       </div>
 
@@ -23,17 +23,17 @@ const APDashboard = () => {
                 <p className="text-[15px] font-semibold text-[var(--cl-gr)]">
                   {"Junior"}
                 </p>
-                <p className="text-sm">Employee : EMP-Id-{user?.id}</p>
+                <p className="text-sm">Id-{user?.id}</p>
               </div>
             </div>
 
             <div className="flex justify-between items-center p-4">
-              <div className="text-center">
+              <div className="text-center text-sm">
                 <p>{user?.projects?.length}</p>
                 <p>Projects</p>
               </div>
 
-              <div className="text-center">
+              <div className="text-center text-sm">
                 <p>{user?.tasks?.length}</p>
                 <p>Tasks</p>
               </div>
@@ -46,6 +46,7 @@ const APDashboard = () => {
 
         {/*//? column 2 */}
         <div className="w-full flex gap-4 flex-col">
+          {/* My Calender */}
           <div className="w-full bg-white rounded-md border border-slate-200">
             <h2 className="text-xl font-bold p-4 border-b border-slate-200">
               My Calender

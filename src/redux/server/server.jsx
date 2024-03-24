@@ -62,6 +62,11 @@ export const addUser = createAsyncThunk("user/postUser", async (data) => {
   return response.data;
 });
 
+export const userDetails = createAsyncThunk("user/userDetails", async (id) => {
+  const response = await axios.get(`${apiUrl}/users/${id}`);
+  return response.data;
+});
+
 export const editUser = createAsyncThunk("user/patchUser", async (data) => {
   const response = await axios.patch(`${apiUrl}/users/${data.id}`, data);
   return response.data;
