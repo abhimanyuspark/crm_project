@@ -63,9 +63,9 @@
       "visits": 341,
       "progress": 79,
       "status": {
-        "name": "Inprocess",
-        "color": "#159afb",
-        "id": "d78fefa7-997a-4655-8954-7d106234a91e"
+        "name": "Pending",
+        "color": "yellow",
+        "id": "78e2a3d9-292f-4356-8e7f-f72e02c5b954"
       },
       "statusMenu": [
         {
@@ -114,9 +114,9 @@
       "visits": 760,
       "progress": 84,
       "status": {
-        "name": "Pending",
-        "color": "yellow",
-        "id": "78e2a3d9-292f-4356-8e7f-f72e02c5b954"
+        "name": "Inprocess",
+        "color": "#159afb",
+        "id": "d78fefa7-997a-4655-8954-7d106234a91e"
       },
       "statusMenu": [
         {

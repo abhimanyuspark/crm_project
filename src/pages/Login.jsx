@@ -112,7 +112,12 @@ const Login = () => {
               }}
             />
 
-            <Button icon={<FaCheck />} loading={loading} text="Log In" />
+            <Button
+              height={"45px"}
+              icon={<FaCheck size={20} />}
+              loading={loading}
+              text="Log In"
+            />
           </form>
         </div>
       </div>

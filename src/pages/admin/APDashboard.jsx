@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Calender } from "../../components";
+import { Calender, Clock_In, DigitalClock } from "../../components";
 
 const APDashboard = () => {
   const { user } = useSelector((state) => state.auth);
@@ -9,6 +9,10 @@ const APDashboard = () => {
     <div className="flex flex-col gap-8">
       <div className="flex justify-between items-center pt-4">
         <h1 className="text-xl font-bold">Welcome {user?.name}</h1>
+        <div className="flex gap-2 items-center">
+          <DigitalClock />
+          <Clock_In />
+        </div>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-4 grid-rows-1">

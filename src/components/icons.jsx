@@ -18,10 +18,12 @@ import {
   FaAngleDoubleLeft,
   FaAngleDoubleRight,
   FaPlus,
+  FaSearch,
+  FaTimes,
 } from "react-icons/fa";
 import { FaGear } from "react-icons/fa6";
 import { IoMdMenu, IoMdFemale, IoMdMale } from "react-icons/io";
-import { BsThreeDotsVertical } from "react-icons/bs";
+import { BsThreeDotsVertical, BsFillKanbanFill } from "react-icons/bs";
 
 export {
   FaDashcube,
@@ -47,5 +49,8 @@ export {
   FaLongArrowAltDown,
   FaAngleDoubleLeft,
   FaAngleDoubleRight,
+  FaSearch,
+  FaTimes,
   BsThreeDotsVertical as ThDotV,
+  BsFillKanbanFill as BsKanBan,
 };

@@ -13,7 +13,7 @@ export const admin = [
     subMenu: [
       {
         id: 1,
-        value: "Private",
+        value: "Private Dashboard",
         link: "/",
       },
     ],
@@ -46,7 +46,7 @@ export const client = [
     subMenu: [
       {
         id: 1,
-        value: "Private",
+        value: "Private Dashboard",
         link: "/",
       },
     ],
@@ -61,7 +61,7 @@ export const employee = [
     subMenu: [
       {
         id: 1,
-        value: "Private",
+        value: "Private Dashboard",
         link: "/",
       },
     ],

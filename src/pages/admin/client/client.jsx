@@ -1,14 +1,15 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { roleUsers } from "../../../redux/server/server";
-import { Button, Table } from "../../../components";
+import { Button, KanBan, Switch, Table } from "../../../components";
 import { Columns } from "./column";
 import { useNavigate } from "react-router-dom";
-import { FaPlus } from "../../../components/icons";
+import { FaList, FaPlus, BsKanBan } from "../../../components/icons";
 
 const Client = () => {
   const { users, loading } = useSelector((state) => state.users);
   const [globalFilter, setGlobalFilter] = useState("");
+  const [tab, setTab] = useState(true);
   const [date, setDate] = useState({
     start: "",
     end: "",
@@ -33,7 +34,7 @@ const Client = () => {
 
   return (
     <div className="flex gap-6 flex-col">
-      <div className="flex gap-2 items-center">
+      <div className="flex gap-2 items-center justify-between">
         <Button
           text="Add Client"
           icon={<FaPlus />}
@@ -42,16 +43,32 @@ const Client = () => {
             navigate("/clients/add");
           }}
         />
-      </div>
-      <div className="p-2 rounded-md border border-slate-200 bg-white">
-        <Table
-          loading={loading}
-          Columns={Columns}
-          data={filterByDate}
-          globalFilter={globalFilter}
-          setGlobalFilter={setGlobalFilter}
+
+        <Switch
+          value={tab}
+          onChange={(b) => setTab(b)}
+          icon1={<FaList />}
+          icon2={<BsKanBan size={20} />}
         />
       </div>
+
+      {/* Switch to table to kanban */}
+
+      {tab ? (
+        <div className="p-2 rounded-md border border-slate-200 bg-white">
+          <Table
+            loading={loading}
+            Columns={Columns}
+            data={filterByDate}
+            globalFilter={globalFilter}
+            setGlobalFilter={setGlobalFilter}
+          />
+        </div>
+      ) : (
+        <div>
+          <KanBan />
+        </div>
+      )}
     </div>
   );
 };

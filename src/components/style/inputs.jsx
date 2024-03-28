@@ -113,6 +113,36 @@ const CheckBox = ({
   );
 };
 
+const Switch = ({ icon1, icon2, value = true, onChange = (b) => b }) => {
+  return (
+    <div className="flex w-20 h-10 border border-black bg-white rounded-[4px] overflow-hidden cursor-pointer">
+      <div
+        onClick={() => {
+          onChange(true);
+        }}
+        style={{ transition: "all 0.2s ease" }}
+        className={`${
+          value ? "bg-black text-white" : ""
+        } w-full h-full hover:bg-black hover:text-white flex items-center justify-center`}
+      >
+        {icon1}
+      </div>
+
+      <div
+        onClick={() => {
+          onChange(false);
+        }}
+        style={{ transition: "all 0.2s ease" }}
+        className={`${
+          !value ? "bg-black text-white" : ""
+        } w-full h-full hover:bg-black hover:text-white flex items-center justify-center`}
+      >
+        {icon2}
+      </div>
+    </div>
+  );
+};
+
 const InputSelect = ({ value, onChange, children }) => {
   return (
     <select
@@ -125,4 +155,4 @@ const InputSelect = ({ value, onChange, children }) => {
   );
 };
 
-export { InputText, CheckBox, InputSelect };
+export { InputText, CheckBox, InputSelect, Switch };

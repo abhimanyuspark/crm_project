@@ -1,7 +1,7 @@
 import React from "react";
 
-const Kanban = () => {
+const KanBan = () => {
   return <div>Kanban</div>;
 };
 
-export default Kanban;
+export default KanBan;
