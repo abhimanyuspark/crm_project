@@ -9,7 +9,7 @@ const APDashboard = () => {
     <div className="flex flex-col gap-8">
       <div className="flex justify-between items-center pt-4">
         <h1 className="text-xl font-bold">Welcome {user?.name}</h1>
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-4 items-center">
           <DigitalClock />
           <Clock_In />
         </div>

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "./style/buttons";
-import { MdLogin, MdLogout } from "./icons";
+import { FaPlayCircle, FaPauseCircle } from "./icons";
 
-const Clock_In = () => {
+const Timer = () => {
   const [time, setTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   const [start, setStart] = useState(false);
@@ -25,6 +24,10 @@ const Clock_In = () => {
     setIsRunning(true);
   };
 
+  const handlePause = () => {
+    setIsRunning(false);
+  };
+
   const handleReset = () => {
     setIsRunning(false);
     setTime(0);
@@ -44,24 +47,30 @@ const Clock_In = () => {
   return (
     <div>
       {!start ? (
-        <Button
+        <button
+          className="p-2 rounded-md text-white bg-blue-700 hover:bg-blue-600"
           onClick={() => {
             handleStart();
             setStart(true);
           }}
-          text={"Clock In"}
-          icon={<MdLogin size={20} />}
-        />
+        >
+          Start
+        </button>
       ) : (
         <div className="flex items-center gap-2">
-          <div className="text-lg border border-slate-300 rounded-[0.2rem] p-2">
-            {formatTime(time)}
-          </div>
+          <h1>{formatTime(time)}</h1>
+
           <button
-            className="py-2 px-3 flex items-center gap-2 rounded-[0.2rem] text-white bg-red-700 hover:bg-red-600"
+            className="p-2 rounded-md text-white bg-blue-700 hover:bg-blue-600"
+            onClick={isRunning ? handlePause : handleStart}
+          >
+            {isRunning ? <FaPauseCircle /> : <FaPlayCircle />}
+          </button>
+          <button
+            className="p-2 rounded-md text-white bg-red-700 hover:bg-red-600"
             onClick={handleReset}
           >
-            <MdLogout size={20} /> <span className="text-lg">Clock Out</span>
+            Reset
           </button>
         </div>
       )}
@@ -69,4 +78,4 @@ const Clock_In = () => {
   );
 };
 
-export default Clock_In;
+export default Timer;

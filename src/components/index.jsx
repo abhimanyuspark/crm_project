@@ -10,6 +10,7 @@ import Table from "./table/table";
 import KanBan from "./kanban/kanban";
 import DigitalClock from "./DigitalClock";
 import Clock_In from "./Clock_In";
+import Timer from "./Timer";
 
 export {
   PersistenceAuth,
@@ -27,4 +28,5 @@ export {
   KanBan,
   DigitalClock,
   Clock_In,
+  Timer,
 };

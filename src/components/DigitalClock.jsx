@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 
-const DigitalClock = () => {
+const DigitalClock = memo(() => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -22,6 +22,6 @@ const DigitalClock = () => {
       })}
     </div>
   );
-};
+});
 
 export default DigitalClock;

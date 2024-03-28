@@ -20,8 +20,12 @@ import {
   FaPlus,
   FaSearch,
   FaTimes,
+  FaPlayCircle,
+  FaPauseCircle,
+  FaStopCircle,
 } from "react-icons/fa";
 import { FaGear } from "react-icons/fa6";
+import { MdLogin, MdLogout } from "react-icons/md";
 import { IoMdMenu, IoMdFemale, IoMdMale } from "react-icons/io";
 import { BsThreeDotsVertical, BsFillKanbanFill } from "react-icons/bs";
 
@@ -51,6 +55,11 @@ export {
   FaAngleDoubleRight,
   FaSearch,
   FaTimes,
+  FaPlayCircle,
+  FaPauseCircle,
+  FaStopCircle,
   BsThreeDotsVertical as ThDotV,
   BsFillKanbanFill as BsKanBan,
+  MdLogin,
+  MdLogout,
 };
