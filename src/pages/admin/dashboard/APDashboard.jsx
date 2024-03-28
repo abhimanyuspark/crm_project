@@ -1,12 +1,15 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Calender, Clock_In, DigitalClock } from "../../components";
+import { Calender, Clock_In, DigitalClock } from "../../../components";
+import TaskList from "./TasksList";
+// import { makeData } from "../../../data/makeData";
 
 const APDashboard = () => {
   const { user } = useSelector((state) => state.auth);
 
   return (
     <div className="flex flex-col gap-8">
+      {/* {JSON.stringify(makeData(10))} */}
       <div className="flex justify-between items-center pt-4">
         <h1 className="text-xl font-bold">Welcome {user?.name}</h1>
         <div className="flex gap-4 items-center">
@@ -25,7 +28,7 @@ const APDashboard = () => {
               <div className="flex flex-col">
                 <h3 className="text-lg font-bold">{user?.name}</h3>
                 <p className="text-[15px] font-semibold text-[var(--cl-gr)]">
-                  {"Junior"}
+                  {user?.jobType}
                 </p>
                 <p className="text-sm">Id-{user?.id}</p>
               </div>
@@ -44,8 +47,10 @@ const APDashboard = () => {
             </div>
           </div>
 
-          {/* Projects and Tasks Chart */}
-          {/* <div className="w-full bg-white rounded-md border border-slate-200"></div> */}
+          {/* Tasks */}
+          <div className="w-full bg-white rounded-md border border-slate-200">
+            <TaskList tasks={user?.tasks} />
+          </div>
         </div>
 
         {/*//? column 2 */}

@@ -34,7 +34,7 @@ const newPerson = () => {
     gender: faker.person.sex(),
     tasks: [
       {
-        title: faker.lorem.lines(1),
+        title: faker.lorem.words(6),
         description: faker.lorem.sentence(),
         dueDate: faker.date.soon(),
       },
@@ -47,8 +47,8 @@ const newPerson = () => {
     ],
     events: [
       {
-        name: faker.lorem.word({ min: 1, max: 3 }),
-        description: faker.lorem.words(),
+        name: faker.lorem.words(4),
+        description: faker.lorem.words(10),
         date: faker.date.between({ from: "2022-01-01", to: "2024-12-01" }),
       },
     ],

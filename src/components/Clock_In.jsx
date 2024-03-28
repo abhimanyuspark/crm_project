@@ -3,9 +3,12 @@ import { Button } from "./style/buttons";
 import { MdLogin, MdLogout } from "./icons";
 
 const Clock_In = () => {
-  const [time, setTime] = useState(0);
-  const [isRunning, setIsRunning] = useState(false);
-  const [start, setStart] = useState(false);
+  const [time, setTime] = useState(
+    () => parseInt(localStorage.getItem("Clock_In_time")) || 0
+  );
+  const [isRunning, setIsRunning] = useState(
+    () => JSON.parse(localStorage.getItem("Clock_In_isRunning")) || false
+  );
 
   useEffect(() => {
     let intervalId;
@@ -13,13 +16,15 @@ const Clock_In = () => {
     if (isRunning) {
       intervalId = setInterval(() => {
         setTime((prevTime) => prevTime + 1);
+        localStorage.setItem("Clock_In_time", time); // Save the timer to local storage every second
+        localStorage.setItem("Clock_In_isRunning", isRunning);
       }, 1000);
     }
 
     return () => {
       clearInterval(intervalId);
     };
-  }, [isRunning]);
+  }, [isRunning, time]);
 
   const handleStart = () => {
     setIsRunning(true);
@@ -27,8 +32,9 @@ const Clock_In = () => {
 
   const handleReset = () => {
     setIsRunning(false);
+    localStorage.removeItem("Clock_In_time");
+    localStorage.removeItem("Clock_In_isRunning");
     setTime(0);
-    setStart(false);
   };
 
   const formatTime = (timeInSeconds) => {
@@ -43,18 +49,15 @@ const Clock_In = () => {
 
   return (
     <div>
-      {!start ? (
+      {!isRunning ? (
         <Button
-          onClick={() => {
-            handleStart();
-            setStart(true);
-          }}
+          onClick={handleStart}
           text={"Clock In"}
           icon={<MdLogin size={20} />}
         />
       ) : (
         <div className="flex items-center gap-2">
-          <div className="text-lg border border-slate-300 rounded-[0.2rem] p-2">
+          <div className="text-base border border-slate-300 rounded-[0.2rem] p-2">
             {formatTime(time)}
           </div>
           <button
