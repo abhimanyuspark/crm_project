@@ -9,9 +9,13 @@ export const formValidation = (data) => {
 
   if (!data?.password?.trim()) {
     errors.password = "Password is required";
-  } else if (data.password.length < 8 || data.password.length > 10) {
+  } else if (data?.password.length < 8 || data?.password.length > 10) {
     errors.password = "Password must be btween 8 to 10 characters long";
   }
+
+  // if (!data?.title?.trim()) {
+  //   errors.title = "Title is required";
+  // }
 
   return errors;
 };
