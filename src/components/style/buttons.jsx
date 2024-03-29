@@ -13,7 +13,7 @@ const Button = ({
       onClick={onClick}
       type={type || "submit"}
       style={{ height: height, transition: "all 0.2s ease" }}
-      className="px-3 bg-blue-500 flex justify-center items-center rounded-[0.2rem] text-white hover:bg-black"
+      className="px-3 bg-blue-600 flex justify-center items-center rounded-[0.2rem] text-white hover:bg-black"
     >
       <div className="flex items-center gap-3">
         {loading ? "loading..." : icon && icon}

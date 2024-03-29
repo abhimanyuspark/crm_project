@@ -58,16 +58,16 @@ const Login = () => {
 
   return (
     <div>
-      <div className="flex items-center justify-center border border-slate-300 h-[70px]">
+      <div className="flex items-center justify-center border-b border-slate-300 h-[70px]">
         <div className="flex gap-4 items-center">
           <img src={SVG} alt="logo" />
-          <h2 className="text-xl">CRM</h2>
+          <h2 className="text-xl font-bold">CRM</h2>
         </div>
       </div>
 
-      <div className="flex items-center justify-center h-[calc(100vh-70px)] overflow-auto">
-        <div className="p-5 w-[450px] border border-slate-200 rounded-md flex flex-col gap-8 items-center">
-          <h1 className="text-2xl">Log In</h1>
+      <div className="flex items-center justify-center h-[calc(100vh-70px)] overflow-auto bg-slate-100">
+        <div className="p-5 w-[450px] border border-slate-200 rounded-md flex flex-col gap-8 items-center bg-white">
+          <h1 className="text-2xl font-bold">Log In</h1>
           <form onSubmit={onSubmit} className="flex gap-5 flex-col w-full">
             <InputText
               placeholder="Enter a name"

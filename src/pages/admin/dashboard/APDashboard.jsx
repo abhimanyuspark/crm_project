@@ -1,7 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Calender, Clock_In, DigitalClock } from "../../../components";
+import {
+  Calender,
+  Clock_In,
+  Container,
+  DigitalClock,
+} from "../../../components";
 import TaskList from "./TasksList";
+import WeeksDays from "./WeekDays";
 // import { makeData } from "../../../data/makeData";
 
 const APDashboard = () => {
@@ -10,19 +16,20 @@ const APDashboard = () => {
   return (
     <div className="flex flex-col gap-8">
       {/* {JSON.stringify(makeData(10))} */}
-      <div className="flex justify-between items-center pt-4">
+      <div className="flex flex-col sm:gap-0 gap-2 sm:flex-row sm:justify-between items-start sm:items-center pt-4">
         <h1 className="text-xl font-bold">Welcome {user?.name}</h1>
-        <div className="flex gap-4 items-center">
+        <div className="flex flex-wrap gap-4 items-center">
           <DigitalClock />
           <Clock_In />
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-4 grid-rows-1">
+      <div className="grid lg:grid-cols-[45%_55%] gap-4 grid-rows-1">
         {/*//? column 1 */}
+
         <div className="w-full flex gap-4 flex-col">
           {/* Profile Card */}
-          <div className="w-full bg-white rounded-md border border-slate-200">
+          <Container>
             <div className="p-4 flex items-start gap-4 border-b border-slate-200">
               <img src={user?.profile} className="w-24 aspect-square" />
               <div className="flex flex-col">
@@ -45,25 +52,45 @@ const APDashboard = () => {
                 <p>Tasks</p>
               </div>
             </div>
-          </div>
+          </Container>
 
           {/* Tasks */}
-          <div className="w-full bg-white rounded-md border border-slate-200">
+          <Container>
             <TaskList tasks={user?.tasks} />
-          </div>
+          </Container>
         </div>
 
         {/*//? column 2 */}
+
         <div className="w-full flex gap-4 flex-col">
+          {/* WeeksDays */}
+          <Container>
+            <WeeksDays />
+            <div className="px-4">
+              <progress
+                data-tooltip-id="my-tooltip"
+                data-tooltip-content={user?.progress + " %"}
+                data-tooltip-place="top"
+                value={user?.progress}
+                max={100}
+                className="w-full h-2"
+              ></progress>
+              <div className="flex justify-between text-sm pb-2">
+                <span>0 min</span>
+                <span>100 max</span>
+              </div>
+            </div>
+          </Container>
+
           {/* My Calender */}
-          <div className="w-full bg-white rounded-md border border-slate-200">
+          <Container>
             <h2 className="text-xl font-bold p-4 border-b border-slate-200">
               My Calender
             </h2>
             <div className="p-4">
-              <Calender />
+              <Calender events={user?.events} id={user?.id} />
             </div>
-          </div>
+          </Container>
         </div>
       </div>
     </div>

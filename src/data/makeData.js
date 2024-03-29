@@ -34,6 +34,7 @@ const newPerson = () => {
     gender: faker.person.sex(),
     tasks: [
       {
+        id: faker.string.uuid(),
         title: faker.lorem.words(6),
         description: faker.lorem.sentence(),
         dueDate: faker.date.soon(),
@@ -41,15 +42,20 @@ const newPerson = () => {
     ],
     projects: [
       {
+        id: faker.string.uuid(),
         title: faker.commerce.productName(),
         description: faker.commerce.productDescription(),
+        dueDate: faker.date.between({ from: "2024-01-01", to: "2024-12-01" }),
       },
     ],
     events: [
       {
-        name: faker.lorem.words(4),
+        id: faker.string.uuid(),
+        title: faker.lorem.words(4),
         description: faker.lorem.words(10),
-        date: faker.date.between({ from: "2022-01-01", to: "2024-12-01" }),
+        start: faker.date.between({ from: "2024-01-01", to: "2024-12-01" }),
+        end: faker.date.between({ from: "2024-01-01", to: "2024-12-01" }),
+        allDay: faker.helpers.arrayElement([true, false]),
       },
     ],
     allowFollowUp: faker.helpers.arrayElement([

@@ -1,3 +1,27 @@
+/* Custom progress bar */
+
+progress::-webkit-progress-bar {
+  background-color: gainsboro;
+  border-radius: 10px;
+}
+progress::-webkit-progress-value {
+  @apply bg-blue-600;
+  border-radius: 10px;
+}
+
+progress::-webkit-progress-bar:hover {
+  @apply bg-slate-400;
+}
+progress::-webkit-progress-value:hover {
+  @apply bg-blue-800;
+}
+
+/* Calender custom css */
+
+:root {
+  --fc-today-bg-color: #f2f4f7 !important;
+}
+
 .fc {
   font-size: 14px !important;
 }
@@ -25,8 +49,4 @@
 }
 .fc .fc-col-header-cell-cushion {
   padding: 10px !important;
-}
-
-:root {
-  --fc-today-bg-color: #f2f4f7 !important;
 }

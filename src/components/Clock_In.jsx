@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "./style/buttons";
 import { MdLogin, MdLogout } from "./icons";
+import toast from "react-hot-toast";
 
 const Clock_In = () => {
   const [time, setTime] = useState(
@@ -28,10 +29,12 @@ const Clock_In = () => {
 
   const handleStart = () => {
     setIsRunning(true);
+    toast.success("Timer started!");
   };
 
   const handleReset = () => {
     setIsRunning(false);
+    toast.error("Timer stoped!");
     localStorage.removeItem("Clock_In_time");
     localStorage.removeItem("Clock_In_isRunning");
     setTime(0);
@@ -57,11 +60,11 @@ const Clock_In = () => {
         />
       ) : (
         <div className="flex items-center gap-2">
-          <div className="text-base border border-slate-300 rounded-[0.2rem] p-2">
+          <div className="text-base border border-slate-300 rounded-[0.2rem] p-[6px]">
             {formatTime(time)}
           </div>
           <button
-            className="py-2 px-3 flex items-center gap-2 rounded-[0.2rem] text-white bg-red-700 hover:bg-red-600"
+            className="py-[6px] px-3 flex items-center gap-2 rounded-[0.2rem] text-white bg-red-700 hover:bg-red-600"
             onClick={handleReset}
           >
             <MdLogout size={20} /> <span className="text-lg">Clock Out</span>

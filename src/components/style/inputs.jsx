@@ -10,33 +10,32 @@ const InputText = ({
   label,
   important,
   focus,
-  width,
-  height,
+  width = "100%",
+  height = "40px",
   error,
   name,
 }) => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
-    <div className="flex gap-2 flex-col">
+    <div className="flex gap-2 flex-col group/item">
       <label
         htmlFor={name}
-        className="text-slate-600 cursor-pointer flex gap-1"
+        className="text-slate-600 cursor-pointer flex gap-1 "
       >
         {label}
         {important && <sup className="text-red-500 text-base static">*</sup>}
       </label>
 
       <div
-        className={`${width || "w-full"} ${
-          height || "h-10"
-        } flex items-center border rounded-md overflow-hidden ${
-          isFocused && "outline-blue-500 outline outline-1"
-        } ${
-          error
-            ? "border-red-500 outline outline-red-500 outline-1"
+        style={{ width: width, height: height }}
+        className={`flex items-center border rounded-[4px] overflow-hidden ${
+          isFocused && !error
+            ? "border-black"
+            : error
+            ? "border-red-500"
             : "border-slate-300"
-        }`}
+        } group-hover/item:border-black`}
       >
         {icon && (
           <div className="p-2 border-r border-slate-300 hover:bg-slate-200 cursor-pointer flex items-center h-full">

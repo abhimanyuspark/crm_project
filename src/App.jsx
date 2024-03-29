@@ -59,7 +59,7 @@ function App() {
           </Route>
         </Route>
       </Routes>
-      <Toaster />
+      <Toaster position="top-right" />
       <Tooltip id="my-tooltip" />
     </Suspense>
   );

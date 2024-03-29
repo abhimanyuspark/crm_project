@@ -80,3 +80,25 @@ export const deleteUser = createAsyncThunk("user/deleteUser", async (id) => {
     console.log(error.message);
   }
 });
+
+export const deleteUserEvent = createAsyncThunk(
+  "event/deleteUserEvent",
+  async ({ userId, eventId }) => {
+    try {
+      const userResponse = await axios.get(`${apiUrl}/users/${userId}`);
+      const user = userResponse.data;
+      const eventIndex = user.events.findIndex((event) => event.id === eventId);
+
+      if (eventIndex !== -1) {
+        user.events.splice(eventIndex, 1);
+        await axios.patch(`${apiUrl}/users/${userId}`, user);
+        return { userId, eventId };
+      } else {
+        throw new Error("Event not found in user's events array");
+      }
+    } catch (error) {
+      console.log(error.message);
+      throw rejectWithValue(error.message);
+    }
+  }
+);
