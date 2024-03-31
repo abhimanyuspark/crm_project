@@ -14,8 +14,12 @@ import DigitalClock from "./DigitalClock";
 import Clock_In from "./Clock_In";
 import Timer from "./Timer";
 import TextEditor from "./TextEditor/TextEditor";
+import Loader from "./Loader";
+import Error from "./Error";
 
 export {
+  Loader,
+  Error,
   PersistenceAuth,
   RequireAuth,
   Button,

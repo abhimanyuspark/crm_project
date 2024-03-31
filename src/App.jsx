@@ -20,7 +20,7 @@ import {
   ViewEvent,
   EditEvent,
 } from "./pages";
-import { RequireAuth, PersistenceAuth } from "./components/index";
+import { RequireAuth, PersistenceAuth, Loader } from "./components/index";
 import { Tooltip } from "react-tooltip";
 import { Toaster } from "react-hot-toast";
 
@@ -32,7 +32,7 @@ function App() {
   };
 
   return (
-    <Suspense fallback="Loading...">
+    <Suspense fallback={<Loader />}>
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/unAuthorized" element={<UnAuth />} />

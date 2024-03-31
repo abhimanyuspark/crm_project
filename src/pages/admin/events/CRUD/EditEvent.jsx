@@ -4,8 +4,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import {
   Button,
   CancelButton,
+  CheckBox,
   Container,
   InputText,
+  Select,
   TextEditor,
 } from "../../../../components";
 import { FaCheck } from "../../../../components/icons";
@@ -44,7 +46,7 @@ const EditEvent = () => {
 
   const validate = (formData) => {
     const err = {};
-    ["title", "description", "start", "end"].forEach((f) => {
+    ["title", "description"].forEach((f) => {
       if (!formData[f].trim()) {
         err[f] = `${f} field is required.`;
       }
@@ -67,12 +69,12 @@ const EditEvent = () => {
           })
         );
         await dispatch(updateEventReducer(formData));
-        setLoading(false);
         navigate(-1, { replace: true });
       } catch (error) {
         console.log(error);
       }
     }
+    setLoading(false);
   };
 
   return (
@@ -82,11 +84,11 @@ const EditEvent = () => {
           <h2 className="text-xl font-bold">Update Event</h2>
         </div>
 
-        {/* Form */}
+        {/* Event Form */}
 
         <form onSubmit={onSubmit}>
           <div className="p-4 flex gap-6 flex-col">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-8">
               <InputText
                 label="Title"
                 name="title"
@@ -99,7 +101,7 @@ const EditEvent = () => {
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-3 gap-8">
               {/* start date */}
               <div className="flex gap-2 flex-col">
                 <label className="text-base">Start Date</label>
@@ -124,9 +126,32 @@ const EditEvent = () => {
                   className="w-full border border-slate-300 hover:border-black p-2 rounded-[0.2rem]"
                 />
               </div>
+              {/*  time zone */}
+              <div className="flex gap-2 flex-col">
+                <label>All Day</label>
+                <CheckBox
+                  className="w-5"
+                  checked={formData.allDay}
+                  onChange={() =>
+                    setFormData((p) => ({ ...p, allDay: !formData.allDay }))
+                  }
+                />
+              </div>
             </div>
 
-            <div>
+            <div className="grid grid-cols-2 gap-8">
+              <div className="flex gap-2 flex-col">
+                <label className="text-base">Employees</label>
+                <Select />
+              </div>
+
+              <div className="flex gap-2 flex-col">
+                <label className="text-base">Clients</label>
+                <Select />
+              </div>
+            </div>
+
+            <div className="pb-4">
               <div className="flex gap-2 flex-col">
                 <label className="text-base">Description</label>
                 <TextEditor
@@ -135,20 +160,22 @@ const EditEvent = () => {
                     setFormData((p) => ({ ...p, description: data }))
                   }
                 />
+                {formError.description && <p>{formError.description}</p>}
               </div>
             </div>
           </div>
 
           <div className="border-t border-slate-300 p-4 flex gap-4">
             <Button
-              text={"Submit"}
+              text="Submit"
               icon={<FaCheck />}
               type="submit"
               loading={loading}
             />
             <CancelButton
+              type="button"
               text="Cancel"
-              onClick={() => navigate(`/events/${id}`, { replace: true })}
+              onClick={() => navigate(-1, { replace: true })}
             />
           </div>
         </form>

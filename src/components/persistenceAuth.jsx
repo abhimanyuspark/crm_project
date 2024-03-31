@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { refreshAuthUser } from "../redux/server/server";
 import { Outlet } from "react-router-dom";
 import Cookies from "js-cookie";
+import Loader from "./Loader";
 
 const PersistenceAuth = () => {
   const auth = Cookies.get("user");
@@ -37,7 +38,7 @@ const PersistenceAuth = () => {
       };
     }, [dispatch, user]);
 
-    return loading ? <p>Loader...</p> : <Outlet />;
+    return loading ? <Loader /> : <Outlet />;
   } else {
     return <Outlet />;
   }

@@ -3,6 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "./sidebar/Sidebar";
 import Navbar from "./navbar/Navbar";
 import { useSideBar } from "../hooks";
+import { Loader } from "../components";
 
 const Layout = () => {
   const [isOpen] = useSideBar();
@@ -28,9 +29,9 @@ const Layout = () => {
         <Navbar />
         <main
           ref={parentRef}
-          className="h-[calc(100vh-60px)] overflow-auto scroll-smooth p-8 bg-gray-100"
+          className="h-[calc(100vh-60px)] relative overflow-auto scroll-smooth p-8 bg-gray-100"
         >
-          <Suspense fallback={<p>Loader...</p>}>
+          <Suspense fallback={<Loader />}>
             <Outlet />
           </Suspense>
         </main>

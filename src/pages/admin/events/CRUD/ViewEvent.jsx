@@ -55,6 +55,9 @@ const ViewEvent = () => {
     navigate(`/events/${id}/edit`);
   };
 
+  const start = new Date(event.start).toISOString();
+  const end = new Date(event.end).toISOString();
+
   return (
     <div>
       <div className="pb-4">
@@ -80,11 +83,11 @@ const ViewEvent = () => {
             </div>
             <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
               <p className="font-bold w-72">Start Date</p>
-              <p>{event?.start}</p>
+              <p>{start}</p>
             </div>
             <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
               <p className="font-bold w-72">End Date</p>
-              <p>{event?.end}</p>
+              <p>{end}</p>
             </div>
           </div>
 

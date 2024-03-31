@@ -6,7 +6,7 @@ function Select({
   value = multiple ? [] : "",
   onChange = (c) => c,
   options = [],
-  width = "300px",
+  width = "100%",
   optionswidth = "100%",
   search = false,
   emptylist = false,

@@ -4,9 +4,7 @@ const getWeekDates = () => {
   const today = new Date();
   const currentDay = today.getDay();
   // It will gave me a number like 0,1,2...6 that represents day of the weeks
-  const startingDateOfTheWeek =
-    today.getDate() - currentDay + (currentDay === 0 ? -6 : 0); // Adjust when today is Sunday
-
+  const startingDateOfTheWeek = today.getDate() - currentDay;
   const startOfWeek = new Date(today.setDate(startingDateOfTheWeek));
   const weekDates = [];
 
