@@ -185,7 +185,7 @@ export const Columns = [
       const { id, name } = info.row.original;
 
       const Edit = (id) => {
-        navigate(`/clients/edit/${id}`, { state: { from: location } });
+        navigate(`/clients/${id}/edit`, { state: { from: location } });
       };
       const View = (id) => {
         navigate(`/clients/${id}`, { state: { from: location } });

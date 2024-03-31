@@ -25,6 +25,23 @@ const authSlice = createSlice({
     togglePersist: (state, action) => {
       state.persist = action?.payload;
     },
+    deletEventReducer: (state, action) => {
+      const id = action?.payload;
+      state.user.events = state.user.events.filter((i) => {
+        return i.id !== id;
+      });
+    },
+    addEventReducer: (state, action) => {
+      const event = action?.payload;
+      if (event) {
+        state.user.events.push(event);
+      }
+    },
+    updateEventReducer: (state, action) => {
+      const event = action?.payload;
+      let index = state.user.events.findIndex((e) => e.id === event.id);
+      state.user.events[index] = event;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -64,5 +81,11 @@ const authSlice = createSlice({
   },
 });
 
-export const { logout, togglePersist } = authSlice.actions;
+export const {
+  logout,
+  togglePersist,
+  deletEventReducer,
+  addEventReducer,
+  updateEventReducer,
+} = authSlice.actions;
 export default authSlice.reducer;

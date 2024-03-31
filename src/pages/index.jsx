@@ -9,6 +9,10 @@ import {
   EditEmployee,
   ViewClient,
   ViewEmployee,
+  Events,
+  AddEvent,
+  ViewEvent,
+  EditEvent,
 } from "./admin/index";
 
 const Login = lazy(() => import("./Login"));
@@ -30,4 +34,8 @@ export {
   EditEmployee,
   ViewClient,
   ViewEmployee,
+  Events,
+  AddEvent,
+  ViewEvent,
+  EditEvent,
 };

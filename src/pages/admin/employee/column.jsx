@@ -139,7 +139,7 @@ export const Columns = [
       const { id, name } = info.row.original;
 
       const Edit = (id) => {
-        navigate(`/employees/edit/${id}`, { state: { from: location } });
+        navigate(`/employees/${id}/edit`, { state: { from: location } });
       };
       const View = (id) => {
         navigate(`/employees/${id}`, { state: { from: location } });

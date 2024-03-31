@@ -110,11 +110,34 @@ export const addEventToUser = createAsyncThunk(
     try {
       const userResponse = await axios.get(`${apiUrl}/users/${userId}`);
       const user = userResponse.data;
-      user.events.push(event);
-      const updatedUser = await axios.patch(`${apiUrl}/users/${userId}`, {
-        events: user.events,
+      await axios.patch(`${apiUrl}/users/${userId}`, {
+        events: [...user.events, event],
       });
-      return updatedUser.data;
+      return { userId, event };
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const updateEvent = createAsyncThunk(
+  "user/updateEvent",
+  async ({ userId, eventId, updatedEvent }, { rejectWithValue }) => {
+    try {
+      const userResponse = await axios.get(`${apiUrl}/users/${userId}`);
+      const user = userResponse.data;
+      const events = user.events.map((event) =>
+        event.id === eventId ? updatedEvent : event
+      );
+
+      if (events?.length > 0) {
+        await axios.patch(`${apiUrl}/users/${userId}`, {
+          events: events,
+        });
+        return { userId, eventId, updatedEvent };
+      } else {
+        throw new Error("Event not found in user's events array");
+      }
     } catch (error) {
       return rejectWithValue(error.message);
     }

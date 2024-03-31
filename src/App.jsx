@@ -15,6 +15,10 @@ import {
   EditEmployee,
   ViewClient,
   ViewEmployee,
+  Events,
+  AddEvent,
+  ViewEvent,
+  EditEvent,
 } from "./pages";
 import { RequireAuth, PersistenceAuth } from "./components/index";
 import { Tooltip } from "react-tooltip";
@@ -50,12 +54,17 @@ function App() {
             <Route path="/clients" element={<Client />} />
             <Route path="/clients/:id" element={<ViewClient />} />
             <Route path="/clients/add" element={<AddClient />} />
-            <Route path="/clients/edit/:id" element={<EditClient />} />
+            <Route path="/clients/:id/edit" element={<EditClient />} />
 
             <Route path="/employees" element={<Employee />} />
             <Route path="/employees/:id" element={<ViewEmployee />} />
             <Route path="/employees/add" element={<AddEmployee />} />
-            <Route path="/employees/edit/:id" element={<EditEmployee />} />
+            <Route path="/employees/:id/edit" element={<EditEmployee />} />
+
+            <Route path="/events" element={<Events />} />
+            <Route path="/events/create" element={<AddEvent />} />
+            <Route path="/events/:id/edit" element={<EditEvent />} />
+            <Route path="/events/:id" element={<ViewEvent />} />
           </Route>
         </Route>
       </Routes>

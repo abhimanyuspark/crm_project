@@ -54,7 +54,7 @@
       "events": [
         {
           "id": "d0b9794f-d28f-49d3-bc69-6cad53ee3739",
-          "title": "hi222",
+          "title": "Talk",
           "description": "i another one",
           "start": "2024-04-11T18:00:00",
           "end": "2024-04-11T21:30:00",
@@ -62,19 +62,11 @@
         },
         {
           "id": "d3daec41-92eb-4061-8cb1-8e9c4fe0d9ff",
-          "title": "hi",
-          "description": "hi am you friend",
+          "title": "Hey",
+          "description": "<p>Hi am you friend</p>",
           "start": "2024-03-30",
           "end": "2024-03-31",
           "allDay": true
-        },
-        {
-          "id": "117782a1-d1f1-421a-91a1-ac79eb9c208a",
-          "title": "no",
-          "description": "not yet",
-          "start": "2024-03-07T08:30:00",
-          "end": "2024-03-07T11:30:00",
-          "allDay": false
         }
       ],
       "allowFollowUp": {

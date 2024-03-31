@@ -1,11 +1,17 @@
-import React, { Suspense } from "react";
-import { Outlet } from "react-router-dom";
+import React, { Suspense, useRef, useEffect } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "./sidebar/Sidebar";
 import Navbar from "./navbar/Navbar";
 import { useSideBar } from "../hooks";
 
 const Layout = () => {
   const [isOpen] = useSideBar();
+  const parentRef = useRef();
+  const { pathname } = useLocation();
+  // Reset scroll position to the top of the main element when the Outlet content changes
+  useEffect(() => {
+    parentRef.current.scrollTop = 0;
+  }, [parentRef, pathname]);
 
   return (
     <div
@@ -20,7 +26,10 @@ const Layout = () => {
 
       <div className="grid grid-rows-[60px_1fr]">
         <Navbar />
-        <main className="h-[calc(100vh-60px)] overflow-auto scroll-smooth p-8 bg-gray-100">
+        <main
+          ref={parentRef}
+          className="h-[calc(100vh-60px)] overflow-auto scroll-smooth p-8 bg-gray-100"
+        >
           <Suspense fallback={<p>Loader...</p>}>
             <Outlet />
           </Suspense>

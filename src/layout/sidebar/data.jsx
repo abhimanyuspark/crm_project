@@ -1,4 +1,5 @@
 import {
+  FaCalendar,
   FaDashcube,
   FaGear,
   FaUserFriends,
@@ -32,6 +33,12 @@ export const admin = [
   },
   {
     id: 4,
+    icon: <FaCalendar size={15} />,
+    value: "Events",
+    link: "/events",
+  },
+  {
+    id: 5,
     icon: <FaGear />,
     value: "Settings",
     link: "/settings",

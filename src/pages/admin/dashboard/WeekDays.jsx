@@ -29,7 +29,7 @@ const days = [
   "Saturday",
 ];
 
-const colors = ["red", "blue"];
+// const colors = ["red", "blue", "green", "purple", "orange", "yellow", "gray"];
 
 const WeeksDays = memo(() => {
   const weekDates = getWeekDates();
@@ -62,7 +62,7 @@ const Day = ({ dayName, date }) => {
       data-tooltip-place="bottom"
       className={`flex items-center justify-center text-xs rounded-full w-9 aspect-square border border-slate-300 cursor-pointer ${isToday}`}
     >
-      {dayName.slice(0, 3)}
+      {dayName.slice(0, 2)}
     </div>
   );
 };

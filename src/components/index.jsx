@@ -1,6 +1,6 @@
 import PersistenceAuth from "./persistenceAuth";
 import RequireAuth from "./requireAuth";
-import { Button } from "./style/buttons";
+import { Button, CancelButton } from "./style/buttons";
 import { Container } from "./style/container";
 import { InputText, CheckBox, InputSelect, Switch } from "./style/inputs";
 import { formValidation } from "./formValidation";
@@ -13,11 +13,13 @@ import KanBan from "./kanban/kanban";
 import DigitalClock from "./DigitalClock";
 import Clock_In from "./Clock_In";
 import Timer from "./Timer";
+import TextEditor from "./TextEditor/TextEditor";
 
 export {
   PersistenceAuth,
   RequireAuth,
   Button,
+  CancelButton,
   Container,
   InputText,
   InputSelect,
@@ -33,4 +35,5 @@ export {
   DigitalClock,
   Clock_In,
   Timer,
+  TextEditor,
 };

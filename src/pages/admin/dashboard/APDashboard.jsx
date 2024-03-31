@@ -73,7 +73,7 @@ const APDashboard = () => {
                 data-tooltip-place="top"
                 value={user?.progress}
                 max={100}
-                className="w-full h-2"
+                className="w-full h-3"
               ></progress>
               <div className="flex justify-between text-sm pb-2">
                 <span>0 min</span>
@@ -88,7 +88,7 @@ const APDashboard = () => {
               My Calender
             </h2>
             <div className="p-4">
-              <Calender events={user?.events} id={user?.id} />
+              <Calender events={user?.events} />
             </div>
           </Container>
         </div>

@@ -9,6 +9,10 @@ const ViewClient = lazy(() => import("./client/CRUD/viewClient"));
 const AddEmployee = lazy(() => import("./employee/CRUD/addEmployee"));
 const EditEmployee = lazy(() => import("./employee/CRUD/editEmployee"));
 const ViewEmployee = lazy(() => import("./employee/CRUD/viewEmployee"));
+const Events = lazy(() => import("./events/Events"));
+const AddEvent = lazy(() => import("./events/CRUD/AddEvent"));
+const ViewEvent = lazy(() => import("./events/CRUD/ViewEvent"));
+const EditEvent = lazy(() => import("./events/CRUD/EditEvent"));
 
 export {
   APDashboard,
@@ -20,4 +24,8 @@ export {
   EditEmployee,
   ViewClient,
   ViewEmployee,
+  Events,
+  AddEvent,
+  ViewEvent,
+  EditEvent,
 };

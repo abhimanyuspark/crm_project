@@ -2,11 +2,11 @@
 
 progress::-webkit-progress-bar {
   background-color: gainsboro;
-  border-radius: 10px;
+  border-radius: 3px;
 }
 progress::-webkit-progress-value {
   @apply bg-blue-600;
-  border-radius: 10px;
+  border-radius: 3px;
 }
 
 progress::-webkit-progress-bar:hover {
@@ -14,6 +14,18 @@ progress::-webkit-progress-bar:hover {
 }
 progress::-webkit-progress-value:hover {
   @apply bg-blue-800;
+}
+
+/* Text Editor css */
+
+.mycontainer > .ql-toolbar.ql-snow {
+  border-top-right-radius: 0.3rem !important;
+  border-top-left-radius: 0.3rem !important;
+}
+
+.mycontainer > .ql-container.ql-snow {
+  border-bottom-right-radius: 0.3rem !important;
+  border-bottom-left-radius: 0.3rem !important;
 }
 
 /* Calender custom css */
