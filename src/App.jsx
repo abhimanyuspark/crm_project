@@ -23,6 +23,7 @@ import {
 import { RequireAuth, PersistenceAuth, Loader } from "./components/index";
 import { Tooltip } from "react-tooltip";
 import { Toaster } from "react-hot-toast";
+import "react-datepicker/dist/react-datepicker.css";
 
 function App() {
   const role = {

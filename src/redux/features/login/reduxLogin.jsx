@@ -32,8 +32,9 @@ const authSlice = createSlice({
       });
     },
     addEventReducer: (state, action) => {
-      const event = action?.payload;
-      if (event) {
+      const { id, event } = action?.payload;
+      const main = state.user.id === id;
+      if (main) {
         state.user.events.push(event);
       }
     },

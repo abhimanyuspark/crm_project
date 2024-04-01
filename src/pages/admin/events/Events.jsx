@@ -22,7 +22,11 @@ const Events = () => {
 
       <Container>
         <div className="p-8">
-          <Calender events={user?.events} height="600px" />
+          <Calender
+            events={user?.events}
+            height="600px"
+            initialView="dayGridMonth"
+          />
         </div>
       </Container>
     </div>

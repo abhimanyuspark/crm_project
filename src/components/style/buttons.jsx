@@ -2,7 +2,7 @@ import React from "react";
 
 const Loader = () => {
   return (
-    <div class="w-4 h-4 mx-auto loader ease-linear rounded-full border-2 border-white"></div>
+    <div className="w-4 h-4 mx-auto loader ease-linear rounded-full border-2 border-white"></div>
   );
 };
 

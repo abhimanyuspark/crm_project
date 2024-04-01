@@ -12,7 +12,11 @@ import { FlConverter } from "../utilities";
 // import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
-const Calender = ({ height = "400px", events = [] }) => {
+const Calender = ({
+  height = "400px",
+  events = [],
+  initialView = "listWeek",
+}) => {
   const navigate = useNavigate();
 
   function handleEventClick(clickInfo) {
@@ -55,7 +59,7 @@ const Calender = ({ height = "400px", events = [] }) => {
       locale={"en"}
       timeZone={"Asia/Kolkata"}
       firstDay={parseInt("1")}
-      initialView={"listWeek"}
+      initialView={initialView}
       plugins={[dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin]}
       headerToolbar={{
         start: "prev,next today",

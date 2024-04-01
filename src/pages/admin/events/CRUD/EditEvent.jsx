@@ -7,14 +7,12 @@ import {
   CheckBox,
   Container,
   InputText,
-  Select,
   TextEditor,
 } from "../../../../components";
 import { FaCheck } from "../../../../components/icons";
 import { updateEvent } from "../../../../redux/server/server";
 import { updateEventReducer } from "../../../../redux/features/login/reduxLogin";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 
 const EditEvent = () => {
   const { id } = useParams();
@@ -33,21 +31,12 @@ const EditEvent = () => {
   const [loading, setLoading] = useState(false);
   const [formError, setFormError] = useState({
     title: "",
-    description: "",
-    start: "",
-    end: "",
   });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-    setFormError((p) => ({ ...p, [name]: "" }));
-  };
 
   const validate = (formData) => {
     const err = {};
-    ["title", "description"].forEach((f) => {
-      if (!formData[f].trim()) {
+    ["title"].forEach((f) => {
+      if (!formData[f] || !formData[f].trim()) {
         err[f] = `${f} field is required.`;
       }
     });
@@ -57,9 +46,9 @@ const EditEvent = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
     // Validate form before submit
     if (validate(formData)) {
+      setLoading(true);
       try {
         await dispatch(
           updateEvent({
@@ -96,12 +85,14 @@ const EditEvent = () => {
                 error={formError.title}
                 value={formData.title}
                 onChange={(e) => {
-                  handleInputChange(e);
+                  const { name, value } = e.target;
+                  setFormData({ ...formData, [name]: value });
+                  setFormError((p) => ({ ...p, [name]: "" }));
                 }}
               />
             </div>
 
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 gap-8">
               {/* start date */}
               <div className="flex gap-2 flex-col">
                 <label className="text-base">Start Date</label>
@@ -126,7 +117,10 @@ const EditEvent = () => {
                   className="w-full border border-slate-300 hover:border-black p-2 rounded-[0.2rem]"
                 />
               </div>
-              {/*  time zone */}
+            </div>
+
+            {/*  time zone */}
+            <div className="grid grid-cols-1 gap-8">
               <div className="flex gap-2 flex-col">
                 <label>All Day</label>
                 <CheckBox
@@ -139,18 +133,6 @@ const EditEvent = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-8">
-              <div className="flex gap-2 flex-col">
-                <label className="text-base">Employees</label>
-                <Select />
-              </div>
-
-              <div className="flex gap-2 flex-col">
-                <label className="text-base">Clients</label>
-                <Select />
-              </div>
-            </div>
-
             <div className="pb-4">
               <div className="flex gap-2 flex-col">
                 <label className="text-base">Description</label>
@@ -160,7 +142,6 @@ const EditEvent = () => {
                     setFormData((p) => ({ ...p, description: data }))
                   }
                 />
-                {formError.description && <p>{formError.description}</p>}
               </div>
             </div>
           </div>
