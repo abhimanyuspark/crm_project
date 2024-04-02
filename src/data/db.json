@@ -2,10 +2,7 @@
   "users": [
     {
       "id": "437df116-17cc-4564-9223-4f79b5aea7ca",
-      "role": [
-        "admin",
-        "employee"
-      ],
+      "role": ["admin", "employee"],
       "email": "admin@gmail.com",
       "name": "Opal Durgan",
       "password": "admin12345",
@@ -57,6 +54,14 @@
           "start": "2024-10-17T02:57:08.233Z",
           "end": "2024-10-04T22:58:02.337Z",
           "allDay": false
+        },
+        {
+          "id": "a568834c-c869-4120-a700-180b19ef4388",
+          "title": "Yes done",
+          "start": "2024-04-02T08:33:32.762Z",
+          "end": "2024-04-02T08:33:32.762Z",
+          "description": "",
+          "allDay": false
         }
       ],
       "allowFollowUp": {
@@ -65,9 +70,7 @@
     },
     {
       "id": "8afd92c3-9613-4215-931e-11a3feb52515",
-      "role": [
-        "lead"
-      ],
+      "role": ["employee"],
       "email": "Ricardo_Nicolas-Metz94@gmail.com",
       "name": "Evan Hilll",
       "password": "bLkPd9Qe",
@@ -119,6 +122,14 @@
           "start": "2024-02-27T13:11:54.696Z",
           "end": "2024-10-22T06:04:31.513Z",
           "allDay": false
+        },
+        {
+          "id": "708e9a86-8477-4e14-aadd-5e12d919b4c7",
+          "title": "Metting",
+          "start": "2024-04-02T08:47:03.873Z",
+          "end": "2024-04-02T08:47:03.873Z",
+          "description": "<h2>Boss says argent meeting</h2>",
+          "allDay": false
         }
       ],
       "allowFollowUp": {
@@ -127,9 +138,7 @@
     },
     {
       "id": "d80be13b-09f2-48d7-b847-8b7c0ba9ccc8",
-      "role": [
-        "client"
-      ],
+      "role": ["client"],
       "email": "Eula_Brekke@hotmail.com",
       "name": "Donnie Schoen",
       "password": "Z3PYbd76",
@@ -189,9 +198,7 @@
     },
     {
       "id": "88dbdbed-c5cb-4f83-b3b6-268e9f9dd4bb",
-      "role": [
-        "client"
-      ],
+      "role": ["client"],
       "email": "Albertha34@yahoo.com",
       "name": "Evan Balistreri-Breitenberg",
       "password": "6C8n7uLu",
@@ -251,9 +258,7 @@
     },
     {
       "id": "7d123ea9-f277-4d4f-a4e9-c27cbac98112",
-      "role": [
-        "client"
-      ],
+      "role": ["client"],
       "email": "Juanita.Mitchell63@gmail.com",
       "name": "Mr. Percy Abshire DDS",
       "password": "HuC99Idx",
@@ -313,9 +318,7 @@
     },
     {
       "id": "43fe130f-e599-43c7-8d66-556918e2e58e",
-      "role": [
-        "lead"
-      ],
+      "role": ["employee"],
       "email": "Dane16@yahoo.com",
       "name": "Kari Abernathy",
       "password": "I9oZHcU6",
@@ -367,6 +370,14 @@
           "start": "2024-05-31T16:31:07.726Z",
           "end": "2024-05-07T14:03:37.787Z",
           "allDay": false
+        },
+        {
+          "id": "b72eb139-84bf-4abb-90b8-cc87ea068cba",
+          "title": "Argent",
+          "start": "2024-04-02T08:50:55.910Z",
+          "end": "2024-04-02T08:50:55.910Z",
+          "description": "<h2>Metting <span class=\"ql-emojiblot\" data-name=\"money_mouth_face\">﻿<span contenteditable=\"false\"><span class=\"ap ap-money_mouth_face\">🤑</span></span>﻿</span></h2>",
+          "allDay": false
         }
       ],
       "allowFollowUp": {
@@ -375,9 +386,7 @@
     },
     {
       "id": "cd2fcde8-2dd5-450e-9361-bad47f6dfa4e",
-      "role": [
-        "client"
-      ],
+      "role": ["client"],
       "email": "Osvaldo67@yahoo.com",
       "name": "Devin Haley",
       "password": "qFFehQxE",
@@ -437,9 +446,7 @@
     },
     {
       "id": "8ff2d6cd-fca8-4cb0-9fd3-04cb28cee905",
-      "role": [
-        "lead"
-      ],
+      "role": ["employee"],
       "email": "Frances_Wuckert@gmail.com",
       "name": "Terry Morar MD",
       "password": "Tv4CkldI",
@@ -499,9 +506,7 @@
     },
     {
       "id": "027c11c0-3953-4c33-98b0-1309d3a40b75",
-      "role": [
-        "employee"
-      ],
+      "role": ["employee"],
       "email": "Gladyce_Casper@gmail.com",
       "name": "Benny Cronin",
       "password": "rMmUT9wj",
@@ -561,9 +566,7 @@
     },
     {
       "id": "2e6ca4ec-5688-44d4-be34-4f7d9f414f44",
-      "role": [
-        "employee"
-      ],
+      "role": ["employee"],
       "email": "Ron.Witting12@gmail.com",
       "name": "Patty Jakubowski",
       "password": "yqa8ptLU",

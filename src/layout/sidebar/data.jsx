@@ -73,4 +73,10 @@ export const employee = [
       },
     ],
   },
+  {
+    id: 2,
+    icon: <FaCalendar size={15} />,
+    value: "Events",
+    link: "/events",
+  },
 ];

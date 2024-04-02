@@ -10,7 +10,7 @@ const RequireAuth = ({ roleAccess = [] }) => {
   if (user !== undefined && Object.keys(user).length > 0) {
     if (
       roleAccess.length === 0 ||
-      roleAccess.some((role) => user?.role.includes(role))
+      roleAccess.some((role) => user?.role?.includes(role))
     ) {
       return <Layout />;
     } else {

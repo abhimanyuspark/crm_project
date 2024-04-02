@@ -2,6 +2,8 @@ import { useEffect, useRef, useState, useMemo } from "react";
 import styles from "./select.module.css";
 
 function Select({
+  loading = false,
+  className = "",
   multiple = false,
   value = multiple ? [] : "",
   onChange = (c) => c,
@@ -80,7 +82,7 @@ function Select({
       <div
         tabIndex={0}
         onClick={() => setIsOpen((prev) => !prev)}
-        className={`${styles.container}`}
+        className={`${styles.container} ${className}`}
       >
         {/* Display Options */}
         <span className={styles.value}>
@@ -202,7 +204,11 @@ function Select({
 
           {/* Options */}
 
-          {filterOptions.length > 0 ? (
+          {loading ? (
+            <li className={`${styles.option} ${styles["no-data"]}`}>
+              Loading...
+            </li>
+          ) : filterOptions.length > 0 ? (
             filterOptions.map((option, index) => (
               <li
                 onClick={() => {

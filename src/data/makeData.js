@@ -11,7 +11,7 @@ const range = (len) => {
 const newPerson = () => {
   return {
     id: faker.string.uuid(),
-    role: faker.helpers.arrayElement([["employee"], ["client"], ["lead"]]),
+    role: faker.helpers.arrayElement([["employee"], ["client"]]),
     email: faker.internet.email(),
     name: faker.person.fullName(),
     password: faker.internet.password({ length: 8 }),

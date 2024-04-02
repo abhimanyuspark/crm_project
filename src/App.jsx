@@ -61,7 +61,11 @@ function App() {
             <Route path="/employees/:id" element={<ViewEmployee />} />
             <Route path="/employees/add" element={<AddEmployee />} />
             <Route path="/employees/:id/edit" element={<EditEmployee />} />
+          </Route>
 
+          <Route
+            element={<RequireAuth roleAccess={[role.Admin, role.Employee]} />}
+          >
             <Route path="/events" element={<Events />} />
             <Route path="/events/create" element={<AddEvent />} />
             <Route path="/events/:id/edit" element={<EditEvent />} />

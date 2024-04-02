@@ -10,22 +10,23 @@ import {
   Select,
   TextEditor,
 } from "../../../../components";
-import { FaCheck } from "../../../../components/icons";
+import { FaCheck, FaTimes } from "../../../../components/icons";
 import { addEventToUser, roleUsers } from "../../../../redux/server/server";
 import { addEventReducer } from "../../../../redux/features/login/reduxLogin";
+import { FlConverter } from "../../../../utilities";
 import DatePicker from "react-datepicker";
 import { v4 as uuid } from "uuid";
 
 const AddEvent = () => {
   const { user } = useSelector((state) => state.auth);
-  const { users } = useSelector((state) => state.users);
+  const { users, loading } = useSelector((state) => state.users);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [employee, setEmployee] = useState(users[0]);
   const [client, setClient] = useState("");
-  const employees = users?.filter((i) => i.role !== "client");
-  const clients = users?.filter((i) => i.role === "client");
+  const employees = users?.filter((i) => !i.role?.includes("client"));
+  const clients = users?.filter((i) => i.role?.includes("client"));
 
   const [formData, setFormData] = useState({
     id: uuid(),
@@ -35,18 +36,26 @@ const AddEvent = () => {
     description: "",
     allDay: false,
   });
-  const [loading, setLoading] = useState(false);
+  const [formLoading, setFormLoading] = useState(false);
   const [formError, setFormError] = useState({
     title: "",
+    employee: "",
+    client: "",
   });
 
   const validate = (formData) => {
     const err = {};
     ["title"].forEach((f) => {
       if (!formData[f] || !formData[f].trim()) {
-        err[f] = `${f} field is required.`;
+        err[f] = `${FlConverter(f)} field is required.`;
       }
     });
+
+    if (!employee && !client) {
+      err.employee = "Employee field is required.";
+      err.client = "Client field is required.";
+    }
+
     setFormError(err);
     return !Object.keys(err).length;
   };
@@ -55,7 +64,7 @@ const AddEvent = () => {
     e.preventDefault();
     // Validate form before submit
     if (validate(formData)) {
-      setLoading(true);
+      setFormLoading(true);
       try {
         await dispatch(
           addEventToUser({
@@ -69,7 +78,7 @@ const AddEvent = () => {
         console.log(error);
       }
     }
-    setLoading(false);
+    setFormLoading(false);
   };
 
   useEffect(() => {
@@ -79,23 +88,14 @@ const AddEvent = () => {
   const Template = (e) => {
     return (
       <div className="flex items-center gap-3 px-2">
-        <img src={e?.profile} className="w-6 h-6" />
+        {e && <img src={e?.profile} className="w-6 h-6" />}
 
-        {e?.name}
-        {user.name === e?.name && (
+        {e ? e?.name : "--"}
+        {e?.role?.includes("admin") && (
           <span className="text-xs py-[2px] px-1 rounded-sm bg-slate-500 text-white">
             its you
           </span>
         )}
-      </div>
-    );
-  };
-
-  const ValueTemplate = (e) => {
-    return (
-      <div className="flex items-center gap-2 px-2">
-        {e && <img src={e?.profile} className="w-6 h-6" />}
-        {e ? e?.name : "--"}
       </div>
     );
   };
@@ -118,6 +118,7 @@ const AddEvent = () => {
                 important
                 error={formError.title}
                 value={formData.title}
+                placeholder="Enter a event title..."
                 onChange={(e) => {
                   const { name, value } = e.target;
                   setFormData({ ...formData, [name]: value });
@@ -167,30 +168,77 @@ const AddEvent = () => {
               </div>
             </div>
 
+            {formError.employee && formError.client && (
+              <div className="border border-red-500 rounded-[4px] p-3 text-red-500 bg-red-100 flex justify-between items-center">
+                <p className="text-sm">
+                  You have to select either client or employee.
+                </p>
+
+                <FaTimes
+                  className="cursor-pointer"
+                  onClick={() => {
+                    setFormError((prev) => ({
+                      ...prev,
+                      client: "",
+                      employee: "",
+                    }));
+                  }}
+                />
+              </div>
+            )}
+
             <div className="grid grid-cols-2 gap-8">
               <div className="flex gap-2 flex-col">
                 <label className="text-base">Employees</label>
                 <Select
+                  search
+                  className={formError.employee && "border-red-500"}
+                  loading={loading}
                   value={employee}
                   options={employees}
                   fields={(i) => i.name}
-                  onChange={(e) => setEmployee(e)}
+                  onChange={(e) => {
+                    setEmployee(e);
+                    setClient("");
+                    setFormError((prev) => ({
+                      ...prev,
+                      employee: "",
+                      client: "",
+                    }));
+                  }}
                   optiontemplete={Template}
-                  valuetemplete={ValueTemplate}
+                  valuetemplete={Template}
                 />
+                {formError.employee && (
+                  <p className="text-red-500 text-base">{formError.employee}</p>
+                )}
               </div>
 
               <div className="flex gap-2 flex-col">
                 <label className="text-base">Clients</label>
                 <Select
+                  search
+                  className={formError.client && "border-red-500"}
                   value={client}
+                  loading={loading}
                   options={clients}
-                  onChange={(e) => setClient(e)}
+                  onChange={(e) => {
+                    setClient(e);
+                    setEmployee("");
+                    setFormError((prev) => ({
+                      ...prev,
+                      employee: "",
+                      client: "",
+                    }));
+                  }}
                   fields={(i) => i.name}
                   optiontemplete={Template}
-                  valuetemplete={ValueTemplate}
+                  valuetemplete={Template}
                   emptylist
                 />
+                {formError.client && (
+                  <p className="text-red-500 text-base">{formError.client}</p>
+                )}
               </div>
             </div>
 
@@ -212,7 +260,7 @@ const AddEvent = () => {
               text="Submit"
               icon={<FaCheck />}
               type="submit"
-              loading={loading}
+              loading={formLoading}
             />
             <CancelButton
               type="button"
