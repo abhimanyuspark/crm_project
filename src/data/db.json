@@ -1,701 +1,624 @@
 {
   "users": [
     {
-      "id": "b1866e7f-ecdf-4161-90f4-3bcc321f2a8c",
-      "role": "admin",
+      "id": "437df116-17cc-4564-9223-4f79b5aea7ca",
+      "role": [
+        "admin",
+        "employee"
+      ],
       "email": "admin@gmail.com",
-      "name": "Rocky Reichert",
+      "name": "Opal Durgan",
       "password": "admin12345",
-      "date": "2024-01-26T16:20:44.797Z",
-      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/225.jpg",
-      "age": 29,
-      "visits": 124,
-      "jobType": "Director",
-      "progress": 86,
-      "status": {
-        "name": "Complete",
-        "color": "#0cf90c",
-        "id": "15d8c902-12d5-4cc1-9646-7725836813c2"
-      },
-      "statusMenu": [
-        {
-          "name": "Pending",
-          "color": "yellow",
-          "id": "8b6018c7-bfe7-41f6-b5f1-c9fc5f0771f1"
-        },
-        {
-          "name": "Inprocess",
-          "color": "#159afb",
-          "id": "7154ec0a-96a4-4861-a472-fe51f912069a"
-        },
-        {
-          "name": "Complete",
-          "color": "#0cf90c",
-          "id": "d4b53733-3a82-4bea-9281-063564bae93a"
-        }
-      ],
-      "gender": "male",
-      "tasks": [
-        {
-          "id": "1fe58519-d660-4236-83d2-7a2d58819fef",
-          "title": "eos amitto virga adipisci sit totidem",
-          "description": "Virgo tabgo cunctatio inflammatio compello subseco.",
-          "dueDate": "2024-03-30T08:33:30.502Z"
-        }
-      ],
-      "projects": [
-        {
-          "id": "d0b9794f-d28f-49d3-bc69-6cad53dd8739",
-          "title": "Ergonomic Metal Tuna",
-          "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-          "dueDate": "2024-09-11T17:17:30.633Z"
-        }
-      ],
-      "events": [
-        {
-          "id": "d0b9794f-d28f-49d3-bc69-6cad53ee3739",
-          "title": "Talk",
-          "description": "<h2>I want to talk to you</h2>",
-          "start": "2024-04-09T12:30:00.000Z",
-          "end": "2024-04-11T21:30:00",
-          "allDay": false
-        },
-        {
-          "id": "d3daec41-92eb-4061-8cb1-8e9c4fe0d9ff",
-          "title": "Hey Everone",
-          "description": "<h2><span class=\"ql-emojiblot\" data-name=\"grinning\">﻿<span contenteditable=\"false\"><span class=\"ap ap-grinning\">😀</span></span>﻿</span> Hey i am very happy today</h2>",
-          "start": "2024-03-30T19:00:00.000Z",
-          "end": "2024-04-05T18:00:00.000Z",
-          "allDay": true
-        },
-        {
-          "id": "1b51e2f6-88a0-4639-b599-42a6ad6ec567",
-          "title": "nice event",
-          "start": "2024-04-17T15:39:28.000Z",
-          "end": "2024-04-18T15:39:28.000Z",
-          "description": "<h2>my first attempt <span class=\"ql-emojiblot\" data-name=\"grinning\">﻿<span contenteditable=\"false\"><span class=\"ap ap-grinning\">😀</span></span>﻿</span></h2>",
-          "allDay": false
-        },
-        {
-          "id": "16c2069a-d54c-4c67-a3cc-479091218e4c",
-          "title": "me",
-          "start": "2024-04-01T15:49:37.894Z",
-          "end": "2024-04-01T15:49:37.894Z",
-          "description": "<p>nice<span class=\"ql-emojiblot\" data-name=\"kissing_closed_eyes\">﻿<span contenteditable=\"false\"><span class=\"ap ap-kissing_closed_eyes\">😚</span></span>﻿</span></p>",
-          "allDay": false
-        }
-      ],
-      "allowFollowUp": {
-        "type": "No"
-      }
-    },
-    {
-      "id": "77cd8aa4-49b5-49e0-a81a-d071ab0bd2d8",
-      "role": "employee",
-      "email": "Jaylan.Stoltenberg@hotmail.com",
-      "name": "Belinda Kautzer",
-      "password": "D47Y6xwp",
-      "date": "2022-03-13T05:07:15.603Z",
-      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/592.jpg",
-      "age": 39,
-      "visits": 90,
-      "jobType": "Specialist",
-      "progress": 82,
-      "status": {
-        "name": "Inprocess",
-        "color": "#159afb",
-        "id": "75dcd6ec-3ab1-46e3-95d6-e496a1ff74f5"
-      },
-      "statusMenu": [
-        {
-          "name": "Pending",
-          "color": "yellow",
-          "id": "e7a7efc9-6688-48a8-a54a-a309bafa971c"
-        },
-        {
-          "name": "Inprocess",
-          "color": "#159afb",
-          "id": "4e85086e-f1c2-4a88-bcde-715afb3d24f7"
-        },
-        {
-          "name": "Complete",
-          "color": "#0cf90c",
-          "id": "72c90645-a02c-4009-885b-1782b64be82d"
-        }
-      ],
-      "gender": "male",
-      "tasks": [
-        {
-          "id": "3be59e39-81c4-4ad7-83bd-e8e925b09976",
-          "title": "credo ulciscor tego ex absque adamo",
-          "description": "Earum atqui concedo tamquam agnosco aiunt.",
-          "dueDate": "2024-03-30T02:52:43.391Z"
-        }
-      ],
-      "projects": [
-        {
-          "id": "81d6e8d1-968f-4b04-bc13-12968990c5d5",
-          "title": "Intelligent Bronze Cheese",
-          "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-          "dueDate": "2024-02-15T15:28:46.995Z"
-        }
-      ],
-      "events": [
-        {
-          "id": "15e63849-8533-4c14-8d04-dd3307a34736",
-          "title": "adulescens terror bellicus templum",
-          "description": "denuo dedico minus demo cruentus cribro allatus triduana in colligo",
-          "start": "2024-10-20T07:17:45.379Z",
-          "end": "2024-11-09T21:57:21.220Z",
-          "allDay": false
-        },
-        {
-          "id": "20ace507-1103-4813-a68e-20285d30ea42",
-          "title": "yes",
-          "description": "ok",
-          "start": "2024-03-29",
-          "end": "2024-03-30",
-          "allDay": true
-        },
-        {
-          "id": "f0d802fd-7605-4ada-9776-9d46dcb10dfa",
-          "title": "what's app my friend",
-          "start": "2024-04-23T15:43:29.000Z",
-          "end": "2024-04-25T15:43:29.000Z",
-          "description": "<h1>it's nice to meet you <span class=\"ql-emojiblot\" data-name=\"grin\">﻿<span contenteditable=\"false\"><span class=\"ap ap-grin\">😁</span></span>﻿</span><span class=\"ql-emojiblot\" data-name=\"sweat_smile\">﻿<span contenteditable=\"false\"><span class=\"ap ap-sweat_smile\">😅</span></span>﻿</span></h1>",
-          "allDay": false
-        },
-        {
-          "id": "459b242e-d9c0-4c79-8652-0b5ac5d7022b",
-          "title": "hi",
-          "start": "2024-05-16T15:00:00.000Z",
-          "end": "2024-05-16T16:30:00.000Z",
-          "description": "<p>nice</p>",
-          "allDay": false
-        }
-      ],
-      "allowFollowUp": {
-        "type": "Yes"
-      }
-    },
-    {
-      "id": "87289ca8-9c40-4b8d-aae6-38e221a0cb88",
-      "role": "employee",
-      "email": "Karelle.Turcotte21@gmail.com",
-      "name": "Agnes Blanda",
-      "password": "p1zQPbM7",
-      "date": "2024-11-11T04:46:28.845Z",
-      "profile": "https://avatars.githubusercontent.com/u/14484794",
-      "age": 36,
-      "visits": 458,
-      "jobType": "Agent",
-      "progress": 48,
-      "status": {
-        "name": "Complete",
-        "color": "#0cf90c",
-        "id": "a0b24391-ffbc-402e-bc7b-99878df2c453"
-      },
-      "statusMenu": [
-        {
-          "name": "Pending",
-          "color": "yellow",
-          "id": "a4429a2d-d329-4b8c-b5ef-02166f5e2e32"
-        },
-        {
-          "name": "Inprocess",
-          "color": "#159afb",
-          "id": "67c87ec8-e600-423b-a229-3c8e209f3751"
-        },
-        {
-          "name": "Complete",
-          "color": "#0cf90c",
-          "id": "6fc7b8b6-afea-4a31-b779-f292ef8f13b7"
-        }
-      ],
-      "gender": "female",
-      "tasks": [
-        {
-          "id": "6132b172-4ce4-40a9-a705-c699e5f1f8e1",
-          "title": "adeptio adfectus audacia uredo anser solvo",
-          "description": "Non demoror abbas vae solvo.",
-          "dueDate": "2024-03-29T16:32:11.005Z"
-        }
-      ],
-      "projects": [
-        {
-          "id": "bbd46aed-99b8-4408-aa7c-3d2206ca912e",
-          "title": "Incredible Steel Fish",
-          "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-          "dueDate": "2024-02-06T15:59:33.455Z"
-        }
-      ],
-      "events": [
-        {
-          "id": "d4a8b966-f300-4f42-baee-f0aed16aabcc",
-          "title": "depromo vorax bos claudeo",
-          "description": "spero vinum umbra repellat timor aestivus depereo vesco contabesco agnitio",
-          "start": "2024-10-05T09:10:03.873Z",
-          "end": "2024-05-02T22:18:13.844Z",
-          "allDay": false
-        }
-      ],
-      "allowFollowUp": {
-        "type": "No"
-      }
-    },
-    {
-      "id": "c01c5c7b-3e5d-41df-9555-c664808e8eeb",
-      "role": "employee",
-      "email": "Maria60@gmail.com",
-      "name": "Evan Parker DDS",
-      "password": "NIAU7OdX",
-      "date": "2022-04-19T02:52:38.760Z",
-      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/372.jpg",
-      "age": 38,
-      "visits": 183,
-      "jobType": "Architect",
-      "progress": 49,
-      "status": {
-        "name": "Complete",
-        "color": "#0cf90c",
-        "id": "676a02aa-0718-4513-a1db-472c568099d4"
-      },
-      "statusMenu": [
-        {
-          "name": "Pending",
-          "color": "yellow",
-          "id": "13c53dfe-880f-47e0-bf8d-2525cc22a008"
-        },
-        {
-          "name": "Inprocess",
-          "color": "#159afb",
-          "id": "452313f6-03cc-4929-97e3-d07206f1a0a0"
-        },
-        {
-          "name": "Complete",
-          "color": "#0cf90c",
-          "id": "fbab3bcb-93d3-4d9a-a050-58333cf94a1a"
-        }
-      ],
-      "gender": "male",
-      "tasks": [
-        {
-          "id": "fede18b5-a6db-4aa3-a9ba-d54a9e8f1f92",
-          "title": "antepono certe desparatus pauci venia attero",
-          "description": "Est suppellex triumphus iste.",
-          "dueDate": "2024-03-30T05:49:16.290Z"
-        }
-      ],
-      "projects": [
-        {
-          "id": "d37b5628-eec0-4a5a-9c26-65a41736558b",
-          "title": "Gorgeous Metal Chicken",
-          "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-          "dueDate": "2024-07-20T12:15:48.053Z"
-        }
-      ],
-      "events": [
-        {
-          "id": "697db090-ab87-4be3-b129-06abed7dbff5",
-          "title": "ipsa valeo vereor comitatus",
-          "description": "caecus claudeo aperiam ambitus culpa perspiciatis adversus cubitum succurro verbum",
-          "start": "2024-06-14T15:39:29.915Z",
-          "end": "2024-05-13T20:11:34.724Z",
-          "allDay": true
-        }
-      ],
-      "allowFollowUp": {
-        "type": "No"
-      }
-    },
-    {
-      "id": "c70685ea-4684-4b16-bd74-46df89cd45fa",
-      "role": "employee",
-      "email": "Myrtle.Klein22@hotmail.com",
-      "name": "Mr. Rick Reichert-Graham",
-      "password": "VpeJit35",
-      "date": "2023-06-09T08:27:10.549Z",
-      "profile": "https://avatars.githubusercontent.com/u/6480137",
-      "age": 34,
-      "visits": 25,
-      "jobType": "Manager",
-      "progress": 60,
-      "status": {
-        "name": "Complete",
-        "color": "#0cf90c",
-        "id": "f206919a-6ab6-4ee2-957c-970373dbf658"
-      },
-      "statusMenu": [
-        {
-          "name": "Pending",
-          "color": "yellow",
-          "id": "d1dd8f77-31b1-449f-bfae-8c1dd717ff67"
-        },
-        {
-          "name": "Inprocess",
-          "color": "#159afb",
-          "id": "f3a729c4-87a1-4d0c-bf59-3d6478b704b9"
-        },
-        {
-          "name": "Complete",
-          "color": "#0cf90c",
-          "id": "17b0849b-941c-4ded-a16e-6f7f5ef899b9"
-        }
-      ],
-      "gender": "male",
-      "tasks": [
-        {
-          "id": "ee19ec46-02f7-4583-be1f-0ca51ba0c3d7",
-          "title": "vulpes acies temeritas ambitus sequi deripio",
-          "description": "Atrox apparatus sui subiungo amiculum.",
-          "dueDate": "2024-03-30T08:31:38.663Z"
-        }
-      ],
-      "projects": [
-        {
-          "id": "5e6c2b86-4afa-4bdc-a8e2-0d7a61c0201c",
-          "title": "Incredible Metal Hat",
-          "description": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-          "dueDate": "2024-07-19T10:50:15.571Z"
-        }
-      ],
-      "events": [
-        {
-          "id": "42d54823-b318-48e1-9def-a45d12a78d62",
-          "title": "dolores uredo doloribus cattus",
-          "description": "error ustilo vulgo catena non adficio qui tardus cubicularis deserunt",
-          "start": "2024-11-08T19:48:43.922Z",
-          "end": "2024-11-11T21:03:02.688Z",
-          "allDay": true
-        }
-      ],
-      "allowFollowUp": {
-        "type": "No"
-      }
-    },
-    {
-      "id": "bc6db1f5-def1-402b-9072-32a6de38e2eb",
-      "role": "client",
-      "email": "Caroline_Lynch1@yahoo.com",
-      "name": "Garrett Hartmann",
-      "password": "dlWVQyfY",
-      "date": "2023-04-15T11:01:41.843Z",
-      "profile": "https://avatars.githubusercontent.com/u/69779600",
-      "age": 31,
-      "visits": 677,
-      "jobType": "Analyst",
-      "progress": 54,
-      "status": {
-        "name": "Complete",
-        "color": "#0cf90c",
-        "id": "28d1da6e-b28a-44cc-a3bb-52439a42353e"
-      },
-      "statusMenu": [
-        {
-          "name": "Pending",
-          "color": "yellow",
-          "id": "84eeba3d-b1bf-4b86-9c71-6adbc2f8ad02"
-        },
-        {
-          "name": "Inprocess",
-          "color": "#159afb",
-          "id": "fd263402-60d7-4ed3-881f-574b39a68c4c"
-        },
-        {
-          "name": "Complete",
-          "color": "#0cf90c",
-          "id": "b16f1f24-7d07-42dc-9c8e-fea43a69e2e9"
-        }
-      ],
-      "gender": "female",
-      "tasks": [
-        {
-          "id": "650dfe0c-4a52-4856-b4d1-eea559265554",
-          "title": "cernuus voro patria cattus virga alias",
-          "description": "Absens curatio cotidie summa tumultus abstergo.",
-          "dueDate": "2024-03-29T22:44:14.702Z"
-        }
-      ],
-      "projects": [
-        {
-          "id": "298929f2-039d-4b78-a176-0e8a85723c73",
-          "title": "Small Concrete Salad",
-          "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-          "dueDate": "2024-09-24T01:41:17.991Z"
-        }
-      ],
-      "events": [
-        {
-          "id": "7f6734b5-db2f-492b-bfa5-ffdcfff50ecf",
-          "title": "sumptus defendo cauda nulla",
-          "description": "solus terebro confido certe viscus aeger patrocinor tabella socius culpo",
-          "start": "2024-05-20T11:37:59.107Z",
-          "end": "2024-02-14T03:48:50.440Z",
-          "allDay": false
-        }
-      ],
-      "allowFollowUp": {
-        "type": "No"
-      }
-    },
-    {
-      "id": "59227b99-99d1-4820-bc33-4149b811310e",
-      "role": "employee",
-      "email": "Hassie.Schulist68@gmail.com",
-      "name": "Lewis Keebler",
-      "password": "DYjjzdgJ",
-      "date": "2023-12-27T07:21:53.583Z",
-      "profile": "https://avatars.githubusercontent.com/u/67812548",
+      "date": "2022-02-14T12:50:45.681Z",
+      "profile": "https://avatars.githubusercontent.com/u/40367086",
       "age": 43,
-      "visits": 210,
-      "jobType": "Manager",
-      "progress": 56,
+      "visits": 570,
+      "jobType": "Technician",
+      "progress": 79,
       "status": {
-        "name": "Inprocess",
-        "color": "#159afb",
-        "id": "30a9174f-aa32-44d8-9016-f68a0200cefd"
+        "name": "InActive",
+        "color": "red",
+        "id": "dbf31a69-f18d-41ef-8b3b-18f8fdffdfa5"
       },
       "statusMenu": [
         {
-          "name": "Pending",
-          "color": "yellow",
-          "id": "761e6799-58d6-454d-a419-89f4f18e953b"
+          "name": "InActive",
+          "color": "red",
+          "id": "71a820b1-5002-47b4-8c64-6f197af13d1b"
         },
         {
-          "name": "Inprocess",
-          "color": "#159afb",
-          "id": "eed1aaa6-be15-45fc-9e4b-3a68da082572"
-        },
-        {
-          "name": "Complete",
+          "name": "Active",
           "color": "#0cf90c",
-          "id": "512ad2fd-d24d-425a-a026-8d390971763d"
+          "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
         }
       ],
       "gender": "male",
       "tasks": [
         {
-          "id": "4d89a6d2-904b-4b79-ae7a-f5b3bc83dba0",
-          "title": "voco suffragium corrigo pectus cauda amissio",
-          "description": "Aestas solitudo careo ait cinis rem totidem vado itaque tendo.",
-          "dueDate": "2024-03-29T19:44:32.542Z"
+          "id": "af350b7d-c31c-40a3-b047-f0b0409495c9",
+          "title": "tertius ventus ventus campana admiratio adipisci",
+          "description": "Degusto vetus agnitio arcus vestigium creber vindico vomica pecco.",
+          "dueDate": "2024-04-03T06:01:44.525Z"
         }
       ],
       "projects": [
         {
-          "id": "9f17a3ed-f54c-4644-99c1-a32483375d41",
-          "title": "Handmade Granite Pizza",
-          "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-          "dueDate": "2024-08-11T11:52:00.750Z"
+          "id": "c9131db1-3b9b-42df-959e-64bc8be745a1",
+          "title": "Gorgeous Frozen Chicken",
+          "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+          "dueDate": "2024-01-18T08:21:02.462Z"
         }
       ],
       "events": [
         {
-          "id": "7cba9200-4856-43fc-8969-3e57b61852ab",
-          "title": "tyrannus timidus territo demo",
-          "description": "vinitor modi animi aptus spoliatio constans alias rem sulum ubi",
-          "start": "2024-04-26T04:53:37.756Z",
-          "end": "2024-07-30T08:28:13.908Z",
-          "allDay": true
-        }
-      ],
-      "allowFollowUp": {
-        "type": "Yes"
-      }
-    },
-    {
-      "id": "8170ea6d-f733-46d0-893f-aae0440ecb23",
-      "role": "client",
-      "email": "Daryl.Davis96@gmail.com",
-      "name": "Roland Walsh",
-      "password": "lu98ABis",
-      "date": "2022-09-26T23:45:55.864Z",
-      "profile": "https://avatars.githubusercontent.com/u/11608062",
-      "age": 47,
-      "visits": 686,
-      "jobType": "Associate",
-      "progress": 90,
-      "status": {
-        "name": "Pending",
-        "color": "yellow",
-        "id": "01213f08-4c33-491a-a871-ac591b7746ff"
-      },
-      "statusMenu": [
-        {
-          "name": "Pending",
-          "color": "yellow",
-          "id": "5d72aac4-bbfb-4857-ad6b-e75aad3ac3fc"
-        },
-        {
-          "name": "Inprocess",
-          "color": "#159afb",
-          "id": "fe018671-2416-493d-b51a-568a98c130c0"
-        },
-        {
-          "name": "Complete",
-          "color": "#0cf90c",
-          "id": "abd045f7-1ad7-4259-8621-a391f4b05fb6"
-        }
-      ],
-      "gender": "male",
-      "tasks": [
-        {
-          "id": "03fbc05f-c60d-4c58-8c76-4fb42b1f0fee",
-          "title": "administratio calamitas alii aeternus ancilla velit",
-          "description": "Spiritus conqueror deporto soleo cauda tenax.",
-          "dueDate": "2024-03-30T08:24:09.586Z"
-        }
-      ],
-      "projects": [
-        {
-          "id": "c7ec892f-8609-46c5-a272-30c826065ea7",
-          "title": "Incredible Plastic Chicken",
-          "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-          "dueDate": "2024-08-06T02:02:52.953Z"
-        }
-      ],
-      "events": [
-        {
-          "id": "d32c5e8f-9be2-47f2-95ef-1bc68a88b4c7",
-          "title": "taedium uxor aedificium explicabo",
-          "description": "ab absorbeo aspicio supra valens absorbeo id tabernus textilis utilis",
-          "start": "2024-01-20T11:05:59.648Z",
-          "end": "2024-06-08T18:38:00.958Z",
+          "id": "6221556a-8793-4146-8815-8bcea916943a",
+          "title": "venia conservo abundans verbum",
+          "description": "basium tribuo votum patria tero accusator vacuus suscipit cruciamentum deprecator",
+          "start": "2024-10-17T02:57:08.233Z",
+          "end": "2024-10-04T22:58:02.337Z",
           "allDay": false
         }
       ],
       "allowFollowUp": {
-        "type": "Yes"
+        "type": "No"
       }
     },
     {
-      "id": "08fd3f29-41cf-427b-beb0-bb91a562fcec",
-      "role": "client",
-      "email": "Bernadette_Funk@hotmail.com",
-      "name": "Dr. Adam Terry",
-      "password": "kDNJLdVe",
-      "date": "2024-04-02T09:55:43.903Z",
-      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/63.jpg",
-      "age": 42,
-      "visits": 740,
-      "jobType": "Planner",
-      "progress": 64,
-      "status": {
-        "name": "Inprocess",
-        "color": "#159afb",
-        "id": "a4b66ac0-188f-4c64-a69f-fbddaa5aa5f5"
-      },
-      "statusMenu": [
-        {
-          "name": "Pending",
-          "color": "yellow",
-          "id": "3aff8237-4bb3-43d3-b8d9-46dfcaf82862"
-        },
-        {
-          "name": "Inprocess",
-          "color": "#159afb",
-          "id": "231ca90b-a189-4ce3-878d-79f0aed3147f"
-        },
-        {
-          "name": "Complete",
-          "color": "#0cf90c",
-          "id": "ef607223-6b40-4443-97dc-c23cbbc00c15"
-        }
+      "id": "8afd92c3-9613-4215-931e-11a3feb52515",
+      "role": [
+        "lead"
       ],
-      "gender": "female",
-      "tasks": [
-        {
-          "id": "013d1368-dcc3-4a60-8708-26748d4baf09",
-          "title": "ulciscor delinquo tabula tum acerbitas ea",
-          "description": "Astrum adduco ambulo viridis.",
-          "dueDate": "2024-03-30T11:38:58.580Z"
-        }
-      ],
-      "projects": [
-        {
-          "id": "9c640b00-2494-4fd9-ba61-f14cf7fec53a",
-          "title": "Oriental Fresh Table",
-          "description": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-          "dueDate": "2024-09-08T10:20:49.733Z"
-        }
-      ],
-      "events": [
-        {
-          "id": "bd377084-054d-4f27-b798-9b679b543c7b",
-          "title": "consuasor termes adipisci ipsum",
-          "description": "temptatio truculenter celo crinis subito amor sequi cruciamentum absens ulterius",
-          "start": "2024-09-12T03:35:01.972Z",
-          "end": "2024-07-03T22:52:42.020Z",
-          "allDay": true
-        }
-      ],
-      "allowFollowUp": {
-        "type": "Yes"
-      }
-    },
-    {
-      "id": "c0393f28-497d-4429-82eb-03ae84354d2a",
-      "role": "employee",
-      "email": "Edgardo.Keebler23@yahoo.com",
-      "name": "Bradford Schamberger",
-      "password": "8P8O1Jyq",
-      "date": "2024-08-03T18:52:33.466Z",
-      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1045.jpg",
-      "age": 28,
-      "visits": 253,
-      "jobType": "Architect",
+      "email": "Ricardo_Nicolas-Metz94@gmail.com",
+      "name": "Evan Hilll",
+      "password": "bLkPd9Qe",
+      "date": "2022-03-24T11:40:03.178Z",
+      "profile": "https://avatars.githubusercontent.com/u/82538957",
+      "age": 45,
+      "visits": 467,
+      "jobType": "Administrator",
       "progress": 44,
       "status": {
-        "name": "Complete",
-        "color": "#0cf90c",
-        "id": "490517b1-7b07-4fbd-b9ad-f2b41b4b190d"
+        "name": "InActive",
+        "color": "red",
+        "id": "a1c3dae9-88e7-4e94-af88-f05941178636"
       },
       "statusMenu": [
         {
-          "name": "Pending",
-          "color": "yellow",
-          "id": "3ea1c975-e3ec-4176-a05b-a630eca6be70"
+          "name": "InActive",
+          "color": "red",
+          "id": "c91bb6aa-7121-49ef-bd0a-a3d0b5e5de81"
         },
         {
-          "name": "Inprocess",
-          "color": "#159afb",
-          "id": "1d4b796f-9dc9-4345-8e20-fafe014fd82a"
-        },
-        {
-          "name": "Complete",
+          "name": "Active",
           "color": "#0cf90c",
-          "id": "26598d67-77bd-4c91-ad92-d5c6cf14f298"
+          "id": "399d7e6a-cd35-4d3f-aeb7-4af3185305fd"
         }
       ],
       "gender": "male",
       "tasks": [
         {
-          "id": "4fda0d1d-d2bc-46c8-8b49-a85172fa08d4",
-          "title": "theca coruscus decor suffragium tardus utique",
-          "description": "Derideo aiunt amor audacia apostolus dignissimos.",
-          "dueDate": "2024-03-30T09:50:12.285Z"
+          "id": "096aa6c9-65b9-4953-a61a-798a836f8866",
+          "title": "tamen dolore demitto texo libero cognatus",
+          "description": "Concedo caterva agnitio ambulo caecus cotidie atqui praesentium uberrime confugo.",
+          "dueDate": "2024-04-02T23:13:54.299Z"
         }
       ],
       "projects": [
         {
-          "id": "e3f4302d-11aa-4ba2-83a2-dad567bf97fc",
-          "title": "Generic Steel Salad",
-          "description": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-          "dueDate": "2024-05-06T06:01:22.299Z"
+          "id": "73c7feea-569a-44c3-998e-a6d28b9772fe",
+          "title": "Recycled Bronze Table",
+          "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+          "dueDate": "2024-07-03T23:08:20.271Z"
         }
       ],
       "events": [
         {
-          "id": "e5f38b7a-e1b7-4f5f-b41e-2094c452853e",
-          "title": "cognatus pauci accendo suasoria",
-          "description": "amor delectus occaecati amissio vulgivagus cursus capillus alo collum terga",
-          "start": "2024-07-27T07:41:44.546Z",
-          "end": "2024-09-10T12:13:49.077Z",
+          "id": "be26d586-260a-4495-8913-391f82983244",
+          "title": "verto vilis conturbo vox",
+          "description": "aequus tero volo vociferor sophismata quo veniam vel casso damnatio",
+          "start": "2024-02-27T13:11:54.696Z",
+          "end": "2024-10-22T06:04:31.513Z",
+          "allDay": false
+        }
+      ],
+      "allowFollowUp": {
+        "type": "No"
+      }
+    },
+    {
+      "id": "d80be13b-09f2-48d7-b847-8b7c0ba9ccc8",
+      "role": [
+        "client"
+      ],
+      "email": "Eula_Brekke@hotmail.com",
+      "name": "Donnie Schoen",
+      "password": "Z3PYbd76",
+      "date": "2024-07-04T03:48:03.736Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/619.jpg",
+      "age": 36,
+      "visits": 260,
+      "jobType": "Architect",
+      "progress": 55,
+      "status": {
+        "name": "Active",
+        "color": "#0cf90c",
+        "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+      },
+      "statusMenu": [
+        {
+          "name": "InActive",
+          "color": "red",
+          "id": "84fd9df3-a764-4627-980d-8aeafa63324d"
+        },
+        {
+          "name": "Active",
+          "color": "#0cf90c",
+          "id": "bcae46ca-e70c-47c2-94a7-ecb0cb205223"
+        }
+      ],
+      "gender": "male",
+      "tasks": [
+        {
+          "id": "fc748fa8-672e-4034-b21c-5e7b02518b7d",
+          "title": "tero pauci accusantium constans tabgo ducimus",
+          "description": "Colligo delicate terror cupressus.",
+          "dueDate": "2024-04-02T07:36:02.131Z"
+        }
+      ],
+      "projects": [
+        {
+          "id": "cab6e9f1-0df2-4d49-b046-01a92d778cc0",
+          "title": "Incredible Soft Bike",
+          "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+          "dueDate": "2024-09-03T06:04:45.719Z"
+        }
+      ],
+      "events": [
+        {
+          "id": "93eaf2e5-2aa5-4b3c-8e62-7185e2df3523",
+          "title": "synagoga tubineus vesica canis",
+          "description": "curriculum testimonium sufficio stipes conitor dolorem attollo crustulum arguo dens",
+          "start": "2024-01-13T07:37:13.077Z",
+          "end": "2024-11-05T06:54:27.758Z",
+          "allDay": false
+        }
+      ],
+      "allowFollowUp": {
+        "type": "No"
+      }
+    },
+    {
+      "id": "88dbdbed-c5cb-4f83-b3b6-268e9f9dd4bb",
+      "role": [
+        "client"
+      ],
+      "email": "Albertha34@yahoo.com",
+      "name": "Evan Balistreri-Breitenberg",
+      "password": "6C8n7uLu",
+      "date": "2023-04-10T22:46:46.659Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/915.jpg",
+      "age": 45,
+      "visits": 488,
+      "jobType": "Liaison",
+      "progress": 86,
+      "status": {
+        "name": "Active",
+        "color": "#0cf90c",
+        "id": "41a1a8ed-9a2c-4191-a01a-376d74d392c4"
+      },
+      "statusMenu": [
+        {
+          "name": "InActive",
+          "color": "red",
+          "id": "b775b442-a3da-4038-9734-c97816a00a95"
+        },
+        {
+          "name": "Active",
+          "color": "#0cf90c",
+          "id": "73acda09-6f9f-4ba7-8598-bd73ca2edfbc"
+        }
+      ],
+      "gender": "female",
+      "tasks": [
+        {
+          "id": "bd3ab5d3-9bed-454a-826c-a2ded6a689db",
+          "title": "adflicto carus vis atqui facilis accusamus",
+          "description": "Arma commodi cernuus colligo.",
+          "dueDate": "2024-04-02T09:08:52.233Z"
+        }
+      ],
+      "projects": [
+        {
+          "id": "395657a3-50f0-408a-8f9c-6afac163abfa",
+          "title": "Refined Bronze Pizza",
+          "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+          "dueDate": "2024-06-12T07:04:58.420Z"
+        }
+      ],
+      "events": [
+        {
+          "id": "12faa4d5-cf8c-4067-b6c5-3c894c673f43",
+          "title": "titulus verumtamen cursim cohibeo",
+          "description": "adipisci mollitia spectaculum confugo temporibus virtus curso aequitas commodi aperio",
+          "start": "2024-06-13T12:23:18.371Z",
+          "end": "2024-06-02T00:51:55.406Z",
           "allDay": false
         }
       ],
       "allowFollowUp": {
         "type": "Yes"
+      }
+    },
+    {
+      "id": "7d123ea9-f277-4d4f-a4e9-c27cbac98112",
+      "role": [
+        "client"
+      ],
+      "email": "Juanita.Mitchell63@gmail.com",
+      "name": "Mr. Percy Abshire DDS",
+      "password": "HuC99Idx",
+      "date": "2024-03-23T15:36:59.952Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/101.jpg",
+      "age": 41,
+      "visits": 519,
+      "jobType": "Strategist",
+      "progress": 40,
+      "status": {
+        "name": "InActive",
+        "color": "red",
+        "id": "055641be-a92d-4a0e-9bfe-865c90a048e0"
+      },
+      "statusMenu": [
+        {
+          "name": "InActive",
+          "color": "red",
+          "id": "48a242bb-8bae-473c-a596-fe2c395358cf"
+        },
+        {
+          "name": "Active",
+          "color": "#0cf90c",
+          "id": "c64bcd7b-c4f9-42bd-9ceb-35501b8209e6"
+        }
+      ],
+      "gender": "female",
+      "tasks": [
+        {
+          "id": "0037ee04-c399-4e6d-8fc3-68ee4e4a57c1",
+          "title": "creber celo facere tutis antea substantia",
+          "description": "Ratione vigilo velum copia communis talis admiratio clam tendo.",
+          "dueDate": "2024-04-02T11:52:45.112Z"
+        }
+      ],
+      "projects": [
+        {
+          "id": "d878407b-956d-4104-a964-9c59f700ac58",
+          "title": "Elegant Soft Table",
+          "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+          "dueDate": "2024-03-29T10:11:38.629Z"
+        }
+      ],
+      "events": [
+        {
+          "id": "31060bcd-08fa-4b25-8638-fb1909b90cf7",
+          "title": "volva acquiro decerno trepide",
+          "description": "exercitationem depopulo ustilo ubi tabesco vulticulus tempore demulceo arto condico",
+          "start": "2024-03-17T06:38:40.364Z",
+          "end": "2024-08-25T23:36:47.013Z",
+          "allDay": false
+        }
+      ],
+      "allowFollowUp": {
+        "type": "No"
+      }
+    },
+    {
+      "id": "43fe130f-e599-43c7-8d66-556918e2e58e",
+      "role": [
+        "lead"
+      ],
+      "email": "Dane16@yahoo.com",
+      "name": "Kari Abernathy",
+      "password": "I9oZHcU6",
+      "date": "2023-12-03T06:00:39.170Z",
+      "profile": "https://avatars.githubusercontent.com/u/87552959",
+      "age": 47,
+      "visits": 899,
+      "jobType": "Engineer",
+      "progress": 79,
+      "status": {
+        "name": "InActive",
+        "color": "red",
+        "id": "49664aec-9abe-4fbd-9564-f1520d30acd4"
+      },
+      "statusMenu": [
+        {
+          "name": "InActive",
+          "color": "red",
+          "id": "4eb86b21-166c-4d25-b81f-a6024f338af7"
+        },
+        {
+          "name": "Active",
+          "color": "#0cf90c",
+          "id": "84c4ccf7-262f-48d5-a014-76b8f12a5008"
+        }
+      ],
+      "gender": "male",
+      "tasks": [
+        {
+          "id": "0bdbeca2-d4e5-4740-a116-b7b45ee199d2",
+          "title": "accusantium totidem talis crebro error confero",
+          "description": "Sub volaticus acies recusandae.",
+          "dueDate": "2024-04-02T19:13:52.969Z"
+        }
+      ],
+      "projects": [
+        {
+          "id": "34b1fe13-1dd0-4e7b-8fb1-89ef711bbeb2",
+          "title": "Recycled Rubber Sausages",
+          "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+          "dueDate": "2024-02-25T12:32:00.384Z"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1bca4f3-a77b-458f-a08e-c422e2c87b25",
+          "title": "repudiandae crapula officiis viscus",
+          "description": "vehemens demoror cohors theatrum auctor adficio desidero talis solvo strenuus",
+          "start": "2024-05-31T16:31:07.726Z",
+          "end": "2024-05-07T14:03:37.787Z",
+          "allDay": false
+        }
+      ],
+      "allowFollowUp": {
+        "type": "Yes"
+      }
+    },
+    {
+      "id": "cd2fcde8-2dd5-450e-9361-bad47f6dfa4e",
+      "role": [
+        "client"
+      ],
+      "email": "Osvaldo67@yahoo.com",
+      "name": "Devin Haley",
+      "password": "qFFehQxE",
+      "date": "2024-07-29T22:47:04.474Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/716.jpg",
+      "age": 45,
+      "visits": 701,
+      "jobType": "Officer",
+      "progress": 78,
+      "status": {
+        "name": "InActive",
+        "color": "red",
+        "id": "27e36b0f-b3a3-46fe-8fd3-d449362c3c9e"
+      },
+      "statusMenu": [
+        {
+          "name": "InActive",
+          "color": "red",
+          "id": "bf8c5e86-b320-482a-b609-17a462797591"
+        },
+        {
+          "name": "Active",
+          "color": "#0cf90c",
+          "id": "dae32a2e-1db5-4f64-94d9-223931074f68"
+        }
+      ],
+      "gender": "male",
+      "tasks": [
+        {
+          "id": "1a7ccb77-0dec-4b87-b87d-2fde4cf0fe83",
+          "title": "delego defetiscor deprecator auxilium aqua calculus",
+          "description": "Una voro adamo civitas adamo acceptus quos somniculosus tenax.",
+          "dueDate": "2024-04-03T06:30:36.345Z"
+        }
+      ],
+      "projects": [
+        {
+          "id": "9e3f605c-b2da-4d09-a833-a67ed57f9836",
+          "title": "Gorgeous Concrete Salad",
+          "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+          "dueDate": "2024-11-22T18:25:07.018Z"
+        }
+      ],
+      "events": [
+        {
+          "id": "c258cdbe-c2d5-4020-9c18-5144af020cd2",
+          "title": "surculus vulticulus collum amplitudo",
+          "description": "speculum ara turpis congregatio tamdiu magnam vicissitudo talis assentator subnecto",
+          "start": "2024-01-26T07:41:06.702Z",
+          "end": "2024-07-10T22:34:48.771Z",
+          "allDay": false
+        }
+      ],
+      "allowFollowUp": {
+        "type": "No"
+      }
+    },
+    {
+      "id": "8ff2d6cd-fca8-4cb0-9fd3-04cb28cee905",
+      "role": [
+        "lead"
+      ],
+      "email": "Frances_Wuckert@gmail.com",
+      "name": "Terry Morar MD",
+      "password": "Tv4CkldI",
+      "date": "2022-09-12T20:35:13.314Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/744.jpg",
+      "age": 40,
+      "visits": 894,
+      "jobType": "Administrator",
+      "progress": 76,
+      "status": {
+        "name": "Active",
+        "color": "#0cf90c",
+        "id": "230ff037-b240-4057-8720-716a8f2513be"
+      },
+      "statusMenu": [
+        {
+          "name": "InActive",
+          "color": "red",
+          "id": "c5eb7465-2904-4a20-ab0d-b9e915990df9"
+        },
+        {
+          "name": "Active",
+          "color": "#0cf90c",
+          "id": "29d0f7bb-cddf-4018-a1ce-266c3dc88259"
+        }
+      ],
+      "gender": "female",
+      "tasks": [
+        {
+          "id": "06a4a22a-3401-4119-90af-a6d606d0ae53",
+          "title": "admoneo aestus solitudo tum corrupti aeternus",
+          "description": "Torqueo vomer adstringo.",
+          "dueDate": "2024-04-02T22:16:57.318Z"
+        }
+      ],
+      "projects": [
+        {
+          "id": "fffae0cf-c701-44f9-afb1-c9bbb1f23450",
+          "title": "Fantastic Frozen Computer",
+          "description": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+          "dueDate": "2024-10-13T02:42:44.979Z"
+        }
+      ],
+      "events": [
+        {
+          "id": "1a6829d1-cd4a-46c9-b26d-960939e970e3",
+          "title": "conscendo eaque qui ago",
+          "description": "aer audentia collum voluptatum speculum suasoria adsidue vallum supra virtus",
+          "start": "2024-08-29T09:18:10.502Z",
+          "end": "2024-01-19T22:12:17.371Z",
+          "allDay": false
+        }
+      ],
+      "allowFollowUp": {
+        "type": "No"
+      }
+    },
+    {
+      "id": "027c11c0-3953-4c33-98b0-1309d3a40b75",
+      "role": [
+        "employee"
+      ],
+      "email": "Gladyce_Casper@gmail.com",
+      "name": "Benny Cronin",
+      "password": "rMmUT9wj",
+      "date": "2022-08-06T19:43:42.736Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1059.jpg",
+      "age": 36,
+      "visits": 321,
+      "jobType": "Administrator",
+      "progress": 52,
+      "status": {
+        "name": "InActive",
+        "color": "red",
+        "id": "9df52639-db05-4f2c-9335-b67a02f608dc"
+      },
+      "statusMenu": [
+        {
+          "name": "InActive",
+          "color": "red",
+          "id": "f13a7f7e-41f9-4c9c-ab62-471b36d569b7"
+        },
+        {
+          "name": "Active",
+          "color": "#0cf90c",
+          "id": "8a80606a-661d-454c-bd10-4b2487ee5bcd"
+        }
+      ],
+      "gender": "female",
+      "tasks": [
+        {
+          "id": "61bec2db-5ef1-416a-a3b3-10e757a0ccfc",
+          "title": "vesper eius aut defessus iure solutio",
+          "description": "Votum deserunt eligendi animi alveus currus.",
+          "dueDate": "2024-04-02T19:18:40.143Z"
+        }
+      ],
+      "projects": [
+        {
+          "id": "fa1b0541-0b41-42b1-a91d-498483ea2e73",
+          "title": "Modern Rubber Mouse",
+          "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+          "dueDate": "2024-10-10T11:43:50.964Z"
+        }
+      ],
+      "events": [
+        {
+          "id": "30406314-6e3e-40c3-84ec-64baeb58a2a7",
+          "title": "repellat vero claudeo sublime",
+          "description": "verumtamen debitis cohors carpo ventosus considero eos thalassinus perferendis votum",
+          "start": "2024-05-01T19:04:29.730Z",
+          "end": "2024-11-28T06:00:00.332Z",
+          "allDay": false
+        }
+      ],
+      "allowFollowUp": {
+        "type": "No"
+      }
+    },
+    {
+      "id": "2e6ca4ec-5688-44d4-be34-4f7d9f414f44",
+      "role": [
+        "employee"
+      ],
+      "email": "Ron.Witting12@gmail.com",
+      "name": "Patty Jakubowski",
+      "password": "yqa8ptLU",
+      "date": "2022-05-13T14:39:55.804Z",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/62.jpg",
+      "age": 28,
+      "visits": 591,
+      "jobType": "Manager",
+      "progress": 70,
+      "status": {
+        "name": "Active",
+        "color": "#0cf90c",
+        "id": "e1b5bf53-b592-45af-88dc-8570d8644cb9"
+      },
+      "statusMenu": [
+        {
+          "name": "InActive",
+          "color": "red",
+          "id": "6a764eef-9b29-426b-9998-01efe585de65"
+        },
+        {
+          "name": "Active",
+          "color": "#0cf90c",
+          "id": "53d2d819-4b7b-4a41-ab47-a43eea977f32"
+        }
+      ],
+      "gender": "male",
+      "tasks": [
+        {
+          "id": "11124734-791e-4e9a-b236-f31a1ed0b89f",
+          "title": "triduana avaritia nisi condico trepide complectus",
+          "description": "Demens vulgus quidem aurum taceo brevis quibusdam dicta commodi delicate.",
+          "dueDate": "2024-04-02T14:36:12.955Z"
+        }
+      ],
+      "projects": [
+        {
+          "id": "14f97d79-1948-445b-b7e7-4314ac554372",
+          "title": "Handcrafted Frozen Cheese",
+          "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+          "dueDate": "2024-06-30T01:11:02.263Z"
+        }
+      ],
+      "events": [
+        {
+          "id": "029aec0c-d468-4668-8807-41c6908981c7",
+          "title": "id amplus tam animadverto",
+          "description": "stips bardus virga atavus celer stabilis casus via cunabula studio",
+          "start": "2024-04-12T12:01:21.646Z",
+          "end": "2024-02-26T22:02:25.217Z",
+          "allDay": false
+        }
+      ],
+      "allowFollowUp": {
+        "type": "No"
       }
     }
   ]

@@ -91,7 +91,7 @@ const ViewEvent = () => {
             </div>
           </div>
 
-          {user?.role === "admin" && (
+          {user?.role?.includes("admin") && (
             <Menu>
               <li onClick={Update}>Edit</li>
               <li onClick={Delete}>Delete</li>

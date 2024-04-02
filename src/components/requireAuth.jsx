@@ -8,7 +8,10 @@ const RequireAuth = ({ roleAccess = [] }) => {
   const { user } = useSelector((state) => state.auth);
 
   if (user !== undefined && Object.keys(user).length > 0) {
-    if (roleAccess.length === 0 || roleAccess.includes(user?.role)) {
+    if (
+      roleAccess.length === 0 ||
+      roleAccess.some((role) => user?.role.includes(role))
+    ) {
       return <Layout />;
     } else {
       return <Navigate to="/unAuthorized" state={{ from: location }} replace />;

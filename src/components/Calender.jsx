@@ -83,8 +83,8 @@ const Calender = ({
 function renderEventContent(eventInfo) {
   return (
     <div
-      style={{ background: "red" }}
-      className="w-full rounded-sm text-white pl-1 flex items-center"
+      // style={{ background: "red", color:"white" }}
+      className="w-full rounded-sm pl-1 flex items-center"
     >
       <b>{FlConverter(eventInfo?.event?.title)}</b>
     </div>

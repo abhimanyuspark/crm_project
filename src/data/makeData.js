@@ -11,7 +11,7 @@ const range = (len) => {
 const newPerson = () => {
   return {
     id: faker.string.uuid(),
-    role: faker.helpers.arrayElement(["employee", "client"]),
+    role: faker.helpers.arrayElement([["employee"], ["client"], ["lead"]]),
     email: faker.internet.email(),
     name: faker.person.fullName(),
     password: faker.internet.password({ length: 8 }),
@@ -22,14 +22,12 @@ const newPerson = () => {
     jobType: faker.person.jobType(),
     progress: faker.number.int({ min: 40, max: 90 }),
     status: faker.helpers.arrayElement([
-      { name: "Pending", color: "yellow", id: faker.string.uuid() },
-      { name: "Inprocess", color: "#159afb", id: faker.string.uuid() },
-      { name: "Complete", color: "#0cf90c", id: faker.string.uuid() },
+      { name: "InActive", color: "red", id: faker.string.uuid() },
+      { name: "Active", color: "#0cf90c", id: faker.string.uuid() },
     ]),
     statusMenu: [
-      { name: "Pending", color: "yellow", id: faker.string.uuid() },
-      { name: "Inprocess", color: "#159afb", id: faker.string.uuid() },
-      { name: "Complete", color: "#0cf90c", id: faker.string.uuid() },
+      { name: "InActive", color: "red", id: faker.string.uuid() },
+      { name: "Active", color: "#0cf90c", id: faker.string.uuid() },
     ],
     gender: faker.person.sex(),
     tasks: [

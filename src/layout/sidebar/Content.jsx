@@ -12,14 +12,13 @@ const Content = () => {
   const { pathname } = useLocation();
   const { user } = useSelector((state) => state.auth);
 
-  const data =
-    user?.role === "admin"
-      ? admin
-      : user?.role === "employee"
-      ? employee
-      : user?.role === "client"
-      ? client
-      : "";
+  const data = user?.role?.includes("admin")
+    ? admin
+    : user?.role?.includes("employee")
+    ? employee
+    : user?.role?.includes("client")
+    ? client
+    : [];
 
   const handleIndex = (i) => {
     setActiveChildIndex((prevIndex) => (prevIndex === i ? null : i));

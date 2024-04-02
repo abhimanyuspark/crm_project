@@ -9,14 +9,13 @@ const Search = () => {
   const { user } = useSelector((state) => state.auth);
   const [show, setShow] = useState(false);
   const [query, setQuery] = useState("");
-  const data =
-    user?.role === "admin"
-      ? admin
-      : user?.role === "employee"
-      ? employee
-      : user?.role === "client"
-      ? client
-      : [];
+  const data = user?.role?.includes("admin")
+    ? admin
+    : user?.role?.includes("employee")
+    ? employee
+    : user?.role?.includes("client")
+    ? client
+    : [];
 
   useEffect(() => {
     if (show) {
