@@ -35,7 +35,7 @@ const WeeksDays = memo(() => {
   return (
     <>
       <div className="flex justify-between p-4 border-b border-slate-200">
-        <h2 className="text-lg font-bold">Week Days</h2>
+        <h2 className="text-lg font-bold">Weekly Timelogs</h2>
       </div>
       <div className="flex gap-2 p-4">
         {days.map((day, index) => (

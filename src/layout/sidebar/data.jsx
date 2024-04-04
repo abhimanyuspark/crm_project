@@ -33,7 +33,7 @@ export const admin = [
   },
   {
     id: 4,
-    icon: <FaCalendar size={15} />,
+    icon: <FaCalendar />,
     value: "Events",
     link: "/events",
   },
@@ -75,7 +75,7 @@ export const employee = [
   },
   {
     id: 2,
-    icon: <FaCalendar size={15} />,
+    icon: <FaCalendar />,
     value: "Events",
     link: "/events",
   },

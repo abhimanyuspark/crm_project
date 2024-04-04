@@ -7,6 +7,7 @@ import {
   CheckBox,
   Container,
   InputText,
+  ReactDatePicker,
   Select,
   TextEditor,
 } from "../../../../components";
@@ -14,7 +15,6 @@ import { FaCheck, FaTimes } from "../../../../components/icons";
 import { addEventToUser, roleUsers } from "../../../../redux/server/server";
 import { addEventReducer } from "../../../../redux/features/login/reduxLogin";
 import { FlConverter } from "../../../../utilities";
-import DatePicker from "react-datepicker";
 import { v4 as uuid } from "uuid";
 
 const AddEvent = () => {
@@ -72,7 +72,9 @@ const AddEvent = () => {
             event: formData,
           })
         );
-        await dispatch(addEventReducer({ id: user?.id, event: formData }));
+        if (user?.id === employee?.id) {
+          await dispatch(addEventReducer(formData));
+        }
         navigate(-1, { replace: true });
       } catch (error) {
         console.log(error);
@@ -131,25 +133,23 @@ const AddEvent = () => {
               {/* start date */}
               <div className="flex gap-2 flex-col">
                 <label className="text-base">Start Date</label>
-                <DatePicker
-                  selected={new Date(formData.start)}
+                <ReactDatePicker
+                  value={new Date(formData.start)}
                   onChange={(date) =>
                     setFormData((p) => ({ ...p, start: date }))
                   }
-                  showTimeSelect
+                  {...{ showTimeSelect: true }}
                   dateFormat="YYYY-MM-dd h:mm:aa"
-                  className="w-full border border-slate-300 hover:border-black p-2 rounded-[0.2rem]"
                 />
               </div>
               {/* end Date */}
               <div className="flex gap-2 flex-col">
                 <label className="text-base">End Date</label>
-                <DatePicker
-                  selected={new Date(formData.end)}
+                <ReactDatePicker
+                  value={new Date(formData.end)}
                   onChange={(date) => setFormData((p) => ({ ...p, end: date }))}
-                  showTimeSelect
+                  {...{ showTimeSelect: true }}
                   dateFormat="YYYY-MM-dd h:mm:aa"
-                  className="w-full border border-slate-300 hover:border-black p-2 rounded-[0.2rem]"
                 />
               </div>
             </div>

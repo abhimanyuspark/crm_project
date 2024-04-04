@@ -13,12 +13,15 @@ import KanBan from "./kanban/kanban";
 import DigitalClock from "./DigitalClock";
 import Clock_In from "./Clock_In";
 import Timer from "./Timer";
-import TextEditor from "./TextEditor/TextEditor";
-import Loader from "./Loader";
+import TextEditor from "./TextEditor";
+import { Loader, ImageLoader } from "./Loader";
 import Error from "./Error";
+import Avatar from "./Avatar";
+import ReactDatePicker from "./DatePicker";
 
 export {
   Loader,
+  ImageLoader,
   Error,
   PersistenceAuth,
   RequireAuth,
@@ -40,4 +43,6 @@ export {
   Clock_In,
   Timer,
   TextEditor,
+  Avatar,
+  ReactDatePicker,
 };

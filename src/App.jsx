@@ -24,6 +24,8 @@ import { RequireAuth, PersistenceAuth, Loader } from "./components/index";
 import { Tooltip } from "react-tooltip";
 import { Toaster } from "react-hot-toast";
 import "react-datepicker/dist/react-datepicker.css";
+const intialImage =
+  "https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png";
 
 function App() {
   const role = {
@@ -54,12 +56,18 @@ function App() {
           <Route element={<RequireAuth roleAccess={[role.Admin]} />}>
             <Route path="/clients" element={<Client />} />
             <Route path="/clients/:id" element={<ViewClient />} />
-            <Route path="/clients/add" element={<AddClient />} />
+            <Route
+              path="/clients/add"
+              element={<AddClient intialImage={intialImage} />}
+            />
             <Route path="/clients/:id/edit" element={<EditClient />} />
 
             <Route path="/employees" element={<Employee />} />
             <Route path="/employees/:id" element={<ViewEmployee />} />
-            <Route path="/employees/add" element={<AddEmployee />} />
+            <Route
+              path="/employees/add"
+              element={<AddEmployee intialImage={intialImage} />}
+            />
             <Route path="/employees/:id/edit" element={<EditEmployee />} />
           </Route>
 

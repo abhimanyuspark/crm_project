@@ -18,10 +18,10 @@
 .menuBar:hover {
   background-color: gainsboro;
 }
-.menuBar:focus {
+/* .menuBar:focus {
   outline: 2px solid blue;
   outline-offset: -4px;
-}
+} */
 .list {
   position: absolute;
   width: 130px;

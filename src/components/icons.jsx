@@ -15,6 +15,7 @@ import {
   FaUserFriends,
   FaLongArrowAltUp,
   FaLongArrowAltDown,
+  FaLongArrowAltLeft,
   FaAngleDoubleLeft,
   FaAngleDoubleRight,
   FaPlus,
@@ -24,6 +25,7 @@ import {
   FaPauseCircle,
   FaStopCircle,
   FaCalendar,
+  FaRandom,
 } from "react-icons/fa";
 import { FaGear } from "react-icons/fa6";
 import { MdLogin, MdLogout } from "react-icons/md";
@@ -52,6 +54,7 @@ export {
   IoMdMale,
   FaLongArrowAltUp,
   FaLongArrowAltDown,
+  FaLongArrowAltLeft,
   FaAngleDoubleLeft,
   FaAngleDoubleRight,
   FaSearch,
@@ -60,6 +63,7 @@ export {
   FaPauseCircle,
   FaStopCircle,
   FaCalendar,
+  FaRandom,
   BsThreeDotsVertical as ThDotV,
   BsFillKanbanFill as BsKanBan,
   MdLogin,

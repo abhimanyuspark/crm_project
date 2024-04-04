@@ -59,7 +59,7 @@ const InputText = ({
           }}
         />
         {button && (
-          <div className="p-2 border-l border-slate-300 hover:bg-slate-200 cursor-pointer flex items-center h-full">
+          <div className="border-l border-slate-300 cursor-pointer h-full">
             {button}
           </div>
         )}

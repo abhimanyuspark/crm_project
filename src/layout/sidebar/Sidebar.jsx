@@ -1,5 +1,5 @@
 import React from "react";
-import { useExpand, useSideBar } from "../../hooks";
+import { useExpand, useInternetCheck, useSideBar } from "../../hooks";
 import Content from "./Content";
 import { FaAngleLeft, FaAngleRight } from "../../components/icons";
 import SVG from "../../assets/react.svg";
@@ -64,6 +64,7 @@ const Sidebar = () => {
 const Header = ({ open }) => {
   const { user } = useSelector((state) => state.auth);
   const { menu } = useSelector((state) => state.layout);
+  const isOnline = useInternetCheck();
 
   return (
     <div
@@ -76,7 +77,15 @@ const Header = ({ open }) => {
         }`}
       >
         <h3 className="text-lg font-bold text-center">CRM</h3>
-        <p className="text-sm text-white truncate w-auto">{user?.name}</p>
+        <p className="text-sm text-white truncate w-auto flex items-center gap-2">
+          <span
+            style={
+              isOnline ? { background: "lightgreen" } : { background: "red" }
+            }
+            className="w-3 h-3 rounded-full"
+          ></span>
+          {user?.name}
+        </p>
       </div>
 
       <img

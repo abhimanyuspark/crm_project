@@ -95,7 +95,7 @@ const Login = () => {
                     setShow(!show);
                   }}
                   type="button"
-                  className="text-slate-600"
+                  className="px-2 text-slate-600 h-full border-r border-slate-300 flex items-center justify-center hover:bg-slate-200"
                 >
                   {show ? <FaEye size={20} /> : <FaEyeSlash size={20} />}
                 </button>

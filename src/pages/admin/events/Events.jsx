@@ -10,15 +10,17 @@ const Events = () => {
 
   return (
     <div>
-      <div className="pb-4">
-        <Button
-          text={"Events"}
-          icon={<FaPlus />}
-          onClick={() => {
-            navigate("/events/create");
-          }}
-        />
-      </div>
+      {user?.role?.includes("admin") && (
+        <div className="pb-4">
+          <Button
+            text={"Events"}
+            icon={<FaPlus />}
+            onClick={() => {
+              navigate("/events/create");
+            }}
+          />
+        </div>
+      )}
 
       <Container>
         <div className="p-8">

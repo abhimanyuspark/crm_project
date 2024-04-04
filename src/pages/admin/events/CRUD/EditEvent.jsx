@@ -7,12 +7,12 @@ import {
   CheckBox,
   Container,
   InputText,
+  ReactDatePicker,
   TextEditor,
 } from "../../../../components";
 import { FaCheck } from "../../../../components/icons";
 import { updateEvent } from "../../../../redux/server/server";
 import { updateEventReducer } from "../../../../redux/features/login/reduxLogin";
-import DatePicker from "react-datepicker";
 
 const EditEvent = () => {
   const { id } = useParams();
@@ -96,25 +96,23 @@ const EditEvent = () => {
               {/* start date */}
               <div className="flex gap-2 flex-col">
                 <label className="text-base">Start Date</label>
-                <DatePicker
-                  selected={new Date(formData.start)}
+                <ReactDatePicker
+                  value={new Date(formData.start)}
                   onChange={(date) =>
                     setFormData((p) => ({ ...p, start: date }))
                   }
-                  showTimeSelect
+                  {...{ showTimeSelect: true }}
                   dateFormat="YYYY-MM-dd h:mm:aa"
-                  className="w-full border border-slate-300 hover:border-black p-2 rounded-[0.2rem]"
                 />
               </div>
               {/* end Date */}
               <div className="flex gap-2 flex-col">
                 <label className="text-base">End Date</label>
-                <DatePicker
-                  selected={new Date(formData.end)}
+                <ReactDatePicker
+                  value={new Date(formData.end)}
                   onChange={(date) => setFormData((p) => ({ ...p, end: date }))}
-                  showTimeSelect
+                  {...{ showTimeSelect: true }}
                   dateFormat="YYYY-MM-dd h:mm:aa"
-                  className="w-full border border-slate-300 hover:border-black p-2 rounded-[0.2rem]"
                 />
               </div>
             </div>

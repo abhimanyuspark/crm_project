@@ -1,3 +1,32 @@
+/* custome loader */
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: #000 #0000;
+  animation: loader 1s infinite;
+}
+@keyframes loader {
+  to {
+    transform: rotate(0.5turn);
+  }
+}
+
+.imageloader {
+  width: calc(80px / cos(45deg));
+  height: 14px;
+  background: repeating-linear-gradient(-45deg, gainsboro 0 15px, #0000 0 20px)
+    left/200% 100%;
+  animation: imageloader 2s infinite linear;
+}
+@keyframes imageloader {
+  100% {
+    background-position: right;
+  }
+}
+
 /* Custom progress bar */
 
 progress::-webkit-progress-bar {

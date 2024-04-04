@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { refreshAuthUser } from "../redux/server/server";
 import { Outlet } from "react-router-dom";
 import Cookies from "js-cookie";
-import Loader from "./Loader";
+import { Loader } from "./index";
 
 const PersistenceAuth = () => {
   const auth = Cookies.get("user");

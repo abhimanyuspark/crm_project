@@ -3,7 +3,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, Select } from "../../../components";
 import { updateStatus, deleteUser } from "../../../redux/server/server";
 import { deleteUserReducer } from "../../../redux/features/roleUsers";
@@ -70,9 +70,15 @@ export const Columns = [
     header: () => "Name",
     cell: (info) => {
       const value = info.getValue();
+      const { id } = info.row.original;
       return (
-        <div className="w-40">
-          <p>{value}</p>
+        <div className="w-48 cursor-pointer">
+          <Link
+            to={`/clients/${id}`}
+            className="text-sm hover:underline text-slate-700 font-semibold"
+          >
+            {value}
+          </Link>
         </div>
       );
     },
