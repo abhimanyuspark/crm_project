@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
   Button,
   CancelButton,
-  CheckBox,
   Container,
   InputText,
   Select,
-  TextEditor,
   Avatar,
   ReactDatePicker,
+  formValidation,
 } from "../../../../components";
 import {
   FaEye,
@@ -18,9 +17,6 @@ import {
   FaCheck,
   FaRandom,
 } from "../../../../components/icons";
-import { addEventToUser, roleUsers } from "../../../../redux/server/server";
-import { addEventReducer } from "../../../../redux/features/login/reduxLogin";
-import { FlConverter } from "../../../../utilities";
 import { v4 as uuid } from "uuid";
 import { useRandomPassword } from "../../../../hooks";
 
@@ -28,8 +24,16 @@ const AddClient = ({ intialImage }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [show, setShow] = useState(false);
+  const FollowUp = [
+    {
+      type: "Yes",
+    },
+    {
+      type: "No",
+    },
+  ];
 
+  const [show, setShow] = useState(false);
   const [formData, setFormData] = useState({
     id: uuid(),
     role: ["client"],
@@ -40,7 +44,7 @@ const AddClient = ({ intialImage }) => {
     age: "",
     visits: "",
     jobType: "",
-    created: new Date(),
+    date: new Date(),
     status: {
       name: "Active",
       color: "#0cf90c",
@@ -58,7 +62,7 @@ const AddClient = ({ intialImage }) => {
         id: "4ddf56cf-c71a-4b62-aa46-86661a8e4dca",
       },
     ],
-    gender: "",
+    gender: "Other",
     tasks: [],
     projects: [],
     events: [],
@@ -69,21 +73,22 @@ const AddClient = ({ intialImage }) => {
   const [formLoading, setFormLoading] = useState(false);
   const [formError, setFormError] = useState({
     name: "",
-    created: "",
     password: "",
     email: "",
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((p) => ({ ...p, [name]: value }));
     setFormError((p) => ({ ...p, [name]: "" }));
   };
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    // Validate form before submit
-    if (true) {
+    const error = formValidation(formData);
+    const isValid = Object.keys(error).length === 0;
+
+    if (isValid) {
       setFormLoading(true);
       try {
         // await dispatch();
@@ -92,6 +97,8 @@ const AddClient = ({ intialImage }) => {
       } catch (error) {
         console.log(error);
       }
+    } else {
+      setFormError((p) => ({ ...p, ...error }));
     }
     setFormLoading(false);
   };
@@ -123,7 +130,8 @@ const AddClient = ({ intialImage }) => {
           className="px-2 h-full flex items-center justify-center hover:bg-slate-200"
           onClick={() => {
             const password = useRandomPassword(10);
-            setFormData({ ...formData, password });
+            setFormData((p) => ({ ...p, password: password }));
+            setFormError((p) => ({ ...p, password: "" }));
           }}
         >
           <FaRandom />
@@ -142,87 +150,119 @@ const AddClient = ({ intialImage }) => {
         {/* Event Form */}
 
         <form onSubmit={onSubmit}>
-          <div className="grid grid-cols-[1fr_auto] gap-8 p-4 ">
-            <div className="grid grid-rows-2 gap-4">
-              <div className="grid grid-cols-3 gap-8">
-                <InputText
-                  label="Name"
-                  name="name"
-                  type="text"
-                  important
-                  error={formError.name}
-                  value={formData.name}
-                  placeholder="Enter a name"
-                  onChange={(e) => {
-                    handleInputChange(e);
-                  }}
-                />
+          <div className="p-4 grid gap-4">
+            <div className="grid grid-cols-[1fr_auto] gap-8">
+              <div className="grid gap-4">
+                {/* Name, Email, Password Fields */}
+                <div className="grid grid-cols-3 gap-8">
+                  <InputText
+                    label="Name"
+                    name="name"
+                    important
+                    error={formError.name}
+                    value={formData.name}
+                    placeholder="Enter a name"
+                    onChange={(e) => {
+                      handleInputChange(e);
+                    }}
+                  />
 
-                <InputText
-                  label="Email"
-                  name="email"
-                  type="email"
-                  important
-                  error={formError.email}
-                  value={formData.email}
-                  placeholder="Enter a email"
-                  onChange={(e) => {
-                    handleInputChange(e);
-                  }}
-                />
+                  <InputText
+                    label="Email"
+                    name="email"
+                    type="text"
+                    important
+                    error={formError.email}
+                    value={formData.email}
+                    placeholder="Enter a email"
+                    onChange={(e) => {
+                      handleInputChange(e);
+                    }}
+                  />
 
-                <InputText
-                  label="Password"
-                  name="password"
-                  important
-                  type={show ? "text" : "password"}
-                  error={formError.password}
-                  value={formData.password}
-                  placeholder="Enter a password"
-                  onChange={(e) => {
-                    handleInputChange(e);
-                  }}
-                  button={<PasswordComponent />}
-                />
+                  <InputText
+                    label="Password"
+                    name="password"
+                    important
+                    type={show ? "text" : "password"}
+                    error={formError.password}
+                    value={formData.password}
+                    placeholder="Enter a password"
+                    onChange={(e) => {
+                      handleInputChange(e);
+                    }}
+                    button={<PasswordComponent />}
+                  />
+                </div>
+
+                <div className="grid grid-cols-3 gap-8">
+                  {/* Created */}
+                  <div className="flex gap-2 flex-col">
+                    <label className="text-base text-slate-600">Created</label>
+                    <ReactDatePicker
+                      value={formData.created}
+                      onChange={(date) =>
+                        setFormData((p) => ({ ...p, created: date }))
+                      }
+                    />
+                  </div>
+
+                  {/* status */}
+                  <div className="flex gap-2 flex-col">
+                    <label className="text-base text-slate-600">Gender</label>
+                    <Select
+                      options={["Male", "Female", "Other"]}
+                      value={formData.gender}
+                      onChange={(data) => {
+                        setFormData((p) => ({ ...p, gender: data }));
+                      }}
+                      fields={(i) => i}
+                    />
+                  </div>
+                </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-8">
-                {/* Created */}
-                <div className="flex gap-2 flex-col">
-                  <label className="text-base text-slate-600">Created</label>
-                  <ReactDatePicker
-                    value={formData.created}
-                    onChange={(date) =>
-                      setFormData((p) => ({ ...p, created: date }))
-                    }
-                  />
-                </div>
-
-                {/* status */}
-                <div className="flex gap-2 flex-col">
-                  <label className="text-base text-slate-600">Status</label>
-                  <Select
-                    options={formData.statusMenu}
-                    value={formData.status}
-                    onChange={(data) => {
-                      setFormData((p) => ({ ...p, status: data }));
-                    }}
-                    optiontemplete={Status}
-                    valuetemplete={Status}
-                    fields={(i) => i.name}
-                  />
-                </div>
+              {/* Profile Image */}
+              <div className="flex gap-2 flex-col">
+                <label className="text-base text-slate-600">
+                  Profile Image
+                </label>
+                <Avatar
+                  value={formData.profile}
+                  onChange={(data) => {
+                    setFormData((p) => ({ ...p, profile: data }));
+                  }}
+                />
               </div>
             </div>
 
-            <div className="flex gap-2 flex-col">
-              <label className="text-base text-slate-600">Profile image</label>
-              <Avatar
-                value={formData.profile}
-                onChange={(data) => {
-                  setFormData({ ...formData, profile: data });
-                }}
-              />
+            <div className="grid grid-cols-3 gap-8">
+              {/* status */}
+              <div className="flex gap-2 flex-col">
+                <label className="text-base text-slate-600">Status</label>
+                <Select
+                  options={formData.statusMenu}
+                  value={formData.status}
+                  onChange={(data) => {
+                    setFormData((p) => ({ ...p, status: data }));
+                  }}
+                  optiontemplete={Status}
+                  valuetemplete={Status}
+                  fields={(i) => i.name}
+                />
+              </div>
+              {/* Follow Up */}
+              <div className="flex gap-2 flex-col">
+                <label className="text-base text-slate-600">Follow Up</label>
+                <Select
+                  options={FollowUp}
+                  value={formData.allowFollowUp}
+                  onChange={(data) => {
+                    setFormData((p) => ({ ...p, allowFollowUp: data }));
+                  }}
+                  fields={(i) => i.type}
+                />
+              </div>
             </div>
           </div>
 

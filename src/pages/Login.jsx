@@ -38,21 +38,17 @@ const Login = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     const validError = formValidation(formData);
-    const updateErrors = {
-      ...validError,
-    };
-
-    const isValid = Object.values(updateErrors).some((e) => e !== "");
+    const isValid = Object.keys(validError).length === 0;
 
     if (isValid) {
-      setErrors((p) => ({ ...p, ...updateErrors }));
-    } else {
       const response = await dispatch(authenticateUser(formData));
       if (response.meta.requestStatus === "fulfilled") {
         navigate(from, { replace: true });
       } else {
         setErrors((p) => ({ ...p, ...response?.payload }));
       }
+    } else {
+      setErrors((p) => ({ ...p, ...validError }));
     }
   };
 
@@ -70,8 +66,8 @@ const Login = () => {
           <h1 className="text-2xl font-bold">Log In</h1>
           <form onSubmit={onSubmit} className="flex gap-5 flex-col w-full">
             <InputText
-              placeholder="Enter a name"
-              label="Name"
+              placeholder="Enter a email"
+              label="Email"
               focus
               name="email"
               important

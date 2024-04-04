@@ -23,10 +23,10 @@ const AddEvent = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [employee, setEmployee] = useState(users[0]);
-  const [client, setClient] = useState("");
-  const employees = users?.filter((i) => !i.role?.includes("client"));
+  const employees = users?.filter((i) => i.role?.includes("employee"));
   const clients = users?.filter((i) => i.role?.includes("client"));
+  const [employee, setEmployee] = useState(user);
+  const [client, setClient] = useState("");
 
   const [formData, setFormData] = useState({
     id: uuid(),

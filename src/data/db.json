@@ -68,11 +68,11 @@
         },
         {
           "id": "87159f12-5f47-4610-85a5-9a04f8f4e1de",
-          "title": "hey",
+          "title": "ffdsfsdf",
           "start": "2024-04-12T09:31:49.000Z",
           "end": "2024-04-12T09:31:49.000Z",
           "description": "<h2>this is mine<span class=\"ql-size-small\">﻿</span><span class=\"ql-emojiblot\" data-name=\"joy\">﻿<span contenteditable=\"false\"><span class=\"ap ap-joy\">😂</span></span>﻿</span></h2>",
-          "allDay": false
+          "allDay": true
         },
         {
           "id": "568fbe71-48a4-4412-b47d-1c76a6c6e850",
@@ -266,9 +266,9 @@
       "jobType": "Liaison",
       "progress": 86,
       "status": {
-        "name": "InActive",
-        "color": "red",
-        "id": "71a820b1-5002-47b4-8c64-6f197af13d1b"
+        "name": "Active",
+        "color": "#0cf90c",
+        "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
       },
       "statusMenu": [
         {

@@ -95,6 +95,9 @@ const CheckBox = ({
         id={name}
         ref={ref}
         checked={checked}
+        // onChange={(e) => {
+        //   onChange(e.target.checked);
+        // }}
         onChange={onChange}
         disabled={disabled}
         className={className + " aspect-square"}

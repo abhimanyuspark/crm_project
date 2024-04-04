@@ -13,7 +13,7 @@ function Select({
   search = false,
   emptylist = false,
   clearicon = false,
-  fields = (i) => i.label,
+  fields = (i) => i,
   optiontemplete = (o) => o,
   valuetemplete = (v) => v,
   multiplvaluetemplete = (m) => m,

@@ -9,6 +9,7 @@ import {
   InputText,
   ReactDatePicker,
   TextEditor,
+  formValidation,
 } from "../../../../components";
 import { FaCheck } from "../../../../components/icons";
 import { updateEvent } from "../../../../redux/server/server";
@@ -33,21 +34,13 @@ const EditEvent = () => {
     title: "",
   });
 
-  const validate = (formData) => {
-    const err = {};
-    ["title"].forEach((f) => {
-      if (!formData[f] || !formData[f].trim()) {
-        err[f] = `${f} field is required.`;
-      }
-    });
-    setFormError(err);
-    return !Object.keys(err).length;
-  };
-
   const onSubmit = async (e) => {
     e.preventDefault();
     // Validate form before submit
-    if (validate(formData)) {
+    const error = formValidation(formData);
+    const isValid = Object.keys(error).length === 0;
+
+    if (isValid) {
       setLoading(true);
       try {
         await dispatch(
@@ -62,6 +55,8 @@ const EditEvent = () => {
       } catch (error) {
         console.log(error);
       }
+    } else {
+      setFormError((p) => ({ ...p, ...error }));
     }
     setLoading(false);
   };
@@ -86,7 +81,7 @@ const EditEvent = () => {
                 value={formData.title}
                 onChange={(e) => {
                   const { name, value } = e.target;
-                  setFormData({ ...formData, [name]: value });
+                  setFormData((p) => ({ ...p, [name]: value }));
                   setFormError((p) => ({ ...p, [name]: "" }));
                 }}
               />
@@ -101,7 +96,7 @@ const EditEvent = () => {
                   onChange={(date) =>
                     setFormData((p) => ({ ...p, start: date }))
                   }
-                  {...{ showTimeSelect: true }}
+                  showTimeSelect={true}
                   dateFormat="YYYY-MM-dd h:mm:aa"
                 />
               </div>
@@ -111,7 +106,7 @@ const EditEvent = () => {
                 <ReactDatePicker
                   value={new Date(formData.end)}
                   onChange={(date) => setFormData((p) => ({ ...p, end: date }))}
-                  {...{ showTimeSelect: true }}
+                  showTimeSelect={true}
                   dateFormat="YYYY-MM-dd h:mm:aa"
                 />
               </div>
@@ -124,8 +119,8 @@ const EditEvent = () => {
                 <CheckBox
                   className="w-5"
                   checked={formData.allDay}
-                  onChange={() =>
-                    setFormData((p) => ({ ...p, allDay: !formData.allDay }))
+                  onChange={(e) =>
+                    setFormData((p) => ({ ...p, allDay: e.target.checked }))
                   }
                 />
               </div>

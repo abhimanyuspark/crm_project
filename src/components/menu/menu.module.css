@@ -3,10 +3,11 @@
   position: relative;
   display: flex;
   justify-content: flex-end;
+  --border: 1px solid gainsboro;
 }
 .menuBar {
   border-radius: 0.2rem;
-  border: 1px solid grey;
+  border: var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,7 +27,7 @@
   position: absolute;
   width: 130px;
   border-radius: 0.2rem;
-  border: 1px solid grey;
+  border: var(--border);
   padding: 8px 0px;
   top: calc(33px + 0.2rem);
   right: 0;
