@@ -200,9 +200,9 @@ const AddClient = ({ intialImage }) => {
                   <div className="flex gap-2 flex-col">
                     <label className="text-base text-slate-600">Created</label>
                     <ReactDatePicker
-                      value={formData.created}
+                      value={formData.date}
                       onChange={(date) =>
-                        setFormData((p) => ({ ...p, created: date }))
+                        setFormData((p) => ({ ...p, date: date }))
                       }
                     />
                   </div>
