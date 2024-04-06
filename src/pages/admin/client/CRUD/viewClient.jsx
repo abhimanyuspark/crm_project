@@ -56,13 +56,15 @@ const ViewClient = ({ intialImage }) => {
           <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
             <p className="font-bold w-72">Gender</p>
             <p className="flex gap-2 items-center">
-              <span
-                className={`text-lg ${
-                  user?.gender === "male" ? "text-blue-700" : "text-pink-700"
-                }`}
-              >
-                {user?.gender === "male" ? <IoMdMale /> : <IoMdFemale />}
-              </span>
+              {user?.gender !== "Other" && (
+                <span
+                  className={`text-lg ${
+                    user?.gender === "Male" ? "text-blue-700" : "text-pink-700"
+                  }`}
+                >
+                  {user?.gender === "Male" ? <IoMdMale /> : <IoMdFemale />}
+                </span>
+              )}
               {FlConverter(user?.gender)}
             </p>
           </div>
