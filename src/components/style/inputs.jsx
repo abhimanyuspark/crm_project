@@ -14,6 +14,7 @@ const InputText = ({
   height = "40px",
   error,
   name,
+  ...rest
 }) => {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -34,8 +35,8 @@ const InputText = ({
             ? "border-black"
             : error
             ? "border-red-500"
-            : "border-slate-300"
-        } group-hover/item:border-black`}
+            : "border-slate-300 group-hover/item:border-black"
+        }`}
       >
         {icon && (
           <div className="p-2 border-r border-slate-300 hover:bg-slate-200 cursor-pointer flex items-center h-full">
@@ -57,6 +58,7 @@ const InputText = ({
           onBlur={() => {
             setIsFocused(false);
           }}
+          {...rest}
         />
         {button && (
           <div className="border-l border-slate-300 cursor-pointer h-full">
@@ -65,7 +67,7 @@ const InputText = ({
         )}
       </div>
 
-      {error && <p className="text-red-500">{error}</p>}
+      {error && <p className="text-red-500 text-sm">{error}</p>}
     </div>
   );
 };

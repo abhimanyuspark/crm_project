@@ -32,7 +32,7 @@
           "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
         }
       ],
-      "gender": "male",
+      "gender": "Male",
       "tasks": [
         {
           "id": "af350b7d-c31c-40a3-b047-f0b0409495c9",
@@ -73,14 +73,6 @@
           "end": "2024-04-12T09:31:49.000Z",
           "description": "<h2>this is mine<span class=\"ql-size-small\">﻿</span><span class=\"ql-emojiblot\" data-name=\"joy\">﻿<span contenteditable=\"false\"><span class=\"ap ap-joy\">😂</span></span>﻿</span></h2>",
           "allDay": true
-        },
-        {
-          "id": "568fbe71-48a4-4412-b47d-1c76a6c6e850",
-          "title": "hey",
-          "start": "2024-04-02T09:41:00.541Z",
-          "end": "2024-04-02T09:41:00.541Z",
-          "description": "",
-          "allDay": false
         },
         {
           "id": "0728aa1e-4e83-4519-91b1-4674189ae166",
@@ -134,7 +126,7 @@
           "id": "399d7e6a-cd35-4d3f-aeb7-4af3185305fd"
         }
       ],
-      "gender": "male",
+      "gender": "Male",
       "tasks": [
         {
           "id": "096aa6c9-65b9-4953-a61a-798a836f8866",
@@ -212,7 +204,7 @@
           "id": "bcae46ca-e70c-47c2-94a7-ecb0cb205223"
         }
       ],
-      "gender": "male",
+      "gender": "Male",
       "tasks": [
         {
           "id": "fc748fa8-672e-4034-b21c-5e7b02518b7d",
@@ -245,6 +237,14 @@
           "end": "2024-04-02T09:39:43.148Z",
           "description": "<p>dsfsdfdafsafafasfasf</p>",
           "allDay": false
+        },
+        {
+          "id": "e645d8e8-d8b8-4861-9d2a-587d579672d4",
+          "title": "buddy",
+          "start": "2024-04-30T10:51:27.000Z",
+          "end": "2024-05-01T10:51:27.000Z",
+          "description": "<p>Doonnie my friend hi</p>",
+          "allDay": false
         }
       ],
       "allowFollowUp": {
@@ -266,9 +266,9 @@
       "jobType": "Liaison",
       "progress": 86,
       "status": {
-        "name": "Active",
-        "color": "#0cf90c",
-        "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+        "name": "InActive",
+        "color": "red",
+        "id": "b775b442-a3da-4038-9734-c97816a00a95"
       },
       "statusMenu": [
         {
@@ -282,7 +282,7 @@
           "id": "73acda09-6f9f-4ba7-8598-bd73ca2edfbc"
         }
       ],
-      "gender": "female",
+      "gender": "Female",
       "tasks": [
         {
           "id": "bd3ab5d3-9bed-454a-826c-a2ded6a689db",
@@ -344,7 +344,7 @@
           "id": "c64bcd7b-c4f9-42bd-9ceb-35501b8209e6"
         }
       ],
-      "gender": "female",
+      "gender": "Female",
       "tasks": [
         {
           "id": "0037ee04-c399-4e6d-8fc3-68ee4e4a57c1",
@@ -406,7 +406,7 @@
           "id": "84c4ccf7-262f-48d5-a014-76b8f12a5008"
         }
       ],
-      "gender": "male",
+      "gender": "Male",
       "tasks": [
         {
           "id": "0bdbeca2-d4e5-4740-a116-b7b45ee199d2",
@@ -484,7 +484,7 @@
           "id": "dae32a2e-1db5-4f64-94d9-223931074f68"
         }
       ],
-      "gender": "male",
+      "gender": "Male",
       "tasks": [
         {
           "id": "1a7ccb77-0dec-4b87-b87d-2fde4cf0fe83",
@@ -546,7 +546,7 @@
           "id": "29d0f7bb-cddf-4018-a1ce-266c3dc88259"
         }
       ],
-      "gender": "female",
+      "gender": "Female",
       "tasks": [
         {
           "id": "06a4a22a-3401-4119-90af-a6d606d0ae53",
@@ -608,7 +608,7 @@
           "id": "8a80606a-661d-454c-bd10-4b2487ee5bcd"
         }
       ],
-      "gender": "female",
+      "gender": "Female",
       "tasks": [
         {
           "id": "61bec2db-5ef1-416a-a3b3-10e757a0ccfc",
@@ -670,7 +670,7 @@
           "id": "53d2d819-4b7b-4a41-ab47-a43eea977f32"
         }
       ],
-      "gender": "male",
+      "gender": "Male",
       "tasks": [
         {
           "id": "11124734-791e-4e9a-b236-f31a1ed0b89f",
@@ -699,6 +699,82 @@
       ],
       "allowFollowUp": {
         "type": "No"
+      }
+    },
+    {
+      "id": "887657d6-0917-4d24-aea5-625385a195f0",
+      "role": [
+        "client"
+      ],
+      "name": "warlock",
+      "password": "@gUaMVIU48",
+      "profile": "",
+      "email": "dvasu696@gmail.com",
+      "age": "",
+      "visits": "",
+      "jobType": "",
+      "date": "2024-04-06T19:20:19.627Z",
+      "status": {
+        "name": "Active",
+        "color": "#0cf90c",
+        "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+      },
+      "statusMenu": [
+        {
+          "name": "InActive",
+          "color": "red",
+          "id": "71a820b1-5002-47b4-8c64-6f197af13d1b"
+        },
+        {
+          "name": "Active",
+          "color": "#0cf90c",
+          "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+        }
+      ],
+      "gender": "Male",
+      "tasks": [],
+      "projects": [],
+      "events": [],
+      "allowFollowUp": {
+        "type": "Yes"
+      }
+    },
+    {
+      "id": "11ca7f93-20c1-49be-97d2-3359b4bab73e",
+      "role": [
+        "client"
+      ],
+      "name": "neha",
+      "password": "o4oQd#b55r",
+      "profile": "https://avatars.githubusercontent.com/u/29474357",
+      "email": "client@example.com",
+      "age": "",
+      "visits": "",
+      "jobType": "",
+      "date": "2024-04-06T19:25:00.233Z",
+      "status": {
+        "name": "Active",
+        "color": "#0cf90c",
+        "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+      },
+      "statusMenu": [
+        {
+          "name": "InActive",
+          "color": "red",
+          "id": "71a820b1-5002-47b4-8c64-6f197af13d1b"
+        },
+        {
+          "name": "Active",
+          "color": "#0cf90c",
+          "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+        }
+      ],
+      "gender": "Female",
+      "tasks": [],
+      "projects": [],
+      "events": [],
+      "allowFollowUp": {
+        "type": "Yes"
       }
     }
   ]

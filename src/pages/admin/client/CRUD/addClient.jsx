@@ -18,7 +18,9 @@ import {
   FaRandom,
 } from "../../../../components/icons";
 import { v4 as uuid } from "uuid";
+import { toast } from "react-hot-toast";
 import { useRandomPassword } from "../../../../hooks";
+import { addUser } from "../../../../redux/server/server";
 
 const AddClient = ({ intialImage }) => {
   const dispatch = useDispatch();
@@ -32,6 +34,7 @@ const AddClient = ({ intialImage }) => {
       type: "No",
     },
   ];
+  const Genders = ["Male", "Female", "Other"];
 
   const [show, setShow] = useState(false);
   const [formData, setFormData] = useState({
@@ -62,7 +65,7 @@ const AddClient = ({ intialImage }) => {
         id: "4ddf56cf-c71a-4b62-aa46-86661a8e4dca",
       },
     ],
-    gender: "Other",
+    gender: "Male",
     tasks: [],
     projects: [],
     events: [],
@@ -90,17 +93,22 @@ const AddClient = ({ intialImage }) => {
 
     if (isValid) {
       setFormLoading(true);
+
       try {
-        // await dispatch();
-        alert(formData.name);
-        // navigate(-1, { replace: true });
+        toast.promise(dispatch(addUser(formData)), {
+          loading: "Adding User...",
+          success: <span>User Added Successfully</span>,
+          error: <span>Failed to Add User</span>,
+        });
       } catch (error) {
         console.log(error);
       }
+
+      navigate(-1, { replace: true });
+      setFormLoading(false);
     } else {
       setFormError((p) => ({ ...p, ...error }));
     }
-    setFormLoading(false);
   };
 
   const Status = (i) => {
@@ -151,7 +159,7 @@ const AddClient = ({ intialImage }) => {
 
         <form onSubmit={onSubmit}>
           <div className="p-4 grid gap-4">
-            <div className="grid grid-cols-[1fr_auto] gap-8">
+            <div className="grid lg:grid-cols-[1fr_176px] lg:gap-8 gap-4">
               <div className="grid gap-4">
                 {/* Name, Email, Password Fields */}
                 <div className="grid grid-cols-3 gap-8">
@@ -195,7 +203,7 @@ const AddClient = ({ intialImage }) => {
                   />
                 </div>
 
-                <div className="grid grid-cols-3 gap-8">
+                <div className="grid lg:grid-cols-3 grid-cols-2 gap-8">
                   {/* Created */}
                   <div className="flex gap-2 flex-col">
                     <label className="text-base text-slate-600">Created</label>
@@ -207,11 +215,11 @@ const AddClient = ({ intialImage }) => {
                     />
                   </div>
 
-                  {/* status */}
+                  {/* Gender */}
                   <div className="flex gap-2 flex-col">
                     <label className="text-base text-slate-600">Gender</label>
                     <Select
-                      options={["Male", "Female", "Other"]}
+                      options={Genders}
                       value={formData.gender}
                       onChange={(data) => {
                         setFormData((p) => ({ ...p, gender: data }));
@@ -222,10 +230,10 @@ const AddClient = ({ intialImage }) => {
                 </div>
               </div>
 
-              {/* Profile Image */}
+              {/* Profile Picture */}
               <div className="flex gap-2 flex-col">
                 <label className="text-base text-slate-600">
-                  Profile Image
+                  Profile Picture
                 </label>
                 <Avatar
                   value={formData.profile}
@@ -236,7 +244,7 @@ const AddClient = ({ intialImage }) => {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid lg:grid-cols-[1fr_1fr_176px] grid-cols-2 gap-8">
               {/* status */}
               <div className="flex gap-2 flex-col">
                 <label className="text-base text-slate-600">Status</label>

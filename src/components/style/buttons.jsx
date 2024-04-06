@@ -8,8 +8,8 @@ const Loader = () => {
 
 const Button = ({
   height = "40px",
-  icon,
-  text,
+  icon = "",
+  text = "Submit",
   onClick,
   type = "submit",
   loading = false,
@@ -22,8 +22,8 @@ const Button = ({
       className="px-3 bg-blue-600 flex justify-center items-center rounded-[0.2rem] text-white hover:bg-black"
     >
       <div className="flex items-center gap-3">
-        {loading ? <Loader /> : icon && icon}
-        <span className="text-lg">{text && text}</span>
+        {loading ? <Loader /> : icon}
+        <span className="text-lg">{loading ? "Loading..." : text}</span>
       </div>
     </button>
   );

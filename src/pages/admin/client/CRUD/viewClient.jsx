@@ -5,7 +5,7 @@ import { userDetails } from "../../../../redux/server/server";
 import { IoMdFemale, IoMdMale } from "../../../../components/icons";
 import { FlConverter } from "../../../../utilities";
 
-const ViewClient = () => {
+const ViewClient = ({ intialImage }) => {
   const { user, loading, error } = useSelector((state) => state.users);
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -42,12 +42,16 @@ const ViewClient = () => {
             <p>{user?.name}</p>
           </div>
           <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
+            <p className="font-bold w-72">Password</p>
+            <p>{user?.password}</p>
+          </div>
+          <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
             <p className="font-bold w-72">Email</p>
             <p>{user?.email}</p>
           </div>
           <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
             <p className="font-bold w-72">Age</p>
-            <p>{user?.age}</p>
+            <p>{user?.age || "--"}</p>
           </div>
           <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
             <p className="font-bold w-72">Gender</p>
@@ -68,17 +72,17 @@ const ViewClient = () => {
           </div>
           <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
             <p className="font-bold w-72">Visits</p>
-            <p>{user?.visits}</p>
+            <p>{user?.visits || "--"}</p>
           </div>
           <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
             <p className="font-bold w-72">Progress</p>
-            <p>{user?.progress}</p>
+            <p>{user?.progress || "--"}</p>
           </div>
           <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
             <p className="font-bold w-72">Status</p>
             <p className="flex gap-2 items-center">
               <span
-                className="w-4 h-4 rounded-full block"
+                className="w-3 h-3 rounded-full block"
                 style={{ backgroundColor: user?.status?.color }}
               ></span>
               {user?.status?.name}
@@ -86,11 +90,11 @@ const ViewClient = () => {
           </div>
           <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
             <p className="font-bold w-72">Current Projects</p>
-            <p>{user?.projects?.length}</p>
+            <p>{user?.projects?.length || "--"}</p>
           </div>
           <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
             <p className="font-bold w-72">Current Tasks</p>
-            <p>{user?.tasks?.length}</p>
+            <p>{user?.tasks?.length || "--"}</p>
           </div>
         </div>
 
@@ -99,6 +103,7 @@ const ViewClient = () => {
             src={user?.profile}
             alt="profile"
             className="w-32 h-32 rounded-md"
+            onError={(e) => (e.currentTarget.srcset = intialImage)}
           />
         </div>
       </div>

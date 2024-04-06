@@ -31,6 +31,7 @@ import { FaGear } from "react-icons/fa6";
 import { MdLogin, MdLogout } from "react-icons/md";
 import { IoMdMenu, IoMdFemale, IoMdMale } from "react-icons/io";
 import { BsThreeDotsVertical, BsFillKanbanFill } from "react-icons/bs";
+import { SlCloudUpload } from "react-icons/sl";
 
 export {
   FaDashcube,
@@ -68,4 +69,5 @@ export {
   BsFillKanbanFill as BsKanBan,
   MdLogin,
   MdLogout,
+  SlCloudUpload,
 };

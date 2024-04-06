@@ -1,3 +1,22 @@
+/* Avatar css */
+
+.avatar:hover {
+  background: repeating-linear-gradient(
+      -45deg,
+      rgb(242, 242, 242) 0 10px,
+      white 0 20px
+    )
+    right/200% 100%;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: imageloader 8s infinite linear;
+}
+
+@media (min-width: 1024px) {
+  .avatar:hover {
+    animation: imageloader 2s infinite linear;
+  }
+}
+
 /* custome loader */
 
 .loader {
@@ -18,12 +37,13 @@
   width: calc(80px / cos(45deg));
   height: 14px;
   background: repeating-linear-gradient(-45deg, gainsboro 0 15px, #0000 0 20px)
-    left/200% 100%;
+    right/200% 100%;
   animation: imageloader 2s infinite linear;
 }
+
 @keyframes imageloader {
   100% {
-    background-position: right;
+    background-position: left;
   }
 }
 

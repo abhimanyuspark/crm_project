@@ -17,7 +17,8 @@ import {
   FaCheck,
   FaRandom,
 } from "../../../../components/icons";
-import { userDetails } from "../../../../redux/server/server";
+import { toast } from "react-hot-toast";
+import { editUser, userDetails } from "../../../../redux/server/server";
 import { useRandomPassword } from "../../../../hooks";
 
 const EditClient = () => {
@@ -33,6 +34,7 @@ const EditClient = () => {
       type: "No",
     },
   ];
+  const Genders = ["Male", "Female", "Other"];
 
   const [show, setShow] = useState(false);
   const [formData, setFormData] = useState({
@@ -75,16 +77,19 @@ const EditClient = () => {
     if (isValid) {
       setFormLoading(true);
       try {
-        // await dispatch();
-        alert(formData.name);
-        // navigate(-1, { replace: true });
+        toast.promise(dispatch(editUser(formData)), {
+          loading: "Saving user...",
+          success: "User saved!",
+          error: `Failed to save user: ${error.message}`,
+        });
+        navigate(-1, { replace: true });
+        setFormLoading(false);
       } catch (error) {
         console.log(error);
       }
     } else {
       setFormError((p) => ({ ...p, ...error }));
     }
-    setFormLoading(false);
   };
 
   const Status = (i) => {
@@ -146,7 +151,7 @@ const EditClient = () => {
 
         <form onSubmit={onSubmit}>
           <div className="p-4 grid gap-4">
-            <div className="grid grid-cols-[1fr_auto] gap-8">
+            <div className="grid lg:grid-cols-[1fr_176px] lg:gap-8 gap-4">
               <div className="grid gap-4">
                 {/* Name, Email, Password Fields */}
                 <div className="grid grid-cols-3 gap-8">
@@ -190,7 +195,7 @@ const EditClient = () => {
                   />
                 </div>
 
-                <div className="grid grid-cols-3 gap-8">
+                <div className="grid lg:grid-cols-3 grid-cols-2 gap-8">
                   {/* Created */}
                   <div className="flex gap-2 flex-col">
                     <label className="text-base text-slate-600">Created</label>
@@ -202,11 +207,11 @@ const EditClient = () => {
                     />
                   </div>
 
-                  {/* status */}
+                  {/* Gender */}
                   <div className="flex gap-2 flex-col">
                     <label className="text-base text-slate-600">Gender</label>
                     <Select
-                      options={["male", "female", "other"]}
+                      options={Genders}
                       value={formData.gender}
                       onChange={(data) => {
                         setFormData((p) => ({ ...p, gender: data }));
@@ -217,10 +222,10 @@ const EditClient = () => {
                 </div>
               </div>
 
-              {/* Profile Image */}
+              {/* Profile Picture */}
               <div className="flex gap-2 flex-col">
                 <label className="text-base text-slate-600">
-                  Profile Image
+                  Profile Picture
                 </label>
                 <Avatar
                   value={formData.profile}
@@ -231,7 +236,7 @@ const EditClient = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid lg:grid-cols-[1fr_1fr_176px] grid-cols-2 gap-8">
               {/* status */}
               <div className="flex gap-2 flex-col">
                 <label className="text-base text-slate-600">Status</label>

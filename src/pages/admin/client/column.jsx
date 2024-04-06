@@ -8,6 +8,8 @@ import { Menu, Select } from "../../../components";
 import { updateStatus, deleteUser } from "../../../redux/server/server";
 import { deleteUserReducer } from "../../../redux/features/roleUsers";
 import { FaEdit, FaTrash, FaEye } from "../../../components/icons";
+import { intialData } from "../../data.json";
+const intialImage = intialData[0].intialImage;
 
 export const Columns = [
   {
@@ -53,15 +55,14 @@ export const Columns = [
     header: () => "Profile",
     cell: (info) => {
       const value = info.getValue();
-      return value ? (
+      return (
         <img
           src={value}
           alt="profile"
           loading="lazy"
           className="w-10 aspect-square rounded-full"
+          onError={(e) => (e.currentTarget.srcset = intialImage)}
         />
-      ) : (
-        <img alt="profile" className="w-10 aspect-square rounded-full" />
       );
     },
   },

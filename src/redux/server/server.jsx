@@ -33,6 +33,8 @@ export const refreshAuthUser = createAsyncThunk(
   }
 );
 
+// about user Start
+
 export const roleUsers = createAsyncThunk(
   "users/roleUsers",
   async (role, { rejectWithValue }) => {
@@ -80,6 +82,10 @@ export const deleteUser = createAsyncThunk("user/deleteUser", async (id) => {
     console.log(error.message);
   }
 });
+
+// about user End
+
+// Events Sart
 
 export const deleteUserEvent = createAsyncThunk(
   "user/deleteUserEvent",
@@ -143,3 +149,5 @@ export const updateEvent = createAsyncThunk(
     }
   }
 );
+
+// Events End
