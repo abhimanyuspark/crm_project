@@ -29,13 +29,15 @@ const newPerson = () => {
       { name: "InActive", color: "red", id: faker.string.uuid() },
       { name: "Active", color: "#0cf90c", id: faker.string.uuid() },
     ],
-    gender: faker.person.sex(),
+    gender: faker.helpers.arrayElement(["Male", "Female", "Other"]),
     tasks: [
       {
         id: faker.string.uuid(),
         title: faker.lorem.words(6),
         description: faker.lorem.sentence(),
-        dueDate: faker.date.soon(),
+        status: { name: "pending", color: "yellow", id: faker.string.uuid() },
+        start: faker.date.between({ from: "2024-01-01", to: "2024-12-01" }),
+        end: faker.date.between({ from: "2024-01-01", to: "2024-12-01" }),
       },
     ],
     projects: [
@@ -43,7 +45,9 @@ const newPerson = () => {
         id: faker.string.uuid(),
         title: faker.commerce.productName(),
         description: faker.commerce.productDescription(),
-        dueDate: faker.date.between({ from: "2024-01-01", to: "2024-12-01" }),
+        status: { name: "inprocess", color: "blue", id: faker.string.uuid() },
+        start: faker.date.between({ from: "2024-01-01", to: "2024-12-01" }),
+        end: faker.date.between({ from: "2024-01-01", to: "2024-12-01" }),
       },
     ],
     events: [
@@ -51,6 +55,7 @@ const newPerson = () => {
         id: faker.string.uuid(),
         title: faker.lorem.words(4),
         description: faker.lorem.words(10),
+        status: { name: "inprocess", color: "blue", id: faker.string.uuid() },
         start: faker.date.between({ from: "2024-01-01", to: "2024-12-01" }),
         end: faker.date.between({ from: "2024-01-01", to: "2024-12-01" }),
         allDay: faker.helpers.arrayElement([true, false]),

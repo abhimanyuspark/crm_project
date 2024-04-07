@@ -26,6 +26,7 @@ import {
   FaStopCircle,
   FaCalendar,
   FaRandom,
+  FaLayerGroup,
 } from "react-icons/fa";
 import { FaGear } from "react-icons/fa6";
 import { MdLogin, MdLogout } from "react-icons/md";
@@ -60,6 +61,7 @@ export {
   FaAngleDoubleRight,
   FaSearch,
   FaTimes,
+  FaLayerGroup,
   FaPlayCircle,
   FaPauseCircle,
   FaStopCircle,

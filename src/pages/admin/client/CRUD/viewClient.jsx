@@ -1,14 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { userDetails } from "../../../../redux/server/server";
-import { IoMdFemale, IoMdMale } from "../../../../components/icons";
+import {
+  FaLayerGroup,
+  IoMdFemale,
+  IoMdMale,
+} from "../../../../components/icons";
 import { FlConverter } from "../../../../utilities";
+import { Container, Image, Menu, PieChartUsage } from "../../../../components";
 
 const ViewClient = ({ intialImage }) => {
   const { user, loading, error } = useSelector((state) => state.users);
   const { id } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const date = new Date(user?.date);
   const created = date.toLocaleDateString();
@@ -26,89 +32,109 @@ const ViewClient = ({ intialImage }) => {
   }
 
   return (
-    <div className="flex gap-6 flex-col">
-      <div className="flex items-center justify-between">
-        <h2 className="sm:text-2xl text-xl font-bold">{user?.name}</h2>
+    <div className="grid gap-8">
+      <div className="grid gap-8 grid-cols-3">
+        <Container>
+          <div className="flex p-3 justify-between">
+            <Image
+              src={user?.profile}
+              alt="avatar"
+              className="w-20 h-24"
+              onError={() => intialImage}
+            />
+
+            <div>
+              <p className="text-base font-bold">{user.name}</p>
+              <p className="text-sm">{user.jobType}</p>
+            </div>
+
+            <Menu>
+              <li onClick={() => navigate(`/clients/${id}/edit`)}>Edit</li>
+            </Menu>
+          </div>
+        </Container>
+
+        <Container>
+          <div className="flex h-full justify-between items-center p-6">
+            <div className="flex h-full flex-col justify-between">
+              <h1 className="text-base">Total Projects</h1>
+              <p className="text-xl font-bold text-blue-500">
+                {user?.projects.length}
+              </p>
+            </div>
+            <FaLayerGroup size={30} className="text-slate-400" />
+          </div>
+        </Container>
+        <Container></Container>
       </div>
 
-      <div className="flex lg:gap-0 gap-8 lg:flex-row flex-col-reverse lg:justify-between justify-normal bg-white p-8 border border-slate-300 rounded-md">
-        <div className="flex gap-5 flex-col">
-          <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
-            <p className="font-bold w-72">Client Id</p>
-            <p>CLI_Id_{user?.id}</p>
-          </div>
-          <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
-            <p className="font-bold w-72">Name</p>
-            <p>{user?.name}</p>
-          </div>
-          <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
-            <p className="font-bold w-72">Password</p>
-            <p>{user?.password}</p>
-          </div>
-          <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
-            <p className="font-bold w-72">Email</p>
-            <p>{user?.email}</p>
-          </div>
-          <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
-            <p className="font-bold w-72">Age</p>
-            <p>{user?.age || "--"}</p>
-          </div>
-          <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
-            <p className="font-bold w-72">Gender</p>
-            <p className="flex gap-2 items-center">
-              {user?.gender !== "Other" && (
-                <span
-                  className={`text-lg ${
-                    user?.gender === "Male" ? "text-blue-700" : "text-pink-700"
-                  }`}
-                >
-                  {user?.gender === "Male" ? <IoMdMale /> : <IoMdFemale />}
-                </span>
-              )}
-              {FlConverter(user?.gender)}
-            </p>
-          </div>
-          <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
-            <p className="font-bold w-72">Created</p>
-            <p>{created}</p>
-          </div>
-          <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
-            <p className="font-bold w-72">Visits</p>
-            <p>{user?.visits || "--"}</p>
-          </div>
-          <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
-            <p className="font-bold w-72">Progress</p>
-            <p>{user?.progress || "--"}</p>
-          </div>
-          <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
-            <p className="font-bold w-72">Status</p>
-            <p className="flex gap-2 items-center">
-              <span
-                className="w-3 h-3 rounded-full block"
-                style={{ backgroundColor: user?.status?.color }}
-              ></span>
-              {user?.status?.name}
-            </p>
-          </div>
-          <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
-            <p className="font-bold w-72">Current Projects</p>
-            <p>{user?.projects?.length || "--"}</p>
-          </div>
-          <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
-            <p className="font-bold w-72">Current Tasks</p>
-            <p>{user?.tasks?.length || "--"}</p>
-          </div>
-        </div>
+      <div className="grid grid-cols-[1fr_auto] grid-rows-1 gap-8">
+        <Container>
+          <div className="flex gap-5 flex-col p-4">
+            <p className="font-bold text-xl">Profile Info</p>
 
-        <div className="flex gap-4 flex-col items-center">
-          <img
-            src={user?.profile}
-            alt="profile"
-            className="w-32 h-32 rounded-md"
-            onError={(e) => (e.currentTarget.srcset = intialImage)}
-          />
+            <Card text="Name" data={user?.name} />
+            <Card text="Password" data={user?.password} />
+            <Card text="Email" data={user?.email} />
+            <Card text="Age" data={user?.age} />
+
+            <Card
+              text="Gender"
+              data={
+                <div className="flex gap-2">
+                  {user?.gender !== "Other" && (
+                    <span
+                      className={`text-lg ${
+                        user?.gender === "Male"
+                          ? "text-blue-700"
+                          : "text-pink-700"
+                      }`}
+                    >
+                      {user?.gender === "Male" ? <IoMdMale /> : <IoMdFemale />}
+                    </span>
+                  )}
+                  {FlConverter(user?.gender)}
+                </div>
+              }
+            />
+            <Card text="Visits" data={user?.visits} />
+            <Card text="Created" data={created} />
+            <Card text="Progress" data={user?.progress} />
+            <Card
+              text="Status"
+              data={
+                <p className="flex gap-2 items-center">
+                  <span
+                    className="w-3 h-3 rounded-full block"
+                    style={{ backgroundColor: user?.status?.color }}
+                  ></span>
+                  {user?.status?.name}
+                </p>
+              }
+            />
+          </div>
+        </Container>
+
+        <div className="grid gap-8">
+          <Container>
+            <div className="border-b border-slate-300 p-4">
+              <h2 className="text-xl font-bold">Projects</h2>
+            </div>
+            <div className="p-4">
+              <PieChartUsage data={user?.projects} />
+            </div>
+          </Container>
         </div>
       </div>
+    </div>
+  );
+};
+
+const Card = ({ text, data }) => {
+  return (
+    <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
+      <p className="w-72">{text}</p>
+      <p>{data || "--"}</p>
     </div>
   );
 };

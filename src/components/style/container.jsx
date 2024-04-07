@@ -7,3 +7,14 @@ export const Container = ({ children }) => {
     </div>
   );
 };
+
+export const Image = ({ src, alt, className, onError }) => {
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={`${className} w-auto h-full rounded-md object-cover`}
+      onError={(e) => (e.currentTarget.srcset = onError())}
+    />
+  );
+};

@@ -1,7 +1,7 @@
 import PersistenceAuth from "./persistenceAuth";
 import RequireAuth from "./requireAuth";
 import { Button, CancelButton } from "./style/buttons";
-import { Container } from "./style/container";
+import { Container, Image } from "./style/container";
 import { InputText, CheckBox, InputSelect, Switch } from "./style/inputs";
 import { formValidation } from "./formValidation";
 import Calender from "./Calender";
@@ -18,6 +18,8 @@ import { Loader, ImageLoader } from "./Loader";
 import Error from "./Error";
 import Avatar from "./Avatar";
 import ReactDatePicker from "./DatePicker";
+import PieChart from "./Charts/PieChart";
+import PieChartUsage from "./Charts/PieChartUsage";
 
 export {
   Loader,
@@ -28,6 +30,7 @@ export {
   Button,
   CancelButton,
   Container,
+  Image,
   InputText,
   InputSelect,
   CheckBox,
@@ -45,4 +48,6 @@ export {
   TextEditor,
   Avatar,
   ReactDatePicker,
+  PieChart,
+  PieChartUsage,
 };

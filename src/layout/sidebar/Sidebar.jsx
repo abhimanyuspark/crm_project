@@ -68,7 +68,7 @@ const Header = ({ open }) => {
 
   return (
     <div
-      className={`relative border-b border-slate-600 flex items-center text-[var(--cl-sky)] p-2`}
+      className={`relative border-b border-slate-600 flex items-center text-[var(--cl-sky)] px-4 py-2`}
     >
       <div
         style={{ transition: "0.3s ease-in-out" }}
@@ -94,7 +94,7 @@ const Header = ({ open }) => {
         src={SVG}
         alt="logo"
         className={`w-auto h-auto rounded-sm p-1 absolute bg-[var(--bg-dk-bl)] ${
-          menu || open ? "right-1" : "sm:left-1"
+          menu || open ? "right-2" : "sm:left-1"
         }`}
       />
     </div>
