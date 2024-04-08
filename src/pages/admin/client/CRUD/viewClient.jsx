@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
 import { userDetails } from "../../../../redux/server/server";
@@ -44,8 +44,8 @@ const ViewClient = ({ intialImage }) => {
             />
 
             <div>
-              <p className="text-base font-bold">{user.name}</p>
-              <p className="text-sm">{user.jobType}</p>
+              <p className="text-base font-bold">{user?.name}</p>
+              <p className="text-sm">{user?.jobType}</p>
             </div>
 
             <Menu>
@@ -59,16 +59,17 @@ const ViewClient = ({ intialImage }) => {
             <div className="flex h-full flex-col justify-between">
               <h1 className="text-base">Total Projects</h1>
               <p className="text-xl font-bold text-blue-500">
-                {user?.projects.length}
+                {user?.projects?.length}
               </p>
             </div>
             <FaLayerGroup size={30} className="text-slate-400" />
           </div>
         </Container>
+
         <Container></Container>
       </div>
 
-      <div className="grid grid-cols-[1fr_auto] grid-rows-1 gap-8">
+      <div className="grid grid-cols-[1fr_auto] grid-rows-[auto] gap-8">
         <Container>
           <div className="flex gap-5 flex-col p-4">
             <p className="font-bold text-xl">Profile Info</p>
@@ -133,8 +134,8 @@ const ViewClient = ({ intialImage }) => {
 const Card = ({ text, data }) => {
   return (
     <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
-      <p className="w-72">{text}</p>
-      <p>{data || "--"}</p>
+      <div className="w-72 text-slate-500">{text}</div>
+      <div>{data || "--"}</div>
     </div>
   );
 };

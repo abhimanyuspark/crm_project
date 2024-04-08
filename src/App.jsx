@@ -19,12 +19,12 @@ import {
   AddEvent,
   ViewEvent,
   EditEvent,
+  intialData,
 } from "./pages";
 import { RequireAuth, PersistenceAuth, Loader } from "./components/index";
 import { Tooltip } from "react-tooltip";
 import { Toaster } from "react-hot-toast";
 import "react-datepicker/dist/react-datepicker.css";
-import { intialData } from "./pages/data.json";
 const intialImage = intialData[0].intialImage;
 
 function App() {

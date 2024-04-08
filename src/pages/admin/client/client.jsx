@@ -1,7 +1,14 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { roleUsers } from "../../../redux/server/server";
-import { Button, KanBan, Switch, Table } from "../../../components";
+import {
+  Button,
+  DateRangePicker,
+  KanBan,
+  SubNavBar,
+  Switch,
+  Table,
+} from "../../../components";
 import { Columns } from "./column";
 import { useNavigate } from "react-router-dom";
 import { FaList, FaPlus, BsKanBan } from "../../../components/icons";
@@ -33,7 +40,11 @@ const Client = () => {
   }, [users, date?.start, date?.end]);
 
   return (
-    <div className="flex gap-6 flex-col">
+    <div className="flex gap-6 flex-col mt-14">
+      <SubNavBar>
+        <DateRangePicker />
+      </SubNavBar>
+
       <div className="flex gap-2 items-center justify-between">
         <Button
           text="Add Client"

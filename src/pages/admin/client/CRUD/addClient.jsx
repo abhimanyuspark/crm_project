@@ -100,12 +100,11 @@ const AddClient = ({ intialImage }) => {
           success: <span>User Added Successfully</span>,
           error: <span>Failed to Add User</span>,
         });
+        navigate(-1, { replace: true });
+        setFormLoading(false);
       } catch (error) {
         console.log(error);
       }
-
-      navigate(-1, { replace: true });
-      setFormLoading(false);
     } else {
       setFormError((p) => ({ ...p, ...error }));
     }

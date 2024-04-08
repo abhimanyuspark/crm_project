@@ -14,6 +14,7 @@ import {
   ViewEvent,
   EditEvent,
 } from "./admin/index";
+import { intialData } from "./data.json";
 
 const Login = lazy(() => import("./Login"));
 const Not_Found = lazy(() => import("./Not_Found"));
@@ -38,4 +39,5 @@ export {
   AddEvent,
   ViewEvent,
   EditEvent,
+  intialData,
 };

@@ -2,7 +2,10 @@
   "users": [
     {
       "id": "b5874345-1c2e-43e6-8443-6686c177098c",
-      "role": ["admin", "employee"],
+      "role": [
+        "admin",
+        "employee"
+      ],
       "email": "admin@gmail.com",
       "name": "Amy Lemke",
       "password": "admin12345",
@@ -87,7 +90,9 @@
     },
     {
       "id": "37de5d6f-e8c9-40f7-afb1-8ae4a8868555",
-      "role": ["employee"],
+      "role": [
+        "employee"
+      ],
       "email": "Kristopher.Spinka64@hotmail.com",
       "name": "Cody Kreiger III",
       "password": "BjMGqdm6",
@@ -164,7 +169,9 @@
     },
     {
       "id": "5d241a1e-40b1-4f09-af44-9920f59c36cb",
-      "role": ["employee"],
+      "role": [
+        "employee"
+      ],
       "email": "Ena38@gmail.com",
       "name": "Thomas Champlin",
       "password": "2IcpTP5V",
@@ -241,7 +248,9 @@
     },
     {
       "id": "98821a9f-2bb3-471f-821a-d232506f101e",
-      "role": ["client"],
+      "role": [
+        "client"
+      ],
       "email": "Roxanne.Koepp@yahoo.com",
       "name": "Lloyd Bednar",
       "password": "CWjcxh6b",
@@ -342,7 +351,9 @@
     },
     {
       "id": "620bb194-d43d-46a6-8a56-a642e8137968",
-      "role": ["client"],
+      "role": [
+        "client"
+      ],
       "email": "Mariana.Abshire@gmail.com",
       "name": "Sue Fahey",
       "password": "QkZjgN6K",
@@ -419,7 +430,9 @@
     },
     {
       "id": "99beb221-5b84-4ecb-956b-4c69584366d9",
-      "role": ["employee"],
+      "role": [
+        "employee"
+      ],
       "email": "Laura94@yahoo.com",
       "name": "Randy White",
       "password": "tblBSz2L",
@@ -496,7 +509,9 @@
     },
     {
       "id": "7b34db7c-047f-45b2-b67a-3b590588b3e0",
-      "role": ["client"],
+      "role": [
+        "client"
+      ],
       "email": "Lawrence67@hotmail.com",
       "name": "Melvin Mitchell",
       "password": "MEd4yAu6",
@@ -573,7 +588,9 @@
     },
     {
       "id": "99fe29b0-6825-4727-8a54-caff2fefff0a",
-      "role": ["client"],
+      "role": [
+        "client"
+      ],
       "email": "Clare19@yahoo.com",
       "name": "Essie Strosin",
       "password": "EP3EJ9mv",
@@ -650,7 +667,9 @@
     },
     {
       "id": "43365038-afe6-422b-ac7b-2506ec5fcca5",
-      "role": ["employee"],
+      "role": [
+        "employee"
+      ],
       "email": "Jerrold_Corwin97@hotmail.com",
       "name": "Walter Runte",
       "password": "KGT1e7TK",
@@ -727,7 +746,9 @@
     },
     {
       "id": "5ad739a9-79a2-4312-bb7c-f74c3095c4f1",
-      "role": ["employee"],
+      "role": [
+        "employee"
+      ],
       "email": "Jorge.Toy@yahoo.com",
       "name": "Dexter Ullrich Sr.",
       "password": "Li6C_mZC",
@@ -798,6 +819,82 @@
           "allDay": false
         }
       ],
+      "allowFollowUp": {
+        "type": "No"
+      }
+    },
+    {
+      "id": "83d5caad-5930-459e-9b31-7fc23b10645a",
+      "role": [
+        "client"
+      ],
+      "name": "warlock",
+      "password": "L5GiItD3#F",
+      "profile": "https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png",
+      "email": "dvasu696@gmail.com",
+      "age": "",
+      "visits": "",
+      "jobType": "",
+      "date": "2024-04-07T18:23:58.806Z",
+      "status": {
+        "name": "Active",
+        "color": "#0cf90c",
+        "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+      },
+      "statusMenu": [
+        {
+          "name": "InActive",
+          "color": "red",
+          "id": "71a820b1-5002-47b4-8c64-6f197af13d1b"
+        },
+        {
+          "name": "Active",
+          "color": "#0cf90c",
+          "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+        }
+      ],
+      "gender": "Male",
+      "tasks": [],
+      "projects": [],
+      "events": [],
+      "allowFollowUp": {
+        "type": "Yes"
+      }
+    },
+    {
+      "id": "99fa5252-07e8-41f5-aa8a-acdda22b7dd2",
+      "role": [
+        "client"
+      ],
+      "name": "neha",
+      "password": "5zFm@bMjh5",
+      "profile": "https://avatars.githubusercontent.com/u/48794091",
+      "email": "client@example.com",
+      "age": "",
+      "visits": "",
+      "jobType": "",
+      "date": "2024-04-07T18:25:59.545Z",
+      "status": {
+        "name": "Active",
+        "color": "#0cf90c",
+        "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+      },
+      "statusMenu": [
+        {
+          "name": "InActive",
+          "color": "red",
+          "id": "71a820b1-5002-47b4-8c64-6f197af13d1b"
+        },
+        {
+          "name": "Active",
+          "color": "#0cf90c",
+          "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+        }
+      ],
+      "gender": "Female",
+      "tasks": [],
+      "projects": [],
+      "events": [],
       "allowFollowUp": {
         "type": "No"
       }

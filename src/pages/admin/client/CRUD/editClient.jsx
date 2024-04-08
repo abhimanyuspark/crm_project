@@ -76,6 +76,7 @@ const EditClient = () => {
 
     if (isValid) {
       setFormLoading(true);
+
       try {
         toast.promise(dispatch(editUser(formData)), {
           loading: "Saving user...",
