@@ -8,8 +8,8 @@ import { Menu, Select } from "../../../components";
 import { updateStatus, deleteUser } from "../../../redux/server/server";
 import { deleteUserReducer } from "../../../redux/features/roleUsers";
 import { FaEdit, FaTrash, FaEye } from "../../../components/icons";
-import { intialData } from "../../data.json";
-const intialImage = intialData[0].intialImage;
+import { initialData } from "../../data.json";
+const initialImage = initialData[0].initialImage;
 
 export const Columns = [
   {
@@ -61,7 +61,7 @@ export const Columns = [
           alt="profile"
           loading="lazy"
           className="w-10 aspect-square rounded-full"
-          onError={(e) => (e.currentTarget.srcset = intialImage)}
+          onError={(e) => (e.currentTarget.srcset = initialImage)}
         />
       );
     },

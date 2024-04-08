@@ -4,12 +4,17 @@ import React from "react";
 import { Pie } from "react-chartjs-2";
 import "chart.js/auto";
 
-const PieChart = ({ values = [], labels = [], colors = [] }) => {
+const PieChart = ({
+  values = [],
+  labels = [],
+  colors = [],
+  label = "Data",
+}) => {
   const data = {
     labels: labels,
     datasets: [
       {
-        label: "Dataset",
+        label: label,
         data: values,
         backgroundColor: colors,
       },

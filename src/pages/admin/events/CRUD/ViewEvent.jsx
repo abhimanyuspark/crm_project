@@ -59,7 +59,7 @@ const ViewEvent = () => {
   const end = new Date(event.end).toISOString();
 
   return (
-    <div>
+    <div className="p-6">
       <div className="pb-4">
         <h2 className="text-2xl font-bold">Event Details</h2>
       </div>

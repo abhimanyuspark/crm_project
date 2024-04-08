@@ -14,7 +14,7 @@ const APDashboard = () => {
   const { user } = useSelector((state) => state.auth);
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 p-8">
       {/* {JSON.stringify(makeData(10))} */}
       <div className="flex flex-col sm:gap-0 gap-2 sm:flex-row sm:justify-between items-start sm:items-center pt-4">
         <h1 className="text-xl font-bold">Welcome {user?.name}</h1>

@@ -9,7 +9,7 @@ const Events = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="p-8">
       {user?.role?.includes("admin") && (
         <div className="pb-4">
           <Button

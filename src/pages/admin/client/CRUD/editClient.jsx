@@ -78,7 +78,7 @@ const EditClient = () => {
       setFormLoading(true);
 
       try {
-        toast.promise(dispatch(editUser(formData)), {
+        await toast.promise(dispatch(editUser(formData)), {
           loading: "Saving user...",
           success: "User saved!",
           error: `Failed to save user: ${error.message}`,
@@ -142,7 +142,7 @@ const EditClient = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="p-6">
       <Container>
         <div className="border-b border-slate-300 p-4">
           <h2 className="text-xl font-bold">Update Client</h2>

@@ -1,7 +1,7 @@
 import PersistenceAuth from "./persistenceAuth";
 import RequireAuth from "./requireAuth";
 import { Button, CancelButton } from "./style/buttons";
-import { Container, Image, SubNavBar } from "./style/container";
+import { Container, Image, SubNavBar, SubNavChild } from "./style/container";
 import { InputText, CheckBox, InputSelect, Switch } from "./style/inputs";
 import { formValidation } from "./formValidation";
 import Calender from "./Calender";
@@ -17,8 +17,9 @@ import TextEditor from "./TextEditor";
 import { Loader, ImageLoader } from "./Loader";
 import Error from "./Error";
 import Avatar from "./Avatar";
-import ReactDatePicker from "./DatePicker";
-import DateRangePicker from "./DateRangePicker";
+import ReactDatePicker from "./DatePicker/DatePicker";
+import DateRangePicker from "./DatePicker/DateRangePicker";
+import { rangePresets } from "./DatePicker/data";
 import PieChart from "./Charts/PieChart";
 import PieChartUsage from "./Charts/PieChartUsage";
 
@@ -32,6 +33,7 @@ export {
   CancelButton,
   Container,
   SubNavBar,
+  SubNavChild,
   Image,
   InputText,
   InputSelect,
@@ -53,4 +55,5 @@ export {
   DateRangePicker,
   PieChart,
   PieChartUsage,
+  rangePresets,
 };

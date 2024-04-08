@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PieChart from "./PieChart";
 
-const PieChartUsage = ({ data }) => {
+const PieChartUsage = ({ data, label }) => {
   const chartjs = [
     { label: "inprocess", value: 0, color: "blue" },
     { label: "pending", value: 0, color: "yellow" },
@@ -36,7 +36,9 @@ const PieChartUsage = ({ data }) => {
     setValues(getValues);
   }, [data]);
 
-  return <PieChart values={values} labels={labels} colors={colors} />;
+  return (
+    <PieChart values={values} labels={labels} colors={colors} label={label} />
+  );
 };
 
 export default PieChartUsage;

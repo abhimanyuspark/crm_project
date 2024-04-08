@@ -62,7 +62,7 @@ const EditEvent = () => {
   };
 
   return (
-    <div>
+    <div className="p-6">
       <Container>
         <div className="border-b border-slate-300 p-4">
           <h2 className="text-xl font-bold">Update Event</h2>

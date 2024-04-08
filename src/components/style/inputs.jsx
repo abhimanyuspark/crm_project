@@ -20,13 +20,15 @@ const InputText = ({
 
   return (
     <div className="flex gap-2 flex-col group/item">
-      <label
-        htmlFor={name}
-        className="text-slate-600 cursor-pointer flex gap-1 "
-      >
-        {label}
-        {important && <sup className="text-red-500 text-base static">*</sup>}
-      </label>
+      {label && (
+        <label
+          htmlFor={name}
+          className="text-slate-600 cursor-pointer flex gap-1 "
+        >
+          {label}
+          {important && <sup className="text-red-500 text-base static">*</sup>}
+        </label>
+      )}
 
       <div
         style={{ width: width, height: height }}
@@ -39,7 +41,7 @@ const InputText = ({
         }`}
       >
         {icon && (
-          <div className="p-2 border-r border-slate-300 hover:bg-slate-200 cursor-pointer flex items-center h-full">
+          <div className="p-2 border-r border-slate-300 bg-slate-200 cursor-pointer flex items-center h-full">
             {icon}
           </div>
         )}

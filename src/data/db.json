@@ -82,6 +82,14 @@
           "end": "2024-04-07T07:41:45.574Z",
           "description": "<p>nice</p>",
           "allDay": false
+        },
+        {
+          "id": "a3e57d69-2763-4980-81a9-c7b42cc5cd89",
+          "title": "hi",
+          "start": "2024-04-08T10:33:39.543Z",
+          "end": "2024-04-08T10:33:39.543Z",
+          "description": "<p>nice</p>",
+          "allDay": false
         }
       ],
       "allowFollowUp": {
@@ -516,7 +524,7 @@
       "name": "Melvin Mitchell",
       "password": "MEd4yAu6",
       "date": "2023-04-01T19:43:31.751Z",
-      "profile": "",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/529.jpg",
       "age": 29,
       "visits": 199,
       "jobType": "Associate",
@@ -595,7 +603,7 @@
       "name": "Essie Strosin",
       "password": "EP3EJ9mv",
       "date": "2023-06-20T18:37:38.947Z",
-      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/844.jpg",
+      "profile": "https://avatars.githubusercontent.com/u/2578462",
       "age": 45,
       "visits": 453,
       "jobType": "Planner",
@@ -829,8 +837,8 @@
         "client"
       ],
       "name": "warlock",
-      "password": "L5GiItD3#F",
-      "profile": "https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png",
+      "password": "CCjh5dYdfJ",
+      "profile": "https://avatars.githubusercontent.com/u/35180563",
       "email": "dvasu696@gmail.com",
       "age": "",
       "visits": "",

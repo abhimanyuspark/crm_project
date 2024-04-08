@@ -95,7 +95,7 @@ const AddClient = ({ intialImage }) => {
       setFormLoading(true);
 
       try {
-        toast.promise(dispatch(addUser(formData)), {
+        await toast.promise(dispatch(addUser(formData)), {
           loading: "Adding User...",
           success: <span>User Added Successfully</span>,
           error: <span>Failed to Add User</span>,
@@ -148,7 +148,7 @@ const AddClient = ({ intialImage }) => {
   };
 
   return (
-    <div>
+    <div className="p-6">
       <Container>
         <div className="border-b border-slate-300 p-4">
           <h2 className="text-xl font-bold">Add Client</h2>

@@ -29,7 +29,7 @@ const Layout = () => {
         <Navbar />
         <main
           ref={parentRef}
-          className="h-[calc(100vh-60px)] relative overflow-auto scroll-smooth p-8 bg-gray-100"
+          className="h-[calc(100vh-60px)] relative overflow-auto scroll-smooth bg-gray-100"
         >
           <Suspense fallback={<Loader />}>
             <Outlet />

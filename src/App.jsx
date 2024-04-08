@@ -19,13 +19,13 @@ import {
   AddEvent,
   ViewEvent,
   EditEvent,
-  intialData,
+  initialData,
 } from "./pages";
 import { RequireAuth, PersistenceAuth, Loader } from "./components/index";
 import { Tooltip } from "react-tooltip";
 import { Toaster } from "react-hot-toast";
 import "react-datepicker/dist/react-datepicker.css";
-const intialImage = intialData[0].intialImage;
+const initialImage = initialData[0].initialImage;
 
 function App() {
   const role = {
@@ -58,11 +58,11 @@ function App() {
             <Route path="/clients" element={<Client />} />
             <Route
               path="/clients/:id"
-              element={<ViewClient intialImage={intialImage} />}
+              element={<ViewClient intialImage={initialImage} />}
             />
             <Route
               path="/clients/add"
-              element={<AddClient intialImage={intialImage} />}
+              element={<AddClient intialImage={initialImage} />}
             />
             <Route path="/clients/:id/edit" element={<EditClient />} />
             {/* Clients End */}
@@ -71,11 +71,11 @@ function App() {
             <Route path="/employees" element={<Employee />} />
             <Route
               path="/employees/:id"
-              element={<ViewEmployee intialImage={intialImage} />}
+              element={<ViewEmployee intialImage={initialImage} />}
             />
             <Route
               path="/employees/add"
-              element={<AddEmployee intialImage={intialImage} />}
+              element={<AddEmployee intialImage={initialImage} />}
             />
             <Route path="/employees/:id/edit" element={<EditEmployee />} />
           </Route>

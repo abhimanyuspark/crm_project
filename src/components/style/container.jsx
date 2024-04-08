@@ -13,15 +13,25 @@ export const Image = ({ src, alt, className, onError }) => {
     <img
       src={src}
       alt={alt}
-      className={`${className} w-auto h-full rounded-md object-cover`}
+      className={`${className} rounded-md object-cover`}
       onError={(e) => (e.currentTarget.srcset = onError())}
     />
   );
 };
 
-export const SubNavBar = ({ children }) => {
+export const SubNavBar = ({ children, className }) => {
   return (
-    <div className="flex border-b border-slate-300 w-[calc(100%-240px)] h-[60px] fixed top-[60px] right-0 bg-white">
+    <div
+      className={`${className} flex border-b border-slate-300 w-full h-[50px] sticky top-0 right-0 bg-white`}
+    >
+      {children}
+    </div>
+  );
+};
+
+export const SubNavChild = ({ children }) => {
+  return (
+    <div className="flex justify-center items-center px-2 border-x border-slate-300">
       {children}
     </div>
   );

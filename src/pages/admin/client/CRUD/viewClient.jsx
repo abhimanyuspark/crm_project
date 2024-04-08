@@ -32,7 +32,7 @@ const ViewClient = ({ intialImage }) => {
   }
 
   return (
-    <div className="grid gap-8">
+    <div className="grid gap-8 p-6">
       <div className="grid gap-8 grid-cols-3">
         <Container>
           <div className="flex p-3 justify-between">
@@ -122,7 +122,7 @@ const ViewClient = ({ intialImage }) => {
               <h2 className="text-xl font-bold">Projects</h2>
             </div>
             <div className="p-4">
-              <PieChartUsage data={user?.projects} />
+              <PieChartUsage data={user?.projects} label="Project" />
             </div>
           </Container>
         </div>

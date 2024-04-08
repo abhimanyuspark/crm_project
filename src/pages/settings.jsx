@@ -6,7 +6,7 @@ const Settings = () => {
   const [theme, toggleTheme] = useTheme();
 
   return (
-    <div>
+    <div className="p-8">
       <div className="flex gap-2 flex-col bg-white p-4 border border-slate-300 rounded-md">
         <p>Theme</p>
         <div className="flex gap-4 items-center">
