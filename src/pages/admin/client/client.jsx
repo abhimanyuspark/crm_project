@@ -4,8 +4,10 @@ import { roleUsers } from "../../../redux/server/server";
 import {
   Button,
   DateRangePicker,
+  FilterTable,
   InputText,
   KanBan,
+  Select,
   SubNavBar,
   SubNavChild,
   Switch,
@@ -15,14 +17,17 @@ import {
 import { Columns } from "./column";
 import { useNavigate } from "react-router-dom";
 import { FaList, FaPlus, BsKanBan, FaSearch } from "../../../components/icons";
+import { ClientsData } from "../../data.json";
 
 const Client = () => {
   const { users, loading } = useSelector((state) => state.users);
   const [globalFilter, setGlobalFilter] = useState("");
   const [tab, setTab] = useState(true);
   const [dates, setDates] = useState({
-    start: rangePresets[6].value[0],
-    end: rangePresets[6].value[1],
+    start: "",
+    end: "",
+    // start: rangePresets[6].value[0],
+    // end: rangePresets[6].value[1],
   });
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -47,15 +52,22 @@ const Client = () => {
         <SubNavChild>
           <DateRangePicker value={dates} onChange={setDates} />
         </SubNavChild>
+
         <SubNavChild>
           <InputText
             focus={true}
             icon={<FaSearch className="text-slate-500" size={15} />}
             type="search"
-            height="35px"
+            height="33px"
             placeholder="Search here.."
             onChange={(e) => setGlobalFilter(e.target.value)}
           />
+        </SubNavChild>
+
+        <SubNavChild>
+          <FilterTable>
+            <FilterData />
+          </FilterTable>
         </SubNavChild>
       </SubNavBar>
 
@@ -97,6 +109,62 @@ const Client = () => {
         )}
       </div>
     </>
+  );
+};
+
+const FilterData = () => {
+  const { followUp, status } = ClientsData;
+
+  const [data, setData] = useState({
+    allowFollowUp: { type: "All" },
+    status: { name: "All" },
+  });
+
+  const clear = () => {
+    setData((p) => ({
+      ...p,
+      allowFollowUp: { type: "All" },
+      status: { name: "All" },
+    }));
+  };
+
+  return (
+    <div>
+      <div className="p-4 flex gap-4 flex-col">
+        {/* allow folloe up */}
+        <div className="flex gap-2 flex-col">
+          <label className="text-base text-slate-600">Allow Follow Up</label>
+          <Select
+            options={followUp}
+            onChange={(d) => setData((p) => ({ ...p, allowFollowUp: d }))}
+            value={data.allowFollowUp}
+            fields={(i) => i?.type}
+          />
+        </div>
+
+        {/* Status */}
+        <div className="flex gap-2 flex-col">
+          <label className="text-base text-slate-600">Status</label>
+          <Select
+            options={status}
+            onChange={(d) => setData((p) => ({ ...p, status: d }))}
+            value={data.status}
+            fields={(i) => i?.name}
+          />
+        </div>
+      </div>
+
+      {/* Clear */}
+      <div className="border-t border-slate-300 p-3 absolute bottom-0 w-full">
+        <button
+          type="reset"
+          className="p-2 hover:bg-slate-300 rounded-[4px] text-sm border border-slate-300"
+          onClick={() => clear()}
+        >
+          Clear
+        </button>
+      </div>
+    </div>
   );
 };
 

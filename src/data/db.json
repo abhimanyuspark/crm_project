@@ -372,9 +372,9 @@
       "jobType": "Director",
       "progress": 63,
       "status": {
-        "name": "Active",
-        "color": "#0cf90c",
-        "id": "37ab713b-1fb1-4b8e-9d42-a9595b2cf25c"
+        "name": "InActive",
+        "color": "red",
+        "id": "c64ed062-599e-40c9-9d51-58017b7c2163"
       },
       "statusMenu": [
         {
@@ -532,7 +532,7 @@
       "status": {
         "name": "InActive",
         "color": "red",
-        "id": "d6608021-5a18-431f-892e-c37901b7225c"
+        "id": "c64ed062-599e-40c9-9d51-58017b7c2163"
       },
       "statusMenu": [
         {

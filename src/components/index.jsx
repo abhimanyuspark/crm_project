@@ -22,6 +22,7 @@ import DateRangePicker from "./DatePicker/DateRangePicker";
 import { rangePresets } from "./DatePicker/data";
 import PieChart from "./Charts/PieChart";
 import PieChartUsage from "./Charts/PieChartUsage";
+import FilterTable from "./FilterTable";
 
 export {
   Loader,
@@ -56,4 +57,5 @@ export {
   PieChart,
   PieChartUsage,
   rangePresets,
+  FilterTable,
 };

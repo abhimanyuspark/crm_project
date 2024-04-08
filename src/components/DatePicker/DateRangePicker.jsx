@@ -53,7 +53,7 @@ const DateRangePicker = ({
           startDate={value?.start}
           endDate={value?.end}
           className="w-20 border-0 focus:outline-0 bg-transparent"
-          calendarClassName="left-20 -top-[2px] rounded-sm border-slate-300"
+          calendarClassName="left-20 -top-[2px] border-slate-300"
           showYearDropdown
           showMonthDropdown
           placeholderText="Start date"
