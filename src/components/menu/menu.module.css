@@ -25,7 +25,7 @@
 } */
 .list {
   position: absolute;
-  width: 130px;
+  width: 140px;
   border-radius: 0.2rem;
   border: var(--border);
   padding: 8px 0px;

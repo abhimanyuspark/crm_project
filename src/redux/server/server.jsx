@@ -83,6 +83,24 @@ export const deleteUser = createAsyncThunk("user/deleteUser", async (id) => {
   }
 });
 
+export const filterUsers = createAsyncThunk(
+  "user/filterUsers",
+  async ({ role, data }) => {
+    try {
+      const response = await axios.get(
+        `${apiUrl}/users?role=${role}&status.name=${
+          data?.status?.name === "All" ? "" : data?.status?.name
+        }&allowFollowUp.type=${
+          data?.allowFollowUp?.type === "All" ? "" : data?.allowFollowUp?.type
+        }`
+      );
+      return response.data;
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+);
+
 // about user End
 
 // Events Sart

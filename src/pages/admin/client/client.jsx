@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { roleUsers } from "../../../redux/server/server";
+import { roleUsers, filterUsers } from "../../../redux/server/server";
 import {
   Button,
   DateRangePicker,
@@ -18,6 +18,7 @@ import { Columns } from "./column";
 import { useNavigate } from "react-router-dom";
 import { FaList, FaPlus, BsKanBan, FaSearch } from "../../../components/icons";
 import { ClientsData } from "../../data.json";
+import { dateFilter } from "../../../redux/features/roleUsers";
 
 const Client = () => {
   const { users, loading } = useSelector((state) => state.users);
@@ -36,15 +37,9 @@ const Client = () => {
     dispatch(roleUsers("client"));
   }, []);
 
-  const filterByDate = useMemo(() => {
-    return users?.filter((item) => {
-      if (dates?.start && dates?.end) {
-        const d = new Date(item?.date);
-        return d >= dates?.start && d <= dates?.end;
-      }
-      return true;
-    });
-  }, [users, dates?.start, dates?.end]);
+  useEffect(() => {
+    dispatch(dateFilter(dates));
+  }, [dates.start, dates.end]);
 
   return (
     <>
@@ -97,7 +92,7 @@ const Client = () => {
             <Table
               loading={loading}
               Columns={Columns}
-              data={filterByDate}
+              data={users}
               globalFilter={globalFilter}
               setGlobalFilter={setGlobalFilter}
             />
@@ -112,13 +107,19 @@ const Client = () => {
   );
 };
 
-const FilterData = () => {
-  const { followUp, status } = ClientsData;
+// Filter Data Component
 
+const { followUp, status } = ClientsData;
+const FilterData = () => {
   const [data, setData] = useState({
     allowFollowUp: { type: "All" },
     status: { name: "All" },
   });
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(filterUsers({ role: "client", data }));
+  }, [data.allowFollowUp, data.status]);
 
   const clear = () => {
     setData((p) => ({
@@ -136,7 +137,10 @@ const FilterData = () => {
           <label className="text-base text-slate-600">Allow Follow Up</label>
           <Select
             options={followUp}
-            onChange={(d) => setData((p) => ({ ...p, allowFollowUp: d }))}
+            onChange={(d) => {
+              if (data?.allowFollowUp?.type === d?.name) return null;
+              setData((p) => ({ ...p, allowFollowUp: d }));
+            }}
             value={data.allowFollowUp}
             fields={(i) => i?.type}
           />
@@ -147,7 +151,10 @@ const FilterData = () => {
           <label className="text-base text-slate-600">Status</label>
           <Select
             options={status}
-            onChange={(d) => setData((p) => ({ ...p, status: d }))}
+            onChange={(d) => {
+              if (data?.status?.name === d?.name) return null;
+              setData((p) => ({ ...p, status: d }));
+            }}
             value={data.status}
             fields={(i) => i?.name}
           />

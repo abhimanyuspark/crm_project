@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useMemo } from "react";
 import styles from "./select.module.css";
 
-function Select({
+const Select = ({
   loading = false,
   className = "",
   multiple = false,
@@ -17,7 +17,7 @@ function Select({
   optiontemplete = (o) => o,
   valuetemplete = (v) => v,
   multiplvaluetemplete = (m) => m,
-}) {
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const parentRef = useRef(null);
@@ -232,6 +232,6 @@ function Select({
       </ul>
     </div>
   );
-}
+};
 
 export default Select;

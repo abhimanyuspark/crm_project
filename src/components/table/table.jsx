@@ -130,12 +130,13 @@ const Table = ({
               );
             })
           ) : (
-            <tr className="p-2">
-              <td
-                className="flex justify-center items-center"
-                colSpan={columnSpan}
-              >
-                No data Found
+            <tr>
+              <td colSpan={columnSpan}>
+                <div className="flex items-center justify-center p-2">
+                  <div className="px-4 py-2 border border-slate-300 rounded-md bg-white">
+                    No data Found
+                  </div>
+                </div>
               </td>
             </tr>
           )}

@@ -4,7 +4,7 @@ import { FaFilter, FaTimes } from "react-icons/fa";
 const FilterTable = ({ label = "Filter", children }) => {
   const [open, setOpen] = useState(false);
 
-  const outerStyle = { transition: "opacity 0.3s ease" };
+  const outerStyle = { transition: "opacity 0.5s ease" };
   const innerStyle = { transition: "0.3s ease" };
 
   return (
@@ -29,7 +29,7 @@ const FilterTable = ({ label = "Filter", children }) => {
         <div
           style={innerStyle}
           className={`fixed w-64 h-full bg-white top-[60px] border-x border-slate-300 ${
-            open ? "right-3" : "-right-64"
+            open ? "right-0" : "-right-64"
           }`}
           onClick={(e) => e.stopPropagation()}
         >
