@@ -7,16 +7,12 @@ const initialState = {
   loading: false,
   error: null,
   user: {},
-  clear: false,
 };
 
 const usersSlice = createSlice({
   name: "users",
   initialState,
   reducers: {
-    clearData: (state, action) => {
-      state.clear = action?.payload;
-    },
     setLoading: (state, action) => {
       state.loading = action?.payload;
     },
@@ -89,6 +85,6 @@ const usersSlice = createSlice({
       }),
 });
 
-export const { deleteUserReducer, filterUsers, setLoading, clearData } =
+export const { deleteUserReducer, filterUsers, setLoading } =
   usersSlice.actions;
 export default usersSlice.reducer;

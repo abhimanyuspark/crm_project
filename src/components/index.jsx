@@ -1,6 +1,6 @@
 import PersistenceAuth from "./persistenceAuth";
 import RequireAuth from "./requireAuth";
-import { Button, CancelButton } from "./style/buttons";
+import { Button, CancelButton, ClearButton } from "./style/buttons";
 import { Container, Image, SubNavBar, SubNavChild } from "./style/container";
 import { InputText, CheckBox, InputSelect, Switch } from "./style/inputs";
 import { formValidation } from "./formValidation";
@@ -32,6 +32,7 @@ export {
   RequireAuth,
   Button,
   CancelButton,
+  ClearButton,
   Container,
   SubNavBar,
   SubNavChild,

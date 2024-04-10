@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaFilter, FaTimes } from "react-icons/fa";
 
-const FilterTable = ({ label = "Filter", children }) => {
+const FilterTable = ({ label = "Filter", children, onChangeClear }) => {
   const [open, setOpen] = useState(false);
 
   const outerStyle = { transition: "opacity 0.5s ease" };
@@ -43,8 +43,19 @@ const FilterTable = ({ label = "Filter", children }) => {
             />
           </div>
           {/* Categories and Filters */}
-          <div className="w-full h-[calc(100%-110px)] overflow-auto relative">
+          <div className="w-full h-[calc(100%-170px)] overflow-auto relative">
             {children}
+          </div>
+
+          {/* Clear */}
+          <div className="border-t bg-white border-slate-300 p-3">
+            <button
+              type="reset"
+              className="p-2 hover:bg-slate-300 rounded-[4px] text-sm border border-slate-300"
+              onClick={onChangeClear}
+            >
+              Clear
+            </button>
           </div>
         </div>
       </div>

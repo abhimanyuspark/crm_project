@@ -52,4 +52,15 @@ const CancelButton = ({
   );
 };
 
-export { Button, CancelButton };
+const ClearButton = ({ onClick, text = "Clear" }) => {
+  return (
+    <button
+      className="border border-black p-2 text-sm rounded-[4px] hover:bg-black hover:text-white"
+      onClick={onClick}
+    >
+      {text}
+    </button>
+  );
+};
+
+export { Button, CancelButton, ClearButton };

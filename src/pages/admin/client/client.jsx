@@ -1,8 +1,9 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { roleUsers } from "../../../redux/server/server";
 import {
   Button,
+  ClearButton,
   DateRangePicker,
   FilterTable,
   InputText,
@@ -15,16 +16,13 @@ import { Columns } from "./column";
 import { useNavigate } from "react-router-dom";
 import { FaPlus, FaSearch } from "../../../components/icons";
 import { ClientsData } from "../../data.json";
-import {
-  clearData,
-  filterUsers,
-  setLoading,
-} from "../../../redux/features/roleUsers";
+import { filterUsers, setLoading } from "../../../redux/features/roleUsers";
 const { followUp, status } = ClientsData;
 
 const Client = () => {
-  const { users, loading, clear } = useSelector((state) => state.users);
+  const { users, loading } = useSelector((state) => state.users);
   const [globalFilter, setGlobalFilter] = useState("");
+  const [clear, setClear] = useState(false);
 
   const [data, setData] = useState({
     allowFollowUp: { type: "All" },
@@ -48,11 +46,12 @@ const Client = () => {
         end: "",
       },
     }));
-    dispatch(clearData());
+    setClear(false);
+    setGlobalFilter("");
   };
 
   const onDatesChange = (dates) => {
-    dispatch(clearData(true));
+    setClear(true);
     setData((p) => {
       const newDate = { ...p.dates, ...dates };
       return { ...p, dates: newDate };
@@ -87,23 +86,30 @@ const Client = () => {
             height="33px"
             value={globalFilter}
             placeholder="Search here.."
-            onChange={(e) => setGlobalFilter(e.target.value)}
+            onChange={(e) => {
+              setGlobalFilter(e.target.value);
+              setClear(true);
+            }}
           />
         </SubNavChild>
 
         {clear && (
           <SubNavChild>
-            <button
-              className="border border-black p-2 text-sm rounded-md hover:bg-black hover:text-white"
-              onClick={onClear}
-            >
-              Clear
-            </button>
+            <ClearButton onClick={onClear} />
           </SubNavChild>
         )}
 
         <SubNavChild>
-          <FilterTable>
+          <FilterTable
+            label="Filter Clients"
+            onChangeClear={() =>
+              setData((p) => ({
+                ...p,
+                allowFollowUp: { type: "All" },
+                status: { name: "All" },
+              }))
+            }
+          >
             <div className="p-4 flex gap-4 flex-col">
               {/* allow folloe up */}
               <div className="flex gap-2 flex-col">
@@ -115,8 +121,7 @@ const Client = () => {
                   onChange={(d) => {
                     if (data?.allowFollowUp?.type === d?.type) return null;
                     setData((p) => ({ ...p, allowFollowUp: d }));
-
-                    dispatch(clearData(true));
+                    setClear(true);
                   }}
                   value={data?.allowFollowUp}
                   fields={(i) => i?.type}
@@ -131,30 +136,12 @@ const Client = () => {
                   onChange={(d) => {
                     if (data?.status?.name === d?.name) return null;
                     setData((p) => ({ ...p, status: d }));
-
-                    dispatch(clearData(true));
+                    setClear(true);
                   }}
                   value={data?.status}
                   fields={(i) => i?.name}
                 />
               </div>
-            </div>
-
-            {/* Clear */}
-            <div className="border-t border-slate-300 p-3 absolute bottom-0 w-full">
-              <button
-                type="reset"
-                className="p-2 hover:bg-slate-300 rounded-[4px] text-sm border border-slate-300"
-                onClick={() =>
-                  setData((p) => ({
-                    ...p,
-                    allowFollowUp: { type: "All" },
-                    status: { name: "All" },
-                  }))
-                }
-              >
-                Clear
-              </button>
             </div>
           </FilterTable>
         </SubNavChild>
