@@ -8,11 +8,11 @@ const DateRangePicker = ({
   onChange = (p) => p,
 }) => {
   const handleStartDateChange = (date) => {
-    onChange(date);
+    onChange({ ...value, start: date });
   };
 
   const handleEndDateChange = (date) => {
-    onChange(date);
+    onChange({ ...value, end: date });
   };
 
   return (
@@ -24,7 +24,7 @@ const DateRangePicker = ({
           <li
             key={i}
             className={`${
-              value?.start === d?.value[0] && value?.end === d?.value[1]
+              value?.start === d?.value.start && value?.end === d?.value?.end
                 ? "bg-slate-500 text-white"
                 : "hover:bg-slate-300"
             } p-2 text-sm cursor-pointer`}
@@ -42,6 +42,7 @@ const DateRangePicker = ({
           selected={value?.start}
           onChange={handleStartDateChange}
           selectsStart
+          dateFormat={"dd/MM/YYYY"}
           startDate={value?.start}
           endDate={value?.end}
           className="w-20 border-0 focus:outline-0 bg-transparent"
@@ -56,6 +57,7 @@ const DateRangePicker = ({
           selected={value?.end}
           onChange={handleEndDateChange}
           selectsEnd
+          dateFormat={"dd/MM/YYYY"}
           startDate={value?.start}
           endDate={value?.end}
           className="w-20 border-0 focus:outline-0 bg-transparent"

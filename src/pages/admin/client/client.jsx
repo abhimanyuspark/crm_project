@@ -95,7 +95,9 @@ const Client = () => {
 
         {clear && (
           <SubNavChild>
-            <ClearButton onClick={onClear} />
+            <div className="px-1">
+              <ClearButton onClick={onClear} />
+            </div>
           </SubNavChild>
         )}
 

@@ -55,7 +55,7 @@ const CancelButton = ({
 const ClearButton = ({ onClick, text = "Clear" }) => {
   return (
     <button
-      className="border border-black p-2 text-sm rounded-[4px] hover:bg-black hover:text-white"
+      className="border border-black px-3 py-[6px] text-base rounded-[4px] hover:bg-black hover:text-white"
       onClick={onClick}
     >
       {text}

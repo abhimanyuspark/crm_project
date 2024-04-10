@@ -16,12 +16,13 @@ const Calender = ({
   height = "400px",
   events = [],
   initialView = "listWeek",
+  userId = "",
 }) => {
   const navigate = useNavigate();
 
   function handleEventClick(clickInfo) {
     const eventId = clickInfo.event.id;
-    navigate(`/events/${eventId}`);
+    navigate(`/events/${userId}/${eventId}`);
   }
 
   // function handleDateSelect(selectInfo) {
@@ -72,7 +73,7 @@ const Calender = ({
       // editable={true}
       // dayMaxEvents={true}
       height={height}
-      initialEvents={events}
+      events={events}
       eventContent={renderEventContent}
       eventClick={handleEventClick}
       // select={handleDateSelect}

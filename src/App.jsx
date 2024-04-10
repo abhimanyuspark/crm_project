@@ -88,7 +88,7 @@ function App() {
             <Route path="/events" element={<Events />} />
             <Route path="/events/create" element={<AddEvent />} />
             <Route path="/events/:id/edit" element={<EditEvent />} />
-            <Route path="/events/:id" element={<ViewEvent />} />
+            <Route path="/events/:userId/:id" element={<ViewEvent />} />
             {/* Events End */}
           </Route>
         </Route>

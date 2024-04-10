@@ -88,7 +88,7 @@ const APDashboard = () => {
               My Calender
             </h2>
             <div className="p-4">
-              <Calender events={user?.events} />
+              <Calender userId={user?.id} events={user?.events} />
             </div>
           </Container>
         </div>

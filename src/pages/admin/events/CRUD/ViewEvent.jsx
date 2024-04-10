@@ -1,25 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { Container, Menu } from "../../../../components";
-import { deleteUserEvent } from "../../../../redux/server/server";
+import { deleteUserEvent, userDetails } from "../../../../redux/server/server";
 import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 import { deletEventReducer } from "../../../../redux/features/login/reduxLogin";
 
 const ViewEvent = () => {
-  const { user } = useSelector((state) => state.auth);
-  const { id } = useParams();
+  const auth = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.users);
+  const { userId, id } = useParams();
   const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/events";
-  const { events } = user;
+
+  useEffect(() => {
+    if (userId) {
+      const id = userId;
+      dispatch(userDetails(id));
+    }
+  }, [dispatch]);
 
   let event = {};
-  events.map((i) => {
-    if (i.id === id) {
-      event = i;
+
+  user?.events?.map((e) => {
+    if (e?.id === id) {
+      event = e;
     }
   });
 
@@ -36,7 +44,7 @@ const ViewEvent = () => {
       if (result.isConfirmed) {
         dispatch(deletEventReducer(id)),
           toast.promise(
-            dispatch(deleteUserEvent({ userId: user?.id, eventId: id })),
+            dispatch(deleteUserEvent({ userId: userId, eventId: id })),
             {
               loading: "loading...",
               success: "Deleted Successfully!",
@@ -54,9 +62,6 @@ const ViewEvent = () => {
   const Update = () => {
     navigate(`/events/${id}/edit`);
   };
-
-  const start = new Date(event.start).toISOString();
-  const end = new Date(event.end).toISOString();
 
   return (
     <div className="p-6">
@@ -83,15 +88,15 @@ const ViewEvent = () => {
             </div>
             <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
               <p className="font-bold w-72">Start Date</p>
-              <p>{start}</p>
+              <p>{event?.end}</p>
             </div>
             <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
               <p className="font-bold w-72">End Date</p>
-              <p>{end}</p>
+              <p>{event?.start}</p>
             </div>
           </div>
 
-          {user?.role?.includes("admin") && (
+          {auth?.user?.role?.includes("admin") && (
             <Menu>
               <li onClick={Update}>Edit</li>
               <li onClick={Delete}>Delete</li>
