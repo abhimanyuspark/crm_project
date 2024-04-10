@@ -25,11 +25,12 @@ const Table = ({
   loading = false,
 }) => {
   const [rowSelection, setRowSelection] = useState({});
+  const tableData = useMemo(() => data, [data]);
   const columns = useMemo(() => Columns, [Columns]);
   const [sorting, setSorting] = useState([]);
 
   const table = useReactTable({
-    data,
+    data: tableData,
     columns,
     state: {
       rowSelection,
@@ -43,6 +44,7 @@ const Table = ({
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
+    enableGlobalFilter: true,
     getPaginationRowModel: getPaginationRowModel(),
     // debugTable: true,
   });

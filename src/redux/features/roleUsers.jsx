@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { roleUsers, userDetails, filterUsers } from "../server/server";
+import { roleUsers, userDetails } from "../server/server";
 
 const initialState = {
   users: [],
@@ -7,12 +7,19 @@ const initialState = {
   loading: false,
   error: null,
   user: {},
+  clear: false,
 };
 
 const usersSlice = createSlice({
   name: "users",
   initialState,
   reducers: {
+    clearData: (state, action) => {
+      state.clear = action?.payload;
+    },
+    setLoading: (state, action) => {
+      state.loading = action?.payload;
+    },
     deleteUserReducer: (state, action) => {
       const id = action?.payload;
       const filteredUsers = state.users.filter((i) => {
@@ -23,19 +30,36 @@ const usersSlice = createSlice({
         users: filteredUsers,
       };
     },
-    dateFilter: (state, action) => {
-      const { start, end } = action?.payload;
-      const filteredUsers = state.localUsers.filter((item) => {
-        if (start && end) {
-          const d = new Date(item?.date);
-          return d >= start && d <= end;
+    filterUsers: (state, action) => {
+      const { status, allowFollowUp, dates } = action?.payload;
+
+      state.users = state.localUsers.filter((data) => {
+        let isStatusMatched = true;
+        let isFollowMatched = true;
+        let isDatesMatched = true;
+        const date = new Date(data?.date);
+
+        if (status?.name !== "All" && data?.status?.name !== status?.name) {
+          isStatusMatched = false;
         }
-        return true;
+
+        if (
+          allowFollowUp?.type !== "All" &&
+          data?.allowFollowUp?.type !== allowFollowUp?.type
+        ) {
+          isFollowMatched = false;
+        }
+
+        if (dates?.start !== "" && date <= new Date(dates?.start)) {
+          isDatesMatched = false;
+        }
+
+        if (dates?.end !== "" && date >= new Date(dates?.end)) {
+          isDatesMatched = false;
+        }
+
+        return isStatusMatched && isFollowMatched && isDatesMatched;
       });
-      return {
-        ...state,
-        users: filteredUsers,
-      };
     },
   },
   extraReducers: (builder) =>
@@ -62,20 +86,9 @@ const usersSlice = createSlice({
       .addCase(userDetails.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
-      })
-      .addCase(filterUsers.pending, (state) => {
-        state.loading = true;
-      })
-      .addCase(filterUsers.fulfilled, (state, action) => {
-        state.loading = false;
-        state.users = action.payload;
-        state.localUsers = action.payload;
-      })
-      .addCase(filterUsers.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message;
       }),
 });
 
-export const { deleteUserReducer, dateFilter } = usersSlice.actions;
+export const { deleteUserReducer, filterUsers, setLoading, clearData } =
+  usersSlice.actions;
 export default usersSlice.reducer;

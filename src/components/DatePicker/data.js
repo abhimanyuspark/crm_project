@@ -30,11 +30,20 @@ const startOfLastYear = new Date(
 );
 
 export const rangePresets = [
-  { label: "Today", value: [today, today] },
-  { label: "Last 30 Days", value: [startOfLast30Days, endOfLast30Days] },
-  { label: "This Month", value: [startOfThisMonth, endOfThisMonth] },
-  { label: "Last Month", value: [startOfLastMonth, endOfLastMonth] },
-  { label: "Last 90 Days", value: [startOfLast90Days, today] },
-  { label: "Last 6 Months", value: [startOfLast6Months, today] },
-  { label: "Last 1 Year", value: [startOfLastYear, today] },
+  { label: "Today", value: { start: today, end: today } },
+  {
+    label: "Last 30 Days",
+    value: { start: startOfLast30Days, end: endOfLast30Days },
+  },
+  {
+    label: "This Month",
+    value: { start: startOfThisMonth, end: endOfThisMonth },
+  },
+  {
+    label: "Last Month",
+    value: { start: startOfLastMonth, end: endOfLastMonth },
+  },
+  { label: "Last 90 Days", value: { start: startOfLast90Days, end: today } },
+  { label: "Last 6 Months", value: { start: startOfLast6Months, end: today } },
+  { label: "Last 1 Year", value: { start: startOfLastYear, end: today } },
 ];

@@ -146,7 +146,7 @@ export const Columns = [
         );
       };
 
-      const optionTemplete = (o) => {
+      const Templete = (o) => {
         return (
           <div className="flex items-center gap-2">
             <span
@@ -160,8 +160,8 @@ export const Columns = [
 
       return val ? (
         <Select
-          optiontemplete={optionTemplete}
-          valuetemplete={optionTemplete}
+          optiontemplete={Templete}
+          valuetemplete={Templete}
           width="8em"
           optionswidth="9em"
           options={options}

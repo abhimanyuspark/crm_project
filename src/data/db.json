@@ -906,6 +906,44 @@
       "allowFollowUp": {
         "type": "No"
       }
+    },
+    {
+      "id": "2ac06070-7c3e-4f79-a107-f47b443a17e6",
+      "role": [
+        "client"
+      ],
+      "name": "spec",
+      "password": "VYBLrJ61Fn",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/534.jpg",
+      "email": "spec@gmail.com",
+      "age": "",
+      "visits": "",
+      "jobType": "",
+      "date": "2024-04-10T11:14:51.342Z",
+      "status": {
+        "name": "InActive",
+        "color": "red",
+        "id": "c64ed062-599e-40c9-9d51-58017b7c2163"
+      },
+      "statusMenu": [
+        {
+          "name": "InActive",
+          "color": "red",
+          "id": "71a820b1-5002-47b4-8c64-6f197af13d1b"
+        },
+        {
+          "name": "Active",
+          "color": "#0cf90c",
+          "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+        }
+      ],
+      "gender": "Male",
+      "tasks": [],
+      "projects": [],
+      "events": [],
+      "allowFollowUp": {
+        "type": "No"
+      }
     }
   ]
 }

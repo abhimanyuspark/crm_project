@@ -1,51 +1,82 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { roleUsers, filterUsers } from "../../../redux/server/server";
+import { roleUsers } from "../../../redux/server/server";
 import {
   Button,
   DateRangePicker,
   FilterTable,
   InputText,
-  KanBan,
   Select,
   SubNavBar,
   SubNavChild,
-  Switch,
   Table,
-  rangePresets,
 } from "../../../components";
 import { Columns } from "./column";
 import { useNavigate } from "react-router-dom";
-import { FaList, FaPlus, BsKanBan, FaSearch } from "../../../components/icons";
+import { FaPlus, FaSearch } from "../../../components/icons";
 import { ClientsData } from "../../data.json";
-import { dateFilter } from "../../../redux/features/roleUsers";
+import {
+  clearData,
+  filterUsers,
+  setLoading,
+} from "../../../redux/features/roleUsers";
+const { followUp, status } = ClientsData;
 
 const Client = () => {
-  const { users, loading } = useSelector((state) => state.users);
+  const { users, loading, clear } = useSelector((state) => state.users);
   const [globalFilter, setGlobalFilter] = useState("");
-  const [tab, setTab] = useState(true);
-  const [dates, setDates] = useState({
-    start: "",
-    end: "",
-    // start: rangePresets[6].value[0],
-    // end: rangePresets[6].value[1],
+
+  const [data, setData] = useState({
+    allowFollowUp: { type: "All" },
+    status: { name: "All" },
+    dates: {
+      start: "",
+      end: "",
+    },
   });
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const onClear = () => {
+    setData((p) => ({
+      ...p,
+      allowFollowUp: { type: "All" },
+      status: { name: "All" },
+      dates: {
+        start: "",
+        end: "",
+      },
+    }));
+    dispatch(clearData());
+  };
+
+  const onDatesChange = (dates) => {
+    dispatch(clearData(true));
+    setData((p) => {
+      const newDate = { ...p.dates, ...dates };
+      return { ...p, dates: newDate };
+    });
+  };
+
+  useEffect(() => {
+    const getData = async () => {
+      dispatch(setLoading(true));
+      await dispatch(filterUsers(data));
+      dispatch(setLoading(false));
+    };
+    getData();
+  }, [data]);
 
   useEffect(() => {
     dispatch(roleUsers("client"));
   }, []);
 
-  useEffect(() => {
-    dispatch(dateFilter(dates));
-  }, [dates.start, dates.end]);
-
   return (
     <>
       <SubNavBar>
         <SubNavChild>
-          <DateRangePicker value={dates} onChange={setDates} />
+          <DateRangePicker value={data.dates} onChange={onDatesChange} />
         </SubNavChild>
 
         <SubNavChild>
@@ -54,14 +85,77 @@ const Client = () => {
             icon={<FaSearch className="text-slate-500" size={15} />}
             type="search"
             height="33px"
+            value={globalFilter}
             placeholder="Search here.."
             onChange={(e) => setGlobalFilter(e.target.value)}
           />
         </SubNavChild>
 
+        {clear && (
+          <SubNavChild>
+            <button
+              className="border border-black p-2 text-sm rounded-md hover:bg-black hover:text-white"
+              onClick={onClear}
+            >
+              Clear
+            </button>
+          </SubNavChild>
+        )}
+
         <SubNavChild>
           <FilterTable>
-            <FilterData />
+            <div className="p-4 flex gap-4 flex-col">
+              {/* allow folloe up */}
+              <div className="flex gap-2 flex-col">
+                <label className="text-base text-slate-600">
+                  Allow Follow Up
+                </label>
+                <Select
+                  options={followUp}
+                  onChange={(d) => {
+                    if (data?.allowFollowUp?.type === d?.type) return null;
+                    setData((p) => ({ ...p, allowFollowUp: d }));
+
+                    dispatch(clearData(true));
+                  }}
+                  value={data?.allowFollowUp}
+                  fields={(i) => i?.type}
+                />
+              </div>
+
+              {/* Status */}
+              <div className="flex gap-2 flex-col">
+                <label className="text-base text-slate-600">Status</label>
+                <Select
+                  options={status}
+                  onChange={(d) => {
+                    if (data?.status?.name === d?.name) return null;
+                    setData((p) => ({ ...p, status: d }));
+
+                    dispatch(clearData(true));
+                  }}
+                  value={data?.status}
+                  fields={(i) => i?.name}
+                />
+              </div>
+            </div>
+
+            {/* Clear */}
+            <div className="border-t border-slate-300 p-3 absolute bottom-0 w-full">
+              <button
+                type="reset"
+                className="p-2 hover:bg-slate-300 rounded-[4px] text-sm border border-slate-300"
+                onClick={() =>
+                  setData((p) => ({
+                    ...p,
+                    allowFollowUp: { type: "All" },
+                    status: { name: "All" },
+                  }))
+                }
+              >
+                Clear
+              </button>
+            </div>
           </FilterTable>
         </SubNavChild>
       </SubNavBar>
@@ -76,102 +170,19 @@ const Client = () => {
               navigate("/clients/add");
             }}
           />
-
-          {/* <Switch
-          value={tab}
-          onChange={(b) => setTab(b)}
-          icon1={<FaList />}
-          icon2={<BsKanBan size={20} />}
-        /> */}
         </div>
 
-        {/* Switch to table to kanban */}
-
-        {tab ? (
-          <div className="p-2 rounded-md border border-slate-200 bg-white">
-            <Table
-              loading={loading}
-              Columns={Columns}
-              data={users}
-              globalFilter={globalFilter}
-              setGlobalFilter={setGlobalFilter}
-            />
-          </div>
-        ) : (
-          <div>
-            <KanBan />
-          </div>
-        )}
+        <div className="p-2 rounded-md border border-slate-200 bg-white">
+          <Table
+            loading={loading}
+            Columns={Columns}
+            data={users}
+            globalFilter={globalFilter}
+            setGlobalFilter={setGlobalFilter}
+          />
+        </div>
       </div>
     </>
-  );
-};
-
-// Filter Data Component
-
-const { followUp, status } = ClientsData;
-const FilterData = () => {
-  const [data, setData] = useState({
-    allowFollowUp: { type: "All" },
-    status: { name: "All" },
-  });
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(filterUsers({ role: "client", data }));
-  }, [data.allowFollowUp, data.status]);
-
-  const clear = () => {
-    setData((p) => ({
-      ...p,
-      allowFollowUp: { type: "All" },
-      status: { name: "All" },
-    }));
-  };
-
-  return (
-    <div>
-      <div className="p-4 flex gap-4 flex-col">
-        {/* allow folloe up */}
-        <div className="flex gap-2 flex-col">
-          <label className="text-base text-slate-600">Allow Follow Up</label>
-          <Select
-            options={followUp}
-            onChange={(d) => {
-              if (data?.allowFollowUp?.type === d?.name) return null;
-              setData((p) => ({ ...p, allowFollowUp: d }));
-            }}
-            value={data.allowFollowUp}
-            fields={(i) => i?.type}
-          />
-        </div>
-
-        {/* Status */}
-        <div className="flex gap-2 flex-col">
-          <label className="text-base text-slate-600">Status</label>
-          <Select
-            options={status}
-            onChange={(d) => {
-              if (data?.status?.name === d?.name) return null;
-              setData((p) => ({ ...p, status: d }));
-            }}
-            value={data.status}
-            fields={(i) => i?.name}
-          />
-        </div>
-      </div>
-
-      {/* Clear */}
-      <div className="border-t border-slate-300 p-3 absolute bottom-0 w-full">
-        <button
-          type="reset"
-          className="p-2 hover:bg-slate-300 rounded-[4px] text-sm border border-slate-300"
-          onClick={() => clear()}
-        >
-          Clear
-        </button>
-      </div>
-    </div>
   );
 };
 

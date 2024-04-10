@@ -5,18 +5,14 @@ import { rangePresets } from "./data";
 
 const DateRangePicker = ({
   value = { start: new Date(), end: new Date() },
-  onChange = (p) => ({
-    ...p,
-    start: "",
-    end: "",
-  }),
+  onChange = (p) => p,
 }) => {
   const handleStartDateChange = (date) => {
-    onChange((p) => ({ ...p, start: date }));
+    onChange(date);
   };
 
   const handleEndDateChange = (date) => {
-    onChange((p) => ({ ...p, end: date }));
+    onChange(date);
   };
 
   return (
@@ -33,11 +29,7 @@ const DateRangePicker = ({
                 : "hover:bg-slate-300"
             } p-2 text-sm cursor-pointer`}
             onClick={() => {
-              onChange((p) => ({
-                ...p,
-                start: d?.value[0],
-                end: d?.value[1],
-              }));
+              onChange(d?.value);
             }}
           >
             {d?.label}
