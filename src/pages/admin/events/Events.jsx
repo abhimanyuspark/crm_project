@@ -4,26 +4,50 @@ import {
   Calender,
   Container,
   Image,
+  Loader,
   Select,
   SubNavBar,
   SubNavChild,
 } from "../../../components/index";
 import { useDispatch, useSelector } from "react-redux";
 import { FaPlus } from "../../../components/icons";
-import { useNavigate } from "react-router-dom";
-import { roleUsers } from "../../../redux/server/server";
+import { useNavigate, useLocation } from "react-router-dom";
+import { roleUsers, userDetails } from "../../../redux/server/server";
 
 const Events = () => {
-  const { user } = useSelector((state) => state.auth);
-  const { users } = useSelector((state) => state.users);
+  const auth = useSelector((state) => state.auth);
+  const { users, user, loading } = useSelector((state) => state.users);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
-  const [selectedUser, setSelectedUser] = useState(user);
+  const roles = [
+    {
+      role: "All",
+      value: "",
+    },
+    {
+      role: "Employees",
+      value: "employee",
+    },
+    {
+      role: "Clients",
+      value: "client",
+    },
+  ];
+
+  const [selectedUser, setSelectedUser] = useState(auth?.user);
+  const [role, setRole] = useState(roles[0]);
 
   useEffect(() => {
-    dispatch(roleUsers(""));
-  }, []);
+    dispatch(roleUsers(role.value));
+  }, [role.value, pathname]);
+
+  useEffect(() => {
+    if (selectedUser) {
+      dispatch(userDetails(selectedUser?.id));
+    }
+  }, [selectedUser]);
 
   const Templete = (i) => {
     return (
@@ -37,7 +61,7 @@ const Events = () => {
           <p className="text-sm">{i?.name}</p>
           <p className="text-xs text-slate-400">{i?.role[0]}</p>
         </div>
-        {i?.name === user?.name && (
+        {i?.name === auth?.user?.name && (
           <span className="px-1 rounded-sm bg-slate-600 text-white text-xs">
             its you
           </span>
@@ -48,11 +72,12 @@ const Events = () => {
 
   return (
     <>
-      {user?.role?.includes("admin") && (
+      {auth?.user?.role?.includes("admin") && (
         <SubNavBar>
           <SubNavChild>
+            <span className="pr-2">{role.role}:</span>
             <Select
-              width="300px"
+              width="250px"
               value={selectedUser}
               options={users}
               fields={(i) => i.name}
@@ -63,14 +88,29 @@ const Events = () => {
               valuetemplete={Templete}
             />
           </SubNavChild>
+          <SubNavChild>
+            <span className="pr-1">Type:</span>
+            <Select
+              options={roles}
+              onChange={(e) => {
+                setRole(e);
+              }}
+              value={role}
+              width="100%"
+              optionswidth="120px"
+              fields={(i) => i.role}
+              className="border-0"
+            />
+          </SubNavChild>
         </SubNavBar>
       )}
 
       <div className="p-8">
-        {user?.role?.includes("admin") && (
+        {auth?.user?.role?.includes("admin") && (
           <div className="pb-4">
             <Button
               text={"Events"}
+              type="button"
               icon={<FaPlus />}
               onClick={() => {
                 navigate("/events/create");
@@ -79,13 +119,14 @@ const Events = () => {
           </div>
         )}
 
-        <Container>
+        <Container className="relative w-full h-full">
+          {loading && <Loader />}
           <div className="p-8">
             <Calender
-              events={selectedUser?.events}
+              events={user?.events}
               height="600px"
               initialView="dayGridMonth"
-              userId={selectedUser?.id}
+              userId={user?.id}
             />
           </div>
         </Container>

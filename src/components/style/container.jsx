@@ -1,8 +1,12 @@
 import React from "react";
 
-export const Container = ({ children }) => {
+export const Container = ({ children, className }) => {
   return (
-    <div className="w-full bg-white rounded-md border border-slate-200">
+    <div
+      className={
+        className + "w-full bg-white rounded-md border border-slate-200"
+      }
+    >
       {children}
     </div>
   );

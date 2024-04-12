@@ -26,10 +26,11 @@ const authSlice = createSlice({
       state.persist = action?.payload;
     },
     deletEventReducer: (state, action) => {
-      const id = action?.payload;
-      state.user.events = state.user.events.filter((i) => {
-        return i.id !== id;
-      });
+      const event = action?.payload;
+      const index = state.user.events.findIndex((e) => e.id === event.id);
+      if (index !== -1) {
+        state.user.events.splice(index, 1);
+      }
     },
     addEventReducer: (state, action) => {
       const event = action?.payload;

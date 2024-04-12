@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { userDetails } from "../../../../redux/server/server";
 import {
   FaLayerGroup,
+  FaCalendar,
   IoMdFemale,
   IoMdMale,
 } from "../../../../components/icons";
@@ -66,7 +67,17 @@ const ViewClient = ({ intialImage }) => {
           </div>
         </Container>
 
-        <Container></Container>
+        <Container>
+          <div className="flex h-full justify-between items-center p-6">
+            <div className="flex h-full flex-col justify-between">
+              <h1 className="text-base">Total Events</h1>
+              <p className="text-xl font-bold text-blue-500">
+                {user?.events?.length}
+              </p>
+            </div>
+            <FaCalendar size={30} className="text-slate-400" />
+          </div>
+        </Container>
       </div>
 
       <div className="grid grid-cols-[1fr_auto] grid-rows-[auto] gap-8">

@@ -31,7 +31,7 @@ const ViewEvent = () => {
     }
   });
 
-  const Delete = () => {
+  const Delete = async () => {
     Swal.fire({
       title: "Are you sure?",
       text: `You won't be able to revert ${event?.title} this event!`,
@@ -42,18 +42,18 @@ const ViewEvent = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        dispatch(deletEventReducer(id)),
-          toast.promise(
-            dispatch(deleteUserEvent({ userId: userId, eventId: id })),
-            {
-              loading: "loading...",
-              success: "Deleted Successfully!",
-              error: "Error in Deleting Event.",
-            },
-            {
-              position: "top-center",
-            }
-          );
+        dispatch(deletEventReducer(event));
+        toast.promise(
+          dispatch(deleteUserEvent({ userId: userId, eventId: id })),
+          {
+            loading: "loading...",
+            success: "Deleted Successfully!",
+            error: "Error in Deleting Event.",
+          },
+          {
+            position: "top-center",
+          }
+        );
         navigate(from, { replace: true });
       }
     });
