@@ -16,7 +16,11 @@ import { Columns } from "./column";
 import { useNavigate, useLocation } from "react-router-dom";
 import { FaPlus, FaSearch } from "../../../components/icons";
 import { ClientsData } from "../../data.json";
-import { filterUsers, setLoading } from "../../../redux/features/roleUsers";
+import {
+  filterUsers,
+  restore,
+  setLoading,
+} from "../../../redux/features/roleUsers";
 const { followUp, status } = ClientsData;
 
 const Client = () => {
@@ -49,6 +53,7 @@ const Client = () => {
     }));
     setClear(false);
     setGlobalFilter("");
+    dispatch(roleUsers("client"));
   };
 
   const onDatesChange = (dates) => {
@@ -76,7 +81,8 @@ const Client = () => {
 
   useEffect(() => {
     dispatch(roleUsers("client"));
-  }, [pathname]);
+    return () => dispatch(restore());
+  }, [dispatch, pathname]);
 
   return (
     <>

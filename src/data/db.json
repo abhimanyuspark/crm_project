@@ -538,9 +538,9 @@
       "jobType": "Associate",
       "progress": 60,
       "status": {
-        "name": "InActive",
-        "color": "red",
-        "id": "c64ed062-599e-40c9-9d51-58017b7c2163"
+        "name": "Active",
+        "color": "#0cf90c",
+        "id": "dd3d8265-a404-4556-8c07-85c85ea10ca1"
       },
       "statusMenu": [
         {
@@ -617,9 +617,9 @@
       "jobType": "Planner",
       "progress": 51,
       "status": {
-        "name": "Active",
-        "color": "#0cf90c",
-        "id": "d56449ca-aa83-4249-9850-2c5102c05f3c"
+        "name": "InActive",
+        "color": "red",
+        "id": "c64ed062-599e-40c9-9d51-58017b7c2163"
       },
       "statusMenu": [
         {
@@ -855,7 +855,7 @@
       "status": {
         "name": "Active",
         "color": "#0cf90c",
-        "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+        "id": "dd3d8265-a404-4556-8c07-85c85ea10ca1"
       },
       "statusMenu": [
         {
@@ -891,9 +891,9 @@
       "jobType": "",
       "date": "2024-04-07T18:25:59.545Z",
       "status": {
-        "name": "InActive",
-        "color": "red",
-        "id": "c64ed062-599e-40c9-9d51-58017b7c2163"
+        "name": "Active",
+        "color": "#0cf90c",
+        "id": "dd3d8265-a404-4556-8c07-85c85ea10ca1"
       },
       "statusMenu": [
         {
@@ -967,9 +967,9 @@
       "jobType": "",
       "date": "2024-04-12T12:06:05.980Z",
       "status": {
-        "name": "Active",
-        "color": "#0cf90c",
-        "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+        "name": "InActive",
+        "color": "red",
+        "id": "c64ed062-599e-40c9-9d51-58017b7c2163"
       },
       "statusMenu": [
         {

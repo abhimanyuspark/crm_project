@@ -5,6 +5,7 @@ import { Button, Table } from "../../../components";
 import { Columns } from "./column";
 import { useNavigate } from "react-router-dom";
 import { FaPlus } from "../../../components/icons";
+import { restore } from "../../../redux/features/roleUsers";
 
 const Employee = () => {
   const { users, loading } = useSelector((state) => state.users);
@@ -19,6 +20,7 @@ const Employee = () => {
 
   useEffect(() => {
     dispatch(roleUsers("employee"));
+    return () => dispatch(restore());
   }, []);
 
   const filterByDate = useMemo(() => {

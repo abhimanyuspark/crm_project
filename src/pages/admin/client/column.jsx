@@ -138,8 +138,8 @@ export const Columns = [
       const Status = async (status) => {
         if (val?.name === status?.name) return null;
         setVal(status);
-        dispatch(statusUpdate({ id, status }));
-        toast.promise(
+        await dispatch(statusUpdate({ id, status }));
+        await toast.promise(
           dispatch(updateStatus({ id, status })),
           {
             loading: "Updating...",
