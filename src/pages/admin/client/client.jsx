@@ -13,7 +13,7 @@ import {
   Table,
 } from "../../../components";
 import { Columns } from "./column";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { FaPlus, FaSearch } from "../../../components/icons";
 import { ClientsData } from "../../data.json";
 import { filterUsers, setLoading } from "../../../redux/features/roleUsers";
@@ -35,6 +35,7 @@ const Client = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const onClear = () => {
     setData((p) => ({
@@ -59,6 +60,12 @@ const Client = () => {
   };
 
   useEffect(() => {
+    if (globalFilter === "") {
+      setClear(false);
+    }
+  }, [globalFilter]);
+
+  useEffect(() => {
     const getData = async () => {
       dispatch(setLoading(true));
       await dispatch(filterUsers(data));
@@ -69,7 +76,7 @@ const Client = () => {
 
   useEffect(() => {
     dispatch(roleUsers("client"));
-  }, []);
+  }, [pathname]);
 
   return (
     <>
@@ -113,7 +120,7 @@ const Client = () => {
             }
           >
             <div className="p-4 flex gap-4 flex-col">
-              {/* allow folloe up */}
+              {/* allowFollowUp */}
               <div className="flex gap-2 flex-col">
                 <label className="text-base text-slate-600">
                   Allow Follow Up

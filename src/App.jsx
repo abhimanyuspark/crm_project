@@ -87,14 +87,14 @@ function App() {
             {/* Events Start */}
             <Route path="/events" element={<Events />} />
             <Route path="/events/create" element={<AddEvent />} />
-            <Route path="/events/:id/edit" element={<EditEvent />} />
+            <Route path="/events/:userId/:id/edit" element={<EditEvent />} />
             <Route path="/events/:userId/:id" element={<ViewEvent />} />
             {/* Events End */}
           </Route>
         </Route>
       </Routes>
       <Toaster position="top-right" />
-      <Tooltip id="my-tooltip" />
+      <Tooltip id="my-tooltip" className="z-50" />
     </Suspense>
   );
 }

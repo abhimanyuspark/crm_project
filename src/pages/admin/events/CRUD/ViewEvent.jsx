@@ -60,7 +60,7 @@ const ViewEvent = () => {
   };
 
   const Update = () => {
-    navigate(`/events/${id}/edit`);
+    navigate(`/events/${userId}/${id}/edit`);
   };
 
   return (
@@ -88,11 +88,11 @@ const ViewEvent = () => {
             </div>
             <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
               <p className="font-bold w-72">Start Date</p>
-              <p>{event?.end}</p>
+              <p>{new Date(event?.start).toLocaleString()}</p>
             </div>
             <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
               <p className="font-bold w-72">End Date</p>
-              <p>{event?.start}</p>
+              <p>{new Date(event?.end).toLocaleString()}</p>
             </div>
           </div>
 

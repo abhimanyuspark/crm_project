@@ -88,11 +88,10 @@ const MiniTable = ({ Columns = [], data = [], loading = false }) => {
             })
           ) : (
             <tr className="p-2">
-              <td
-                className="flex justify-center items-center"
-                colSpan={columnSpan}
-              >
-                No data Found
+              <td colSpan={columnSpan}>
+                <div className="flex items-center justify-center p-2">
+                  No data Found
+                </div>
               </td>
             </tr>
           )}

@@ -13,11 +13,14 @@ const Navbar = () => {
   const { user, loading } = useSelector((state) => state.users);
   const { pathname } = useLocation();
   const array = pathname.split("/");
+  const Keys = ["clients", "employees"];
 
   const RenderPathItems = () => {
     return (
       <div className="flex gap-1 items-center">
         {array.map((item, i) => {
+          if (i > 1 && !Keys.includes(array[1])) return null;
+
           const value = i === 2 ? `${array[1]}/${item}` : item;
           const isLastItem = i === array.length - 1;
           const Item =

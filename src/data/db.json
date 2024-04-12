@@ -84,12 +84,12 @@
           "allDay": false
         },
         {
-          "id": "a3e57d69-2763-4980-81a9-c7b42cc5cd89",
-          "title": "hi",
-          "start": "2024-04-08T10:33:39.543Z",
-          "end": "2024-04-08T10:33:39.543Z",
+          "title": "hi hdsffdsfs",
+          "start": "2024-04-12T04:30:00.000Z",
+          "end": "2024-04-12T10:33:39.000Z",
           "description": "<p>nice</p>",
-          "allDay": false
+          "allDay": false,
+          "id": "a3e57d69-2763-4980-81a9-c7b42cc5cd89"
         }
       ],
       "allowFollowUp": {
@@ -158,17 +158,17 @@
       ],
       "events": [
         {
-          "id": "f2156a08-49c2-4bb4-906e-5cf94143c7b5",
           "title": "usitas corporis spiritus catena",
-          "description": "stultus stillicidium ademptio adamo delectus voco annus adnuo audeo truculenter",
+          "start": "2024-11-12T03:52:47.000Z",
+          "end": "2024-11-21T05:10:57.000Z",
+          "description": "<p>stultus stillicidium ademptio adamo delectus voco annus adnuo audeo truculenter<span class=\"ql-emojiblot\" data-name=\"grin\">﻿<span contenteditable=\"false\"><span class=\"ap ap-grin\">😁</span></span>﻿</span></p>",
+          "allDay": false,
+          "id": "f2156a08-49c2-4bb4-906e-5cf94143c7b5",
           "status": {
             "name": "inprocess",
             "color": "blue",
             "id": "28f0157b-88f4-4098-8a3c-2ec8b6ec4441"
-          },
-          "start": "2024-11-15T03:52:47.237Z",
-          "end": "2024-07-08T05:10:57.378Z",
-          "allDay": false
+          }
         }
       ],
       "allowFollowUp": {
@@ -271,7 +271,7 @@
       "status": {
         "name": "Active",
         "color": "#0cf90c",
-        "id": "96f8ce43-0678-404e-a4e1-98155f56e785"
+        "id": "dd3d8265-a404-4556-8c07-85c85ea10ca1"
       },
       "statusMenu": [
         {
@@ -372,9 +372,9 @@
       "jobType": "Director",
       "progress": 63,
       "status": {
-        "name": "InActive",
-        "color": "red",
-        "id": "c64ed062-599e-40c9-9d51-58017b7c2163"
+        "name": "Active",
+        "color": "#0cf90c",
+        "id": "dd3d8265-a404-4556-8c07-85c85ea10ca1"
       },
       "statusMenu": [
         {
@@ -883,9 +883,9 @@
       "jobType": "",
       "date": "2024-04-07T18:25:59.545Z",
       "status": {
-        "name": "Active",
-        "color": "#0cf90c",
-        "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+        "name": "InActive",
+        "color": "red",
+        "id": "c64ed062-599e-40c9-9d51-58017b7c2163"
       },
       "statusMenu": [
         {
@@ -908,22 +908,60 @@
       }
     },
     {
-      "id": "2ac06070-7c3e-4f79-a107-f47b443a17e6",
+      "id": "f2bf607d-2730-4d2d-9b32-156c6de35286",
       "role": [
         "client"
       ],
-      "name": "spec",
-      "password": "VYBLrJ61Fn",
-      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/534.jpg",
-      "email": "spec@gmail.com",
+      "name": "Spec",
+      "password": "nayblkz&81",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/416.jpg",
+      "email": "dvasu696@gmail.com",
       "age": "",
       "visits": "",
       "jobType": "",
-      "date": "2024-04-10T11:14:51.342Z",
+      "date": "2024-04-12T07:05:29.036Z",
       "status": {
-        "name": "InActive",
-        "color": "red",
-        "id": "c64ed062-599e-40c9-9d51-58017b7c2163"
+        "name": "Active",
+        "color": "#0cf90c",
+        "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+      },
+      "statusMenu": [
+        {
+          "name": "InActive",
+          "color": "red",
+          "id": "71a820b1-5002-47b4-8c64-6f197af13d1b"
+        },
+        {
+          "name": "Active",
+          "color": "#0cf90c",
+          "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+        }
+      ],
+      "gender": "Male",
+      "tasks": [],
+      "projects": [],
+      "events": [],
+      "allowFollowUp": {
+        "type": "Yes"
+      }
+    },
+    {
+      "id": "7a4c8a71-eda5-489b-8182-544be8e4b509",
+      "role": [
+        "client"
+      ],
+      "name": "hulk",
+      "password": "hulkBuster",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1229.jpg",
+      "email": "hulk@gmail.com",
+      "age": "",
+      "visits": "",
+      "jobType": "",
+      "date": "2024-04-12T12:06:05.980Z",
+      "status": {
+        "name": "Active",
+        "color": "#0cf90c",
+        "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
       },
       "statusMenu": [
         {

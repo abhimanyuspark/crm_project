@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import {
   Button,
@@ -12,24 +12,22 @@ import {
   formValidation,
 } from "../../../../components";
 import { FaCheck } from "../../../../components/icons";
-import { updateEvent } from "../../../../redux/server/server";
+import { updateEvent, userDetails } from "../../../../redux/server/server";
 import { updateEventReducer } from "../../../../redux/features/login/reduxLogin";
 
 const EditEvent = () => {
-  const { id } = useParams();
-  const { user } = useSelector((state) => state.auth);
+  const { userId, id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { events } = user;
-  let event = {};
-  events.map((i) => {
-    if (i.id === id) {
-      event = i;
-    }
-  });
 
-  const [formData, setFormData] = useState({ ...event });
-  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    title: "",
+    start: new Date(),
+    end: new Date(),
+    description: "",
+    allDay: false,
+  });
+  const [formLoading, setFormLoading] = useState(false);
   const [formError, setFormError] = useState({
     title: "",
   });
@@ -41,11 +39,11 @@ const EditEvent = () => {
     const isValid = Object.keys(error).length === 0;
 
     if (isValid) {
-      setLoading(true);
+      setFormLoading(true);
       try {
         await dispatch(
           updateEvent({
-            userId: user?.id,
+            userId: userId,
             eventId: id,
             updatedEvent: formData,
           })
@@ -58,8 +56,25 @@ const EditEvent = () => {
     } else {
       setFormError((p) => ({ ...p, ...error }));
     }
-    setLoading(false);
+    setFormLoading(false);
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await dispatch(userDetails(userId));
+      const data = response.payload;
+      if (data) {
+        let event = {};
+        data?.events?.map((e) => {
+          if (e?.id === id) {
+            event = e;
+          }
+        });
+        setFormData((p) => ({ ...p, ...event }));
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className="p-6">
@@ -78,7 +93,7 @@ const EditEvent = () => {
                 name="title"
                 important
                 error={formError.title}
-                value={formData.title}
+                value={formData?.title}
                 onChange={(e) => {
                   const { name, value } = e.target;
                   setFormData((p) => ({ ...p, [name]: value }));
@@ -92,7 +107,7 @@ const EditEvent = () => {
               <div className="flex gap-2 flex-col">
                 <label className="text-base">Start Date</label>
                 <ReactDatePicker
-                  value={new Date(formData.start)}
+                  value={new Date(formData?.start)}
                   onChange={(date) =>
                     setFormData((p) => ({ ...p, start: date }))
                   }
@@ -104,7 +119,7 @@ const EditEvent = () => {
               <div className="flex gap-2 flex-col">
                 <label className="text-base">End Date</label>
                 <ReactDatePicker
-                  value={new Date(formData.end)}
+                  value={new Date(formData?.end)}
                   onChange={(date) => setFormData((p) => ({ ...p, end: date }))}
                   showTimeSelect={true}
                   dateFormat="YYYY-MM-dd h:mm:aa"
@@ -118,7 +133,7 @@ const EditEvent = () => {
                 <label>All Day</label>
                 <CheckBox
                   className="w-5"
-                  checked={formData.allDay}
+                  checked={formData?.allDay}
                   onChange={(e) =>
                     setFormData((p) => ({ ...p, allDay: e.target.checked }))
                   }
@@ -130,7 +145,7 @@ const EditEvent = () => {
               <div className="flex gap-2 flex-col">
                 <label className="text-base">Description</label>
                 <TextEditor
-                  value={formData.description}
+                  value={formData?.description}
                   onChange={(data) =>
                     setFormData((p) => ({ ...p, description: data }))
                   }
@@ -144,7 +159,7 @@ const EditEvent = () => {
               text="Submit"
               icon={<FaCheck />}
               type="submit"
-              loading={loading}
+              loading={formLoading}
             />
             <CancelButton
               type="button"

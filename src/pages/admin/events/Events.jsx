@@ -3,6 +3,7 @@ import {
   Button,
   Calender,
   Container,
+  Image,
   Select,
   SubNavBar,
   SubNavChild,
@@ -24,21 +25,46 @@ const Events = () => {
     dispatch(roleUsers(""));
   }, []);
 
+  const Templete = (i) => {
+    return (
+      <div className="flex gap-4 items-center">
+        <Image
+          className={"w-5 h-5 rounded-sm"}
+          src={i?.profile}
+          alt={i?.name}
+        />
+        <div className="flex flex-col">
+          <p className="text-sm">{i?.name}</p>
+          <p className="text-xs text-slate-400">{i?.role[0]}</p>
+        </div>
+        {i?.name === user?.name && (
+          <span className="px-1 rounded-sm bg-slate-600 text-white text-xs">
+            its you
+          </span>
+        )}
+      </div>
+    );
+  };
+
   return (
     <>
-      <SubNavBar>
-        <SubNavChild>
-          <Select
-            width="300px"
-            value={selectedUser}
-            options={users}
-            fields={(i) => i.name}
-            onChange={(data) => {
-              setSelectedUser(data);
-            }}
-          />
-        </SubNavChild>
-      </SubNavBar>
+      {user?.role?.includes("admin") && (
+        <SubNavBar>
+          <SubNavChild>
+            <Select
+              width="300px"
+              value={selectedUser}
+              options={users}
+              fields={(i) => i.name}
+              onChange={(data) => {
+                setSelectedUser(data);
+              }}
+              optiontemplete={Templete}
+              valuetemplete={Templete}
+            />
+          </SubNavChild>
+        </SubNavBar>
+      )}
 
       <div className="p-8">
         {user?.role?.includes("admin") && (

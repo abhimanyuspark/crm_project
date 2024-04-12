@@ -16,6 +16,21 @@ const usersSlice = createSlice({
     setLoading: (state, action) => {
       state.loading = action?.payload;
     },
+    statusUpdate: (state, action) => {
+      const { id, status } = action.payload;
+      const filter = state.users.map((i) => {
+        if (i.id === id) {
+          return { ...i, status };
+        } else {
+          return i;
+        }
+      });
+      return {
+        ...state,
+        users: filter,
+        localUsers: filter,
+      };
+    },
     deleteUserReducer: (state, action) => {
       const id = action?.payload;
       const filteredUsers = state.users.filter((i) => {
@@ -24,6 +39,7 @@ const usersSlice = createSlice({
       return {
         ...state,
         users: filteredUsers,
+        localUsers: filteredUsers,
       };
     },
     filterUsers: (state, action) => {
@@ -85,6 +101,6 @@ const usersSlice = createSlice({
       }),
 });
 
-export const { deleteUserReducer, filterUsers, setLoading } =
+export const { deleteUserReducer, filterUsers, setLoading, statusUpdate } =
   usersSlice.actions;
 export default usersSlice.reducer;

@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import {
   Calender,
-  Clock_In,
+  // Clock_In,
   Container,
   DigitalClock,
 } from "../../../components";
@@ -20,7 +20,7 @@ const APDashboard = () => {
         <h1 className="text-xl font-bold">Welcome {user?.name}</h1>
         <div className="flex flex-wrap gap-4 items-center">
           <DigitalClock />
-          <Clock_In />
+          {/* <Clock_In /> */}
         </div>
       </div>
 
@@ -69,7 +69,7 @@ const APDashboard = () => {
             <div className="px-4">
               <progress
                 data-tooltip-id="my-tooltip"
-                data-tooltip-content={user?.progress + " %"}
+                data-tooltip-content={user?.progress || 0}
                 data-tooltip-place="top"
                 value={user?.progress}
                 max={100}

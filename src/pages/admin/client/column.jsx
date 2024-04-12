@@ -6,7 +6,10 @@ import Swal from "sweetalert2";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, Select } from "../../../components";
 import { updateStatus, deleteUser } from "../../../redux/server/server";
-import { deleteUserReducer } from "../../../redux/features/roleUsers";
+import {
+  deleteUserReducer,
+  statusUpdate,
+} from "../../../redux/features/roleUsers";
 import { FaEdit, FaTrash, FaEye } from "../../../components/icons";
 import { initialData } from "../../data.json";
 const initialImage = initialData[0].initialImage;
@@ -132,9 +135,10 @@ export const Columns = [
       const { user } = useSelector((state) => state.auth);
       const options = user?.statusMenu;
 
-      const Status = (status) => {
+      const Status = async (status) => {
         if (val?.name === status?.name) return null;
         setVal(status);
+        dispatch(statusUpdate({ id, status }));
         toast.promise(
           dispatch(updateStatus({ id, status })),
           {

@@ -52,7 +52,8 @@ export const updateStatus = createAsyncThunk(
   "user/updateStatus",
   async ({ id, status }, { rejectWithValue }) => {
     try {
-      await axios.patch(`${apiUrl}/users/${id}`, { status });
+      const response = await axios.patch(`${apiUrl}/users/${id}`, { status });
+      return response.data;
     } catch (error) {
       return rejectWithValue(error.message);
     }
