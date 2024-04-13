@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaPlus } from "../../../components/icons";
 import { useNavigate, useLocation } from "react-router-dom";
 import { roleUsers, userDetails } from "../../../redux/server/server";
+import { restore } from "../../../redux/features/roleUsers";
 
 const Events = () => {
   const auth = useSelector((state) => state.auth);
@@ -28,11 +29,11 @@ const Events = () => {
     },
     {
       role: "Employees",
-      value: "employee",
+      value: ["employee"],
     },
     {
       role: "Clients",
-      value: "client",
+      value: ["client"],
     },
   ];
 
@@ -41,6 +42,7 @@ const Events = () => {
 
   useEffect(() => {
     dispatch(roleUsers(role.value));
+    return () => dispatch(restore());
   }, [role.value, pathname]);
 
   useEffect(() => {
@@ -84,6 +86,7 @@ const Events = () => {
               onChange={(data) => {
                 setSelectedUser(data);
               }}
+              search
               optiontemplete={Templete}
               valuetemplete={Templete}
             />

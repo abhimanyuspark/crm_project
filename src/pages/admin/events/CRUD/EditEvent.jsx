@@ -7,25 +7,30 @@ import {
   CheckBox,
   Container,
   InputText,
+  Loader,
   ReactDatePicker,
+  Select,
   TextEditor,
   formValidation,
 } from "../../../../components";
 import { FaCheck } from "../../../../components/icons";
 import { updateEvent, userDetails } from "../../../../redux/server/server";
 import { updateEventReducer } from "../../../../redux/features/login/reduxLogin";
+import { eventsData } from "../../../data.json";
 
 const EditEvent = () => {
   const { userId, id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
     start: new Date(),
     end: new Date(),
     description: "",
     allDay: false,
+    status: eventsData[0],
   });
   const [formLoading, setFormLoading] = useState(false);
   const [formError, setFormError] = useState({
@@ -61,6 +66,7 @@ const EditEvent = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       const response = await dispatch(userDetails(userId));
       const data = response.payload;
       if (data) {
@@ -72,19 +78,20 @@ const EditEvent = () => {
         });
         setFormData((p) => ({ ...p, ...event }));
       }
+      setLoading(false);
     };
     fetchData();
   }, []);
 
   return (
     <div className="p-6">
-      <Container>
+      <Container className="relative">
         <div className="border-b border-slate-300 p-4">
           <h2 className="text-xl font-bold">Update Event</h2>
         </div>
 
         {/* Event Form */}
-
+        {loading && <Loader />}
         <form onSubmit={onSubmit}>
           <div className="p-4 flex gap-6 flex-col">
             <div className="grid grid-cols-2 gap-8">
@@ -100,6 +107,18 @@ const EditEvent = () => {
                   setFormError((p) => ({ ...p, [name]: "" }));
                 }}
               />
+              {/* Status */}
+              <div className="flex gap-2 flex-col">
+                <label className="text-base">Status</label>
+                <Select
+                  options={eventsData}
+                  value={formData.status}
+                  fields={(i) => i?.name}
+                  onChange={(status) => {
+                    setFormData((p) => ({ ...p, status: status }));
+                  }}
+                />
+              </div>
             </div>
 
             <div className="grid grid-cols-2 gap-8">

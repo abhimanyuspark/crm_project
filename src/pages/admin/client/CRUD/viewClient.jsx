@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
 import { userDetails } from "../../../../redux/server/server";
@@ -7,15 +7,26 @@ import {
   FaCalendar,
   IoMdFemale,
   IoMdMale,
+  FaEye,
+  FaEyeSlash,
 } from "../../../../components/icons";
 import { FlConverter } from "../../../../utilities";
-import { Container, Image, Menu, PieChartUsage } from "../../../../components";
+import {
+  Container,
+  Error,
+  Image,
+  Loader,
+  Menu,
+  PieChartUsage,
+  Row,
+} from "../../../../components";
 
 const ViewClient = ({ intialImage }) => {
   const { user, loading, error } = useSelector((state) => state.users);
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [show, setShow] = useState(false);
 
   const date = new Date(user?.date);
   const created = date.toLocaleDateString();
@@ -25,16 +36,16 @@ const ViewClient = ({ intialImage }) => {
   }, [dispatch]);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <Loader />;
   }
 
   if (error) {
-    return <p>{error}</p>;
+    return <Error />;
   }
 
   return (
     <div className="grid gap-8 p-6">
-      <div className="grid gap-8 grid-cols-3">
+      <div className="grid gap-8 sm:grid-cols-3 grid-cols-1">
         <Container>
           <div className="flex p-3 justify-between">
             <Image
@@ -80,17 +91,35 @@ const ViewClient = ({ intialImage }) => {
         </Container>
       </div>
 
-      <div className="grid grid-cols-[1fr_auto] grid-rows-[auto] gap-8">
+      <div className="grid sm:grid-cols-[1fr_auto] grid-cols-1 gap-8">
         <Container>
           <div className="flex gap-5 flex-col p-4">
             <p className="font-bold text-xl">Profile Info</p>
 
-            <Card text="Name" data={user?.name} />
-            <Card text="Password" data={user?.password} />
-            <Card text="Email" data={user?.email} />
-            <Card text="Age" data={user?.age} />
+            <Row text="Name" data={user?.name} />
+            <div className="flex gap-2 items-center">
+              <Row
+                text="Password"
+                data={show ? user?.password : "**********"}
+              />
+              {show ? (
+                <FaEye
+                  size={20}
+                  className="text-slate-500 cursor-pointer hover:text-black"
+                  onClick={() => setShow(false)}
+                />
+              ) : (
+                <FaEyeSlash
+                  size={20}
+                  className="text-slate-500 cursor-pointer hover:text-black"
+                  onClick={() => setShow(true)}
+                />
+              )}
+            </div>
+            <Row text="Email" data={user?.email} />
+            <Row text="Age" data={user?.age} />
 
-            <Card
+            <Row
               text="Gender"
               data={
                 <div className="flex gap-2">
@@ -109,10 +138,10 @@ const ViewClient = ({ intialImage }) => {
                 </div>
               }
             />
-            <Card text="Visits" data={user?.visits} />
-            <Card text="Created" data={created} />
-            <Card text="Progress" data={user?.progress} />
-            <Card
+            <Row text="Visits" data={user?.visits} />
+            <Row text="Created" data={created} />
+            <Row text="Progress" data={user?.progress} />
+            <Row
               text="Status"
               data={
                 <p className="flex gap-2 items-center">
@@ -138,15 +167,6 @@ const ViewClient = ({ intialImage }) => {
           </Container>
         </div>
       </div>
-    </div>
-  );
-};
-
-const Card = ({ text, data }) => {
-  return (
-    <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
-      <div className="w-72 text-slate-500">{text}</div>
-      <div>{data || "--"}</div>
     </div>
   );
 };

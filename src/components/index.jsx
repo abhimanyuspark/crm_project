@@ -1,7 +1,13 @@
 import PersistenceAuth from "./persistenceAuth";
 import RequireAuth from "./requireAuth";
 import { Button, CancelButton, ClearButton } from "./style/buttons";
-import { Container, Image, SubNavBar, SubNavChild } from "./style/container";
+import {
+  Container,
+  Image,
+  SubNavBar,
+  SubNavChild,
+  Row,
+} from "./style/container";
 import { InputText, CheckBox, InputSelect, Switch } from "./style/inputs";
 import { formValidation } from "./formValidation";
 import Calender from "./Calender";
@@ -34,6 +40,7 @@ export {
   CancelButton,
   ClearButton,
   Container,
+  Row,
   SubNavBar,
   SubNavChild,
   Image,

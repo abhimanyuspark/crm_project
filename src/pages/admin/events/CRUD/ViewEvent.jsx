@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { Container, Menu } from "../../../../components";
+import { Container, Menu, Row } from "../../../../components";
 import { deleteUserEvent, userDetails } from "../../../../redux/server/server";
 import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
@@ -73,27 +73,37 @@ const ViewEvent = () => {
         {/* Event Details */}
         <div className="p-8 flex justify-between">
           <div className="flex flex-col gap-4">
-            <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
-              <p className="font-bold w-72">Event Id</p>
-              <p>{event?.id}</p>
-            </div>
-            <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
-              <p className="font-bold w-72">Title</p>
-              <p>{event?.title}</p>
-            </div>
-            <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
-              <p className="font-bold w-72">Description</p>
-              {/* <p>{event?.description}</p> */}
-              <div dangerouslySetInnerHTML={{ __html: event?.description }} />
-            </div>
-            <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
-              <p className="font-bold w-72">Start Date</p>
-              <p>{new Date(event?.start).toLocaleString()}</p>
-            </div>
-            <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
-              <p className="font-bold w-72">End Date</p>
-              <p>{new Date(event?.end).toLocaleString()}</p>
-            </div>
+            <Row text="Event Id" data={`EVE_ID_${event?.id}`} />
+            <Row text="Name" data={event?.title} />
+            <Row
+              text="Start Date"
+              data={new Date(event?.start).toLocaleString()}
+            />
+            <Row text="End Date" data={new Date(event?.end).toLocaleString()} />
+            <Row
+              text="Status"
+              data={
+                event?.status && (
+                  <p className="flex gap-2 items-center">
+                    <span
+                      className="block h-4 w-4 rounded-full "
+                      style={{ background: event?.status?.color }}
+                    ></span>
+                    {event?.status?.name}
+                  </p>
+                )
+              }
+            />
+            <Row
+              text="Description"
+              data={
+                event?.description && (
+                  <div
+                    dangerouslySetInnerHTML={{ __html: event?.description }}
+                  />
+                )
+              }
+            />
           </div>
 
           {auth?.user?.role?.includes("admin") && (

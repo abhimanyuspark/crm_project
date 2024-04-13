@@ -81,15 +81,38 @@
           "end": "2024-04-07T07:41:45.574Z",
           "description": "<p>nice</p>",
           "allDay": false,
+          "status": {
+            "name": "finished",
+            "color": "green",
+            "id": 3
+          },
           "id": "8fee15f5-5cdf-4782-8840-fea429c00eff"
         },
         {
-          "id": "be529ec2-8b2e-4f36-8836-782e399599c8",
-          "title": "zxvvx",
+          "title": "zxvvxfdfsfafffff",
           "start": "2024-04-12T14:50:07.367Z",
           "end": "2024-04-12T14:50:07.367Z",
           "description": "<p>vcxvxv<span class=\"ql-emojiblot\" data-name=\"kissing\">﻿<span contenteditable=\"false\"><span class=\"ap ap-kissing\">😗</span></span>﻿</span><span class=\"ql-emojiblot\" data-name=\"smiley\">﻿<span contenteditable=\"false\"><span class=\"ap ap-smiley\">😃</span></span>﻿</span><span class=\"ql-emojiblot\" data-name=\"joy\">﻿<span contenteditable=\"false\"><span class=\"ap ap-joy\">😂</span></span>﻿</span><span class=\"ql-emojiblot\" data-name=\"sweat_drops\">﻿<span contenteditable=\"false\"><span class=\"ap ap-sweat_drops\">💦</span></span>﻿</span></p>",
-          "allDay": false
+          "allDay": false,
+          "status": {
+            "name": "inprocess",
+            "color": "blue",
+            "id": 2
+          },
+          "id": "be529ec2-8b2e-4f36-8836-782e399599c8"
+        },
+        {
+          "title": "hi",
+          "start": "2024-04-01T11:00:41.000Z",
+          "end": "2024-04-02T11:00:41.000Z",
+          "description": "<p>sASasSas</p>",
+          "allDay": false,
+          "status": {
+            "name": "finished",
+            "color": "green",
+            "id": 3
+          },
+          "id": "9c562108-aa70-4fd8-b013-7465af2a2bdf"
         }
       ],
       "allowFollowUp": {
@@ -168,6 +191,32 @@
             "name": "inprocess",
             "color": "blue",
             "id": "28f0157b-88f4-4098-8a3c-2ec8b6ec4441"
+          }
+        },
+        {
+          "title": "nice",
+          "start": "2024-04-12T16:31:24.539Z",
+          "end": "2024-04-12T16:31:24.539Z",
+          "description": "<p>you are a good developer</p>",
+          "allDay": false,
+          "status": {
+            "name": "finished",
+            "color": "green",
+            "id": 3
+          },
+          "id": "f0b26656-a7e3-4c3c-b9ed-a63bcd34612b"
+        },
+        {
+          "id": "7cfda583-e976-44e9-a27a-b06084dc3c04",
+          "title": "ffhfhgh",
+          "start": "2024-04-13T11:03:11.581Z",
+          "end": "2024-04-13T11:03:11.581Z",
+          "description": "<p>hgjhhfhgh</p>",
+          "allDay": false,
+          "status": {
+            "name": "pending",
+            "color": "yellow",
+            "id": 1
           }
         }
       ],
@@ -872,7 +921,16 @@
       "gender": "Male",
       "tasks": [],
       "projects": [],
-      "events": [],
+      "events": [
+        {
+          "id": "436bdcc9-6e2d-4d14-9588-ec76c673f9f7",
+          "title": "Event",
+          "start": "2024-04-13T10:09:11.752Z",
+          "end": "2024-04-14T10:09:11.000Z",
+          "description": "<h2>Nice event for warlock <span class=\"ql-emojiblot\" data-name=\"yum\">﻿<span contenteditable=\"false\"><span class=\"ap ap-yum\">😋</span></span>﻿</span></h2>",
+          "allDay": false
+        }
+      ],
       "allowFollowUp": {
         "type": "Yes"
       }
@@ -929,9 +987,9 @@
       "jobType": "",
       "date": "2024-04-12T07:05:29.036Z",
       "status": {
-        "name": "Active",
-        "color": "#0cf90c",
-        "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+        "name": "InActive",
+        "color": "red",
+        "id": "c64ed062-599e-40c9-9d51-58017b7c2163"
       },
       "statusMenu": [
         {
@@ -967,9 +1025,47 @@
       "jobType": "",
       "date": "2024-04-12T12:06:05.980Z",
       "status": {
-        "name": "InActive",
-        "color": "red",
-        "id": "c64ed062-599e-40c9-9d51-58017b7c2163"
+        "name": "Active",
+        "color": "#0cf90c",
+        "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+      },
+      "statusMenu": [
+        {
+          "name": "InActive",
+          "color": "red",
+          "id": "71a820b1-5002-47b4-8c64-6f197af13d1b"
+        },
+        {
+          "name": "Active",
+          "color": "#0cf90c",
+          "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+        }
+      ],
+      "gender": "Male",
+      "tasks": [],
+      "projects": [],
+      "events": [],
+      "allowFollowUp": {
+        "type": "No"
+      }
+    },
+    {
+      "id": "1b25f49a-f227-42c0-803d-86e47341d4c8",
+      "role": [
+        "client"
+      ],
+      "name": "Sam",
+      "password": "wQlU5ufnkO",
+      "profile": "https://avatars.githubusercontent.com/u/1134187",
+      "email": "sam@gmail.com",
+      "age": "",
+      "visits": "",
+      "jobType": "",
+      "date": "2024-04-13T11:29:56.726Z",
+      "status": {
+        "name": "Active",
+        "color": "#0cf90c",
+        "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
       },
       "statusMenu": [
         {

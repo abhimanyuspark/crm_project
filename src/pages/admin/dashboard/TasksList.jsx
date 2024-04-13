@@ -36,7 +36,7 @@ const TasksList = ({ tasks }) => {
       },
     },
     {
-      accessorKey: "dueDate",
+      accessorKey: "end",
       header: "Due Date",
       cell: (info) => {
         const value = info.getValue();

@@ -10,6 +10,7 @@ import {
   Avatar,
   ReactDatePicker,
   formValidation,
+  Loader,
 } from "../../../../components";
 import {
   FaEye,
@@ -37,6 +38,7 @@ const EditClient = () => {
   const Genders = ["Male", "Female", "Other"];
 
   const [show, setShow] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     id: id,
     role: "",
@@ -132,24 +134,26 @@ const EditClient = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       const response = await dispatch(userDetails(id));
       const data = response.payload;
       if (data) {
         setFormData((p) => ({ ...p, ...data }));
       }
+      setLoading(false);
     };
     fetchData();
   }, [dispatch]);
 
   return (
     <div className="p-6">
-      <Container>
+      <Container className="relative w-full h-full">
         <div className="border-b border-slate-300 p-4">
           <h2 className="text-xl font-bold">Update Client</h2>
         </div>
 
         {/* Event Form */}
-
+        {loading && <Loader />}
         <form onSubmit={onSubmit}>
           <div className="p-4 grid gap-4">
             <div className="grid lg:grid-cols-[1fr_176px] lg:gap-8 gap-4">

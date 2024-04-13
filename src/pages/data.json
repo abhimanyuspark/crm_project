@@ -17,5 +17,22 @@
         "name": "Active"
       }
     ]
-  }
+  },
+  "eventsData": [
+    {
+      "name": "pending",
+      "color": "yellow",
+      "id": 1
+    },
+    {
+      "name": "inprocess",
+      "color": "blue",
+      "id": 2
+    },
+    {
+      "name": "finished",
+      "color": "green",
+      "id": 3
+    }
+  ]
 }

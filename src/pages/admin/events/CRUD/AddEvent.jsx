@@ -16,6 +16,7 @@ import { addEventToUser, roleUsers } from "../../../../redux/server/server";
 import { addEventReducer } from "../../../../redux/features/login/reduxLogin";
 import { FlConverter } from "../../../../utilities";
 import { v4 as uuid } from "uuid";
+import { eventsData } from "../../../data.json";
 
 const AddEvent = () => {
   const { user } = useSelector((state) => state.auth);
@@ -35,6 +36,7 @@ const AddEvent = () => {
     end: new Date(),
     description: "",
     allDay: false,
+    status: eventsData[0],
   });
   const [formLoading, setFormLoading] = useState(false);
   const [formError, setFormError] = useState({
@@ -127,6 +129,18 @@ const AddEvent = () => {
                   setFormError((p) => ({ ...p, [name]: "" }));
                 }}
               />
+              {/* Status */}
+              <div className="flex gap-2 flex-col">
+                <label className="text-base">Status</label>
+                <Select
+                  options={eventsData}
+                  value={formData.status}
+                  fields={(i) => i?.name}
+                  onChange={(status) => {
+                    setFormData((p) => ({ ...p, status: status }));
+                  }}
+                />
+              </div>
             </div>
 
             <div className="grid grid-cols-2 gap-8">

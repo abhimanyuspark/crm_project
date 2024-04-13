@@ -40,3 +40,12 @@ export const SubNavChild = ({ children }) => {
     </div>
   );
 };
+
+export const Row = ({ text, data }) => {
+  return (
+    <div className="w-full flex sm:gap-0 gap-1 sm:items-center sm:flex-row flex-col">
+      <div className="w-72 text-slate-500">{text}</div>
+      <div>{data || "--"}</div>
+    </div>
+  );
+};
