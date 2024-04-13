@@ -1,0 +1,52 @@
+import React, { useState } from "react";
+import { Container, InputText } from "../../components";
+import { settingSideBarData as data } from "../data.json";
+import { Link } from "react-router-dom";
+
+const Search = ({ value = "", onChange = (i) => i }) => {
+  const [search, setSearch] = useState("");
+
+  const filter = data.filter((i) => {
+    return i?.title.toLowerCase().includes(search.toLowerCase());
+  });
+
+  return (
+    <Container className="rounded-none">
+      <div className="border-b border-slate-300 p-4">
+        <InputText
+          value={search}
+          placeholder={"Search settings"}
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
+          focus={true}
+        />
+      </div>
+
+      <ul>
+        {filter.map((d, index) => (
+          <li
+            key={index}
+            onClick={() => {
+              onChange(d?.title);
+            }}
+            className={
+              value === d?.title
+                ? "bg-slate-400 text-white"
+                : "text-slate-600 hover:bg-slate-200"
+            }
+          >
+            <Link
+              className="block p-2 pl-4 border-b border-slate-300"
+              to={d?.link}
+            >
+              {d?.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </Container>
+  );
+};
+
+export default Search;

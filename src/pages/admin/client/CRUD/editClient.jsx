@@ -21,6 +21,7 @@ import {
 import { toast } from "react-hot-toast";
 import { editUser, userDetails } from "../../../../redux/server/server";
 import { useRandomPassword } from "../../../../hooks";
+import { genders } from "../../../data.json";
 
 const EditClient = () => {
   const { id } = useParams();
@@ -35,7 +36,6 @@ const EditClient = () => {
       type: "No",
     },
   ];
-  const Genders = ["Male", "Female", "Other"];
 
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -216,7 +216,7 @@ const EditClient = () => {
                   <div className="flex gap-2 flex-col">
                     <label className="text-base text-slate-600">Gender</label>
                     <Select
-                      options={Genders}
+                      options={genders}
                       value={formData.gender}
                       onChange={(data) => {
                         setFormData((p) => ({ ...p, gender: data }));

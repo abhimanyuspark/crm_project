@@ -19,7 +19,8 @@ import { initialData } from "./data.json";
 const Login = lazy(() => import("./Login"));
 const Not_Found = lazy(() => import("./Not_Found"));
 const UnAuth = lazy(() => import("./UnAuth"));
-const Settings = lazy(() => import("./settings"));
+const Settings = lazy(() => import("./settings/settings"));
+const ProfileTab = lazy(() => import("./settings/ProfileTab"));
 
 export {
   Login,
@@ -40,4 +41,5 @@ export {
   ViewEvent,
   EditEvent,
   initialData,
+  ProfileTab,
 };

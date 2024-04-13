@@ -58,6 +58,12 @@ export const client = [
       },
     ],
   },
+  {
+    id: 2,
+    icon: <FaGear />,
+    value: "Settings",
+    link: "/settings",
+  },
 ];
 
 export const employee = [
@@ -78,5 +84,11 @@ export const employee = [
     icon: <FaCalendar />,
     value: "Events",
     link: "/events",
+  },
+  {
+    id: 3,
+    icon: <FaGear />,
+    value: "Settings",
+    link: "/settings",
   },
 ];

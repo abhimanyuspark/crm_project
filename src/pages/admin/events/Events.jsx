@@ -61,7 +61,7 @@ const Events = () => {
         />
         <div className="flex flex-col">
           <p className="text-sm">{i?.name}</p>
-          <p className="text-xs text-slate-400">{i?.role[0]}</p>
+          {/* <p className="text-xs text-slate-400">{i?.role[0]}</p> */}
         </div>
         {i?.name === auth?.user?.name && (
           <span className="px-1 rounded-sm bg-slate-600 text-white text-xs">

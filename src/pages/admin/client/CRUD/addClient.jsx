@@ -21,6 +21,7 @@ import { v4 as uuid } from "uuid";
 import { toast } from "react-hot-toast";
 import { useRandomPassword } from "../../../../hooks";
 import { addUser } from "../../../../redux/server/server";
+import { genders } from "../../../data.json";
 
 const AddClient = ({ intialImage }) => {
   const dispatch = useDispatch();
@@ -34,7 +35,6 @@ const AddClient = ({ intialImage }) => {
       type: "No",
     },
   ];
-  const Genders = ["Male", "Female", "Other"];
 
   const [show, setShow] = useState(false);
   const [formData, setFormData] = useState({
@@ -218,7 +218,7 @@ const AddClient = ({ intialImage }) => {
                   <div className="flex gap-2 flex-col">
                     <label className="text-base text-slate-600">Gender</label>
                     <Select
-                      options={Genders}
+                      options={genders}
                       value={formData.gender}
                       onChange={(data) => {
                         setFormData((p) => ({ ...p, gender: data }));

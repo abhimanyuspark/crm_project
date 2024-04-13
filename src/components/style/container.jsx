@@ -1,10 +1,10 @@
 import React from "react";
 
-export const Container = ({ children, className }) => {
+export const Container = ({ children, className = "" }) => {
   return (
     <div
       className={
-        className + "w-full bg-white rounded-md border border-slate-200"
+        className + " w-full bg-white rounded-md border border-slate-200"
       }
     >
       {children}

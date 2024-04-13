@@ -20,6 +20,7 @@ import {
   ViewEvent,
   EditEvent,
   initialData,
+  ProfileTab,
 } from "./pages";
 import { RequireAuth, PersistenceAuth, Loader } from "./components/index";
 import { Tooltip } from "react-tooltip";
@@ -50,45 +51,54 @@ function App() {
             }
           >
             <Route path="/" element={<APDashboard />} />
-            <Route path="/settings" element={<Settings />} />
+            <Route path="/settings/" element={<Settings />}>
+              <Route index element={<ProfileTab />} />
+              <Route path="profile" element={<ProfileTab />} />
+            </Route>
           </Route>
 
           <Route element={<RequireAuth roleAccess={[role.Admin]} />}>
             {/* Clients Start */}
-            <Route path="/clients" element={<Client />} />
-            <Route
-              path="/clients/:id"
-              element={<ViewClient intialImage={initialImage} />}
-            />
-            <Route
-              path="/clients/add"
-              element={<AddClient intialImage={initialImage} />}
-            />
-            <Route path="/clients/:id/edit" element={<EditClient />} />
+            <Route path="/clients/">
+              <Route index element={<Client />} />
+              <Route
+                path=":id"
+                element={<ViewClient intialImage={initialImage} />}
+              />
+              <Route
+                path="add"
+                element={<AddClient intialImage={initialImage} />}
+              />
+              <Route path=":id/edit" element={<EditClient />} />
+            </Route>
             {/* Clients End */}
 
             {/* Emplyees Start */}
-            <Route path="/employees" element={<Employee />} />
-            <Route
-              path="/employees/:id"
-              element={<ViewEmployee intialImage={initialImage} />}
-            />
-            <Route
-              path="/employees/add"
-              element={<AddEmployee intialImage={initialImage} />}
-            />
-            <Route path="/employees/:id/edit" element={<EditEmployee />} />
+            <Route path="/employees/">
+              <Route index element={<Employee />} />
+              <Route
+                path=":id"
+                element={<ViewEmployee intialImage={initialImage} />}
+              />
+              <Route
+                path="add"
+                element={<AddEmployee intialImage={initialImage} />}
+              />
+              <Route path=":id/edit" element={<EditEmployee />} />
+            </Route>
+            {/* Emplyees End */}
           </Route>
-          {/* Emplyees End */}
 
           <Route
             element={<RequireAuth roleAccess={[role.Admin, role.Employee]} />}
           >
             {/* Events Start */}
-            <Route path="/events" element={<Events />} />
-            <Route path="/events/create" element={<AddEvent />} />
-            <Route path="/events/:userId/:id/edit" element={<EditEvent />} />
-            <Route path="/events/:userId/:id" element={<ViewEvent />} />
+            <Route path="/events/">
+              <Route index element={<Events />} />
+              <Route path="create" element={<AddEvent />} />
+              <Route path=":userId/:id/edit" element={<EditEvent />} />
+              <Route path=":userId/:id" element={<ViewEvent />} />
+            </Route>
             {/* Events End */}
           </Route>
         </Route>

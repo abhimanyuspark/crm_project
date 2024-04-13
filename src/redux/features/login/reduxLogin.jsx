@@ -41,6 +41,14 @@ const authSlice = createSlice({
       let index = state.user.events.findIndex((e) => e.id === event.id);
       state.user.events[index] = event;
     },
+    editAuthReducer: (state, action) => {
+      const event = action?.payload;
+      const user = { ...state.user, ...event };
+      return {
+        ...state,
+        user,
+      };
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -86,5 +94,7 @@ export const {
   deletEventReducer,
   addEventReducer,
   updateEventReducer,
+  editAuthReducer,
 } = authSlice.actions;
+
 export default authSlice.reducer;

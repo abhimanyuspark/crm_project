@@ -18,6 +18,7 @@
       }
     ]
   },
+  "genders": ["Male", "Female", "Other"],
   "eventsData": [
     {
       "name": "pending",
@@ -34,5 +35,6 @@
       "color": "green",
       "id": 3
     }
-  ]
+  ],
+  "settingSideBarData": [{ "title": "Profile", "link": "/settings/profile" }]
 }

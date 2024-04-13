@@ -120,6 +120,7 @@ const AddEvent = () => {
                 label="Title"
                 name="title"
                 important
+                focus={true}
                 error={formError.title}
                 value={formData.title}
                 placeholder="Enter a event title..."
