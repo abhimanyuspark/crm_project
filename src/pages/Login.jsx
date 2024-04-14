@@ -42,7 +42,7 @@ const Login = () => {
 
     if (isValid) {
       const response = await dispatch(authenticateUser(formData));
-      if (response.meta.requestStatus === "fulfilled") {
+      if (response?.meta?.requestStatus === "fulfilled") {
         navigate(from, { replace: true });
       } else {
         setErrors((p) => ({ ...p, ...response?.payload }));

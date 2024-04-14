@@ -145,13 +145,19 @@ const Employee = () => {
         <SubNavChild>
           <FilterTable
             label="Filter Employee"
-            onChangeClear={() =>
+            onChangeClear={() => {
               setData((p) => ({
                 ...p,
                 allowFollowUp: { type: "All" },
                 status: { name: "All" },
-              }))
-            }
+              }));
+              //Reset Filter users
+              filterUsersData({
+                ...data,
+                allowFollowUp: { type: "All" },
+                status: { name: "All" },
+              });
+            }}
           >
             <div className="p-4 flex gap-4 flex-col">
               {/* allowFollowUp */}

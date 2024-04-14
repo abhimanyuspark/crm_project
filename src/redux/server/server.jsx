@@ -7,20 +7,23 @@ export const authenticateUser = createAsyncThunk(
   async ({ email, password }, { rejectWithValue }) => {
     try {
       const response = await axios.get(`${apiUrl}/users?email=${email}`);
-      const user = response?.data[0];
+      const user = response.data[0]; // Assuming you expect only one user
 
-      if (user?.password === password) {
-        return user;
-        // if (user?.login === true) {
-        //   return user;
-        // } else {
-        //   rejectWithValue({ email: "This account is not activated" });
-        // }
+      if (!user) {
+        return rejectWithValue({ email: "User not found" });
+      }
+
+      if (user.password === password) {
+        if (user.login === "Yes") {
+          return user;
+        } else {
+          return rejectWithValue({ email: "This account is not activated" });
+        }
       } else {
-        return rejectWithValue({ password: "Please Enter valid credentials" });
+        return rejectWithValue({ password: "Please enter valid credentials" });
       }
     } catch (error) {
-      return rejectWithValue({ email: "Please Enter valid email" });
+      return rejectWithValue({ email: "Error occurred while authenticating" });
     }
   }
 );

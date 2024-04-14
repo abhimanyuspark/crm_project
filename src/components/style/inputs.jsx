@@ -119,19 +119,28 @@ const CheckBox = ({
   );
 };
 
-const Radio = ({ name = "", label, value = true, onChange = (e) => e }) => {
+const Radio = ({
+  id = "",
+  name = "",
+  label,
+  value = true,
+  checked,
+  onChange = (e) => e,
+}) => {
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-3">
       <input
         type="radio"
         value={value}
         onChange={(e) => {
           onChange(e.target.value);
         }}
+        checked={checked}
+        id={id}
         name={name}
         className="w-4 h-4"
       />
-      {label && <label>{label}</label>}
+      {label && <label htmlFor={id}>{label}</label>}
     </div>
   );
 };

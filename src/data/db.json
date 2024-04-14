@@ -2,7 +2,10 @@
   "users": [
     {
       "id": "d6b0ffeb-0a53-4800-a1e4-0c3036f323a1",
-      "role": ["admin", "employee"],
+      "role": [
+        "admin",
+        "employee"
+      ],
       "email": "admin@gmail.com",
       "name": "Patti Kemmer",
       "password": "admin3103",
@@ -83,7 +86,9 @@
     },
     {
       "id": "b2b7e49f-f0a8-4b82-8aeb-c10a5d5c3cf5",
-      "role": ["client"],
+      "role": [
+        "client"
+      ],
       "email": "Magdalen.Schmeler@hotmail.com",
       "name": "Alexander Ankunding",
       "password": "8mr2I4KO",
@@ -92,7 +97,7 @@
       "age": 35,
       "visits": 473,
       "jobType": "Analyst",
-      "login": "Yes",
+      "login": "No",
       "company": "Leffler - Wilderman",
       "phone": "430-608-8688 x83727",
       "address": "815 Daniel Corner, Gorczanyview",
@@ -164,7 +169,9 @@
     },
     {
       "id": "1b219ad4-04c2-48df-a75f-ccd5dd6a112e",
-      "role": ["employee"],
+      "role": [
+        "employee"
+      ],
       "email": "Hope.Beier@gmail.com",
       "name": "James Cole",
       "password": "ssvJzZjD",
@@ -245,7 +252,9 @@
     },
     {
       "id": "a06f7f21-69cf-4874-83cb-9453f9952cc9",
-      "role": ["client"],
+      "role": [
+        "client"
+      ],
       "email": "Lynn.Fadel@yahoo.com",
       "name": "Rex Kassulke",
       "password": "cTxhrGTa",
@@ -326,7 +335,9 @@
     },
     {
       "id": "3579de7c-e96a-4895-8ae6-69f209e646c8",
-      "role": ["client"],
+      "role": [
+        "client"
+      ],
       "email": "Garnett.Stanton@hotmail.com",
       "name": "Owen Nolan",
       "password": "weX0MmyB",
@@ -407,7 +418,9 @@
     },
     {
       "id": "f93a0d6a-f027-4ab3-8423-b15cfc2949f5",
-      "role": ["client"],
+      "role": [
+        "client"
+      ],
       "email": "Mathias_Krajcik73@hotmail.com",
       "name": "Dean Friesen",
       "password": "0zi8tvW_",
@@ -488,7 +501,9 @@
     },
     {
       "id": "47f8562c-d32a-4d79-8fca-54962e4b4c1d",
-      "role": ["employee"],
+      "role": [
+        "employee"
+      ],
       "email": "Alyce.Bruen19@yahoo.com",
       "name": "Ernesto Brakus",
       "password": "dtWMBAkc",
@@ -569,7 +584,9 @@
     },
     {
       "id": "80b0439d-9cac-4544-a503-6f7cd8db4af0",
-      "role": ["client"],
+      "role": [
+        "client"
+      ],
       "email": "Sage.Turcotte-Anderson99@hotmail.com",
       "name": "Alfonso Ortiz",
       "password": "4p0GXfnT",
@@ -650,7 +667,9 @@
     },
     {
       "id": "187a17d2-bdd9-47f3-bb67-d6b7ab0193a5",
-      "role": ["client"],
+      "role": [
+        "client"
+      ],
       "email": "Jaycee.Schuppe23@gmail.com",
       "name": "Earnest Swaniawski",
       "password": "6rzQ5FOx",
@@ -731,7 +750,9 @@
     },
     {
       "id": "685bb350-ba04-42ce-aa35-32e7f224232a",
-      "role": ["client"],
+      "role": [
+        "client"
+      ],
       "email": "Lauren75@yahoo.com",
       "name": "Dr. Clinton Mueller",
       "password": "hhR4ydre",
@@ -809,6 +830,45 @@
           "allDay": false
         }
       ]
+    },
+    {
+      "id": "968a6575-d276-46f8-8ba7-dba59c68cc67",
+      "role": [
+        "client"
+      ],
+      "name": "specsssdasd",
+      "password": "DOQCn8&IJ0",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/441.jpg",
+      "email": "specsss@gmail.com",
+      "age": "",
+      "visits": "",
+      "jobType": "",
+      "date": "2024-04-14T18:48:10.397Z",
+      "login": "No",
+      "status": {
+        "name": "Active",
+        "color": "#0cf90c",
+        "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+      },
+      "statusMenu": [
+        {
+          "name": "InActive",
+          "color": "red",
+          "id": "71a820b1-5002-47b4-8c64-6f197af13d1b"
+        },
+        {
+          "name": "Active",
+          "color": "#0cf90c",
+          "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+        }
+      ],
+      "gender": "Male",
+      "tasks": [],
+      "projects": [],
+      "events": [],
+      "allowFollowUp": {
+        "type": "No"
+      }
     }
   ]
 }

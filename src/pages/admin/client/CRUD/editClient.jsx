@@ -11,6 +11,7 @@ import {
   ReactDatePicker,
   formValidation,
   Loader,
+  Radio,
 } from "../../../../components";
 import {
   FaEye,
@@ -21,12 +22,13 @@ import {
 import { toast } from "react-hot-toast";
 import { editUser, userDetails } from "../../../../redux/server/server";
 import { useRandomPassword } from "../../../../hooks";
-import { genders } from "../../../data.json";
+import { genders, ClientsData } from "../../../data.json";
 
 const EditClient = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { loginData } = ClientsData;
 
   const FollowUp = [
     {
@@ -40,24 +42,19 @@ const EditClient = () => {
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
-    id: id,
-    role: "",
     name: "",
     password: "",
     profile: "",
     email: "",
     age: "",
-    visits: "",
     jobType: "",
     date: "",
     status: {},
-    statusMenu: [],
     gender: "", //default
-    tasks: [],
-    projects: [],
-    events: [],
+    login: "",
     allowFollowUp: {}, //default
   });
+  console.log(formData?.login);
   const [formLoading, setFormLoading] = useState(false);
   const [formError, setFormError] = useState({
     name: "",
@@ -267,6 +264,30 @@ const EditClient = () => {
                   }}
                   fields={(i) => i.type}
                 />
+              </div>
+            </div>
+
+            <div className="grid lg:grid-cols-[1fr_1fr_176px] grid-cols-2 gap-8">
+              {/* Login Allowed */}
+              <div className="flex gap-2 flex-col">
+                <label className="text-base text-slate-600">
+                  Login Allowed
+                </label>
+                <div className="flex gap-8 items-center">
+                  {loginData?.map((d, i) => (
+                    <Radio
+                      id={d}
+                      name="login"
+                      label={d}
+                      key={i}
+                      value={d}
+                      checked={formData.login === d}
+                      onChange={(e) => {
+                        setFormData((p) => ({ ...p, login: e }));
+                      }}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>

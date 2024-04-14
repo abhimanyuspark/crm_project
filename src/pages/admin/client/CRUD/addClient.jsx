@@ -275,7 +275,8 @@ const AddClient = ({ intialImage }) => {
               </div>
             </div>
 
-            <div>
+            <div className="grid lg:grid-cols-[1fr_1fr_176px] grid-cols-2 gap-8">
+              {/* Login Allowed */}
               <div className="flex gap-2 flex-col">
                 <label className="text-base text-slate-600">
                   Login Allowed
@@ -287,6 +288,7 @@ const AddClient = ({ intialImage }) => {
                       label={d}
                       key={i}
                       value={d}
+                      checked={formData.login === d}
                       onChange={(e) => {
                         setFormData((p) => ({ ...p, login: e }));
                       }}
