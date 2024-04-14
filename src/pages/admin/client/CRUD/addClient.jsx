@@ -10,6 +10,7 @@ import {
   Avatar,
   ReactDatePicker,
   formValidation,
+  Radio,
 } from "../../../../components";
 import {
   FaEye,
@@ -21,11 +22,12 @@ import { v4 as uuid } from "uuid";
 import { toast } from "react-hot-toast";
 import { useRandomPassword } from "../../../../hooks";
 import { addUser } from "../../../../redux/server/server";
-import { genders } from "../../../data.json";
+import { genders, ClientsData } from "../../../data.json";
 
 const AddClient = ({ intialImage }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { loginData } = ClientsData;
 
   const FollowUp = [
     {
@@ -48,6 +50,7 @@ const AddClient = ({ intialImage }) => {
     visits: "",
     jobType: "",
     date: new Date(),
+    login: "Yes",
     status: {
       name: "Active",
       color: "#0cf90c",
@@ -269,6 +272,27 @@ const AddClient = ({ intialImage }) => {
                   }}
                   fields={(i) => i.type}
                 />
+              </div>
+            </div>
+
+            <div>
+              <div className="flex gap-2 flex-col">
+                <label className="text-base text-slate-600">
+                  Login Allowed
+                </label>
+                <div className="flex gap-4 items-center">
+                  {loginData?.map((d, i) => (
+                    <Radio
+                      name="login"
+                      label={d}
+                      key={i}
+                      value={d}
+                      onChange={(e) => {
+                        setFormData((p) => ({ ...p, login: e }));
+                      }}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>

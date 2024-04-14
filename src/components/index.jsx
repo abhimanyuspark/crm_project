@@ -8,7 +8,13 @@ import {
   SubNavChild,
   Row,
 } from "./style/container";
-import { InputText, CheckBox, InputSelect, Switch } from "./style/inputs";
+import {
+  InputText,
+  CheckBox,
+  Radio,
+  InputSelect,
+  Switch,
+} from "./style/inputs";
 import { formValidation } from "./formValidation";
 import Calender from "./Calender";
 import Select from "./select/select";
@@ -47,6 +53,7 @@ export {
   InputText,
   InputSelect,
   CheckBox,
+  Radio,
   Switch,
   formValidation,
   Calender,

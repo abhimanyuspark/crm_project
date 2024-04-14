@@ -119,6 +119,23 @@ const CheckBox = ({
   );
 };
 
+const Radio = ({ name = "", label, value = true, onChange = (e) => e }) => {
+  return (
+    <div className="flex items-center gap-2">
+      <input
+        type="radio"
+        value={value}
+        onChange={(e) => {
+          onChange(e.target.value);
+        }}
+        name={name}
+        className="w-4 h-4"
+      />
+      {label && <label>{label}</label>}
+    </div>
+  );
+};
+
 const Switch = ({ icon1, icon2, value = true, onChange = (b) => b }) => {
   return (
     <div className="flex w-20 h-10 border border-black bg-white rounded-[4px] overflow-hidden cursor-pointer">
@@ -161,4 +178,4 @@ const InputSelect = ({ value, onChange, children }) => {
   );
 };
 
-export { InputText, CheckBox, InputSelect, Switch };
+export { InputText, CheckBox, Radio, InputSelect, Switch };

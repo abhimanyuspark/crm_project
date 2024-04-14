@@ -20,7 +20,16 @@ const newPerson = () => {
     age: faker.number.int({ min: 25, max: 50 }),
     visits: faker.number.int(1000),
     jobType: faker.person.jobType(),
+    login: true,
+    company: faker.company.name(),
+    phone: faker.phone.number(),
+    address: `${faker.location.streetAddress()}, ${faker.location.city()}`,
     progress: faker.number.int({ min: 40, max: 90 }),
+    gender: faker.helpers.arrayElement(["Male", "Female", "Other"]),
+    allowFollowUp: faker.helpers.arrayElement([
+      { type: "Yes" },
+      { type: "No" },
+    ]),
     status: faker.helpers.arrayElement([
       { name: "InActive", color: "red", id: faker.string.uuid() },
       { name: "Active", color: "#0cf90c", id: faker.string.uuid() },
@@ -29,7 +38,6 @@ const newPerson = () => {
       { name: "InActive", color: "red", id: faker.string.uuid() },
       { name: "Active", color: "#0cf90c", id: faker.string.uuid() },
     ],
-    gender: faker.helpers.arrayElement(["Male", "Female", "Other"]),
     tasks: [
       {
         id: faker.string.uuid(),
@@ -61,10 +69,6 @@ const newPerson = () => {
         allDay: faker.helpers.arrayElement([true, false]),
       },
     ],
-    allowFollowUp: faker.helpers.arrayElement([
-      { type: "Yes" },
-      { type: "No" },
-    ]),
   };
 };
 

@@ -32,10 +32,9 @@ const Button = ({
 const CancelButton = ({
   height = "40px",
   icon,
-  text,
+  text = "",
   onClick,
   type = "submit",
-  loading = false,
 }) => {
   return (
     <button
@@ -45,20 +44,23 @@ const CancelButton = ({
       className="px-3 bg-white flex justify-center items-center rounded-[0.2rem] hover:bg-black hover:text-white"
     >
       <div className="flex items-center gap-3">
-        {loading ? <Loader /> : icon && icon}
-        <span className="text-lg">{text && text}</span>
+        {icon && icon}
+        <span className="text-lg">{text}</span>
       </div>
     </button>
   );
 };
 
-const ClearButton = ({ onClick, text = "Clear" }) => {
+const ClearButton = ({ onClick, text = "Clear", icon }) => {
   return (
     <button
-      className="border border-black px-3 py-[6px] text-base rounded-[4px] hover:bg-black hover:text-white"
+      className="border border-black px-2 py-[4px] text-base rounded-[4px] hover:bg-black hover:text-white"
       onClick={onClick}
     >
-      {text}
+      <div className="flex items-center gap-2">
+        {icon && icon}
+        <span className="text-lg">{text}</span>
+      </div>
     </button>
   );
 };

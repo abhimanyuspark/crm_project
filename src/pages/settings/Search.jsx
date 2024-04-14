@@ -11,7 +11,7 @@ const Search = ({ value = "", onChange = (i) => i }) => {
   });
 
   return (
-    <Container className="rounded-none">
+    <Container className="sticky  top-0 z-10 rounded-none">
       <div className="border-b border-slate-300 p-4">
         <InputText
           value={search}
@@ -24,26 +24,32 @@ const Search = ({ value = "", onChange = (i) => i }) => {
       </div>
 
       <ul>
-        {filter.map((d, index) => (
-          <li
-            key={index}
-            onClick={() => {
-              onChange(d?.title);
-            }}
-            className={
-              value === d?.title
-                ? "bg-slate-400 text-white"
-                : "text-slate-600 hover:bg-slate-200"
-            }
-          >
-            <Link
-              className="block p-2 pl-4 border-b border-slate-300"
-              to={d?.link}
+        {filter.length > 0 ? (
+          filter.map((d, index) => (
+            <li
+              key={index}
+              onClick={() => {
+                onChange(d?.title);
+              }}
+              className={
+                value === d?.title
+                  ? "bg-slate-400 text-white"
+                  : "text-slate-600 hover:bg-slate-200"
+              }
             >
-              {d?.title}
-            </Link>
+              <Link
+                className="block p-2 pl-4 border-b border-slate-300"
+                to={d?.link}
+              >
+                {d?.title}
+              </Link>
+            </li>
+          ))
+        ) : (
+          <li className="text-slate-600 hover:bg-slate-200 text-center p-2 pl-4 border-b border-slate-300">
+            No data found
           </li>
-        ))}
+        )}
       </ul>
     </Container>
   );

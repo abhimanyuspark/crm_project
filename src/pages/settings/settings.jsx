@@ -9,7 +9,7 @@ const Settings = () => {
   const [tab, setTab] = useState("Profile");
 
   return (
-    <div className="grid lg:grid-cols-[250px_1fr] grid-cols-1">
+    <div className="grid lg:grid-cols-[250px_1fr] grid-rows-1 grid-cols-1">
       <Search value={tab} onChange={(t) => setTab(t)} />
 
       <div className="p-4">

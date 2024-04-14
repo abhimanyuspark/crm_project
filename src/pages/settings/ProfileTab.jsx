@@ -14,7 +14,7 @@ import { toast } from "react-hot-toast";
 import { useRandomPassword } from "../../hooks";
 import { editUser } from "../../redux/server/server";
 import { editAuthReducer } from "../../redux/features/login/reduxLogin";
-import { genders } from "../data.json";
+import { genders, Marital_status } from "../data.json";
 
 const ProfileTab = () => {
   const { user } = useSelector((state) => state.auth);
@@ -24,17 +24,17 @@ const ProfileTab = () => {
   const [show, setShow] = useState(false);
 
   const [formData, setFormData] = useState({
-    name: user?.name,
+    name: "",
     password: "",
-    profile: user?.profile,
-    email: user?.email,
-    gender: user?.gender,
-    meratial_status: "Maried",
+    profile: "",
+    email: "",
+    gender: "",
+    marital_status: "",
   });
   const [formLoading, setFormLoading] = useState(false);
   const [formError, setFormError] = useState({
     name: "",
-    // password: "",
+    password: "",
     email: "",
   });
 
@@ -54,9 +54,9 @@ const ProfileTab = () => {
 
       try {
         await toast.promise(dispatch(editUser(formData)), {
-          loading: "Adding User...",
-          success: <span>User Added Successfully</span>,
-          error: <span>Failed to Add User</span>,
+          loading: "Updating User...",
+          success: <span>User Updated Successfully</span>,
+          error: <span>Failed to updated a user</span>,
         });
         dispatch(editAuthReducer(formData));
         setFormLoading(false);
@@ -93,11 +93,11 @@ const ProfileTab = () => {
     );
   };
 
-  // useEffect(() => {
-  //   if (user) {
-  //     setFormData(user);
-  //   }
-  // }, [user]);
+  useEffect(() => {
+    if (user) {
+      setFormData(user);
+    }
+  }, [user]);
 
   return (
     <form onSubmit={onSubmit}>
@@ -139,24 +139,19 @@ const ProfileTab = () => {
             }}
           />
 
-          <div className="flex flex-col gap-2">
-            <InputText
-              label="Password"
-              name="password"
-              important
-              type={show ? "text" : "password"}
-              // error={formError.password}
-              value={formData.password}
-              placeholder="Enter a password"
-              onChange={(e) => {
-                handleInputChange(e);
-              }}
-              button={<PasswordComponent />}
-            />
-            <p className="text-xs text-slate-500">
-              If you don't want to change a password leave it empty.
-            </p>
-          </div>
+          <InputText
+            label="Password"
+            name="password"
+            important
+            type={show ? "text" : "password"}
+            error={formError.password}
+            value={formData.password}
+            placeholder="Enter a password"
+            onChange={(e) => {
+              handleInputChange(e);
+            }}
+            button={<PasswordComponent />}
+          />
 
           <div className="flex gap-2 flex-col">
             <label className="text-base text-slate-600">Gender</label>
@@ -171,14 +166,16 @@ const ProfileTab = () => {
           </div>
 
           <div className="flex gap-2 flex-col">
-            <label className="text-base text-slate-600">Meratial status</label>
+            <label className="text-base text-slate-600">Marital status</label>
             <Select
-              options={[]}
-              value={formData.meratial_status}
+              options={Marital_status}
+              value={formData?.marital_status}
               onChange={(m) => {
-                setFormData((p) => ({ ...p, meratial_status: m }));
+                setFormData((p) => ({ ...p, marital_status: m }));
               }}
-              fields={(i) => i}
+              emptylist
+              search
+              fields={(i) => i.name}
             />
           </div>
         </div>
@@ -186,7 +183,7 @@ const ProfileTab = () => {
 
       <div className="border-t border-slate-300 p-4 flex gap-4">
         <Button
-          text="Submit"
+          text="Save"
           icon={<FaCheck />}
           type="submit"
           loading={formLoading}

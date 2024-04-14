@@ -91,6 +91,7 @@ const Events = () => {
               valuetemplete={Templete}
             />
           </SubNavChild>
+
           <SubNavChild>
             <span className="pr-1">Type:</span>
             <Select

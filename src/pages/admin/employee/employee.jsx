@@ -14,7 +14,7 @@ import {
 } from "../../../components";
 import { Columns } from "./column";
 import { useNavigate, useLocation } from "react-router-dom";
-import { FaPlus, FaSearch } from "../../../components/icons";
+import { FaPlus, FaSearch, FaTimesCircle } from "../../../components/icons";
 import { ClientsData } from "../../data.json";
 import {
   filterUsers,
@@ -41,6 +41,12 @@ const Employee = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
+  const filterUsersData = async (filterData) => {
+    dispatch(setLoading(true));
+    await dispatch(filterUsers(filterData));
+    dispatch(setLoading(false));
+  };
+
   const onClear = () => {
     setData((p) => ({
       ...p,
@@ -53,7 +59,17 @@ const Employee = () => {
     }));
     setClear(false);
     setGlobalFilter("");
-    dispatch(roleUsers("employee"));
+
+    //Reset Filter users
+    filterUsersData({
+      ...data,
+      allowFollowUp: { type: "All" },
+      status: { name: "All" },
+      dates: {
+        start: "",
+        end: "",
+      },
+    });
   };
 
   const onDatesChange = (dates) => {
@@ -62,22 +78,35 @@ const Employee = () => {
       const newDate = { ...p.dates, ...dates };
       return { ...p, dates: newDate };
     });
+
+    // Filter users here
+    filterUsersData({ ...data, dates });
   };
 
-  useEffect(() => {
-    if (globalFilter === "") {
-      setClear(false);
-    }
-  }, [globalFilter]);
+  const handleStatusChange = (selectedStatus) => {
+    setData((p) => ({ ...p, status: selectedStatus }));
+    setClear(true);
 
-  useEffect(() => {
-    const getData = async () => {
-      dispatch(setLoading(true));
-      await dispatch(filterUsers(data));
-      dispatch(setLoading(false));
-    };
-    getData();
-  }, [data]);
+    // Filter users here
+    filterUsersData({ ...data, status: selectedStatus });
+  };
+
+  const handleAllowFollowUpChange = (selectedFollowUp) => {
+    setData((p) => ({ ...p, allowFollowUp: selectedFollowUp }));
+    setClear(true);
+
+    // Filter users here
+    filterUsersData({ ...data, allowFollowUp: selectedFollowUp });
+  };
+
+  const handleGlobalFilterChange = (value) => {
+    setGlobalFilter(value);
+    if (value === "") {
+      setClear(false);
+    } else {
+      setClear(true);
+    }
+  };
 
   useEffect(() => {
     dispatch(roleUsers("employee"));
@@ -100,8 +129,7 @@ const Employee = () => {
             value={globalFilter}
             placeholder="Search here.."
             onChange={(e) => {
-              setGlobalFilter(e.target.value);
-              setClear(true);
+              handleGlobalFilterChange(e?.target?.value);
             }}
           />
         </SubNavChild>
@@ -109,14 +137,14 @@ const Employee = () => {
         {clear && (
           <SubNavChild>
             <div className="px-1">
-              <ClearButton onClick={onClear} />
+              <ClearButton icon={<FaTimesCircle />} onClick={onClear} />
             </div>
           </SubNavChild>
         )}
 
         <SubNavChild>
           <FilterTable
-            label="Filter Employees"
+            label="Filter Employee"
             onChangeClear={() =>
               setData((p) => ({
                 ...p,
@@ -134,9 +162,7 @@ const Employee = () => {
                 <Select
                   options={followUp}
                   onChange={(d) => {
-                    if (data?.allowFollowUp?.type === d?.type) return null;
-                    setData((p) => ({ ...p, allowFollowUp: d }));
-                    setClear(true);
+                    handleAllowFollowUpChange(d);
                   }}
                   value={data?.allowFollowUp}
                   fields={(i) => i?.type}
@@ -149,9 +175,7 @@ const Employee = () => {
                 <Select
                   options={status}
                   onChange={(d) => {
-                    if (data?.status?.name === d?.name) return null;
-                    setData((p) => ({ ...p, status: d }));
-                    setClear(true);
+                    handleStatusChange(d);
                   }}
                   value={data?.status}
                   fields={(i) => i?.name}
