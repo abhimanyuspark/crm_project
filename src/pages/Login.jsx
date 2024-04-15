@@ -10,7 +10,7 @@ import SVG from "../assets/react.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { authenticateUser } from "../redux/server/server";
-import { togglePersist } from "../redux/features/login/reduxLogin";
+import { togglePersist } from "../redux/features/reduxLogin";
 
 const Login = () => {
   const { loading, persist } = useSelector((state) => state.auth);

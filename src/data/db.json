@@ -16,7 +16,7 @@
       "jobType": "Administrator",
       "login": "Yes",
       "company": "Cronin - Terry",
-      "phone": "(441) 287-3969 x32513",
+      "officePhone": "(441) 287-3969 x32513",
       "address": "40579 N Jefferson Street, New Rebeka",
       "progress": 46,
       "gender": "Other",
@@ -81,6 +81,19 @@
           "start": "2024-02-26T18:45:28.832Z",
           "end": "2024-01-29T19:15:34.035Z",
           "allDay": false
+        },
+        {
+          "id": "2fe5cd7c-57ca-4b61-9a07-66564c03935d",
+          "title": "Hi",
+          "start": "2024-04-14T20:22:54.779Z",
+          "end": "2024-04-14T20:22:54.779Z",
+          "description": "<p>Nice one<span class=\"ql-emojiblot\" data-name=\"kissing_heart\">﻿<span contenteditable=\"false\"><span class=\"ap ap-kissing_heart\">😘</span></span>﻿</span></p>",
+          "allDay": false,
+          "status": {
+            "name": "finished",
+            "color": "green",
+            "id": 3
+          }
         }
       ]
     },
@@ -97,9 +110,9 @@
       "age": 35,
       "visits": 473,
       "jobType": "Analyst",
-      "login": "No",
+      "login": "Yes",
       "company": "Leffler - Wilderman",
-      "phone": "430-608-8688 x83727",
+      "officePhone": "430-608-8688 x83727",
       "address": "815 Daniel Corner, Gorczanyview",
       "progress": 65,
       "gender": "Other",
@@ -153,17 +166,30 @@
       ],
       "events": [
         {
-          "id": "75353f74-3afb-4b11-a88e-e82f1bca6111",
           "title": "speciosus astrum venio vito",
-          "description": "stipes tabgo magnam copia depono minima aeternus vito conor cumque",
+          "start": "2024-06-21T10:20:03.536Z",
+          "end": "2024-07-18T00:05:01.000Z",
+          "description": "<p>stipes tabgo magnam copia depono minima aeternus vito conor cumque</p>",
+          "allDay": true,
           "status": {
             "name": "inprocess",
             "color": "blue",
             "id": "306aac8a-deff-4832-b4d3-ccfe0f05f1db"
           },
-          "start": "2024-06-21T10:20:03.536Z",
-          "end": "2024-03-18T00:05:01.416Z",
-          "allDay": true
+          "id": "75353f74-3afb-4b11-a88e-e82f1bca6111"
+        },
+        {
+          "title": "Meeting",
+          "start": "2024-04-15T03:30:00.000Z",
+          "end": "2024-04-15T05:00:00.000Z",
+          "description": "<p>Office meeting</p>",
+          "allDay": false,
+          "status": {
+            "name": "pending",
+            "color": "yellow",
+            "id": 1
+          },
+          "id": "a1f2bf75-55ec-4a72-8bdb-e32238af0a01"
         }
       ]
     },
@@ -182,7 +208,7 @@
       "jobType": "Engineer",
       "login": "Yes",
       "company": "Considine Inc",
-      "phone": "(977) 367-1442 x016",
+      "officePhone": "(977) 367-1442 x016",
       "address": "25887 S Central Avenue, Port Baby",
       "progress": 86,
       "gender": "Male",
@@ -263,9 +289,9 @@
       "age": 25,
       "visits": 817,
       "jobType": "Technician",
-      "login": "Yes",
+      "login": "No",
       "company": "Kihn - Walker",
-      "phone": "250-529-6047 x1532",
+      "officePhone": "250-529-6047 x1532",
       "address": "3632 Oakfield Road, Manhattan",
       "progress": 65,
       "gender": "Female",
@@ -348,7 +374,7 @@
       "jobType": "Agent",
       "login": "Yes",
       "company": "Littel - Hyatt",
-      "phone": "849-443-0274 x441",
+      "officePhone": "849-443-0274 x441",
       "address": "59192 Keyon Meadow, East Clementineborough",
       "progress": 88,
       "gender": "Male",
@@ -431,7 +457,7 @@
       "jobType": "Manager",
       "login": "Yes",
       "company": "Miller - Waters",
-      "phone": "512.777.8618 x4528",
+      "officePhone": "512.777.8618 x4528",
       "address": "53091 Howe Corner, Mayeside",
       "progress": 79,
       "gender": "Female",
@@ -514,7 +540,7 @@
       "jobType": "Consultant",
       "login": "Yes",
       "company": "Kuhic, Hettinger and Labadie",
-      "phone": "1-691-411-4012 x4918",
+      "officePhone": "1-691-411-4012 x4918",
       "address": "18011 Turner Creek, Willardfield",
       "progress": 52,
       "gender": "Other",
@@ -597,7 +623,7 @@
       "jobType": "Assistant",
       "login": "Yes",
       "company": "Schmidt and Sons",
-      "phone": "898-455-7161",
+      "officePhone": "898-455-7161",
       "address": "7388 Henderson Green, Lake Celinehaven",
       "progress": 59,
       "gender": "Other",
@@ -680,7 +706,7 @@
       "jobType": "Architect",
       "login": "Yes",
       "company": "Sauer - Doyle",
-      "phone": "705.785.0489 x377",
+      "officePhone": "705.785.0489 x377",
       "address": "877 Kessler Place, Turcotteton",
       "progress": 85,
       "gender": "Other",
@@ -688,9 +714,9 @@
         "type": "Yes"
       },
       "status": {
-        "name": "InActive",
-        "color": "red",
-        "id": "768a50c3-3ae2-43e8-92fe-f5beed58d673"
+        "name": "Active",
+        "color": "#0cf90c",
+        "id": "6926818c-f5d9-4525-bdc4-4e25302f4608"
       },
       "statusMenu": [
         {
@@ -763,7 +789,7 @@
       "jobType": "Analyst",
       "login": "Yes",
       "company": "Boehm - Nicolas",
-      "phone": "1-455-936-7757",
+      "officePhone": "1-455-936-7757",
       "address": "25981 Barbara Parkways, North Johanstad",
       "progress": 84,
       "gender": "Female",
@@ -868,6 +894,737 @@
       "events": [],
       "allowFollowUp": {
         "type": "No"
+      }
+    },
+    {
+      "id": "e9de0010-bd4f-4a9c-bf6c-8aae1106cef4",
+      "role": [
+        "client"
+      ],
+      "name": "warlock",
+      "password": "6y9XSVXk6O",
+      "profile": "https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper.png",
+      "email": "dvasu696@gmail.com",
+      "phoneNumber": "9027268328",
+      "countryCode": {
+        "name": {
+          "common": "India",
+          "official": "Republic of India",
+          "nativeName": {
+            "eng": {
+              "official": "Republic of India",
+              "common": "India"
+            },
+            "hin": {
+              "official": "भारत गणराज्य",
+              "common": "भारत"
+            },
+            "tam": {
+              "official": "இந்தியக் குடியரசு",
+              "common": "இந்தியா"
+            }
+          }
+        },
+        "tld": [
+          ".in"
+        ],
+        "cca2": "IN",
+        "ccn3": "356",
+        "cca3": "IND",
+        "cioc": "IND",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+          "INR": {
+            "name": "Indian rupee",
+            "symbol": "₹"
+          }
+        },
+        "idd": {
+          "root": "+9",
+          "suffixes": [
+            "1"
+          ]
+        },
+        "capital": [
+          "New Delhi"
+        ],
+        "altSpellings": [
+          "IN",
+          "Bhārat",
+          "Republic of India",
+          "Bharat Ganrajya",
+          "இந்தியா"
+        ],
+        "region": "Asia",
+        "subregion": "Southern Asia",
+        "languages": {
+          "eng": "English",
+          "hin": "Hindi",
+          "tam": "Tamil"
+        },
+        "translations": {
+          "ara": {
+            "official": "جمهورية الهند",
+            "common": "الهند"
+          },
+          "bre": {
+            "official": "Republik India",
+            "common": "India"
+          },
+          "ces": {
+            "official": "Indická republika",
+            "common": "Indie"
+          },
+          "cym": {
+            "official": "Republic of India",
+            "common": "India"
+          },
+          "deu": {
+            "official": "Republik Indien",
+            "common": "Indien"
+          },
+          "est": {
+            "official": "India Vabariik",
+            "common": "India"
+          },
+          "fin": {
+            "official": "Intian tasavalta",
+            "common": "Intia"
+          },
+          "fra": {
+            "official": "République de l'Inde",
+            "common": "Inde"
+          },
+          "hrv": {
+            "official": "Republika Indija",
+            "common": "Indija"
+          },
+          "hun": {
+            "official": "Indiai Köztársaság",
+            "common": "India"
+          },
+          "ita": {
+            "official": "Repubblica dell'India",
+            "common": "India"
+          },
+          "jpn": {
+            "official": "インド共和国",
+            "common": "インド"
+          },
+          "kor": {
+            "official": "인도 공화국",
+            "common": "인도"
+          },
+          "nld": {
+            "official": "Republiek India",
+            "common": "India"
+          },
+          "per": {
+            "official": "جمهوری هندوستان",
+            "common": "هند"
+          },
+          "pol": {
+            "official": "Republika Indii",
+            "common": "Indie"
+          },
+          "por": {
+            "official": "República da Índia",
+            "common": "Índia"
+          },
+          "rus": {
+            "official": "Республика Индия",
+            "common": "Индия"
+          },
+          "slk": {
+            "official": "Indická republika",
+            "common": "India"
+          },
+          "spa": {
+            "official": "República de la India",
+            "common": "India"
+          },
+          "srp": {
+            "official": "Република Индија",
+            "common": "Индија"
+          },
+          "swe": {
+            "official": "Republiken Indien",
+            "common": "Indien"
+          },
+          "tur": {
+            "official": "Hindistan Cumhuriyeti",
+            "common": "Hindistan"
+          },
+          "urd": {
+            "official": "جمہوریہ بھارت",
+            "common": "بھارت"
+          },
+          "zho": {
+            "official": "印度共和国",
+            "common": "印度"
+          }
+        },
+        "latlng": [
+          20,
+          77
+        ],
+        "landlocked": false,
+        "borders": [
+          "BGD",
+          "BTN",
+          "MMR",
+          "CHN",
+          "NPL",
+          "PAK"
+        ],
+        "area": 3287590,
+        "demonyms": {
+          "eng": {
+            "f": "Indian",
+            "m": "Indian"
+          },
+          "fra": {
+            "f": "Indienne",
+            "m": "Indien"
+          }
+        },
+        "flag": "🇮🇳",
+        "maps": {
+          "googleMaps": "https://goo.gl/maps/WSk3fLwG4vtPQetp7",
+          "openStreetMaps": "https://www.openstreetmap.org/relation/304716"
+        },
+        "population": 1380004385,
+        "gini": {
+          "2011": 35.7
+        },
+        "fifa": "IND",
+        "car": {
+          "signs": [
+            "IND"
+          ],
+          "side": "left"
+        },
+        "timezones": [
+          "UTC+05:30"
+        ],
+        "continents": [
+          "Asia"
+        ],
+        "flags": {
+          "png": "https://flagcdn.com/w320/in.png",
+          "svg": "https://flagcdn.com/in.svg",
+          "alt": "The flag of India is composed of three equal horizontal bands of saffron, white and green. A navy blue wheel with twenty-four spokes — the Ashoka Chakra — is centered in the white band."
+        },
+        "coatOfArms": {
+          "png": "https://mainfacts.com/media/images/coats_of_arms/in.png",
+          "svg": "https://mainfacts.com/media/images/coats_of_arms/in.svg"
+        },
+        "startOfWeek": "monday",
+        "capitalInfo": {
+          "latlng": [
+            28.6,
+            77.2
+          ]
+        },
+        "postalCode": {
+          "format": "######",
+          "regex": "^(\\d{6})$"
+        }
+      },
+      "country": {
+        "name": {
+          "common": "India",
+          "official": "Republic of India",
+          "nativeName": {
+            "eng": {
+              "official": "Republic of India",
+              "common": "India"
+            },
+            "hin": {
+              "official": "भारत गणराज्य",
+              "common": "भारत"
+            },
+            "tam": {
+              "official": "இந்தியக் குடியரசு",
+              "common": "இந்தியா"
+            }
+          }
+        },
+        "tld": [
+          ".in"
+        ],
+        "cca2": "IN",
+        "ccn3": "356",
+        "cca3": "IND",
+        "cioc": "IND",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+          "INR": {
+            "name": "Indian rupee",
+            "symbol": "₹"
+          }
+        },
+        "idd": {
+          "root": "+9",
+          "suffixes": [
+            "1"
+          ]
+        },
+        "capital": [
+          "New Delhi"
+        ],
+        "altSpellings": [
+          "IN",
+          "Bhārat",
+          "Republic of India",
+          "Bharat Ganrajya",
+          "இந்தியா"
+        ],
+        "region": "Asia",
+        "subregion": "Southern Asia",
+        "languages": {
+          "eng": "English",
+          "hin": "Hindi",
+          "tam": "Tamil"
+        },
+        "translations": {
+          "ara": {
+            "official": "جمهورية الهند",
+            "common": "الهند"
+          },
+          "bre": {
+            "official": "Republik India",
+            "common": "India"
+          },
+          "ces": {
+            "official": "Indická republika",
+            "common": "Indie"
+          },
+          "cym": {
+            "official": "Republic of India",
+            "common": "India"
+          },
+          "deu": {
+            "official": "Republik Indien",
+            "common": "Indien"
+          },
+          "est": {
+            "official": "India Vabariik",
+            "common": "India"
+          },
+          "fin": {
+            "official": "Intian tasavalta",
+            "common": "Intia"
+          },
+          "fra": {
+            "official": "République de l'Inde",
+            "common": "Inde"
+          },
+          "hrv": {
+            "official": "Republika Indija",
+            "common": "Indija"
+          },
+          "hun": {
+            "official": "Indiai Köztársaság",
+            "common": "India"
+          },
+          "ita": {
+            "official": "Repubblica dell'India",
+            "common": "India"
+          },
+          "jpn": {
+            "official": "インド共和国",
+            "common": "インド"
+          },
+          "kor": {
+            "official": "인도 공화국",
+            "common": "인도"
+          },
+          "nld": {
+            "official": "Republiek India",
+            "common": "India"
+          },
+          "per": {
+            "official": "جمهوری هندوستان",
+            "common": "هند"
+          },
+          "pol": {
+            "official": "Republika Indii",
+            "common": "Indie"
+          },
+          "por": {
+            "official": "República da Índia",
+            "common": "Índia"
+          },
+          "rus": {
+            "official": "Республика Индия",
+            "common": "Индия"
+          },
+          "slk": {
+            "official": "Indická republika",
+            "common": "India"
+          },
+          "spa": {
+            "official": "República de la India",
+            "common": "India"
+          },
+          "srp": {
+            "official": "Република Индија",
+            "common": "Индија"
+          },
+          "swe": {
+            "official": "Republiken Indien",
+            "common": "Indien"
+          },
+          "tur": {
+            "official": "Hindistan Cumhuriyeti",
+            "common": "Hindistan"
+          },
+          "urd": {
+            "official": "جمہوریہ بھارت",
+            "common": "بھارت"
+          },
+          "zho": {
+            "official": "印度共和国",
+            "common": "印度"
+          }
+        },
+        "latlng": [
+          20,
+          77
+        ],
+        "landlocked": false,
+        "borders": [
+          "BGD",
+          "BTN",
+          "MMR",
+          "CHN",
+          "NPL",
+          "PAK"
+        ],
+        "area": 3287590,
+        "demonyms": {
+          "eng": {
+            "f": "Indian",
+            "m": "Indian"
+          },
+          "fra": {
+            "f": "Indienne",
+            "m": "Indien"
+          }
+        },
+        "flag": "🇮🇳",
+        "maps": {
+          "googleMaps": "https://goo.gl/maps/WSk3fLwG4vtPQetp7",
+          "openStreetMaps": "https://www.openstreetmap.org/relation/304716"
+        },
+        "population": 1380004385,
+        "gini": {
+          "2011": 35.7
+        },
+        "fifa": "IND",
+        "car": {
+          "signs": [
+            "IND"
+          ],
+          "side": "left"
+        },
+        "timezones": [
+          "UTC+05:30"
+        ],
+        "continents": [
+          "Asia"
+        ],
+        "flags": {
+          "png": "https://flagcdn.com/w320/in.png",
+          "svg": "https://flagcdn.com/in.svg",
+          "alt": "The flag of India is composed of three equal horizontal bands of saffron, white and green. A navy blue wheel with twenty-four spokes — the Ashoka Chakra — is centered in the white band."
+        },
+        "coatOfArms": {
+          "png": "https://mainfacts.com/media/images/coats_of_arms/in.png",
+          "svg": "https://mainfacts.com/media/images/coats_of_arms/in.svg"
+        },
+        "startOfWeek": "monday",
+        "capitalInfo": {
+          "latlng": [
+            28.6,
+            77.2
+          ]
+        },
+        "postalCode": {
+          "format": "######",
+          "regex": "^(\\d{6})$"
+        }
+      },
+      "age": "",
+      "visits": "",
+      "jobType": "",
+      "date": "2024-04-15T14:22:14.870Z",
+      "login": "Yes",
+      "status": {
+        "name": "Active",
+        "color": "#0cf90c",
+        "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+      },
+      "statusMenu": [
+        {
+          "name": "InActive",
+          "color": "red",
+          "id": "71a820b1-5002-47b4-8c64-6f197af13d1b"
+        },
+        {
+          "name": "Active",
+          "color": "#0cf90c",
+          "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+        }
+      ],
+      "gender": "Male",
+      "tasks": [],
+      "projects": [],
+      "events": [],
+      "allowFollowUp": {
+        "type": "No"
+      },
+      "company": "",
+      "officeWebsite": "",
+      "officePhone": "",
+      "address": "",
+      "city": "",
+      "state": "",
+      "postalCode": "",
+      "note": "",
+      "phone": {
+        "code": {
+          "name": {
+            "common": "India",
+            "official": "Republic of India",
+            "nativeName": {
+              "eng": {
+                "official": "Republic of India",
+                "common": "India"
+              },
+              "hin": {
+                "official": "भारत गणराज्य",
+                "common": "भारत"
+              },
+              "tam": {
+                "official": "இந்தியக் குடியரசு",
+                "common": "இந்தியா"
+              }
+            }
+          },
+          "tld": [
+            ".in"
+          ],
+          "cca2": "IN",
+          "ccn3": "356",
+          "cca3": "IND",
+          "cioc": "IND",
+          "independent": true,
+          "status": "officially-assigned",
+          "unMember": true,
+          "currencies": {
+            "INR": {
+              "name": "Indian rupee",
+              "symbol": "₹"
+            }
+          },
+          "idd": {
+            "root": "+9",
+            "suffixes": [
+              "1"
+            ]
+          },
+          "capital": [
+            "New Delhi"
+          ],
+          "altSpellings": [
+            "IN",
+            "Bhārat",
+            "Republic of India",
+            "Bharat Ganrajya",
+            "இந்தியா"
+          ],
+          "region": "Asia",
+          "subregion": "Southern Asia",
+          "languages": {
+            "eng": "English",
+            "hin": "Hindi",
+            "tam": "Tamil"
+          },
+          "translations": {
+            "ara": {
+              "official": "جمهورية الهند",
+              "common": "الهند"
+            },
+            "bre": {
+              "official": "Republik India",
+              "common": "India"
+            },
+            "ces": {
+              "official": "Indická republika",
+              "common": "Indie"
+            },
+            "cym": {
+              "official": "Republic of India",
+              "common": "India"
+            },
+            "deu": {
+              "official": "Republik Indien",
+              "common": "Indien"
+            },
+            "est": {
+              "official": "India Vabariik",
+              "common": "India"
+            },
+            "fin": {
+              "official": "Intian tasavalta",
+              "common": "Intia"
+            },
+            "fra": {
+              "official": "République de l'Inde",
+              "common": "Inde"
+            },
+            "hrv": {
+              "official": "Republika Indija",
+              "common": "Indija"
+            },
+            "hun": {
+              "official": "Indiai Köztársaság",
+              "common": "India"
+            },
+            "ita": {
+              "official": "Repubblica dell'India",
+              "common": "India"
+            },
+            "jpn": {
+              "official": "インド共和国",
+              "common": "インド"
+            },
+            "kor": {
+              "official": "인도 공화국",
+              "common": "인도"
+            },
+            "nld": {
+              "official": "Republiek India",
+              "common": "India"
+            },
+            "per": {
+              "official": "جمهوری هندوستان",
+              "common": "هند"
+            },
+            "pol": {
+              "official": "Republika Indii",
+              "common": "Indie"
+            },
+            "por": {
+              "official": "República da Índia",
+              "common": "Índia"
+            },
+            "rus": {
+              "official": "Республика Индия",
+              "common": "Индия"
+            },
+            "slk": {
+              "official": "Indická republika",
+              "common": "India"
+            },
+            "spa": {
+              "official": "República de la India",
+              "common": "India"
+            },
+            "srp": {
+              "official": "Република Индија",
+              "common": "Индија"
+            },
+            "swe": {
+              "official": "Republiken Indien",
+              "common": "Indien"
+            },
+            "tur": {
+              "official": "Hindistan Cumhuriyeti",
+              "common": "Hindistan"
+            },
+            "urd": {
+              "official": "جمہوریہ بھارت",
+              "common": "بھارت"
+            },
+            "zho": {
+              "official": "印度共和国",
+              "common": "印度"
+            }
+          },
+          "latlng": [
+            20,
+            77
+          ],
+          "landlocked": false,
+          "borders": [
+            "BGD",
+            "BTN",
+            "MMR",
+            "CHN",
+            "NPL",
+            "PAK"
+          ],
+          "area": 3287590,
+          "demonyms": {
+            "eng": {
+              "f": "Indian",
+              "m": "Indian"
+            },
+            "fra": {
+              "f": "Indienne",
+              "m": "Indien"
+            }
+          },
+          "flag": "🇮🇳",
+          "maps": {
+            "googleMaps": "https://goo.gl/maps/WSk3fLwG4vtPQetp7",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/304716"
+          },
+          "population": 1380004385,
+          "gini": {
+            "2011": 35.7
+          },
+          "fifa": "IND",
+          "car": {
+            "signs": [
+              "IND"
+            ],
+            "side": "left"
+          },
+          "timezones": [
+            "UTC+05:30"
+          ],
+          "continents": [
+            "Asia"
+          ],
+          "flags": {
+            "png": "https://flagcdn.com/w320/in.png",
+            "svg": "https://flagcdn.com/in.svg",
+            "alt": "The flag of India is composed of three equal horizontal bands of saffron, white and green. A navy blue wheel with twenty-four spokes — the Ashoka Chakra — is centered in the white band."
+          },
+          "coatOfArms": {
+            "png": "https://mainfacts.com/media/images/coats_of_arms/in.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/in.svg"
+          },
+          "startOfWeek": "monday",
+          "capitalInfo": {
+            "latlng": [
+              28.6,
+              77.2
+            ]
+          },
+          "postalCode": {
+            "format": "######",
+            "regex": "^(\\d{6})$"
+          }
+        }
       }
     }
   ]

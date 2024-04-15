@@ -14,6 +14,8 @@ import {
   Radio,
   InputSelect,
   Switch,
+  TextArea,
+  Label,
 } from "./style/inputs";
 import { formValidation } from "./formValidation";
 import Calender from "./Calender";
@@ -35,6 +37,7 @@ import { rangePresets } from "./DatePicker/data";
 import PieChart from "./Charts/PieChart";
 import PieChartUsage from "./Charts/PieChartUsage";
 import FilterTable from "./FilterTable";
+import { SelectCountry, SelectCountryIDD } from "./SelectCountry";
 
 export {
   Loader,
@@ -52,12 +55,14 @@ export {
   Image,
   InputText,
   InputSelect,
+  TextArea,
   CheckBox,
   Radio,
   Switch,
   formValidation,
   Calender,
   Select,
+  Label,
   Menu,
   Table,
   MiniTable,
@@ -73,4 +78,6 @@ export {
   PieChartUsage,
   rangePresets,
   FilterTable,
+  SelectCountry,
+  SelectCountryIDD,
 };

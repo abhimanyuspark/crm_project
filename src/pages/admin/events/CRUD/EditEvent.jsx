@@ -15,7 +15,7 @@ import {
 } from "../../../../components";
 import { FaCheck } from "../../../../components/icons";
 import { updateEvent, userDetails } from "../../../../redux/server/server";
-import { updateEventReducer } from "../../../../redux/features/login/reduxLogin";
+import { updateEventReducer } from "../../../../redux/features/reduxLogin";
 import { eventsData } from "../../../data.json";
 
 const EditEvent = () => {

@@ -109,6 +109,8 @@ const ViewEmployee = ({ intialImage }) => {
             <p className="font-bold text-xl">Profile Info</p>
 
             <Row text="Name" data={user?.name} />
+            <Row text="Job Type" data={user?.jobType} />
+
             <div className="flex gap-2 items-center">
               <Row
                 text="Password"

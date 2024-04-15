@@ -12,6 +12,11 @@ import {
   formValidation,
   Loader,
   Radio,
+  TextArea,
+  Label,
+  TextEditor,
+  SelectCountry,
+  SelectCountryIDD,
 } from "../../../../components";
 import {
   FaEye,
@@ -46,15 +51,25 @@ const EditClient = () => {
     password: "",
     profile: "",
     email: "",
+    phoneNumber: "",
+    countryCode: "",
+    country: "",
     age: "",
-    jobType: "",
     date: "",
     status: {},
-    gender: "", //default
+    gender: "",
     login: "",
-    allowFollowUp: {}, //default
+    allowFollowUp: {},
+    company: "",
+    officeWebsite: "",
+    officePhone: "",
+    address: "",
+    city: "",
+    state: "",
+    postalCode: "",
+    note: "",
   });
-  console.log(formData?.login);
+
   const [formLoading, setFormLoading] = useState(false);
   const [formError, setFormError] = useState({
     name: "",
@@ -152,11 +167,12 @@ const EditClient = () => {
         {/* Event Form */}
         {loading && <Loader />}
         <form onSubmit={onSubmit}>
-          <div className="p-4 grid gap-4">
-            <div className="grid lg:grid-cols-[1fr_176px] lg:gap-8 gap-4">
-              <div className="grid gap-4">
-                {/* Name, Email, Password Fields */}
-                <div className="grid grid-cols-3 gap-8">
+          <div>
+            {/* Client Details */}
+            <div className="p-4 grid gap-6">
+              <div className="grid lg:grid-cols-[1fr_180px] lg:gap-6 gap-4">
+                {/* Name, Email, Password, Gender and  Updated At Fields */}
+                <div className="grid sm:grid-cols-3 grid-cols-1 gap-6">
                   <InputText
                     label="Name"
                     name="name"
@@ -195,23 +211,8 @@ const EditClient = () => {
                     }}
                     button={<PasswordComponent />}
                   />
-                </div>
 
-                <div className="grid lg:grid-cols-3 grid-cols-2 gap-8">
-                  {/* Created */}
-                  <div className="flex gap-2 flex-col">
-                    <label className="text-base text-slate-600">Created</label>
-                    <ReactDatePicker
-                      value={formData.date}
-                      onChange={(date) =>
-                        setFormData((p) => ({ ...p, date: date }))
-                      }
-                    />
-                  </div>
-
-                  {/* Gender */}
-                  <div className="flex gap-2 flex-col">
-                    <label className="text-base text-slate-600">Gender</label>
+                  <Label label="Gender">
                     <Select
                       options={genders}
                       value={formData.gender}
@@ -220,60 +221,85 @@ const EditClient = () => {
                       }}
                       fields={(i) => i}
                     />
-                  </div>
+                  </Label>
+
+                  <Label label="Country">
+                    <SelectCountry
+                      value={formData.country}
+                      onChange={(d) => {
+                        setFormData((p) => ({
+                          ...p,
+                          country: d,
+                          countryCode: d,
+                        }));
+                      }}
+                    />
+                  </Label>
+
+                  <Label label="Phone no" htmlFor="phone">
+                    <div className="flex">
+                      <SelectCountryIDD
+                        value={formData.countryCode}
+                        onChange={(d) => {
+                          setFormData((p) => ({ ...p, countryCode: d }));
+                        }}
+                      />
+                      <InputText
+                        type="tel"
+                        name="phone"
+                        value={formData.phoneNumber}
+                        onChange={(d) => {
+                          setFormData((p) => ({
+                            ...p,
+                            phoneNumber: d.target.value,
+                          }));
+                        }}
+                      />
+                    </div>
+                  </Label>
                 </div>
+
+                {/* Profile Picture */}
+                <Label label={"Profile Picture"}>
+                  <Avatar
+                    value={formData.profile}
+                    onChange={(data) => {
+                      setFormData((p) => ({ ...p, profile: data }));
+                    }}
+                  />
+                </Label>
               </div>
 
-              {/* Profile Picture */}
-              <div className="flex gap-2 flex-col">
-                <label className="text-base text-slate-600">
-                  Profile Picture
-                </label>
-                <Avatar
-                  value={formData.profile}
-                  onChange={(data) => {
-                    setFormData((p) => ({ ...p, profile: data }));
-                  }}
-                />
+              <div className="grid grid-cols-2 gap-8">
+                {/* status */}
+                <Label label="Status">
+                  <Select
+                    options={formData.statusMenu}
+                    value={formData.status}
+                    onChange={(data) => {
+                      setFormData((p) => ({ ...p, status: data }));
+                    }}
+                    optiontemplete={Status}
+                    valuetemplete={Status}
+                    fields={(i) => i.name}
+                  />
+                </Label>
+                {/* Follow Up */}
+                <Label label="Follow up">
+                  <Select
+                    options={FollowUp}
+                    value={formData.allowFollowUp}
+                    onChange={(data) => {
+                      setFormData((p) => ({ ...p, allowFollowUp: data }));
+                    }}
+                    fields={(i) => i.type}
+                  />
+                </Label>
               </div>
-            </div>
 
-            <div className="grid lg:grid-cols-[1fr_1fr_176px] grid-cols-2 gap-8">
-              {/* status */}
-              <div className="flex gap-2 flex-col">
-                <label className="text-base text-slate-600">Status</label>
-                <Select
-                  options={formData.statusMenu}
-                  value={formData.status}
-                  onChange={(data) => {
-                    setFormData((p) => ({ ...p, status: data }));
-                  }}
-                  optiontemplete={Status}
-                  valuetemplete={Status}
-                  fields={(i) => i.name}
-                />
-              </div>
-              {/* Follow Up */}
-              <div className="flex gap-2 flex-col">
-                <label className="text-base text-slate-600">Follow Up</label>
-                <Select
-                  options={FollowUp}
-                  value={formData.allowFollowUp}
-                  onChange={(data) => {
-                    setFormData((p) => ({ ...p, allowFollowUp: data }));
-                  }}
-                  fields={(i) => i.type}
-                />
-              </div>
-            </div>
-
-            <div className="grid lg:grid-cols-[1fr_1fr_176px] grid-cols-2 gap-8">
               {/* Login Allowed */}
-              <div className="flex gap-2 flex-col">
-                <label className="text-base text-slate-600">
-                  Login Allowed
-                </label>
-                <div className="flex gap-8 items-center">
+              <Label label="Login Allowed">
+                <div className="flex gap-6 items-center">
                   {loginData?.map((d, i) => (
                     <Radio
                       id={d}
@@ -288,6 +314,106 @@ const EditClient = () => {
                     />
                   ))}
                 </div>
+              </Label>
+            </div>
+
+            {/* Company Details */}
+            <div>
+              <div className="border-t border-slate-300 p-4">
+                <h2 className="text-xl">Company Details</h2>
+              </div>
+
+              <div className="p-4 grid gap-6">
+                <div className="grid grid-cols-3 gap-6">
+                  {/* Company Name */}
+                  <InputText
+                    label="Company Name"
+                    name="company"
+                    placeholder="Enter a company name"
+                    value={formData.company}
+                    onChange={(e) => {
+                      handleInputChange(e);
+                    }}
+                  />
+
+                  {/* Phone No */}
+                  <InputText
+                    type="tel"
+                    label="Office Phone No"
+                    name="officePhone"
+                    placeholder="Enter a phone no"
+                    value={formData.officePhone}
+                    onChange={(e) => {
+                      handleInputChange(e);
+                    }}
+                  />
+
+                  {/* Website */}
+                  <InputText
+                    type="url"
+                    label="Office Website"
+                    name="officeWebsite"
+                    placeholder="Enter a website url"
+                    value={formData.officeWebsite}
+                    onChange={(e) => {
+                      handleInputChange(e);
+                    }}
+                  />
+
+                  {/* city */}
+                  <InputText
+                    label="City"
+                    name="city"
+                    placeholder="Enter a city name"
+                    value={formData.city}
+                    onChange={(e) => {
+                      handleInputChange(e);
+                    }}
+                  />
+
+                  {/* state */}
+                  <InputText
+                    label="State"
+                    name="state"
+                    placeholder="Enter a state"
+                    value={formData.state}
+                    onChange={(e) => {
+                      handleInputChange(e);
+                    }}
+                  />
+
+                  {/* Postal Code */}
+                  <InputText
+                    label="Postal Code"
+                    name="postalCode"
+                    placeholder="Enter a postalCode"
+                    value={formData.postalCode}
+                    onChange={(e) => {
+                      handleInputChange(e);
+                    }}
+                  />
+                </div>
+
+                {/* Address */}
+                <TextArea
+                  type="text"
+                  label="Address"
+                  placeholder="Enter a address"
+                  name="address"
+                  value={formData.address}
+                  onChange={(e) => {
+                    handleInputChange(e);
+                  }}
+                />
+
+                <Label label={"Note"}>
+                  <TextEditor
+                    value={formData.note}
+                    onChange={(d) => {
+                      setFormData((p) => ({ ...p, note: d }));
+                    }}
+                  />
+                </Label>
               </div>
             </div>
           </div>

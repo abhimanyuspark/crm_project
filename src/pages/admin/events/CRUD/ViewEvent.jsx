@@ -5,7 +5,7 @@ import { deleteUserEvent, userDetails } from "../../../../redux/server/server";
 import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
-import { deletEventReducer } from "../../../../redux/features/login/reduxLogin";
+import { deletEventReducer } from "../../../../redux/features/reduxLogin";
 
 const ViewEvent = () => {
   const auth = useSelector((state) => state.auth);

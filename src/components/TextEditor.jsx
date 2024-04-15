@@ -76,14 +76,16 @@ const TextEditor = ({ value, onChange }) => {
   ];
 
   return (
-    <ReactQuill
-      onChange={onChange}
-      value={value}
-      modules={modules}
-      formats={formats}
-      theme="snow"
-      className="mycontainer"
-    />
+    <div>
+      <ReactQuill
+        onChange={onChange}
+        value={value}
+        modules={modules}
+        formats={formats}
+        theme="snow"
+        className="mycontainer"
+      />
+    </div>
   );
 };
 

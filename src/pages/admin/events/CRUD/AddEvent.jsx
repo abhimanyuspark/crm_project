@@ -13,7 +13,7 @@ import {
 } from "../../../../components";
 import { FaCheck, FaTimes } from "../../../../components/icons";
 import { addEventToUser, roleUsers } from "../../../../redux/server/server";
-import { addEventReducer } from "../../../../redux/features/login/reduxLogin";
+import { addEventReducer } from "../../../../redux/features/reduxLogin";
 import { FlConverter } from "../../../../utilities";
 import { v4 as uuid } from "uuid";
 import { eventsData } from "../../../data.json";

@@ -43,6 +43,13 @@ const ViewClient = ({ intialImage }) => {
     return <Error />;
   }
 
+  const getData = (d) => {
+    const root = d?.idd?.root ? String(d?.idd?.root) : "+0";
+    const suffixes = d?.idd?.suffixes ? String(d?.idd?.suffixes) : "";
+    const combined = root + suffixes.slice(0, 2);
+    return combined;
+  };
+
   return (
     <div className="grid gap-8 p-6">
       <div className="grid gap-8 sm:grid-cols-3 grid-cols-1">
@@ -117,7 +124,36 @@ const ViewClient = ({ intialImage }) => {
               )}
             </div>
             <Row text="Email" data={user?.email} />
+            <Row text="Login Allowed" data={user?.login} />
+            <Row
+              text="Country"
+              data={
+                <div className="flex items-center gap-2">
+                  {user?.country ? (
+                    <>
+                      <img
+                        loading="lazy"
+                        className="w-6 h-6"
+                        src={user?.country?.flags?.svg}
+                        alt={`${user?.country?.name}`}
+                      />
+                      <span>{user?.country?.name?.common}</span>
+                    </>
+                  ) : (
+                    "--"
+                  )}
+                </div>
+              }
+            />
+            <Row
+              text="Mobile no"
+              data={`${user?.countryCode && getData(user?.countryCode)} ${
+                user?.phoneNumber && user?.phoneNumber
+              }`}
+            />
+
             <Row text="Age" data={user?.age} />
+            <Row text="Created" data={created} />
 
             <Row
               text="Gender"
@@ -139,8 +175,7 @@ const ViewClient = ({ intialImage }) => {
               }
             />
             <Row text="Visits" data={user?.visits} />
-            <Row text="Created" data={created} />
-            <Row text="Progress" data={user?.progress} />
+
             <Row
               text="Status"
               data={
@@ -153,6 +188,10 @@ const ViewClient = ({ intialImage }) => {
                 </p>
               }
             />
+
+            <Row text="Company Name" data={user?.company} />
+            <Row text="Office Phone" data={user?.officePhone} />
+            <Row text="Address" data={user?.address} />
           </div>
         </Container>
 

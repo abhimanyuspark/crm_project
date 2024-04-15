@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import Cookies from "js-cookie";
-import { authenticateUser, refreshAuthUser } from "../../server/server";
+import { authenticateUser, refreshAuthUser } from "../server/server";
 
 const initialState = {
   error: null,

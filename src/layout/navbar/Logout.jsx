@@ -1,4 +1,4 @@
-import { logout } from "../../redux/features/login/reduxLogin";
+import { logout } from "../../redux/features/reduxLogin";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { FaPowerOff } from "../../components/icons";

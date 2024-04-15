@@ -11,7 +11,7 @@ const InputText = ({
   important,
   focus,
   width = "100%",
-  height = "40px",
+  height = "37px",
   error,
   name,
   ...rest
@@ -23,7 +23,7 @@ const InputText = ({
       {label && (
         <label
           htmlFor={name}
-          className="text-slate-600 cursor-pointer flex gap-1 "
+          className="text-slate-500 text-sm cursor-pointer flex gap-1"
         >
           {label}
           {important && <sup className="text-red-500 text-base static">*</sup>}
@@ -70,6 +70,79 @@ const InputText = ({
       </div>
 
       {error && <p className="text-red-500 text-sm">{error}</p>}
+    </div>
+  );
+};
+
+const TextArea = ({
+  value,
+  placeholder,
+  onChange,
+  label,
+  important,
+  width = "100%",
+  rows = "3",
+  error,
+  name,
+  ...rest
+}) => {
+  const [isFocused, setIsFocused] = useState(false);
+
+  return (
+    <div className="flex gap-2 flex-col group/item">
+      {label && (
+        <label
+          htmlFor={name}
+          className="text-slate-500 text-sm cursor-pointer flex gap-1 "
+        >
+          {label}
+          {important && <sup className="text-red-500 text-base static">*</sup>}
+        </label>
+      )}
+
+      <div
+        style={{ width: width }}
+        className={`flex items-center border rounded-[4px] overflow-hidden ${
+          isFocused && !error
+            ? "border-black"
+            : error
+            ? "border-red-500"
+            : "border-slate-300 group-hover/item:border-black"
+        }`}
+      >
+        <textarea
+          id={name}
+          name={name}
+          value={value}
+          placeholder={placeholder}
+          rows={rows}
+          className="w-full h-full outline-none p-2"
+          onChange={onChange}
+          onFocus={() => {
+            setIsFocused(true);
+          }}
+          onBlur={() => {
+            setIsFocused(false);
+          }}
+          {...rest}
+        />
+      </div>
+
+      {error && <p className="text-red-500 text-sm">{error}</p>}
+    </div>
+  );
+};
+
+const Label = ({ label, children, htmlFor = "" }) => {
+  return (
+    <div className={"flex gap-2 flex-col"}>
+      <label
+        htmlFor={htmlFor}
+        className="text-slate-500 text-sm cursor-pointer"
+      >
+        {label}
+      </label>
+      {children}
     </div>
   );
 };
@@ -187,4 +260,4 @@ const InputSelect = ({ value, onChange, children }) => {
   );
 };
 
-export { InputText, CheckBox, Radio, InputSelect, Switch };
+export { InputText, CheckBox, Radio, InputSelect, Switch, TextArea, Label };

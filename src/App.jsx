@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import {
@@ -26,6 +26,8 @@ import { RequireAuth, PersistenceAuth, Loader } from "./components/index";
 import { Tooltip } from "react-tooltip";
 import { Toaster } from "react-hot-toast";
 import "react-datepicker/dist/react-datepicker.css";
+import { useDispatch } from "react-redux";
+import { getContryApi } from "./redux/server/other_api";
 const initialImage = initialData[0].initialImage;
 
 function App() {
@@ -34,6 +36,12 @@ function App() {
     Employee: "employee",
     Client: "client",
   };
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getContryApi());
+  }, [dispatch]);
 
   return (
     <Suspense fallback={<Loader />}>
