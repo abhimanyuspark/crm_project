@@ -13,14 +13,18 @@
 
 // console.log(number + " / " + numberLens);
 
-const auth = {
-  id: 1,
-  name: "abhi",
-};
+// const auth = {
+//   id: 1,
+//   name: "abhi",
+// };
 
-const user = {
-  name: "vasu",
-};
+// const user = {
+//   name: "vasu",
+// };
 
-const data = { ...auth, ...user };
-console.log(data);
+// const data = { ...auth, ...user };
+// console.log(data);
+
+// let i = 3;
+// const ans = i % 3;
+// console.log(ans);

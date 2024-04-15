@@ -3,8 +3,12 @@ import React, { memo } from "react";
 const getWeekDates = () => {
   const today = new Date();
   const currentDay = today.getDay();
-  // It will gave me a number like 0,1,2...6 that represents day of the weeks
-  const startingDateOfTheWeek = today.getDate() - currentDay;
+
+  // Subtract the current day of the week to get the starting date of the week
+  // Adjust to make Monday the start of the week
+  const startingDateOfTheWeek =
+    today.getDate() - currentDay + (currentDay === 0 ? -6 : 1);
+
   const startOfWeek = new Date(today.setDate(startingDateOfTheWeek));
   const weekDates = [];
 
@@ -18,16 +22,16 @@ const getWeekDates = () => {
 };
 
 const days = [
-  "Sunday",
   "Monday",
   "Tuesday",
   "Wednesday",
   "Thursday",
   "Friday",
   "Saturday",
+  "Sunday",
 ];
 
-// const colors = ["red", "blue", "green", "purple", "orange", "yellow", "gray"];
+// const colors = ["red", "blue", "green"];
 
 const WeeksDays = memo(() => {
   const weekDates = getWeekDates();
@@ -39,17 +43,24 @@ const WeeksDays = memo(() => {
       </div>
       <div className="flex gap-2 p-4">
         {days.map((day, index) => (
-          <Day key={index} dayName={day} date={weekDates[index]} />
+          <Day
+            key={index}
+            dayName={day}
+            date={weekDates[index]}
+            // color={colors[index % colors.length]}
+          />
         ))}
       </div>
     </>
   );
 });
 
-const Day = ({ dayName, date }) => {
-  const today = new Date().getDay();
+const Day = ({ dayName, date, color }) => {
+  const todayIndex = new Date().getDay();
+  // Adjust todayIndex to make Monday the start of the week
+  const adjustedIndex = todayIndex === 0 ? 6 : todayIndex - 1;
   const isToday =
-    days[today].slice(0, 3) === dayName.slice(0, 3)
+    days[adjustedIndex] === dayName
       ? "bg-blue-600 text-white"
       : "hover:bg-slate-200";
 
@@ -59,6 +70,7 @@ const Day = ({ dayName, date }) => {
       data-tooltip-content={`${date}`}
       data-tooltip-place="bottom"
       className={`flex items-center justify-center text-xs rounded-full w-9 aspect-square border border-slate-300 cursor-pointer ${isToday}`}
+      // style={{ backgroundColor: color }}
     >
       {dayName.slice(0, 2)}
     </div>

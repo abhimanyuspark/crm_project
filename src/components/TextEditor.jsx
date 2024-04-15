@@ -76,7 +76,7 @@ const TextEditor = ({ value, onChange }) => {
   ];
 
   return (
-    <div>
+    <div className="relative">
       <ReactQuill
         onChange={onChange}
         value={value}

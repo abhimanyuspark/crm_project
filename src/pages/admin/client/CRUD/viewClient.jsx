@@ -147,9 +147,10 @@ const ViewClient = ({ intialImage }) => {
             />
             <Row
               text="Mobile no"
-              data={`${user?.countryCode && getData(user?.countryCode)} ${
-                user?.phoneNumber && user?.phoneNumber
-              }`}
+              data={
+                user?.phoneNumber &&
+                `${getData(user?.countryCode)} ${user?.phoneNumber}`
+              }
             />
 
             <Row text="Age" data={user?.age} />
