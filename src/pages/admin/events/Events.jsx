@@ -77,9 +77,10 @@ const Events = () => {
       {auth?.user?.role?.includes("admin") && (
         <SubNavBar>
           <SubNavChild>
-            <span className="pr-2">{role.role}:</span>
+            {/* <span className="pr-2">{role.role}:</span> */}
             <Select
               width="250px"
+              optionswidth="350px"
               value={selectedUser}
               options={users}
               fields={(i) => i.name}

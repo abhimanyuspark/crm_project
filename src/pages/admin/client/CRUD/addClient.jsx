@@ -97,6 +97,7 @@ const AddClient = ({ intialImage }) => {
     name: "",
     password: "",
     email: "",
+    officeWebsite: "",
   });
 
   const handleInputChange = (e) => {
@@ -279,7 +280,17 @@ const AddClient = ({ intialImage }) => {
                 </Label>
               </div>
 
-              <div className="grid grid-cols-2 gap-8">
+              <div className="grid grid-cols-3 gap-8">
+                {/* age */}
+                <InputText
+                  type="number"
+                  label="Age"
+                  value={formData.age}
+                  name="age"
+                  onChange={(e) => {
+                    handleInputChange(e);
+                  }}
+                />
                 {/* status */}
                 <Label label="Status">
                   <Select
@@ -359,10 +370,10 @@ const AddClient = ({ intialImage }) => {
 
                   {/* Website */}
                   <InputText
-                    type="url"
                     label="Office Website"
                     name="officeWebsite"
                     placeholder="Enter a website url"
+                    error={formError.officeWebsite}
                     value={formData.officeWebsite}
                     onChange={(e) => {
                       handleInputChange(e);

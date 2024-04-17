@@ -55,7 +55,6 @@ const EditClient = () => {
     countryCode: "",
     country: "",
     age: "",
-    date: "",
     status: {},
     gender: "",
     login: "",
@@ -75,6 +74,7 @@ const EditClient = () => {
     name: "",
     password: "",
     email: "",
+    officeWebsite: "",
   });
 
   const handleInputChange = (e) => {
@@ -159,7 +159,7 @@ const EditClient = () => {
 
   return (
     <div className="p-6">
-      <Container className="relative w-full h-full">
+      <Container className="w-full h-full">
         <div className="border-b border-slate-300 p-4">
           <h2 className="text-xl font-bold">Update Client</h2>
         </div>
@@ -270,7 +270,17 @@ const EditClient = () => {
                 </Label>
               </div>
 
-              <div className="grid grid-cols-2 gap-8">
+              <div className="grid grid-cols-3 gap-8">
+                {/* age */}
+                <InputText
+                  type="number"
+                  label="Age"
+                  value={formData.age}
+                  name="age"
+                  onChange={(e) => {
+                    handleInputChange(e);
+                  }}
+                />
                 {/* status */}
                 <Label label="Status">
                   <Select
@@ -350,10 +360,10 @@ const EditClient = () => {
 
                   {/* Website */}
                   <InputText
-                    type="url"
                     label="Office Website"
                     name="officeWebsite"
                     placeholder="Enter a website url"
+                    error={formError.officeWebsite}
                     value={formData.officeWebsite}
                     onChange={(e) => {
                       handleInputChange(e);

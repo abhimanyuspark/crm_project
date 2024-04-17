@@ -33,5 +33,14 @@ export const formValidation = (data) => {
     }
   }
 
+  // check if officeWebsite is provided
+  if (data.hasOwnProperty("officeWebsite")) {
+    if (data.officeWebsite !== "") {
+      if (!/^(http|https):\/\/[^ "]+$/.test(data.officeWebsite)) {
+        errors.officeWebsite = "Office website URL format is incorrect.";
+      }
+    }
+  }
+
   return errors;
 };
