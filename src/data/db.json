@@ -94,6 +94,19 @@
             "color": "green",
             "id": 3
           }
+        },
+        {
+          "title": "nice",
+          "start": "2024-04-18T18:15:05.561Z",
+          "end": "2024-04-18T18:15:05.561Z",
+          "description": "<p>one<span class=\"ql-emojiblot\" data-name=\"joy\">﻿<span contenteditable=\"false\"><span class=\"ap ap-joy\">😂</span></span>﻿</span></p>",
+          "allDay": true,
+          "status": {
+            "name": "pending",
+            "color": "yellow",
+            "id": 1
+          },
+          "id": "c5757867-303d-4015-837c-3f4c19b4fca2"
         }
       ]
     },
@@ -106,7 +119,7 @@
       "name": "Alexander Ankunding",
       "password": "8mr2I4KO",
       "date": "2024-05-04T04:46:05.152Z",
-      "profile": "https://avatars.githubusercontent.com/u/33006822",
+      "profile": "https://avatars.githubusercontent.com/u/40372685",
       "age": 35,
       "visits": 473,
       "jobType": "Analyst",
@@ -191,7 +204,15 @@
           },
           "id": "a1f2bf75-55ec-4a72-8bdb-e32238af0a01"
         }
-      ]
+      ],
+      "phoneNumber": "",
+      "countryCode": "",
+      "country": "",
+      "officeWebsite": "",
+      "city": "",
+      "state": "",
+      "postalCode": "",
+      "note": ""
     },
     {
       "id": "1b219ad4-04c2-48df-a75f-ccd5dd6a112e",
@@ -1640,6 +1661,56 @@
           }
         }
       }
+    },
+    {
+      "id": "14ce56f1-5a61-47a9-ac1a-71f177d5beff",
+      "role": [
+        "client"
+      ],
+      "name": "hulk",
+      "password": "hulkBuster",
+      "profile": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/498.jpg",
+      "email": "hulk@gmail.com",
+      "phoneNumber": "",
+      "countryCode": "",
+      "country": "",
+      "age": "",
+      "visits": "",
+      "jobType": "",
+      "date": "2024-04-18T11:13:17.729Z",
+      "login": "No",
+      "status": {
+        "name": "Active",
+        "color": "#0cf90c",
+        "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+      },
+      "statusMenu": [
+        {
+          "name": "InActive",
+          "color": "red",
+          "id": "71a820b1-5002-47b4-8c64-6f197af13d1b"
+        },
+        {
+          "name": "Active",
+          "color": "#0cf90c",
+          "id": "4ddf56cf-c71a-4b62-aa46-86661a8e4dca"
+        }
+      ],
+      "gender": "Male",
+      "tasks": [],
+      "projects": [],
+      "events": [],
+      "allowFollowUp": {
+        "type": "No"
+      },
+      "company": "",
+      "officeWebsite": "",
+      "officePhone": "",
+      "address": "",
+      "city": "",
+      "state": "",
+      "postalCode": "",
+      "note": ""
     }
   ]
 }

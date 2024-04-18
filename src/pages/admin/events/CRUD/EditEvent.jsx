@@ -17,6 +17,7 @@ import { FaCheck } from "../../../../components/icons";
 import { updateEvent, userDetails } from "../../../../redux/server/server";
 import { updateEventReducer } from "../../../../redux/features/reduxLogin";
 import { eventsData } from "../../../data.json";
+import toast from "react-hot-toast";
 
 const EditEvent = () => {
   const { userId, id } = useParams();
@@ -46,12 +47,19 @@ const EditEvent = () => {
     if (isValid) {
       setFormLoading(true);
       try {
-        await dispatch(
-          updateEvent({
-            userId: userId,
-            eventId: id,
-            updatedEvent: formData,
-          })
+        await toast.promise(
+          dispatch(
+            updateEvent({
+              userId: userId,
+              eventId: id,
+              updatedEvent: formData,
+            })
+          ),
+          {
+            loading: "Updating event...",
+            success: <span>Event Updated Successfully</span>,
+            error: <span>Failed to Update Event</span>,
+          }
         );
         await dispatch(updateEventReducer(formData));
         navigate(-1, { replace: true });

@@ -13,7 +13,7 @@ import { FaEye, FaEyeSlash, FaCheck, FaRandom } from "../../components/icons";
 import { toast } from "react-hot-toast";
 import { useRandomPassword } from "../../hooks";
 import { editUser } from "../../redux/server/server";
-import { editAuthReducer } from "../../redux/features/login/reduxLogin";
+import { editAuthReducer } from "../../redux/features/reduxLogin";
 import { genders, Marital_status } from "../data.json";
 
 const ProfileTab = () => {

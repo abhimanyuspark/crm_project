@@ -93,9 +93,9 @@ const EditClient = () => {
 
       try {
         await toast.promise(dispatch(editUser(formData)), {
-          loading: "Saving user...",
-          success: "User saved!",
-          error: `Failed to save user: ${error.message}`,
+          loading: "Updating client...",
+          success: "Updated successfully",
+          error: `Failed to update client: ${error.message}`,
         });
         navigate(-1, { replace: true });
         setFormLoading(false);

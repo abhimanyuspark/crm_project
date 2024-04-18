@@ -17,6 +17,7 @@ import { addEventReducer } from "../../../../redux/features/reduxLogin";
 import { FlConverter } from "../../../../utilities";
 import { v4 as uuid } from "uuid";
 import { eventsData } from "../../../data.json";
+import toast from "react-hot-toast";
 
 const AddEvent = () => {
   const { user } = useSelector((state) => state.auth);
@@ -68,11 +69,18 @@ const AddEvent = () => {
     if (validate(formData)) {
       setFormLoading(true);
       try {
-        await dispatch(
-          addEventToUser({
-            userId: employee?.id || client?.id,
-            event: formData,
-          })
+        await toast.promise(
+          dispatch(
+            addEventToUser({
+              userId: employee?.id || client?.id,
+              event: formData,
+            })
+          ),
+          {
+            loading: "Adding event...",
+            success: <span>Event Added Successfully</span>,
+            error: <span>Failed to Add Event</span>,
+          }
         );
         if (user?.id === employee?.id) {
           await dispatch(addEventReducer(formData));

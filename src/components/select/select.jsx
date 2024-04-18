@@ -80,8 +80,10 @@ const Select = ({
       {/*  Select Input Field */}
 
       <div
-        tabIndex={0}
-        onClick={() => setIsOpen((prev) => !prev)}
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsOpen((prev) => !prev);
+        }}
         className={`${styles.container} ${className}`}
       >
         {/* Display Options */}

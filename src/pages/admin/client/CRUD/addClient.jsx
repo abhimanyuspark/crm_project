@@ -116,7 +116,7 @@ const AddClient = ({ intialImage }) => {
 
       try {
         await toast.promise(dispatch(addUser(formData)), {
-          loading: "Adding User...",
+          loading: "Saving client...",
           success: <span>User Added Successfully</span>,
           error: <span>Failed to Add User</span>,
         });

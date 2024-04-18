@@ -10,37 +10,36 @@ import { FlConverter } from "../../utilities";
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const { user, loading } = useSelector((state) => state.users);
+  const { user } = useSelector((state) => state.users);
   const { pathname } = useLocation();
-  const array = pathname.split("/");
-  const Keys = ["clients", "employees"];
 
   const RenderPathItems = () => {
+    const MAX_VISIBLE_CRUMBS = 3;
+    const Keys = ["events"];
+    // Split the location string into an array of breadcrumb items
+    const crumbs = pathname.split("/").filter((crumb) => crumb !== "");
+    const breadcrumbs = crumbs.slice(0, MAX_VISIBLE_CRUMBS);
+
     return (
-      <div className="flex gap-1 items-center">
-        {array.map((item, i) => {
-          if (i > 1 && !Keys.includes(array[1])) return null;
+      <div className="flex gap-1 text-base">
+        <Link to="/" className="hover:text-black font-semibold">
+          Dashboard
+        </Link>
 
-          const value = i === 2 ? `${array[1]}/${item}` : item;
-          const isLastItem = i === array.length - 1;
-          const Item =
-            i === 0
-              ? "Dashboard"
-              : i === 2 && user.id === item
-              ? FlConverter(user.name)
-              : FlConverter(item);
-
+        {breadcrumbs.map((crumb, index) => {
+          if (index > 0 && Keys.includes(crumbs[0])) return null;
+          const item = index === 1 && crumb === user?.id ? user?.name : crumb;
           return (
-            <div className="flex gap-4 items-center" key={i}>
-              {isLastItem ? (
-                <p className="font-medium w-auto truncate">{Item}</p>
+            <div key={index} className="flex items-baseline gap-1">
+              <span className="w-[3px] h-[3px] rounded-[100%] bg-slate-500 block"></span>
+              {index === breadcrumbs.length - 1 ? (
+                <span>{FlConverter(item)}</span>
               ) : (
                 <Link
-                  to={value}
-                  className="font-semibold w-auto truncate hover:text-black cursor-pointer flex gap-[2px] items-center"
+                  to={`/${crumbs.slice(0, index + 1).join("/")}`}
+                  className="hover:text-black font-semibold"
                 >
-                  <span>{Item}</span>
-                  {<span className="font-bold">.</span>}
+                  {FlConverter(item)}
                 </Link>
               )}
             </div>
