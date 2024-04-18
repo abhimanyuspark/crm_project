@@ -11,7 +11,7 @@ const Search = ({ value = "", onChange = (i) => i }) => {
   });
 
   return (
-    <Container className="sticky  top-0 z-10 rounded-none">
+    <Container className="sticky top-0 z-[1] rounded-none">
       <div className="border-b border-slate-300 p-4">
         <InputText
           value={search}
