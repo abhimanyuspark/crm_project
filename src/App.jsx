@@ -5,7 +5,6 @@ import {
   Login,
   Not_Found,
   UnAuth,
-  APDashboard,
   Client,
   Employee,
   Settings,
@@ -21,6 +20,7 @@ import {
   EditEvent,
   initialData,
   ProfileTab,
+  DashBoards,
 } from "./pages";
 import { RequireAuth, PersistenceAuth, Loader } from "./components/index";
 import { Tooltip } from "react-tooltip";
@@ -58,7 +58,7 @@ function App() {
               />
             }
           >
-            <Route path="/" element={<APDashboard />} />
+            <Route path="/" element={<DashBoards role={role} />} />
             <Route path="/settings/" element={<Settings />}>
               <Route index element={<ProfileTab />} />
               <Route path="profile" element={<ProfileTab />} />

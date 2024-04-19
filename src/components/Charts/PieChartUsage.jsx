@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import PieChart from "./PieChart";
+const chart = [
+  { label: "inprocess", value: 0, color: "blue" },
+  { label: "pending", value: 0, color: "yellow" },
+  { label: "notstarted", value: 0, color: "gray" },
+  { label: "canceled", value: 0, color: "red" },
+  { label: "finished", value: 0, color: "green" },
+];
 
-const PieChartUsage = ({ data, label }) => {
-  const chartjs = [
-    { label: "inprocess", value: 0, color: "blue" },
-    { label: "pending", value: 0, color: "yellow" },
-    { label: "notstarted", value: 0, color: "gray" },
-    { label: "canceled", value: 0, color: "red" },
-    { label: "finished", value: 0, color: "green" },
-  ];
-
+const PieChartUsage = ({ data, label, chartjs = chart }) => {
   const [labels, setLabels] = useState([]);
   const [values, setValues] = useState([]);
   const [colors, setColors] = useState([]);

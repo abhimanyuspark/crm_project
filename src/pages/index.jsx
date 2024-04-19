@@ -1,4 +1,5 @@
 import { lazy } from "react";
+
 import {
   APDashboard,
   Client,
@@ -14,22 +15,34 @@ import {
   ViewEvent,
   EditEvent,
 } from "./admin/index";
+
+import { ClientDashboard } from "./client/index";
+
+import { Settings, ProfileTab } from "./settings/index";
+
 import { initialData } from "./data.json";
 
 const Login = lazy(() => import("./Login"));
 const Not_Found = lazy(() => import("./Not_Found"));
 const UnAuth = lazy(() => import("./UnAuth"));
-const Settings = lazy(() => import("./settings/settings"));
-const ProfileTab = lazy(() => import("./settings/ProfileTab"));
+const DashBoards = lazy(() => import("./DashBoards"));
 
 export {
+  // Index Pages
   Login,
   Not_Found,
   UnAuth,
+  DashBoards,
+  initialData,
+
+  // Setting Pages
+  Settings,
+  ProfileTab,
+
+  //  Admin Pages
   APDashboard,
   Client,
   Employee,
-  Settings,
   AddClient,
   AddEmployee,
   EditClient,
@@ -40,6 +53,7 @@ export {
   AddEvent,
   ViewEvent,
   EditEvent,
-  initialData,
-  ProfileTab,
+
+  //  Client pages
+  ClientDashboard,
 };

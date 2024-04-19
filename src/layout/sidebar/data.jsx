@@ -50,13 +50,7 @@ export const client = [
     id: 1,
     icon: <FaDashcube />,
     value: "Dashboard",
-    subMenu: [
-      {
-        id: 1,
-        value: "Private Dashboard",
-        link: "/",
-      },
-    ],
+    link: "/",
   },
   {
     id: 2,

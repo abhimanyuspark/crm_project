@@ -59,7 +59,7 @@ const ClearButton = ({ onClick, text = "Clear", icon }) => {
     >
       <div className="flex items-center gap-2">
         {icon && icon}
-        <span className="text-lg">{text}</span>
+        <span className="text-base">{text}</span>
       </div>
     </button>
   );
