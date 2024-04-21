@@ -15,29 +15,29 @@ import { initialData } from "../../data.json";
 const initialImage = initialData[0].initialImage;
 
 export const Columns = [
-  {
-    id: "select",
-    enableSorting: false,
-    header: ({ table }) => {
-      return (
-        <CheckBox
-          checked={table.getIsAllRowsSelected()}
-          indeterminate={table.getIsSomeRowsSelected()}
-          onChange={table.getToggleAllRowsSelectedHandler()}
-        />
-      );
-    },
-    cell: ({ row }) => {
-      return (
-        <CheckBox
-          checked={row.getIsSelected()}
-          disabled={!row.getCanSelect()}
-          indeterminate={row.getIsSomeSelected()}
-          onChange={row.getToggleSelectedHandler()}
-        />
-      );
-    },
-  },
+  // {
+  //   id: "select",
+  //   enableSorting: false,
+  //   header: ({ table }) => {
+  //     return (
+  //       <CheckBox
+  //         checked={table.getIsAllRowsSelected()}
+  //         indeterminate={table.getIsSomeRowsSelected()}
+  //         onChange={table.getToggleAllRowsSelectedHandler()}
+  //       />
+  //     );
+  //   },
+  //   cell: ({ row }) => {
+  //     return (
+  //       <CheckBox
+  //         checked={row.getIsSelected()}
+  //         disabled={!row.getCanSelect()}
+  //         indeterminate={row.getIsSomeSelected()}
+  //         onChange={row.getToggleSelectedHandler()}
+  //       />
+  //     );
+  //   },
+  // },
   {
     accessorKey: "index",
     header: "Id",
@@ -76,7 +76,7 @@ export const Columns = [
       const value = info.getValue();
       const { id } = info.row.original;
       return (
-        <div className="w-48 cursor-pointer">
+        <div className="w-44 cursor-pointer">
           <Link
             to={`/clients/${id}`}
             className="text-sm hover:underline text-slate-700 font-semibold"
@@ -85,6 +85,14 @@ export const Columns = [
           </Link>
         </div>
       );
+    },
+  },
+  {
+    accessorKey: "email",
+    header: () => "Email",
+    cell: (info) => {
+      const value = info.getValue();
+      return <div className="w-52 text-sm">{value}</div>;
     },
   },
   {
@@ -115,15 +123,15 @@ export const Columns = [
       return value ? <>{value}</> : "--";
     },
   },
-  {
-    accessorKey: "progress",
-    header: "Progress",
-    cell: (info) => {
-      const value = info.getValue();
-      return value ? <div className="w-10">{value}</div> : "--";
-    },
-    sortDescFirst: false,
-  },
+  // {
+  //   accessorKey: "progress",
+  //   header: "Progress",
+  //   cell: (info) => {
+  //     const value = info.getValue();
+  //     return value ? <div className="w-10">{value}</div> : "--";
+  //   },
+  //   sortDescFirst: false,
+  // },
   {
     accessorKey: "status",
     header: "Status",
@@ -235,7 +243,7 @@ export const Columns = [
               View(id);
             }}
           >
-            <FaEye size={17} /> View
+            <FaEye /> View
           </li>
           <li
             onClick={() => {

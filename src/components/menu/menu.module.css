@@ -25,10 +25,10 @@
 } */
 .list {
   position: absolute;
-  width: 140px;
+  width: 150px;
   border-radius: 0.2rem;
   border: var(--border);
-  padding: 8px 0px;
+  padding: 6px 0px;
   top: calc(33px + 0.2rem);
   right: 0;
   background-color: white;
@@ -37,15 +37,16 @@
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 .list > li {
-  padding: 5px 10px;
+  padding: 6px 10px;
   cursor: pointer;
   display: flex;
-  gap: 10px;
+  gap: 14px;
   align-items: center;
   transition: all 0.3s ease;
+  font-size: 15px;
   @apply text-slate-600;
 }
 .list > li:hover {
-  background: gainsboro;
+  @apply bg-slate-200;
   color: black;
 }

@@ -186,7 +186,7 @@ const Table = ({
                         table.setPageSize(Number(e.target.value));
                       }}
                     >
-                      {[2, 10, 20, 30, 40, 50].map((pageSize) => (
+                      {[5, 10, 20, 30, 40, 50].map((pageSize) => (
                         <option key={pageSize} value={pageSize}>
                           {pageSize}
                         </option>
@@ -200,7 +200,7 @@ const Table = ({
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 text-slate-500">
                   <button
                     className="px-4 py-2 rounded-[0.2rem] border border-slate-300 hover:bg-slate-200 disabled:bg-white"
                     onClick={() => table.setPageIndex(0)}

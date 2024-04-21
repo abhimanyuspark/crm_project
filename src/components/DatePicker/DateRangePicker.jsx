@@ -16,10 +16,10 @@ const DateRangePicker = ({
   };
 
   return (
-    <div className="relative flex gap-4 p-2 items-center group/show hover:bg-slate-200 rounded-sm">
-      <p className="text-base font-semibold">Date Range</p>
+    <div className="relative flex gap-4 p-[6px] items-center group/show hover:bg-slate-200 rounded-sm">
+      <p className="text-[15px] font-semibold">Date Range</p>
 
-      <ul className="group-hover/show:visible invisible absolute top-10 left-0 w-28 h-auto bg-white border border-slate-300 z-10">
+      <ul className="group-hover/show:visible invisible absolute top-9 left-0 w-28 h-auto bg-white border border-slate-300 z-10">
         {rangePresets?.map((d, i) => (
           <li
             key={i}
@@ -46,7 +46,7 @@ const DateRangePicker = ({
           startDate={value?.start}
           endDate={value?.end}
           className="w-20 border-0 focus:outline-0 bg-transparent"
-          calendarClassName="left-20 -top-[2px] border-slate-300"
+          calendarClassName="left-20 -top-[4px] border-slate-300"
           showYearDropdown
           showMonthDropdown
           placeholderText="Start date"
@@ -61,7 +61,7 @@ const DateRangePicker = ({
           startDate={value?.start}
           endDate={value?.end}
           className="w-20 border-0 focus:outline-0 bg-transparent"
-          calendarClassName="left-20 -top-[2px] border-slate-300"
+          calendarClassName="left-20 -top-[4px] border-slate-300"
           showYearDropdown
           showMonthDropdown
           placeholderText="End date"

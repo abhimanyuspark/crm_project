@@ -11,6 +11,7 @@ import {
   SubNavBar,
   SubNavChild,
   Table,
+  Label,
 } from "../../../components";
 import { Columns } from "./column";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -161,10 +162,7 @@ const Employee = () => {
           >
             <div className="p-4 flex gap-4 flex-col">
               {/* allowFollowUp */}
-              <div className="flex gap-2 flex-col">
-                <label className="text-base text-slate-600">
-                  Allow Follow Up
-                </label>
+              <Label label="Allow FollowUp">
                 <Select
                   options={followUp}
                   onChange={(d) => {
@@ -173,11 +171,10 @@ const Employee = () => {
                   value={data?.allowFollowUp}
                   fields={(i) => i?.type}
                 />
-              </div>
+              </Label>
 
               {/* Status */}
-              <div className="flex gap-2 flex-col">
-                <label className="text-base text-slate-600">Status</label>
+              <Label label="Status">
                 <Select
                   options={status}
                   onChange={(d) => {
@@ -186,7 +183,7 @@ const Employee = () => {
                   value={data?.status}
                   fields={(i) => i?.name}
                 />
-              </div>
+              </Label>
             </div>
           </FilterTable>
         </SubNavChild>
