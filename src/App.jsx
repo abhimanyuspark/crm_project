@@ -21,6 +21,7 @@ import {
   initialData,
   ProfileTab,
   DashBoards,
+  AppTab,
 } from "./pages";
 import { RequireAuth, PersistenceAuth, Loader } from "./components/index";
 import { Tooltip } from "react-tooltip";
@@ -62,6 +63,7 @@ function App() {
             <Route path="/settings/" element={<Settings />}>
               <Route index element={<ProfileTab />} />
               <Route path="profile" element={<ProfileTab />} />
+              <Route path="app_settings" element={<AppTab />} />
             </Route>
           </Route>
 

@@ -23,6 +23,8 @@
 // };
 
 // const data = { ...auth, ...user };
+// console.log(auth);
+// console.log(user);
 // console.log(data);
 
 // let i = 3;

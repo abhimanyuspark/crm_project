@@ -45,5 +45,8 @@
       "id": 3
     }
   ],
-  "settingSideBarData": [{ "title": "Profile", "link": "/settings/profile" }]
+  "settingSideBarData": [
+    { "title": "Profile", "link": "/settings/profile" },
+    { "title": "App setting", "link": "/settings/app_settings" }
+  ]
 }

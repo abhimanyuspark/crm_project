@@ -56,8 +56,9 @@ const ViewEmployee = ({ intialImage }) => {
             />
 
             <div>
-              <p className="text-base font-bold">{user?.name}</p>
-              <p className="text-sm">{user?.jobType}</p>
+              <p className="text-sm font-bold">{FlConverter(user?.name)}</p>
+              <p className="text-xs">{user?.jobType}</p>
+              <p className="text-xs">{user?.about}</p>
             </div>
 
             <Menu>
@@ -170,7 +171,7 @@ const ViewEmployee = ({ intialImage }) => {
           </div>
         </Container>
 
-        <div className="grid gap-8">
+        <div className="grid gap-8 grid-rows-2">
           <Container>
             <div className="border-b border-slate-300 p-4">
               <h2 className="text-xl font-bold">Taks</h2>
@@ -179,6 +180,7 @@ const ViewEmployee = ({ intialImage }) => {
               <PieChartUsage data={user?.tasks} label="Tasks" />
             </div>
           </Container>
+
           <Container>
             <div className="border-b border-slate-300 p-4">
               <h2 className="text-xl font-bold">Projects</h2>

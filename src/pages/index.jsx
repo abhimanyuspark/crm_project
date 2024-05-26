@@ -18,7 +18,7 @@ import {
 
 import { ClientDashboard } from "./client/index";
 
-import { Settings, ProfileTab } from "./settings/index";
+import { Settings, ProfileTab, AppTab } from "./settings/index";
 
 import { initialData } from "./data.json";
 
@@ -38,6 +38,7 @@ export {
   // Setting Pages
   Settings,
   ProfileTab,
+  AppTab,
 
   //  Admin Pages
   APDashboard,

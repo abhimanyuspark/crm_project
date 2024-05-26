@@ -63,8 +63,8 @@ const ViewClient = ({ intialImage }) => {
             />
 
             <div>
-              <p className="text-base font-bold">{user?.name}</p>
-              <p className="text-sm">{user?.jobType}</p>
+              <p className="text-sm font-bold">{FlConverter(user?.name)}</p>
+              <p className="text-xs">{user?.jobType}</p>
             </div>
 
             <Menu>
@@ -99,104 +99,109 @@ const ViewClient = ({ intialImage }) => {
       </div>
 
       <div className="grid sm:grid-cols-[1fr_auto] grid-cols-1 gap-8">
-        <Container>
-          <div className="flex gap-5 flex-col p-4">
-            <p className="font-bold text-xl">Profile Info</p>
+        <Container className="flex gap-5 flex-col p-4">
+          <p className="font-bold text-xl">Profile Info</p>
 
-            <Row text="Name" data={user?.name} />
-            <div className="flex gap-2 items-center">
-              <Row
-                text="Password"
-                data={show ? user?.password : "**********"}
+          <Row text="Name" data={user?.name} />
+          <div className="flex gap-2 items-center">
+            <Row text="Password" data={show ? user?.password : "**********"} />
+            {show ? (
+              <FaEye
+                size={20}
+                className="text-slate-500 cursor-pointer hover:text-black"
+                onClick={() => setShow(false)}
               />
-              {show ? (
-                <FaEye
-                  size={20}
-                  className="text-slate-500 cursor-pointer hover:text-black"
-                  onClick={() => setShow(false)}
-                />
-              ) : (
-                <FaEyeSlash
-                  size={20}
-                  className="text-slate-500 cursor-pointer hover:text-black"
-                  onClick={() => setShow(true)}
-                />
-              )}
-            </div>
-            <Row text="Email" data={user?.email} />
-            <Row text="Login Allowed" data={user?.login} />
-            <Row
-              text="Country"
-              data={
-                <div className="flex items-center gap-2">
-                  {user?.country ? (
-                    <>
-                      <img
-                        loading="lazy"
-                        className="w-6 h-6"
-                        src={user?.country?.flags?.svg}
-                        alt={`${user?.country?.name}`}
-                      />
-                      <span>{user?.country?.name?.common}</span>
-                    </>
-                  ) : (
-                    "--"
-                  )}
-                </div>
-              }
-            />
-            <Row
-              text="Mobile no"
-              data={
-                user?.phoneNumber &&
-                `${getData(user?.countryCode)} ${user?.phoneNumber}`
-              }
-            />
-
-            <Row text="Age" data={user?.age} />
-            <Row text="Created" data={created} />
-
-            <Row
-              text="Gender"
-              data={
-                <div className="flex gap-2">
-                  {user?.gender !== "Other" && (
-                    <span
-                      className={`text-lg ${
-                        user?.gender === "Male"
-                          ? "text-blue-700"
-                          : "text-pink-700"
-                      }`}
-                    >
-                      {user?.gender === "Male" ? <IoMdMale /> : <IoMdFemale />}
-                    </span>
-                  )}
-                  {FlConverter(user?.gender)}
-                </div>
-              }
-            />
-            <Row text="Visits" data={user?.visits} />
-
-            <Row
-              text="Status"
-              data={
-                <p className="flex gap-2 items-center">
-                  <span
-                    className="w-3 h-3 rounded-full block"
-                    style={{ backgroundColor: user?.status?.color }}
-                  ></span>
-                  {user?.status?.name}
-                </p>
-              }
-            />
-
-            <Row text="Company Name" data={user?.company} />
-            <Row text="Office Phone" data={user?.officePhone} />
-            <Row text="Address" data={user?.address} />
+            ) : (
+              <FaEyeSlash
+                size={20}
+                className="text-slate-500 cursor-pointer hover:text-black"
+                onClick={() => setShow(true)}
+              />
+            )}
           </div>
+          <Row text="Email" data={user?.email} />
+          <Row text="Login Allowed" data={user?.login} />
+          <Row
+            text="Country"
+            data={
+              <div className="flex items-center gap-2">
+                {user?.country ? (
+                  <>
+                    <img
+                      loading="lazy"
+                      className="w-6 h-6"
+                      src={user?.country?.flags?.svg}
+                      alt={`${user?.country?.name}`}
+                    />
+                    <span>{user?.country?.name?.common}</span>
+                  </>
+                ) : (
+                  "--"
+                )}
+              </div>
+            }
+          />
+          <Row
+            text="Mobile no"
+            data={
+              user?.phoneNumber &&
+              `${getData(user?.countryCode)} ${user?.phoneNumber}`
+            }
+          />
+
+          <Row text="Age" data={user?.age} />
+          <Row text="Created" data={created} />
+
+          <Row
+            text="Gender"
+            data={
+              <div className="flex gap-2">
+                {user?.gender !== "Other" && (
+                  <span
+                    className={`text-lg ${
+                      user?.gender === "Male"
+                        ? "text-blue-700"
+                        : "text-pink-700"
+                    }`}
+                  >
+                    {user?.gender === "Male" ? <IoMdMale /> : <IoMdFemale />}
+                  </span>
+                )}
+                {FlConverter(user?.gender)}
+              </div>
+            }
+          />
+          <Row text="Visits" data={user?.visits} />
+
+          <Row
+            text="Status"
+            data={
+              <p className="flex gap-2 items-center">
+                <span
+                  className="w-3 h-3 rounded-full block"
+                  style={{ backgroundColor: user?.status?.color }}
+                ></span>
+                {user?.status?.name}
+              </p>
+            }
+          />
+
+          <Row text="Company Name" data={user?.company} />
+          <Row text="Office Phone" data={user?.officePhone} />
+          <Row text="Address" data={user?.address} />
+          <Row
+            text="Note"
+            data={
+              user?.note ? (
+                <div dangerouslySetInnerHTML={{ __html: user?.note }} />
+              ) : (
+                "--"
+              )
+            }
+          />
         </Container>
 
-        <div className="grid gap-8">
+        <div className="grid gap-8 grid-rows-2">
           <Container>
             <div className="border-b border-slate-300 p-4">
               <h2 className="text-xl font-bold">Projects</h2>
