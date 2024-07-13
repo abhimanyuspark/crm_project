@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-const apiUrl = "http://localhost:3500";
+const apiUrl = process.env.REACT_APP_API_URL;
+// const apiUrl = "https://66924ac5346eeafcf46c720f.mockapi.io";
 
 export const authenticateUser = createAsyncThunk(
   "auth/authenticateUser",
