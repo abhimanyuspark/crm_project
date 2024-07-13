@@ -11,10 +11,18 @@ const RequireAuth = ({ roleAccess = [] }) => {
     if (roleAccess.some((role) => user?.role?.includes(role))) {
       return <Layout />;
     } else {
-      return <Navigate to="/unAuthorized" state={{ from: location }} replace />;
+      return (
+        <Navigate
+          to="/crm_project/unAuthorized"
+          state={{ from: location }}
+          replace
+        />
+      );
     }
   } else {
-    return <Navigate to="/login" state={{ from: location }} replace />;
+    return (
+      <Navigate to="/crm_project/login" state={{ from: location }} replace />
+    );
   }
 };
 
