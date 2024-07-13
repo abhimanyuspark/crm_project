@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-const apiUrl = process.env.REACT_APP_API_URL;
+const apiUrl = import.meta.env.VITE_API_URL;
 // const apiUrl = "https://66924ac5346eeafcf46c720f.mockapi.io";
 
 export const authenticateUser = createAsyncThunk(
@@ -61,7 +61,7 @@ export const updateStatus = createAsyncThunk(
   "user/updateStatus",
   async ({ id, status }, { rejectWithValue }) => {
     try {
-      const response = await axios.patch(`${apiUrl}/users/${id}`, { status });
+      const response = await axios.put(`${apiUrl}/users/${id}`, { status });
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -80,7 +80,7 @@ export const userDetails = createAsyncThunk("user/userDetails", async (id) => {
 });
 
 export const editUser = createAsyncThunk("user/patchUser", async (data) => {
-  const response = await axios.patch(`${apiUrl}/users/${data.id}`, data);
+  const response = await axios.put(`${apiUrl}/users/${data.id}`, data);
   return response.data;
 });
 
@@ -125,7 +125,7 @@ export const deleteUserEvent = createAsyncThunk(
 
       if (eventIndex !== -1) {
         user.events.splice(eventIndex, 1);
-        await axios.patch(`${apiUrl}/users/${userId}`, {
+        await axios.put(`${apiUrl}/users/${userId}`, {
           events: user.events,
         });
         return { userId, eventId };
@@ -144,7 +144,7 @@ export const addEventToUser = createAsyncThunk(
     try {
       const userResponse = await axios.get(`${apiUrl}/users/${userId}`);
       const user = userResponse.data;
-      await axios.patch(`${apiUrl}/users/${userId}`, {
+      await axios.put(`${apiUrl}/users/${userId}`, {
         events: [...user.events, event],
       });
       return { userId, event };
@@ -165,7 +165,7 @@ export const updateEvent = createAsyncThunk(
       );
 
       if (events?.length > 0) {
-        await axios.patch(`${apiUrl}/users/${userId}`, {
+        await axios.put(`${apiUrl}/users/${userId}`, {
           events: events,
         });
         return { userId, eventId, updatedEvent };

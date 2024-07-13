@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-const apiUrl = process.env.REACT_APP_COUNTRY_URL;
+const apiUrl = import.meta.env.VITE_COUNTRY_URL;
 // const apiUrl = "https://restcountries.com/v3.1/all";
 
 export const getContryApi = createAsyncThunk("fetch/country", async () => {
