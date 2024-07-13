@@ -30,3 +30,6 @@
 // let i = 3;
 // const ans = i % 3;
 // console.log(ans);
+
+const apiUrl = process.env.REACT_APP_API_URL;
+console.log(`Api url : ${apiUrl}`);
