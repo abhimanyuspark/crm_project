@@ -22,7 +22,7 @@ const Navbar = () => {
 
     return (
       <div className="flex gap-1 text-base">
-        <Link to="/" className="hover:text-black font-semibold">
+        <Link to="/crm_project" className="hover:text-black font-semibold">
           Dashboard
         </Link>
 

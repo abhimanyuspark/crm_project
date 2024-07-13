@@ -23,25 +23,25 @@ export const admin = [
     id: 2,
     icon: <FaUserFriends />,
     value: "Clients",
-    link: "/clients",
+    link: "/crm_project/clients",
   },
   {
     id: 3,
     icon: <FaUsers />,
     value: "Employees",
-    link: "/employees",
+    link: "/crm_project/employees",
   },
   {
     id: 4,
     icon: <FaCalendar />,
     value: "Events",
-    link: "/events",
+    link: "/crm_project/events",
   },
   {
     id: 5,
     icon: <FaGear />,
     value: "Settings",
-    link: "/settings",
+    link: "/crm_project/settings",
   },
 ];
 
@@ -56,7 +56,7 @@ export const client = [
     id: 2,
     icon: <FaGear />,
     value: "Settings",
-    link: "/settings",
+    link: "/crm_project/settings",
   },
 ];
 
@@ -77,12 +77,12 @@ export const employee = [
     id: 2,
     icon: <FaCalendar />,
     value: "Events",
-    link: "/events",
+    link: "/crm_project/events",
   },
   {
     id: 3,
     icon: <FaGear />,
     value: "Settings",
-    link: "/settings",
+    link: "/crm_project/settings",
   },
 ];
