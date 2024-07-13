@@ -8,6 +8,7 @@ import { Menu, Select } from "../../../components";
 import { updateStatus, deleteUser } from "../../../redux/server/server";
 import {
   deleteUserReducer,
+  setLoading,
   statusUpdate,
 } from "../../../redux/features/roleUsers";
 import { FaEdit, FaTrash, FaEye } from "../../../components/icons";
@@ -218,10 +219,12 @@ export const Columns = [
           confirmButtonColor: "#3085d6",
           cancelButtonColor: "#d33",
           confirmButtonText: "Yes, delete!",
-        }).then((result) => {
+        }).then(async (result) => {
           if (result.isConfirmed) {
-            dispatch(deleteUser(id));
-            dispatch(deleteUserReducer(id));
+            dispatch(setLoading(true));
+            await dispatch(deleteUser(id));
+            await dispatch(deleteUserReducer(id));
+            dispatch(setLoading(false));
             toast.success(`${name} deleted successfull`, {
               position: "top-right",
             });

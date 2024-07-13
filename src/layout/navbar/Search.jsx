@@ -57,7 +57,7 @@ const Search = () => {
           onClick={() => {
             setShow(false);
           }}
-          className="z-10 absolute top-0 right-0 flex items-start justify-center w-full h-full bg-[rgba(0,0,0,0.2)]"
+          className="z-[999999] absolute top-0 right-0 flex items-start justify-center w-full h-full bg-[rgba(0,0,0,0.2)]"
         >
           <div
             onClick={(e) => {
