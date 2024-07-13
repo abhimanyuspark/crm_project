@@ -196,7 +196,7 @@ const Client = () => {
             icon={<FaPlus />}
             type="button"
             onClick={() => {
-              navigate("/clients/add");
+              navigate("/crm_project/clients/add");
             }}
           />
         </div>

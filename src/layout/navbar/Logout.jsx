@@ -20,7 +20,7 @@ const LogOut = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         dispatch(logout());
-        navigate("/login", { replace: true }); // Redirect to the login page
+        navigate("/crm_project/login", { replace: true }); // Redirect to the login page
       }
     });
   };

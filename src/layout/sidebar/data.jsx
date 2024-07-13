@@ -15,7 +15,7 @@ export const admin = [
       {
         id: 1,
         value: "Private Dashboard",
-        link: "/crm_project",
+        link: "/crm_project/",
       },
     ],
   },
@@ -50,7 +50,7 @@ export const client = [
     id: 1,
     icon: <FaDashcube />,
     value: "Dashboard",
-    link: "/crm_project",
+    link: "/crm_project/",
   },
   {
     id: 2,
@@ -69,7 +69,7 @@ export const employee = [
       {
         id: 1,
         value: "Private Dashboard",
-        link: "/crm_project",
+        link: "/crm_project/",
       },
     ],
   },

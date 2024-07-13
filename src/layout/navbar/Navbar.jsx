@@ -22,24 +22,22 @@ const Navbar = () => {
 
     return (
       <div className="flex gap-1 text-base">
-        <Link to="/crm_project" className="hover:text-black font-semibold">
-          Dashboard
-        </Link>
-
         {breadcrumbs.map((crumb, index) => {
           if (index > 0 && Keys.includes(crumbs[0])) return null;
           const item = index === 1 && crumb === user?.id ? user?.name : crumb;
+          const value = item === "crm_project" ? "Dashboard" : item;
+
           return (
             <div key={index} className="flex items-baseline gap-1">
-              <span className="w-[3px] h-[3px] rounded-[100%] bg-slate-500 block"></span>
               {index === breadcrumbs.length - 1 ? (
-                <span>{FlConverter(item)}</span>
+                <span className="font-semibold">{FlConverter(value)}</span>
               ) : (
                 <Link
                   to={`/${crumbs.slice(0, index + 1).join("/")}`}
-                  className="hover:text-black font-semibold"
+                  className="hover:text-black font-semibold flex gap-1 items-center"
                 >
-                  {FlConverter(item)}
+                  {FlConverter(value)}
+                  <span className="w-[3px] h-[3px] rounded-[100%] bg-slate-500 block"></span>
                 </Link>
               )}
             </div>

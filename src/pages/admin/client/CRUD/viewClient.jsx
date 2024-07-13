@@ -68,7 +68,9 @@ const ViewClient = ({ intialImage }) => {
             </div>
 
             <Menu>
-              <li onClick={() => navigate(`/clients/${id}/edit`)}>Edit</li>
+              <li onClick={() => navigate(`/crm_project/clients/${id}/edit`)}>
+                Edit
+              </li>
             </Menu>
           </div>
         </Container>

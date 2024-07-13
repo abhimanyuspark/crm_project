@@ -62,7 +62,9 @@ const ViewEmployee = ({ intialImage }) => {
             </div>
 
             <Menu>
-              <li onClick={() => navigate(`/employees/${id}/edit`)}>Edit</li>
+              <li onClick={() => navigate(`/crm_project/employees/${id}/edit`)}>
+                Edit
+              </li>
             </Menu>
           </div>
         </Container>

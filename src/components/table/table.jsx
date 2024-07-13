@@ -141,7 +141,7 @@ const Table = ({
           )}
         </tbody>
         <tfoot>
-          <tr>
+          {/* <tr>
             <td className="p-2">
               <CheckBox
                 checked={table.getIsAllPageRowsSelected()}
@@ -152,7 +152,7 @@ const Table = ({
             <td className="p-2" colSpan={columnSpan}>
               Page Rows ({table.getRowModel().rows.length})
             </td>
-          </tr>
+          </tr> */}
 
           <tr>
             <td colSpan={columnSpan} className="p-2">

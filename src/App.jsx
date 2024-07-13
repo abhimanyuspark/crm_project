@@ -61,7 +61,7 @@ function App() {
               />
             }
           >
-            <Route path="/crm_project" element={<DashBoards role={role} />} />
+            <Route path="/crm_project/" element={<DashBoards role={role} />} />
             <Route path={`${url}/settings/`} element={<Settings />}>
               <Route index element={<ProfileTab />} />
               <Route path="profile" element={<ProfileTab />} />
