@@ -1,0 +1,1 @@
+import{j as s}from"./index-CBG9DTp9.js";import{D as a}from"./index-DK4fyJ37.js";const p=({value:e=new Date,onChange:r,dateFormat:o="dd/MM/yyyy",showTimeSelect:t=!1})=>s.jsx(a,{selected:e,onChange:r,dateFormat:o,className:"w-full border border-slate-300 hover:border-black p-[6px] rounded-[0.2rem]",showTimeSelect:t,showYearDropdown:!0,showMonthDropdown:!0});export{p as R};
